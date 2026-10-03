@@ -1,0 +1,13 @@
+=== POST-FIX: base_external_force_torque removed; flag should stay ~83% ===
+burst audit: 4096 envs x 600 steps  [actions: deterministic]
+  event terms present: ['push_robot', 'sustained_push']
+  body[0] name = floating_base_link  (force target; must be the base/torso)
+  sustained_push params: {'force_range': (10.0, 30.0), 'duration_range': (0.5, 2.5), 'rest_range': (3.0, 8.0), 'lateral_bias': 0.5, 'lateral_spread_deg': 20.0}
+  APPLIED FORCE: nonzero on 18.9% of env-steps (496/600 steps had >=1 env pushed)
+    magnitude when active: mean=19.0 N  p50=18.5  p90=27.3  max=30.0
+    per-env active fraction: min=5% mean=19% max=39%
+  *** has_external_wrench TRUE on 496/600 steps (82.7%) — if LOW, forces are being CLOBBERED ***
+  TERMINATIONS: 4389 total over 600 steps x 4096 envs = 0.179% of env-steps
+    by cause: {'time_out': 0, 'base_contact': 0, 'bad_orientation': 3292, 'base_height': 1898}
+  tilt: mean=12.5 p95=22.4 max=57.3 deg; env-steps >25deg: 3.1%  >45deg: 0.6%
+

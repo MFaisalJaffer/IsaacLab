@@ -1,0 +1,199 @@
+=== FREQ-MAP STUDY part A: deploy policy (trained@1.4) driven at off-nominal clocks ===
+deploy_f1.0_v0.15: cmd_vx=0.15  (400 steps x 32 envs)
+  PITCH (fwd+ / back-) deg: first-qtr mean=+8.0  last-qtr mean=+8.2   p50=+8.1  p95=10.9
+  ROLL  (sideways)    deg: first-qtr mean=-0.1  last-qtr mean=-0.2   |p95|=3.3
+  -> steady lean if first~last; GROWING lean = falling
+  base height m: start=1.01  end=1.01   (spawn ~0.72; <0.45 = collapsed)
+  envs still standing tall at end: 32/32
+  forward speed m/s: first-qtr=0.189  last-qtr=0.207   (commanded 0.15)
+  stance-duty: 80%   both-feet-down: 61%   airborne(both up): 0%
+  tilt>25deg fraction of steps: 0%   | tilt>45: 0%
+deploy_f1.0_v0.30: cmd_vx=0.3  (400 steps x 32 envs)
+  PITCH (fwd+ / back-) deg: first-qtr mean=+7.0  last-qtr mean=+7.1   p50=+7.2  p95=9.8
+  ROLL  (sideways)    deg: first-qtr mean=-0.2  last-qtr mean=-0.1   |p95|=4.3
+  -> steady lean if first~last; GROWING lean = falling
+  base height m: start=1.01  end=1.01   (spawn ~0.72; <0.45 = collapsed)
+  envs still standing tall at end: 32/32
+  forward speed m/s: first-qtr=0.315  last-qtr=0.327   (commanded 0.3)
+  stance-duty: 76%   both-feet-down: 53%   airborne(both up): 0%
+  tilt>25deg fraction of steps: 0%   | tilt>45: 0%
+deploy_f1.1_v0.15: cmd_vx=0.15  (400 steps x 32 envs)
+  PITCH (fwd+ / back-) deg: first-qtr mean=+7.7  last-qtr mean=+7.9   p50=+7.9  p95=10.3
+  ROLL  (sideways)    deg: first-qtr mean=-0.0  last-qtr mean=+0.0   |p95|=3.0
+  -> steady lean if first~last; GROWING lean = falling
+  base height m: start=1.01  end=1.01   (spawn ~0.72; <0.45 = collapsed)
+  envs still standing tall at end: 32/32
+  forward speed m/s: first-qtr=0.182  last-qtr=0.195   (commanded 0.15)
+  stance-duty: 78%   both-feet-down: 58%   airborne(both up): 1%
+  tilt>25deg fraction of steps: 0%   | tilt>45: 0%
+deploy_f1.1_v0.30: cmd_vx=0.3  (400 steps x 32 envs)
+  PITCH (fwd+ / back-) deg: first-qtr mean=+6.4  last-qtr mean=+6.7   p50=+6.7  p95=9.4
+  ROLL  (sideways)    deg: first-qtr mean=+0.1  last-qtr mean=-0.4   |p95|=4.0
+  -> steady lean if first~last; GROWING lean = falling
+  base height m: start=1.01  end=1.01   (spawn ~0.72; <0.45 = collapsed)
+  envs still standing tall at end: 32/32
+  forward speed m/s: first-qtr=0.328  last-qtr=0.328   (commanded 0.3)
+  stance-duty: 74%   both-feet-down: 49%   airborne(both up): 1%
+  tilt>25deg fraction of steps: 0%   | tilt>45: 0%
+deploy_f1.2_v0.15: cmd_vx=0.15  (400 steps x 32 envs)
+  PITCH (fwd+ / back-) deg: first-qtr mean=+7.7  last-qtr mean=+7.9   p50=+7.8  p95=10.3
+  ROLL  (sideways)    deg: first-qtr mean=+0.0  last-qtr mean=-0.2   |p95|=2.9
+  -> steady lean if first~last; GROWING lean = falling
+  base height m: start=1.01  end=1.01   (spawn ~0.72; <0.45 = collapsed)
+  envs still standing tall at end: 32/32
+  forward speed m/s: first-qtr=0.194  last-qtr=0.203   (commanded 0.15)
+  stance-duty: 79%   both-feet-down: 59%   airborne(both up): 1%
+  tilt>25deg fraction of steps: 0%   | tilt>45: 0%
+deploy_f1.2_v0.30: cmd_vx=0.3  (400 steps x 32 envs)
+  PITCH (fwd+ / back-) deg: first-qtr mean=+6.6  last-qtr mean=+6.6   p50=+6.7  p95=9.3
+  ROLL  (sideways)    deg: first-qtr mean=-0.1  last-qtr mean=-0.4   |p95|=3.8
+  -> steady lean if first~last; GROWING lean = falling
+  base height m: start=1.01  end=1.01   (spawn ~0.72; <0.45 = collapsed)
+  envs still standing tall at end: 32/32
+  forward speed m/s: first-qtr=0.337  last-qtr=0.342   (commanded 0.3)
+  stance-duty: 75%   both-feet-down: 51%   airborne(both up): 0%
+  tilt>25deg fraction of steps: 0%   | tilt>45: 0%
+deploy_f1.3_v0.15: cmd_vx=0.15  (400 steps x 32 envs)
+  PITCH (fwd+ / back-) deg: first-qtr mean=+7.6  last-qtr mean=+7.6   p50=+7.5  p95=10.0
+  ROLL  (sideways)    deg: first-qtr mean=-0.1  last-qtr mean=+0.0   |p95|=2.7
+  -> steady lean if first~last; GROWING lean = falling
+  base height m: start=1.01  end=1.01   (spawn ~0.72; <0.45 = collapsed)
+  envs still standing tall at end: 32/32
+  forward speed m/s: first-qtr=0.182  last-qtr=0.177   (commanded 0.15)
+  stance-duty: 78%   both-feet-down: 57%   airborne(both up): 1%
+  tilt>25deg fraction of steps: 0%   | tilt>45: 0%
+deploy_f1.3_v0.30: cmd_vx=0.3  (400 steps x 32 envs)
+  PITCH (fwd+ / back-) deg: first-qtr mean=+6.5  last-qtr mean=+6.6   p50=+6.6  p95=9.2
+  ROLL  (sideways)    deg: first-qtr mean=-0.3  last-qtr mean=-0.2   |p95|=3.6
+  -> steady lean if first~last; GROWING lean = falling
+  base height m: start=1.01  end=1.01   (spawn ~0.72; <0.45 = collapsed)
+  envs still standing tall at end: 32/32
+  forward speed m/s: first-qtr=0.344  last-qtr=0.332   (commanded 0.3)
+  stance-duty: 74%   both-feet-down: 50%   airborne(both up): 1%
+  tilt>25deg fraction of steps: 0%   | tilt>45: 0%
+deploy_f1.4_v0.15: cmd_vx=0.15  (400 steps x 32 envs)
+  PITCH (fwd+ / back-) deg: first-qtr mean=+7.2  last-qtr mean=+7.1   p50=+7.4  p95=9.6
+  ROLL  (sideways)    deg: first-qtr mean=-0.1  last-qtr mean=+0.0   |p95|=2.6
+  -> steady lean if first~last; GROWING lean = falling
+  base height m: start=1.01  end=1.01   (spawn ~0.72; <0.45 = collapsed)
+  envs still standing tall at end: 32/32
+  forward speed m/s: first-qtr=0.168  last-qtr=0.168   (commanded 0.15)
+  stance-duty: 78%   both-feet-down: 57%   airborne(both up): 1%
+  tilt>25deg fraction of steps: 0%   | tilt>45: 0%
+deploy_f1.4_v0.30: cmd_vx=0.3  (400 steps x 32 envs)
+  PITCH (fwd+ / back-) deg: first-qtr mean=+6.6  last-qtr mean=+6.6   p50=+6.6  p95=9.4
+  ROLL  (sideways)    deg: first-qtr mean=-0.2  last-qtr mean=-0.0   |p95|=3.4
+  -> steady lean if first~last; GROWING lean = falling
+  base height m: start=1.01  end=1.01   (spawn ~0.72; <0.45 = collapsed)
+  envs still standing tall at end: 32/32
+  forward speed m/s: first-qtr=0.352  last-qtr=0.358   (commanded 0.3)
+  stance-duty: 75%   both-feet-down: 51%   airborne(both up): 1%
+  tilt>25deg fraction of steps: 0%   | tilt>45: 0%
+deploy_f0.8_v0.15: cmd_vx=0.15  (400 steps x 32 envs)
+  PITCH (fwd+ / back-) deg: first-qtr mean=+9.1  last-qtr mean=+9.4   p50=+9.1  p95=12.8
+  ROLL  (sideways)    deg: first-qtr mean=-0.4  last-qtr mean=-0.5   |p95|=4.2
+  -> steady lean if first~last; GROWING lean = falling
+  base height m: start=1.00  end=1.00   (spawn ~0.72; <0.45 = collapsed)
+  envs still standing tall at end: 32/32
+  forward speed m/s: first-qtr=0.207  last-qtr=0.208   (commanded 0.15)
+  stance-duty: 80%   both-feet-down: 60%   airborne(both up): 0%
+  tilt>25deg fraction of steps: 0%   | tilt>45: 0%
+deploy_f0.8_v0.30: cmd_vx=0.3  (400 steps x 32 envs)
+  PITCH (fwd+ / back-) deg: first-qtr mean=+8.8  last-qtr mean=+11.2   p50=+8.8  p95=12.9
+  ROLL  (sideways)    deg: first-qtr mean=-0.2  last-qtr mean=-0.3   |p95|=5.1
+  -> steady lean if first~last; GROWING lean = falling
+  base height m: start=1.00  end=0.97   (spawn ~0.72; <0.45 = collapsed)
+  envs still standing tall at end: 31/32
+  forward speed m/s: first-qtr=0.289  last-qtr=0.273   (commanded 0.3)
+  stance-duty: 75%   both-feet-down: 51%   airborne(both up): 1%
+  tilt>25deg fraction of steps: 2%   | tilt>45: 1%
+deploy_f0.9_v0.15: cmd_vx=0.15  (400 steps x 32 envs)
+  PITCH (fwd+ / back-) deg: first-qtr mean=+8.0  last-qtr mean=+8.2   p50=+8.3  p95=11.2
+  ROLL  (sideways)    deg: first-qtr mean=-0.0  last-qtr mean=-0.0   |p95|=3.6
+  -> steady lean if first~last; GROWING lean = falling
+  base height m: start=1.01  end=1.01   (spawn ~0.72; <0.45 = collapsed)
+  envs still standing tall at end: 32/32
+  forward speed m/s: first-qtr=0.187  last-qtr=0.180   (commanded 0.15)
+  stance-duty: 81%   both-feet-down: 62%   airborne(both up): 0%
+  tilt>25deg fraction of steps: 0%   | tilt>45: 0%
+deploy_f0.9_v0.30: cmd_vx=0.3  (400 steps x 32 envs)
+  PITCH (fwd+ / back-) deg: first-qtr mean=+7.8  last-qtr mean=+7.5   p50=+7.8  p95=11.0
+  ROLL  (sideways)    deg: first-qtr mean=-0.1  last-qtr mean=-0.2   |p95|=4.5
+  -> steady lean if first~last; GROWING lean = falling
+  base height m: start=1.01  end=1.01   (spawn ~0.72; <0.45 = collapsed)
+  envs still standing tall at end: 32/32
+  forward speed m/s: first-qtr=0.299  last-qtr=0.293   (commanded 0.3)
+  stance-duty: 76%   both-feet-down: 52%   airborne(both up): 0%
+  tilt>25deg fraction of steps: 0%   | tilt>45: 0%
+tq_f0.8_v0.15 [clock=0.8Hz, gains=nominal] vx=0.204/0.15 (136%)  tilt mean=9.4 p95(max)=16.8 max=17.8  alive=32/32 (fell-in-window=0) [stats = alive envs only]
+    T-V saturation%: right_ankle_02=54  left_ankle_02=51  right_knee_04=12  left_knee_04=12  left_hip_pitch_04=7  right_hip_roll_04=7  right_hip_pitch_04=7  left_hip_roll_04=6  right_hip_yaw_03=0  left_hip_yaw_03=0
+    sat split mot/brk/stall %: right_ankle_02=28/21/4  left_ankle_02=29/18/4  right_knee_04=9/2/1  left_knee_04=9/2/1  left_hip_pitch_04=5/1/1  right_hip_roll_04=4/2/1  right_hip_pitch_04=5/1/1  left_hip_roll_04=3/2/1
+    qd tick-flip%: left_hip_pitch_04=24  right_hip_pitch_04=22  left_hip_roll_04=23  right_hip_roll_04=22  left_hip_yaw_03=41  right_hip_yaw_03=43  left_knee_04=29  right_knee_04=28  left_ankle_02=30  right_ankle_02=28
+    contact: flicker=6.4 trans/s/foot  stance-duty=80%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=8.3(9.7)  right_hip_pitch_04=8.2(9.6)  left_hip_roll_04=7.3(8.8)  right_hip_roll_04=7.4(9.0)  left_hip_yaw_03=1.0(1.3)  right_hip_yaw_03=1.1(1.4)  left_knee_04=4.9(7.9)  right_knee_04=5.0(8.0)  left_ankle_02=7.2(8.0)  right_ankle_02=7.4(8.2)
+tq_f0.8_v0.30 [clock=0.8Hz, gains=nominal] vx=0.290/0.3 (97%)  tilt mean=9.1 p95(max)=16.0 max=21.9  alive=32/32 (fell-in-window=0) [stats = alive envs only]
+    T-V saturation%: left_ankle_02=55  right_ankle_02=54  left_knee_04=11  right_knee_04=9  right_hip_roll_04=9  left_hip_roll_04=8  right_hip_pitch_04=6  left_hip_pitch_04=4  right_hip_yaw_03=0  left_hip_yaw_03=0
+    sat split mot/brk/stall %: left_ankle_02=31/20/3  right_ankle_02=30/21/3  left_knee_04=9/2/0  right_knee_04=7/2/0  right_hip_roll_04=5/2/2  left_hip_roll_04=5/2/1  right_hip_pitch_04=5/1/1  left_hip_pitch_04=4/0/0
+    qd tick-flip%: left_hip_pitch_04=20  right_hip_pitch_04=19  left_hip_roll_04=21  right_hip_roll_04=21  left_hip_yaw_03=40  right_hip_yaw_03=42  left_knee_04=30  right_knee_04=29  left_ankle_02=27  right_ankle_02=26
+    contact: flicker=6.4 trans/s/foot  stance-duty=76%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=7.0(8.5)  right_hip_pitch_04=7.3(8.9)  left_hip_roll_04=7.4(9.0)  right_hip_roll_04=7.3(9.0)  left_hip_yaw_03=1.0(1.3)  right_hip_yaw_03=1.1(1.5)  left_knee_04=5.2(8.0)  right_knee_04=4.4(7.3)  left_ankle_02=7.4(8.3)  right_ankle_02=7.4(8.2)
+tq_f0.9_v0.15 [clock=0.9Hz, gains=nominal] vx=0.191/0.15 (127%)  tilt mean=8.6 p95(max)=14.6 max=15.8  alive=32/32 (fell-in-window=0) [stats = alive envs only]
+    T-V saturation%: right_ankle_02=51  left_ankle_02=48  left_knee_04=14  right_knee_04=14  right_hip_pitch_04=10  left_hip_pitch_04=9  right_hip_roll_04=7  left_hip_roll_04=4  right_hip_yaw_03=0  left_hip_yaw_03=0
+    sat split mot/brk/stall %: right_ankle_02=27/21/4  left_ankle_02=27/17/4  left_knee_04=12/2/0  right_knee_04=11/2/1  right_hip_pitch_04=6/1/2  left_hip_pitch_04=6/1/2  right_hip_roll_04=4/2/1  left_hip_roll_04=2/1/1
+    qd tick-flip%: left_hip_pitch_04=23  right_hip_pitch_04=21  left_hip_roll_04=24  right_hip_roll_04=23  left_hip_yaw_03=43  right_hip_yaw_03=43  left_knee_04=30  right_knee_04=29  left_ankle_02=31  right_ankle_02=29
+    contact: flicker=6.9 trans/s/foot  stance-duty=80%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=8.6(10.0)  right_hip_pitch_04=8.8(10.2)  left_hip_roll_04=7.1(8.5)  right_hip_roll_04=7.3(8.9)  left_hip_yaw_03=1.0(1.3)  right_hip_yaw_03=1.0(1.3)  left_knee_04=5.5(8.6)  right_knee_04=5.2(8.3)  left_ankle_02=7.1(7.9)  right_ankle_02=7.4(8.2)
+tq_f0.9_v0.30 [clock=0.9Hz, gains=nominal] vx=0.299/0.3 (100%)  tilt mean=8.0 p95(max)=14.2 max=15.4  alive=32/32 (fell-in-window=0) [stats = alive envs only]
+    T-V saturation%: right_ankle_02=53  left_ankle_02=49  right_knee_04=12  left_knee_04=11  right_hip_roll_04=8  left_hip_roll_04=6  right_hip_pitch_04=4  left_hip_pitch_04=4  right_hip_yaw_03=0  left_hip_yaw_03=0
+    sat split mot/brk/stall %: right_ankle_02=29/21/3  left_ankle_02=29/17/3  right_knee_04=9/2/0  left_knee_04=8/2/0  right_hip_roll_04=5/2/1  left_hip_roll_04=3/2/1  right_hip_pitch_04=3/0/1  left_hip_pitch_04=3/0/1
+    qd tick-flip%: left_hip_pitch_04=20  right_hip_pitch_04=18  left_hip_roll_04=22  right_hip_roll_04=20  left_hip_yaw_03=42  right_hip_yaw_03=43  left_knee_04=31  right_knee_04=28  left_ankle_02=26  right_ankle_02=26
+    contact: flicker=6.7 trans/s/foot  stance-duty=76%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=7.2(8.6)  right_hip_pitch_04=7.4(8.8)  left_hip_roll_04=7.1(8.7)  right_hip_roll_04=7.3(9.0)  left_hip_yaw_03=1.0(1.3)  right_hip_yaw_03=1.0(1.3)  left_knee_04=4.8(7.7)  right_knee_04=5.1(8.1)  left_ankle_02=7.1(8.0)  right_ankle_02=7.4(8.2)
+tq_f1.0_v0.15 [clock=1.0Hz, gains=nominal] vx=0.182/0.15 (121%)  tilt mean=8.1 p95(max)=14.1 max=16.0  alive=32/32 (fell-in-window=0) [stats = alive envs only]
+    T-V saturation%: right_ankle_02=48  left_ankle_02=45  left_knee_04=16  right_knee_04=15  right_hip_pitch_04=10  left_hip_pitch_04=9  right_hip_roll_04=6  left_hip_roll_04=4  left_hip_yaw_03=0  right_hip_yaw_03=0
+    sat split mot/brk/stall %: right_ankle_02=26/18/4  left_ankle_02=26/15/4  left_knee_04=14/2/1  right_knee_04=12/2/1  right_hip_pitch_04=6/1/2  left_hip_pitch_04=6/1/2  right_hip_roll_04=3/2/1  left_hip_roll_04=2/1/1
+    qd tick-flip%: left_hip_pitch_04=23  right_hip_pitch_04=22  left_hip_roll_04=26  right_hip_roll_04=24  left_hip_yaw_03=43  right_hip_yaw_03=44  left_knee_04=29  right_knee_04=30  left_ankle_02=31  right_ankle_02=29
+    contact: flicker=7.5 trans/s/foot  stance-duty=79%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=8.8(10.2)  right_hip_pitch_04=8.8(10.3)  left_hip_roll_04=6.8(8.3)  right_hip_roll_04=6.9(8.5)  left_hip_yaw_03=1.1(1.4)  right_hip_yaw_03=1.0(1.3)  left_knee_04=5.8(8.9)  right_knee_04=5.4(8.5)  left_ankle_02=6.9(7.7)  right_ankle_02=7.1(8.0)
+tq_f1.0_v0.30 [clock=1.0Hz, gains=nominal] vx=0.322/0.3 (107%)  tilt mean=7.3 p95(max)=12.8 max=13.3  alive=32/32 (fell-in-window=0) [stats = alive envs only]
+    T-V saturation%: right_ankle_02=53  left_ankle_02=47  right_knee_04=15  left_knee_04=14  right_hip_roll_04=8  left_hip_roll_04=6  left_hip_pitch_04=6  right_hip_pitch_04=5  left_hip_yaw_03=0  right_hip_yaw_03=0
+    sat split mot/brk/stall %: right_ankle_02=29/21/2  left_ankle_02=27/17/3  right_knee_04=12/2/1  left_knee_04=12/2/0  right_hip_roll_04=4/2/2  left_hip_roll_04=3/2/1  left_hip_pitch_04=4/1/1  right_hip_pitch_04=4/1/1
+    qd tick-flip%: left_hip_pitch_04=18  right_hip_pitch_04=18  left_hip_roll_04=21  right_hip_roll_04=20  left_hip_yaw_03=43  right_hip_yaw_03=43  left_knee_04=30  right_knee_04=28  left_ankle_02=27  right_ankle_02=25
+    contact: flicker=6.7 trans/s/foot  stance-duty=77%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=7.8(9.2)  right_hip_pitch_04=7.5(8.9)  left_hip_roll_04=7.2(8.8)  right_hip_roll_04=7.5(9.1)  left_hip_yaw_03=1.0(1.3)  right_hip_yaw_03=1.0(1.3)  left_knee_04=5.4(8.4)  right_knee_04=5.6(8.7)  left_ankle_02=7.0(7.9)  right_ankle_02=7.4(8.3)
+tq_f1.1_v0.15 [clock=1.1Hz, gains=nominal] vx=0.180/0.15 (120%)  tilt mean=7.9 p95(max)=12.9 max=14.5  alive=32/32 (fell-in-window=0) [stats = alive envs only]
+    T-V saturation%: right_ankle_02=47  left_ankle_02=46  right_knee_04=17  left_knee_04=15  right_hip_pitch_04=10  left_hip_pitch_04=10  right_hip_roll_04=6  left_hip_roll_04=3  right_hip_yaw_03=0  left_hip_yaw_03=0
+    sat split mot/brk/stall %: right_ankle_02=25/18/4  left_ankle_02=27/16/3  right_knee_04=15/2/1  left_knee_04=13/1/1  right_hip_pitch_04=7/1/2  left_hip_pitch_04=6/1/2  right_hip_roll_04=3/2/1  left_hip_roll_04=2/1/1
+    qd tick-flip%: left_hip_pitch_04=23  right_hip_pitch_04=21  left_hip_roll_04=26  right_hip_roll_04=26  left_hip_yaw_03=44  right_hip_yaw_03=44  left_knee_04=29  right_knee_04=28  left_ankle_02=31  right_ankle_02=29
+    contact: flicker=7.9 trans/s/foot  stance-duty=78%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=8.8(10.3)  right_hip_pitch_04=8.9(10.4)  left_hip_roll_04=6.7(8.1)  right_hip_roll_04=7.0(8.6)  left_hip_yaw_03=1.1(1.4)  right_hip_yaw_03=1.0(1.3)  left_knee_04=5.7(8.7)  right_knee_04=6.0(9.0)  left_ankle_02=7.0(7.9)  right_ankle_02=7.0(7.9)
+tq_f1.1_v0.30 [clock=1.1Hz, gains=nominal] vx=0.334/0.3 (111%)  tilt mean=7.1 p95(max)=12.9 max=13.6  alive=32/32 (fell-in-window=0) [stats = alive envs only]
+    T-V saturation%: right_ankle_02=51  left_ankle_02=49  right_knee_04=17  left_knee_04=15  right_hip_roll_04=7  left_hip_pitch_04=6  right_hip_pitch_04=6  left_hip_roll_04=6  right_hip_yaw_03=0  left_hip_yaw_03=0
+    sat split mot/brk/stall %: right_ankle_02=27/21/2  left_ankle_02=26/20/3  right_knee_04=14/2/1  left_knee_04=13/2/1  right_hip_roll_04=3/3/1  left_hip_pitch_04=5/1/1  right_hip_pitch_04=5/1/1  left_hip_roll_04=3/2/1
+    qd tick-flip%: left_hip_pitch_04=19  right_hip_pitch_04=17  left_hip_roll_04=22  right_hip_roll_04=21  left_hip_yaw_03=42  right_hip_yaw_03=43  left_knee_04=28  right_knee_04=27  left_ankle_02=28  right_ankle_02=25
+    contact: flicker=6.8 trans/s/foot  stance-duty=76%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=8.0(9.4)  right_hip_pitch_04=8.0(9.4)  left_hip_roll_04=7.1(8.7)  right_hip_roll_04=7.3(8.9)  left_hip_yaw_03=1.0(1.3)  right_hip_yaw_03=1.0(1.3)  left_knee_04=5.6(8.5)  right_knee_04=5.8(8.9)  left_ankle_02=7.2(8.0)  right_ankle_02=7.3(8.2)
+tq_f1.2_v0.15 [clock=1.2Hz, gains=nominal] vx=0.180/0.15 (120%)  tilt mean=7.8 p95(max)=13.2 max=13.5  alive=32/32 (fell-in-window=0) [stats = alive envs only]
+    T-V saturation%: right_ankle_02=48  left_ankle_02=44  right_knee_04=18  left_knee_04=18  right_hip_pitch_04=12  left_hip_pitch_04=11  right_hip_roll_04=4  left_hip_roll_04=3  right_hip_yaw_03=0  left_hip_yaw_03=0
+    sat split mot/brk/stall %: right_ankle_02=27/17/4  left_ankle_02=24/16/4  right_knee_04=15/2/1  left_knee_04=15/2/1  right_hip_pitch_04=7/2/2  left_hip_pitch_04=7/2/2  right_hip_roll_04=3/1/1  left_hip_roll_04=1/1/0
+    qd tick-flip%: left_hip_pitch_04=22  right_hip_pitch_04=20  left_hip_roll_04=27  right_hip_roll_04=26  left_hip_yaw_03=44  right_hip_yaw_03=45  left_knee_04=30  right_knee_04=29  left_ankle_02=33  right_ankle_02=29
+    contact: flicker=8.0 trans/s/foot  stance-duty=79%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=9.1(10.6)  right_hip_pitch_04=9.2(10.7)  left_hip_roll_04=6.7(8.1)  right_hip_roll_04=6.6(8.1)  left_hip_yaw_03=1.1(1.4)  right_hip_yaw_03=1.1(1.4)  left_knee_04=6.1(9.1)  right_knee_04=6.1(9.1)  left_ankle_02=6.8(7.7)  right_ankle_02=7.2(8.0)
+tq_f1.2_v0.30 [clock=1.2Hz, gains=nominal] vx=0.346/0.3 (115%)  tilt mean=7.1 p95(max)=13.1 max=14.7  alive=32/32 (fell-in-window=0) [stats = alive envs only]
+    T-V saturation%: right_ankle_02=51  left_ankle_02=50  right_knee_04=19  left_knee_04=18  right_hip_pitch_04=8  left_hip_pitch_04=8  right_hip_roll_04=7  left_hip_roll_04=6  right_hip_yaw_03=0  left_hip_yaw_03=0
+    sat split mot/brk/stall %: right_ankle_02=27/21/3  left_ankle_02=27/21/3  right_knee_04=16/2/1  left_knee_04=16/2/0  right_hip_pitch_04=6/1/1  left_hip_pitch_04=5/1/1  right_hip_roll_04=3/2/1  left_hip_roll_04=2/2/1
+    qd tick-flip%: left_hip_pitch_04=18  right_hip_pitch_04=16  left_hip_roll_04=23  right_hip_roll_04=22  left_hip_yaw_03=43  right_hip_yaw_03=45  left_knee_04=29  right_knee_04=28  left_ankle_02=28  right_ankle_02=25
+    contact: flicker=7.4 trans/s/foot  stance-duty=75%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=8.2(9.6)  right_hip_pitch_04=8.4(9.8)  left_hip_roll_04=7.1(8.7)  right_hip_roll_04=7.0(8.7)  left_hip_yaw_03=1.1(1.4)  right_hip_yaw_03=1.1(1.4)  left_knee_04=6.0(9.0)  right_knee_04=6.1(9.2)  left_ankle_02=7.3(8.1)  right_ankle_02=7.3(8.2)
+tq_f1.4_v0.15 [clock=1.4Hz, gains=nominal] vx=0.175/0.15 (117%)  tilt mean=7.4 p95(max)=12.4 max=12.9  alive=32/32 (fell-in-window=0) [stats = alive envs only]
+    T-V saturation%: right_ankle_02=47  left_ankle_02=44  right_knee_04=24  left_knee_04=22  left_hip_pitch_04=12  right_hip_pitch_04=11  right_hip_roll_04=4  left_hip_roll_04=2  right_hip_yaw_03=0  left_hip_yaw_03=0
+    sat split mot/brk/stall %: right_ankle_02=26/17/3  left_ankle_02=26/15/3  right_knee_04=20/2/1  left_knee_04=19/2/1  left_hip_pitch_04=7/2/2  right_hip_pitch_04=7/2/2  right_hip_roll_04=3/1/1  left_hip_roll_04=1/1/0
+    qd tick-flip%: left_hip_pitch_04=21  right_hip_pitch_04=20  left_hip_roll_04=27  right_hip_roll_04=25  left_hip_yaw_03=44  right_hip_yaw_03=46  left_knee_04=27  right_knee_04=28  left_ankle_02=31  right_ankle_02=29
+    contact: flicker=8.8 trans/s/foot  stance-duty=77%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=9.0(10.5)  right_hip_pitch_04=9.0(10.5)  left_hip_roll_04=6.2(7.5)  right_hip_roll_04=6.7(8.2)  left_hip_yaw_03=1.1(1.4)  right_hip_yaw_03=1.1(1.4)  left_knee_04=6.9(9.9)  right_knee_04=7.0(10.0)  left_ankle_02=6.8(7.7)  right_ankle_02=7.1(8.0)
+tq_f1.4_v0.30 [clock=1.4Hz, gains=nominal] vx=0.350/0.3 (117%)  tilt mean=6.7 p95(max)=12.7 max=13.7  alive=32/32 (fell-in-window=0) [stats = alive envs only]
+    T-V saturation%: right_ankle_02=51  left_ankle_02=48  left_knee_04=23  right_knee_04=23  left_hip_pitch_04=9  right_hip_pitch_04=8  right_hip_roll_04=5  left_hip_roll_04=4  right_hip_yaw_03=0  left_hip_yaw_03=0
+    sat split mot/brk/stall %: right_ankle_02=27/22/2  left_ankle_02=26/20/2  left_knee_04=20/2/1  right_knee_04=19/3/1  left_hip_pitch_04=7/1/1  right_hip_pitch_04=5/2/1  right_hip_roll_04=2/2/1  left_hip_roll_04=2/1/1
+    qd tick-flip%: left_hip_pitch_04=16  right_hip_pitch_04=15  left_hip_roll_04=23  right_hip_roll_04=23  left_hip_yaw_03=44  right_hip_yaw_03=45  left_knee_04=28  right_knee_04=27  left_ankle_02=27  right_ankle_02=24
+    contact: flicker=8.0 trans/s/foot  stance-duty=75%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=8.5(10.0)  right_hip_pitch_04=8.5(9.9)  left_hip_roll_04=6.7(8.2)  right_hip_roll_04=6.7(8.3)  left_hip_yaw_03=1.1(1.4)  right_hip_yaw_03=1.0(1.4)  left_knee_04=6.7(9.7)  right_knee_04=6.7(9.8)  left_ankle_02=7.1(8.0)  right_ankle_02=7.4(8.2)

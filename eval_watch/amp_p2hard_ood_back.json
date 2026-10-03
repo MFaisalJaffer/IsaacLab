@@ -1,0 +1,6 @@
+{
+ "checkpoint": "archive_anchors/amp_pilot2_hardened.pt",
+ "cmd": "-0.3:0:0",
+ "standing": null,
+ "walking_envs": 0
+}

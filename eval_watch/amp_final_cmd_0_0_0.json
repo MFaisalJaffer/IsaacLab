@@ -1,0 +1,19 @@
+{
+ "checkpoint": "archive_anchors/amp_pilot2_hard_mirroroff.pt",
+ "cmd": "0:0:0",
+ "standing": {
+  "envs": 256,
+  "survival": 0.90625,
+  "tilt_deg": {
+   "mean": 2.2794923782348633,
+   "p90": 3.230641412734986
+  },
+  "foot_lift_max_cm": 6.674641370773315,
+  "foot_travel_mps_mean": 0.05629828944802284,
+  "width_cm": 27.873605489730835,
+  "base_speed_abs_mps": 0.052563320845365524
+ },
+ "walking_envs": 0,
+ "survival_walking": null,
+ "note": "no walking envs"
+}

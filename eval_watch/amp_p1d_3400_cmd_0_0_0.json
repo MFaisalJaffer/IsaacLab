@@ -1,0 +1,17 @@
+{
+ "checkpoint": "logs/rsl_rl/kbot_legs_amp/2026-09-30_21-38-11/model_3400.pt",
+ "cmd": "0:0:0",
+ "standing": {
+  "envs": 256,
+  "survival": 0.8515625,
+  "tilt_deg": {
+   "mean": 1.9850406646728516,
+   "p90": 3.5647387504577637
+  },
+  "foot_lift_max_cm": 6.997990608215332,
+  "foot_travel_mps_mean": 0.06836775690317154,
+  "width_cm": 29.424479603767395,
+  "base_speed_abs_mps": 0.06240842118859291
+ },
+ "walking_envs": 0
+}

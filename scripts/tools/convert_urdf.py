@@ -109,6 +109,11 @@ def main():
         fix_base=args_cli.fix_base,
         merge_fixed_joints=args_cli.merge_joints,
         force_usd_conversion=True,
+        # kbot URDF only ships collision on the 2 feet; the torso/limbs have
+        # no <collision>, so the body passes through terrain and torso-contact
+        # termination can't fire. Generate colliders from the visual meshes
+        # for every link (convex hull) so the whole body collides.
+        collision_from_visuals=True,
         joint_drive=UrdfConverterCfg.JointDriveCfg(
             gains=UrdfConverterCfg.JointDriveCfg.PDGainsCfg(
                 stiffness=args_cli.joint_stiffness,

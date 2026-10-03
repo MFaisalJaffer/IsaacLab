@@ -1,0 +1,9 @@
+==== SKATE DIAGNOSTIC @ model_203800.pt ====
+envs=64 window=250 steps (5s stand, pushes off) MU PINNED = 1.0
+slide (both feet, m/s): mean=0.0574 p50=0.0536 p90=0.0825 max=0.2292
+outward slide vel: mean=-0.0001 m/s (+ = away from midline = bracing; envs outward: 44%)
+width drift: mean=+0.20 cm p90=+8.65 cm
+WORLD-FRAME (rig instrument, normalized /30s, window 5s):
+  base_drift cm/30s: mean=50.0 p50=21.4 p90=45.5 max=1273.9
+  foot net cm/30s: L=55.8 R=43.7 (rig 204800: base 17.2, feet 15/16; rig 171500: base 6.8, feet 6/5)
+gyro mean=0.138 rad/s (statue check)

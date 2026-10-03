@@ -1,0 +1,5 @@
+=== CADENCE CHECK: does the deploy policy's realized step rate follow the clock? ===
+cad_clock1.0_v0.15: cmd=0.15 act_vx=0.167  sep amp mean=14.6 cm (p10=12.2 p90=17.4)  sep mean-offset=+0.1 cm  realized cadence=0.96 Hz  | natural stride v/f=11.9 cm  target(now)=30.0 cm  overreach x2.52
+cad_clock1.2_v0.15: cmd=0.15 act_vx=0.168  sep amp mean=12.2 cm (p10=11.2 p90=14.7)  sep mean-offset=-0.4 cm  realized cadence=1.16 Hz  | natural stride v/f=12.0 cm  target(now)=30.0 cm  overreach x2.50
+cad_clock1.4_v0.15: cmd=0.15 act_vx=0.166  sep amp mean=11.9 cm (p10=10.5 p90=14.2)  sep mean-offset=-0.6 cm  realized cadence=1.36 Hz  | natural stride v/f=11.8 cm  target(now)=30.0 cm  overreach x2.53
+cad_clock0.8_v0.15: cmd=0.15 act_vx=0.169  sep amp mean=14.9 cm (p10=0.4 p90=20.2)  sep mean-offset=-0.9 cm  realized cadence=0.69 Hz  | natural stride v/f=12.0 cm  target(now)=30.0 cm  overreach x2.49

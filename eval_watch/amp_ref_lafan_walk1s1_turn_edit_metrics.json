@@ -1,0 +1,83 @@
+{
+ "clip": "walk1_subject1_kbot_edit.npz",
+ "frames": 1000,
+ "fps": 50.0,
+ "time_scale": 1.0,
+ "sign_map": {
+  "n/a_already mapped": 1
+ },
+ "t_range": "20:40",
+ "stance_width_cm": {
+  "median": 29.751431941986084,
+  "p10": 25.16965687274933,
+  "p90": 31.54186338186264
+ },
+ "swing_apex_clearance_cm": [
+  10.641109943389893,
+  10.295051336288452
+ ],
+ "implied_speed_mps": {
+  "mean": 0.4910446565115485,
+  "p10": 0.2135482110226884,
+  "p90": 0.7207886127915388
+ },
+ "touchdown_foot_pitch_deg": {
+  "median_abs": 2.746758222579956,
+  "n": 25
+ },
+ "joint_limit_margin_deg": {
+  "dof_left_hip_pitch_04": 48.642269134521484,
+  "dof_right_hip_pitch_04": 46.880653381347656,
+  "dof_left_hip_roll_04": 6.462845802307129,
+  "dof_right_hip_roll_04": 7.432722568511963,
+  "dof_left_hip_yaw_03": 60.28220748901367,
+  "dof_right_hip_yaw_03": 54.103675842285156,
+  "dof_left_knee_04": 9.344354629516602,
+  "dof_right_knee_04": 10.274728775024414,
+  "dof_left_ankle_02": 3.0000102519989014,
+  "dof_right_ankle_02": 3.0000102519989014
+ },
+ "peak_joint_speed_frac_of_urdf_limit": {
+  "dof_left_hip_pitch_04": 0.16143288180463813,
+  "dof_right_hip_pitch_04": 0.17122308104166936,
+  "dof_left_hip_roll_04": 0.0808064409166111,
+  "dof_right_hip_roll_04": 0.052019030073860426,
+  "dof_left_hip_yaw_03": 0.30467486064044086,
+  "dof_right_hip_yaw_03": 0.17544941039760584,
+  "dof_left_knee_04": 0.326536057307321,
+  "dof_right_knee_04": 0.3244616193500878,
+  "dof_left_ankle_02": 0.0905261665456962,
+  "dof_right_ankle_02": 0.10079766316528856
+ },
+ "hip_roll_range_deg": {
+  "dof_left_hip_roll_04": [
+   -5.537180423736572,
+   7.88768196105957
+  ],
+  "dof_right_hip_roll_04": [
+   -12.21407699584961,
+   4.567303657531738
+  ]
+ },
+ "knee_range_deg": {
+  "dof_left_knee_04": [
+   9.344354629516602,
+   73.02928161621094
+  ],
+  "dof_right_knee_04": [
+   -73.3880844116211,
+   -10.274728775024414
+  ]
+ },
+ "ankle_range_deg": {
+  "dof_left_ankle_02": [
+   -17.596036911010742,
+   9.999999046325684
+  ],
+  "dof_right_ankle_02": [
+   -9.999999046325684,
+   22.49895668029785
+  ]
+ },
+ "standing_base_height_m": 1.006583163261415
+}

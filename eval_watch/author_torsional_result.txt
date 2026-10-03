@@ -1,0 +1,1 @@
+2 prims -> /home/faisal/IsaacLab/source/isaaclab_assets/isaaclab_assets/robots/temp_kbot_legs_usd/robot_torsional.usd

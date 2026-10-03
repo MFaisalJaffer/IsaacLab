@@ -1,0 +1,156 @@
+{
+ "schema": "sim2sim_bareplant_v1",
+ "release_deg": 15.0,
+ "dur_s": 6.0,
+ "rate_hz": 100.0,
+ "hold_scale": 1.0,
+ "held_kp": [
+  150.0,
+  150.0,
+  60.0,
+  150.0,
+  60.0,
+  150.0,
+  150.0,
+  60.0,
+  150.0,
+  60.0
+ ],
+ "held_kd": [
+  2.5,
+  1.5,
+  1.0,
+  1.0,
+  0.5,
+  2.5,
+  1.5,
+  1.0,
+  1.0,
+  0.5
+ ],
+ "joint_order": [
+  "dof_right_hip_pitch_04",
+  "dof_right_hip_roll_04",
+  "dof_right_hip_yaw_03",
+  "dof_right_knee_04",
+  "dof_right_ankle_02",
+  "dof_left_hip_pitch_04",
+  "dof_left_hip_roll_04",
+  "dof_left_hip_yaw_03",
+  "dof_left_knee_04",
+  "dof_left_ankle_02"
+ ],
+ "protocol": "test joint kp=kd=0; OTHER joints PD-held at deployed gains x HOLD_SCALE; friction off (verified); base held by MuJoCo weld (PIN_WELD=1, verified)",
+ "results": {
+  "dof_right_hip_pitch_04": {
+   "release_deg": 15.0,
+   "travel_deg": -7.737,
+   "peak_qd_deg_s": 64.57,
+   "reversal_frac": 0.008,
+   "period_s": 1.7143,
+   "mean_abs_tau_Nm": 0.0175,
+   "max_abs_tau_Nm": 2.3321,
+   "tilt_max_deg": 0.049,
+   "swings": true
+  },
+  "dof_right_hip_roll_04": {
+   "release_deg": 15.0,
+   "travel_deg": -2.885,
+   "peak_qd_deg_s": 53.66,
+   "reversal_frac": 0.0081,
+   "period_s": 1.7143,
+   "mean_abs_tau_Nm": 0.0181,
+   "max_abs_tau_Nm": 1.746,
+   "tilt_max_deg": 0.058,
+   "swings": true
+  },
+  "dof_right_hip_yaw_03": {
+   "release_deg": 15.0,
+   "travel_deg": -104.979,
+   "peak_qd_deg_s": 68.21,
+   "reversal_frac": 0.0023,
+   "period_s": null,
+   "mean_abs_tau_Nm": 0.0122,
+   "max_abs_tau_Nm": 0.0122,
+   "tilt_max_deg": 0.043,
+   "swings": false
+  },
+  "dof_right_knee_04": {
+   "release_deg": -15.0,
+   "travel_deg": 4.874,
+   "peak_qd_deg_s": 20.92,
+   "reversal_frac": 0.0115,
+   "period_s": 1.2,
+   "mean_abs_tau_Nm": 0.0124,
+   "max_abs_tau_Nm": 0.1099,
+   "tilt_max_deg": 0.043,
+   "swings": true
+  },
+  "dof_right_ankle_02": {
+   "release_deg": 15.0,
+   "travel_deg": -7.104,
+   "peak_qd_deg_s": 6.37,
+   "reversal_frac": 0.0,
+   "period_s": null,
+   "mean_abs_tau_Nm": 0.0123,
+   "max_abs_tau_Nm": 0.0366,
+   "tilt_max_deg": 0.043,
+   "swings": false
+  },
+  "dof_left_hip_pitch_04": {
+   "release_deg": 15.0,
+   "travel_deg": -10.775,
+   "peak_qd_deg_s": 66.39,
+   "reversal_frac": 0.008,
+   "period_s": 1.7143,
+   "mean_abs_tau_Nm": 0.0205,
+   "max_abs_tau_Nm": 2.4298,
+   "tilt_max_deg": 0.052,
+   "swings": true
+  },
+  "dof_left_hip_roll_04": {
+   "release_deg": 15.0,
+   "travel_deg": -2.426,
+   "peak_qd_deg_s": 66.39,
+   "reversal_frac": 0.0081,
+   "period_s": 1.7143,
+   "mean_abs_tau_Nm": 0.0175,
+   "max_abs_tau_Nm": 2.3077,
+   "tilt_max_deg": 0.059,
+   "swings": true
+  },
+  "dof_left_hip_yaw_03": {
+   "release_deg": 15.0,
+   "travel_deg": -104.979,
+   "peak_qd_deg_s": 68.21,
+   "reversal_frac": 0.0023,
+   "period_s": null,
+   "mean_abs_tau_Nm": 0.0122,
+   "max_abs_tau_Nm": 0.0122,
+   "tilt_max_deg": 0.043,
+   "swings": false
+  },
+  "dof_left_knee_04": {
+   "release_deg": 15.0,
+   "travel_deg": -4.524,
+   "peak_qd_deg_s": 24.56,
+   "reversal_frac": 0.0103,
+   "period_s": 1.3333,
+   "mean_abs_tau_Nm": 0.0125,
+   "max_abs_tau_Nm": 0.0855,
+   "tilt_max_deg": 0.043,
+   "swings": true
+  },
+  "dof_left_ankle_02": {
+   "release_deg": -15.0,
+   "travel_deg": 5.661,
+   "peak_qd_deg_s": 2.73,
+   "reversal_frac": 0.0081,
+   "period_s": 1.7143,
+   "mean_abs_tau_Nm": 0.0124,
+   "max_abs_tau_Nm": 0.0611,
+   "tilt_max_deg": 0.043,
+   "swings": true
+  }
+ }
+}

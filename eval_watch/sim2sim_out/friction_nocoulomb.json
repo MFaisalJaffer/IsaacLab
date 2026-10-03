@@ -1,0 +1,155 @@
+{
+ "schema": "sim2sim_friction_v1",
+ "side": "isaac",
+ "ladder_deg": [
+  0.5,
+  1.0,
+  2.0,
+  5.0,
+  10.0,
+  20.0
+ ],
+ "decay_start_deg": 15.0,
+ "kp": [
+  150.0,
+  150.0,
+  60.0,
+  150.0,
+  60.0,
+  150.0,
+  150.0,
+  60.0,
+  150.0,
+  60.0
+ ],
+ "joint_order": [
+  "dof_right_hip_pitch_04",
+  "dof_right_hip_roll_04",
+  "dof_right_hip_yaw_03",
+  "dof_right_knee_04",
+  "dof_right_ankle_02",
+  "dof_left_hip_pitch_04",
+  "dof_left_hip_roll_04",
+  "dof_left_hip_yaw_03",
+  "dof_left_knee_04",
+  "dof_left_ankle_02"
+ ],
+ "rate_hz": 200.0,
+ "base": "pinned+lifted 0.6 m",
+ "contact": "none",
+ "actuator_off_mode": "no_coulomb",
+ "position_quantum_deg": 0.0,
+ "note": "no encoder quantiser on this side (float32), so ladder intercepts are MEASUREMENTS not upper bounds; friction model is -fc*tanh(qd/0.02), i.e. NO stiction, same gap as yours",
+ "results": {
+  "dof_right_hip_pitch_04": {
+   "decay_start_deg": 15.0,
+   "n_peaks": 0,
+   "peak_prominence_deg": 0.05,
+   "osc_freq_hz": 0.0,
+   "peak_to_peak_first_0p5s_deg": 0.0011,
+   "detector_dither_flag": false,
+   "envelope_verdict": "no oscillation (overdamped or joint did not swing)",
+   "settled_deg": 14.9995,
+   "residual_from_zero_deg": 14.9995
+  },
+  "dof_right_hip_roll_04": {
+   "decay_start_deg": -15.0,
+   "n_peaks": 0,
+   "peak_prominence_deg": 0.05,
+   "osc_freq_hz": 0.0,
+   "peak_to_peak_first_0p5s_deg": 0.0031,
+   "detector_dither_flag": false,
+   "envelope_verdict": "no oscillation (overdamped or joint did not swing)",
+   "settled_deg": -15.0053,
+   "residual_from_zero_deg": 15.0053
+  },
+  "dof_right_hip_yaw_03": {
+   "decay_start_deg": 15.0,
+   "n_peaks": 0,
+   "peak_prominence_deg": 0.05,
+   "osc_freq_hz": 0.0,
+   "peak_to_peak_first_0p5s_deg": 0.0,
+   "detector_dither_flag": false,
+   "envelope_verdict": "no oscillation (overdamped or joint did not swing)",
+   "settled_deg": 15.0,
+   "residual_from_zero_deg": 15.0
+  },
+  "dof_right_knee_04": {
+   "decay_start_deg": -15.0,
+   "n_peaks": 0,
+   "peak_prominence_deg": 0.05,
+   "osc_freq_hz": 0.0,
+   "peak_to_peak_first_0p5s_deg": 0.0,
+   "detector_dither_flag": false,
+   "envelope_verdict": "no oscillation (overdamped or joint did not swing)",
+   "settled_deg": -15.0,
+   "residual_from_zero_deg": 15.0
+  },
+  "dof_right_ankle_02": {
+   "decay_start_deg": 15.0,
+   "n_peaks": 0,
+   "peak_prominence_deg": 0.05,
+   "osc_freq_hz": 0.0,
+   "peak_to_peak_first_0p5s_deg": 0.0,
+   "detector_dither_flag": false,
+   "envelope_verdict": "no oscillation (overdamped or joint did not swing)",
+   "settled_deg": 14.8994,
+   "residual_from_zero_deg": 14.8994
+  },
+  "dof_left_hip_pitch_04": {
+   "decay_start_deg": 15.0,
+   "n_peaks": 0,
+   "peak_prominence_deg": 0.05,
+   "osc_freq_hz": 0.0,
+   "peak_to_peak_first_0p5s_deg": 0.0019,
+   "detector_dither_flag": false,
+   "envelope_verdict": "no oscillation (overdamped or joint did not swing)",
+   "settled_deg": 14.9982,
+   "residual_from_zero_deg": 14.9982
+  },
+  "dof_left_hip_roll_04": {
+   "decay_start_deg": 15.0,
+   "n_peaks": 0,
+   "peak_prominence_deg": 0.05,
+   "osc_freq_hz": 0.0,
+   "peak_to_peak_first_0p5s_deg": 0.008,
+   "detector_dither_flag": false,
+   "envelope_verdict": "no oscillation (overdamped or joint did not swing)",
+   "settled_deg": 15.0122,
+   "residual_from_zero_deg": 15.0122
+  },
+  "dof_left_hip_yaw_03": {
+   "decay_start_deg": 15.0,
+   "n_peaks": 0,
+   "peak_prominence_deg": 0.05,
+   "osc_freq_hz": 0.0,
+   "peak_to_peak_first_0p5s_deg": 0.0,
+   "detector_dither_flag": false,
+   "envelope_verdict": "no oscillation (overdamped or joint did not swing)",
+   "settled_deg": 15.0,
+   "residual_from_zero_deg": 15.0
+  },
+  "dof_left_knee_04": {
+   "decay_start_deg": 15.0,
+   "n_peaks": 0,
+   "peak_prominence_deg": 0.05,
+   "osc_freq_hz": 0.0,
+   "peak_to_peak_first_0p5s_deg": 0.0,
+   "detector_dither_flag": false,
+   "envelope_verdict": "no oscillation (overdamped or joint did not swing)",
+   "settled_deg": 15.0,
+   "residual_from_zero_deg": 15.0
+  },
+  "dof_left_ankle_02": {
+   "decay_start_deg": -15.0,
+   "n_peaks": 0,
+   "peak_prominence_deg": 0.05,
+   "osc_freq_hz": 0.0,
+   "peak_to_peak_first_0p5s_deg": 0.0,
+   "detector_dither_flag": false,
+   "envelope_verdict": "no oscillation (overdamped or joint did not swing)",
+   "settled_deg": -14.9972,
+   "residual_from_zero_deg": 14.9972
+  }
+ }
+}

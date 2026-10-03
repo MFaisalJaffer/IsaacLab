@@ -1,0 +1,16 @@
+=== Phase-1b torque probe: model_141800.pt, FLAT, pinned gains, cmd 0.15/0.30/0.50 ===
+phase1b_vx0.15 [gains=nominal] vx=0.148/0.15 (98%)  tilt mean=7.9 p95(max)=12.5 max=12.8  fallen=0/32
+    T-V saturation%: left_ankle_02=30  right_ankle_02=30  right_knee_04=12  left_knee_04=12  left_hip_pitch_04=9  right_hip_pitch_04=9  left_hip_roll_04=2  right_hip_roll_04=2  right_hip_yaw_03=0  left_hip_yaw_03=0
+    qd tick-flip%: left_hip_pitch_04=29  right_hip_pitch_04=27  left_hip_roll_04=34  right_hip_roll_04=34  left_hip_yaw_03=47  right_hip_yaw_03=44  left_knee_04=35  right_knee_04=36  left_ankle_02=34  right_ankle_02=31
+    contact: flicker=7.8 trans/s/foot  stance-duty=85%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=8.2(9.8)  right_hip_pitch_04=8.1(9.7)  left_hip_roll_04=5.7(7.1)  right_hip_roll_04=5.3(6.6)  left_hip_yaw_03=1.1(1.5)  right_hip_yaw_03=1.2(1.6)  left_knee_04=4.6(7.8)  right_knee_04=4.8(8.0)  left_ankle_02=5.5(6.6)  right_ankle_02=5.6(6.7)
+phase1b_vx0.30 [gains=nominal] vx=0.295/0.3 (98%)  tilt mean=6.9 p95(max)=12.7 max=14.7  fallen=0/32
+    T-V saturation%: left_ankle_02=40  right_ankle_02=40  left_knee_04=11  right_knee_04=10  right_hip_pitch_04=9  left_hip_pitch_04=8  right_hip_roll_04=6  left_hip_roll_04=6  left_hip_yaw_03=0  right_hip_yaw_03=0
+    qd tick-flip%: left_hip_pitch_04=25  right_hip_pitch_04=20  left_hip_roll_04=26  right_hip_roll_04=27  left_hip_yaw_03=44  right_hip_yaw_03=43  left_knee_04=36  right_knee_04=36  left_ankle_02=28  right_ankle_02=26
+    contact: flicker=7.7 trans/s/foot  stance-duty=76%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=7.6(9.2)  right_hip_pitch_04=7.6(9.3)  left_hip_roll_04=6.8(8.4)  right_hip_roll_04=6.5(8.2)  left_hip_yaw_03=1.1(1.5)  right_hip_yaw_03=1.2(1.6)  left_knee_04=4.7(7.6)  right_knee_04=4.6(7.4)  left_ankle_02=6.4(7.4)  right_ankle_02=6.4(7.4)
+phase1b_vx0.50 [gains=nominal] vx=0.500/0.5 (100%)  tilt mean=5.2 p95(max)=12.7 max=13.7  fallen=0/32
+    T-V saturation%: left_ankle_02=49  right_ankle_02=48  left_hip_roll_04=13  right_knee_04=12  left_knee_04=11  right_hip_roll_04=11  right_hip_pitch_04=7  left_hip_pitch_04=4  right_hip_yaw_03=0  left_hip_yaw_03=0
+    qd tick-flip%: left_hip_pitch_04=19  right_hip_pitch_04=16  left_hip_roll_04=22  right_hip_roll_04=22  left_hip_yaw_03=44  right_hip_yaw_03=47  left_knee_04=38  right_knee_04=38  left_ankle_02=23  right_ankle_02=22
+    contact: flicker=7.1 trans/s/foot  stance-duty=68%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=6.4(8.0)  right_hip_pitch_04=7.0(8.6)  left_hip_roll_04=8.1(9.9)  right_hip_roll_04=7.9(9.6)  left_hip_yaw_03=1.2(1.6)  right_hip_yaw_03=1.1(1.6)  left_knee_04=4.7(7.5)  right_knee_04=5.2(8.0)  left_ankle_02=7.0(7.9)  right_ankle_02=7.1(8.0)

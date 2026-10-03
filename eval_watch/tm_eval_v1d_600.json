@@ -1,0 +1,103 @@
+{
+ "checkpoint": "/tmp/claude-1000/-home-faisal/d2f69e5f-1832-4795-ac3c-acfca88fa4e9/scratchpad/tm_v1d_600.pt",
+ "num_envs": 256,
+ "seconds": 20.0,
+ "cycles": {
+  "forward": {
+   "episodes": 50,
+   "falls": 4,
+   "survival": 0.92,
+   "rmse_deg": 7.21854305267334,
+   "cmd": [
+    0.405,
+    -0.0,
+    0.0
+   ],
+   "achieved": [
+    0.198,
+    -0.015,
+    0.019
+   ]
+  },
+  "backward": {
+   "episodes": 57,
+   "falls": 3,
+   "survival": 0.9473684210526316,
+   "rmse_deg": 10.024810791015625,
+   "cmd": [
+    -0.401,
+    -0.0,
+    0.0
+   ],
+   "achieved": [
+    -0.172,
+    -0.001,
+    -0.036
+   ]
+  },
+  "side_left": {
+   "episodes": 29,
+   "falls": 1,
+   "survival": 0.9655172413793104,
+   "rmse_deg": 6.7377848625183105,
+   "cmd": [
+    0.0,
+    0.129,
+    -0.0
+   ],
+   "achieved": [
+    0.011,
+    0.007,
+    -0.029
+   ]
+  },
+  "side_right": {
+   "episodes": 42,
+   "falls": 1,
+   "survival": 0.9761904761904762,
+   "rmse_deg": 6.704853057861328,
+   "cmd": [
+    0.0,
+    -0.129,
+    -0.0
+   ],
+   "achieved": [
+    -0.003,
+    -0.003,
+    -0.011
+   ]
+  },
+  "pivot_left": {
+   "episodes": 39,
+   "falls": 0,
+   "survival": 1.0,
+   "rmse_deg": 6.692830562591553,
+   "cmd": [
+    0.0,
+    -0.0,
+    0.562
+   ],
+   "achieved": [
+    0.012,
+    -0.029,
+    0.266
+   ]
+  },
+  "pivot_right": {
+   "episodes": 48,
+   "falls": 0,
+   "survival": 1.0,
+   "rmse_deg": 6.621891021728516,
+   "cmd": [
+    0.0,
+    0.0,
+    -0.562
+   ],
+   "achieved": [
+    -0.016,
+    0.031,
+    -0.28
+   ]
+  }
+ }
+}

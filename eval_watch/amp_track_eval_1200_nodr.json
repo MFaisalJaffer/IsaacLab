@@ -1,0 +1,70 @@
+{
+ "checkpoint": "logs/rsl_rl/kbot_legs_track/2026-09-29_20-53-17/model_1200.pt",
+ "num_envs": 128,
+ "seconds": 20.0,
+ "dr": false,
+ "stochastic": false,
+ "survival_frac": 0.3828125,
+ "fall_time_s_percentiles_10_25_50_75_90": [
+  0.7000000000000001,
+  0.92,
+  1.46,
+  2.6900000000000004,
+  8.500000000000002
+ ],
+ "fall_time_s_median": 1.46,
+ "rmse_deg": {
+  "dof_left_hip_pitch_04": 2.086879253387451,
+  "dof_right_hip_pitch_04": 2.09626841545105,
+  "dof_left_hip_roll_04": 1.6742280721664429,
+  "dof_right_hip_roll_04": 1.7000356912612915,
+  "dof_left_hip_yaw_03": 0.9843612313270569,
+  "dof_right_hip_yaw_03": 0.901762068271637,
+  "dof_left_knee_04": 3.4580142498016357,
+  "dof_right_knee_04": 3.274772882461548,
+  "dof_left_ankle_02": 3.3387837409973145,
+  "dof_right_ankle_02": 3.161705493927002
+ },
+ "rmse_all_deg": 2.450526475906372,
+ "speed_mps": {
+  "mean": 0.4968317747116089,
+  "lateral_abs": 0.227096289396286,
+  "cmd": 0.4055926644594204
+ },
+ "yaw_rate_abs": 0.34569022059440613,
+ "tilt_deg_mean": 5.783270835876465,
+ "stance_width_cm": {
+  "median": 30.975085496902466,
+  "p90": 33.72476041316986
+ },
+ "clearance_cm": 11.594167351722717,
+ "stride_period_s": {
+  "median": 1.06,
+  "ref": 1.06,
+  "n": 782
+ },
+ "torque_rms_over_continuous": {
+  "dof_left_hip_pitch_04": 1.2908766428629557,
+  "dof_right_hip_pitch_04": 1.242911656697591,
+  "dof_left_hip_roll_04": 1.138189442952474,
+  "dof_right_hip_roll_04": 1.1373677571614584,
+  "dof_left_hip_yaw_03": 0.4266666889190674,
+  "dof_right_hip_yaw_03": 0.4034322738647461,
+  "dof_left_knee_04": 0.8910794576009115,
+  "dof_right_knee_04": 0.8609491348266601,
+  "dof_left_ankle_02": 0.5031119346618652,
+  "dof_right_ankle_02": 0.4981719970703125
+ },
+ "torque_peak_nm": {
+  "dof_left_hip_pitch_04": 22.0,
+  "dof_right_hip_pitch_04": 22.0,
+  "dof_left_hip_roll_04": 22.0,
+  "dof_right_hip_roll_04": 22.0,
+  "dof_left_hip_yaw_03": 11.0,
+  "dof_right_hip_yaw_03": 11.0,
+  "dof_left_knee_04": 22.0,
+  "dof_right_knee_04": 22.0,
+  "dof_left_ankle_02": 11.008186340332031,
+  "dof_right_ankle_02": 10.117622375488281
+ }
+}

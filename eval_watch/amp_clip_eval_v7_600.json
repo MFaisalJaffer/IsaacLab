@@ -1,0 +1,167 @@
+{
+ "checkpoint": "logs/rsl_rl/kbot_legs_trackclip/2026-10-01_17-03-42//model_600.pt",
+ "num_envs": 256,
+ "seconds": 30.0,
+ "labels": {
+  "backward": {
+   "steps": 95386,
+   "episodes_ended": 195,
+   "fell": 22,
+   "fall_frac_of_ends": 0.11282051282051282,
+   "rmse_deg": 7.242826461791992,
+   "cmd_mean": [
+    -0.251,
+    0.003,
+    0.005
+   ],
+   "achieved_mean": [
+    -0.057,
+    0.003,
+    -0.026
+   ],
+   "fwd_err": 0.21253684163093567,
+   "lat_err": 0.08847199380397797,
+   "yaw_err": 0.42854633927345276
+  },
+  "forward_straight": {
+   "steps": 29889,
+   "episodes_ended": 225,
+   "fell": 1,
+   "fall_frac_of_ends": 0.0044444444444444444,
+   "rmse_deg": 9.261810302734375,
+   "cmd_mean": [
+    0.194,
+    -0.0,
+    0.004
+   ],
+   "achieved_mean": [
+    0.055,
+    0.005,
+    0.024
+   ],
+   "fwd_err": 0.16117098927497864,
+   "lat_err": 0.08084972947835922,
+   "yaw_err": 0.4786549508571625
+  },
+  "forward_turn": {
+   "steps": 39987,
+   "episodes_ended": 276,
+   "fell": 0,
+   "fall_frac_of_ends": 0.0,
+   "rmse_deg": 8.154504776000977,
+   "cmd_mean": [
+    0.286,
+    -0.002,
+    0.04
+   ],
+   "achieved_mean": [
+    0.123,
+    -0.0,
+    0.069
+   ],
+   "fwd_err": 0.18721875548362732,
+   "lat_err": 0.09391810745000839,
+   "yaw_err": 0.5717020630836487
+  },
+  "side_left": {
+   "steps": 45487,
+   "episodes_ended": 215,
+   "fell": 8,
+   "fall_frac_of_ends": 0.037209302325581395,
+   "rmse_deg": 9.716882705688477,
+   "cmd_mean": [
+    0.067,
+    0.161,
+    0.007
+   ],
+   "achieved_mean": [
+    0.011,
+    0.017,
+    -0.025
+   ],
+   "fwd_err": 0.13338756561279297,
+   "lat_err": 0.1614862084388733,
+   "yaw_err": 0.40263631939888
+  },
+  "side_right": {
+   "steps": 52055,
+   "episodes_ended": 245,
+   "fell": 8,
+   "fall_frac_of_ends": 0.0326530612244898,
+   "rmse_deg": 9.58141040802002,
+   "cmd_mean": [
+    0.076,
+    -0.164,
+    -0.006
+   ],
+   "achieved_mean": [
+    0.001,
+    -0.024,
+    0.041
+   ],
+   "fwd_err": 0.13451620936393738,
+   "lat_err": 0.1594771444797516,
+   "yaw_err": 0.41289445757865906
+  },
+  "start_stop": {
+   "steps": 46921,
+   "episodes_ended": 230,
+   "fell": 1,
+   "fall_frac_of_ends": 0.004347826086956522,
+   "rmse_deg": 6.521849155426025,
+   "cmd_mean": [
+    0.118,
+    0.001,
+    0.0
+   ],
+   "achieved_mean": [
+    0.075,
+    -0.0,
+    0.007
+   ],
+   "fwd_err": 0.12108420580625534,
+   "lat_err": 0.06709367036819458,
+   "yaw_err": 0.432690292596817
+  },
+  "stop_start": {
+   "steps": 46634,
+   "episodes_ended": 223,
+   "fell": 0,
+   "fall_frac_of_ends": 0.0,
+   "rmse_deg": 7.984385013580322,
+   "cmd_mean": [
+    0.144,
+    0.001,
+    -0.0
+   ],
+   "achieved_mean": [
+    0.056,
+    0.0,
+    0.031
+   ],
+   "fwd_err": 0.13177651166915894,
+   "lat_err": 0.08000428229570389,
+   "yaw_err": 0.48995158076286316
+  },
+  "turn_in_place": {
+   "steps": 27641,
+   "episodes_ended": 239,
+   "fell": 0,
+   "fall_frac_of_ends": 0.0,
+   "rmse_deg": 5.13893985748291,
+   "cmd_mean": [
+    0.028,
+    -0.002,
+    -0.056
+   ],
+   "achieved_mean": [
+    -0.005,
+    -0.002,
+    0.007
+   ],
+   "fwd_err": 0.0850299522280693,
+   "lat_err": 0.0651986226439476,
+   "yaw_err": 0.47830840945243835
+  }
+ }
+}

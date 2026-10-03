@@ -1,0 +1,19 @@
+{
+ "checkpoint": "archive_anchors/amp_v3_final.pt",
+ "cmd": "0:0:0",
+ "standing": {
+  "envs": 256,
+  "survival": 0.73828125,
+  "tilt_deg": {
+   "mean": 3.334027051925659,
+   "p90": 5.197542142868042
+  },
+  "foot_lift_max_cm": 11.47494912147522,
+  "foot_travel_mps_mean": 0.04512683302164078,
+  "width_cm": 32.07073509693146,
+  "base_speed_abs_mps": 0.044734254479408264
+ },
+ "walking_envs": 0,
+ "survival_walking": null,
+ "note": "no walking envs"
+}

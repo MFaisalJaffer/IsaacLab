@@ -1,0 +1,12 @@
+==== SKATE DIAGNOSTIC @ model_171500.pt ====
+envs=256 window=500 steps (10s stand, pushes off) (training DR mu)
+slide (both feet, m/s): mean=0.1511 p50=0.1189 p90=0.2773 max=0.5521
+outward slide vel: mean=+0.0070 m/s (+ = away from midline = bracing; envs outward: 84%)
+width drift: mean=-0.09 cm p90=+6.66 cm
+gyro mean=0.184 rad/s (statue check)
+per-shape corr(mu_j, slide): strongest negative [(-0.2688390016555786, 12), (-0.17546197772026062, 11)]
+                             strongest positive [(-0.2688390016555786, 12), (-0.17546197772026062, 11)]
+  shape12 muQ1(low)  mu=0.54 slide=0.1872 outward=+0.0080 drift=-0.8cm
+  shape12 muQ2       mu=0.79 slide=0.1448 outward=+0.0069 drift=+0.9cm
+  shape12 muQ3       mu=1.02 slide=0.1480 outward=+0.0068 drift=-0.8cm
+  shape12 muQ4(high) mu=1.28 slide=0.1200 outward=+0.0061 drift=+0.5cm

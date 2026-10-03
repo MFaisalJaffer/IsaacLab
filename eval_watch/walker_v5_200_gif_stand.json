@@ -1,0 +1,19 @@
+{
+ "checkpoint": "/tmp/claude-1000/-home-faisal/d2f69e5f-1832-4795-ac3c-acfca88fa4e9/scratchpad/walker_v5_200.pt",
+ "cmd": "0:0:0",
+ "standing": {
+  "envs": 16,
+  "survival": 0.0625,
+  "tilt_deg": {
+   "mean": 3.2561168670654297,
+   "p90": 4.719350147247315
+  },
+  "foot_lift_max_cm": 0.18149018287658691,
+  "foot_travel_mps_mean": 0.051623545587062836,
+  "width_cm": 23.25994521379471,
+  "base_speed_abs_mps": 0.050023432821035385
+ },
+ "walking_envs": 0,
+ "survival_walking": null,
+ "note": "no walking envs"
+}

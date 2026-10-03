@@ -1,0 +1,134 @@
+{
+  "task": "Isaac-Velocity-Rough-KbotLegs-v0",
+  "checkpoint": "/home/faisal/IsaacLab/logs/rsl_rl/kbot_legs_rough/2026-06-17_10-24-27/model_1800.pt",
+  "obs_dim": 43,
+  "action_dim": 10,
+  "obs_terms": [
+    {
+      "name": "imu_projected_gravity",
+      "dim": 3,
+      "note": "gravity unit vec in IMU frame"
+    },
+    {
+      "name": "velocity_commands",
+      "dim": 3,
+      "note": "[vx, vy, wz]"
+    },
+    {
+      "name": "joint_pos_rel",
+      "dim": 10,
+      "note": "q - q_default, in joint_names order"
+    },
+    {
+      "name": "joint_vel_rel",
+      "dim": 10,
+      "note": "qd, in joint_names order"
+    },
+    {
+      "name": "imu_ang_vel",
+      "dim": 3,
+      "note": "angular vel in IMU frame"
+    },
+    {
+      "name": "last_action",
+      "dim": 10,
+      "note": "previous raw policy output"
+    },
+    {
+      "name": "gait_phase",
+      "dim": 4,
+      "note": "[cos phiL, sin phiL, cos phiR, sin phiR]; anti-phase gait clock at gait_freq"
+    }
+  ],
+  "joint_names": [
+    "dof_left_hip_pitch_04",
+    "dof_right_hip_pitch_04",
+    "dof_left_hip_roll_04",
+    "dof_right_hip_roll_04",
+    "dof_left_hip_yaw_03",
+    "dof_right_hip_yaw_03",
+    "dof_left_knee_04",
+    "dof_right_knee_04",
+    "dof_left_ankle_02",
+    "dof_right_ankle_02"
+  ],
+  "default_joint_pos": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "kp": {
+    "dof_left_hip_pitch_04": 150.0,
+    "dof_right_hip_pitch_04": 150.0,
+    "dof_left_hip_roll_04": 200.0,
+    "dof_right_hip_roll_04": 200.0,
+    "dof_left_hip_yaw_03": 100.0,
+    "dof_right_hip_yaw_03": 100.0,
+    "dof_left_knee_04": 150.0,
+    "dof_right_knee_04": 150.0,
+    "dof_left_ankle_02": 40.0,
+    "dof_right_ankle_02": 40.0
+  },
+  "kd": {
+    "dof_left_hip_pitch_04": 8.0,
+    "dof_right_hip_pitch_04": 8.0,
+    "dof_left_hip_roll_04": 8.0,
+    "dof_right_hip_roll_04": 8.0,
+    "dof_left_hip_yaw_03": 4.0,
+    "dof_right_hip_yaw_03": 4.0,
+    "dof_left_knee_04": 8.0,
+    "dof_right_knee_04": 8.0,
+    "dof_left_ankle_02": 8.0,
+    "dof_right_ankle_02": 8.0
+  },
+  "armature": {
+    "dof_left_hip_pitch_04": 0.0065018413588404655,
+    "dof_right_hip_pitch_04": 0.008236429654061794,
+    "dof_left_hip_roll_04": 0.006421554833650589,
+    "dof_right_hip_roll_04": 0.007262041326612234,
+    "dof_left_hip_yaw_03": 0.005632558837532997,
+    "dof_right_hip_yaw_03": 0.004154871217906475,
+    "dof_left_knee_04": 0.008216798305511475,
+    "dof_right_knee_04": 0.008143177255988121,
+    "dof_left_ankle_02": 0.0013981075026094913,
+    "dof_right_ankle_02": 0.0013183268019929528
+  },
+  "effort_limit": {
+    "dof_left_hip_pitch_04": 1000000000.0,
+    "dof_right_hip_pitch_04": 1000000000.0,
+    "dof_left_hip_roll_04": 1000000000.0,
+    "dof_right_hip_roll_04": 1000000000.0,
+    "dof_left_hip_yaw_03": 1000000000.0,
+    "dof_right_hip_yaw_03": 1000000000.0,
+    "dof_left_knee_04": 1000000000.0,
+    "dof_right_knee_04": 1000000000.0,
+    "dof_left_ankle_02": 1000000000.0,
+    "dof_right_ankle_02": 1000000000.0
+  },
+  "action_scale": 0.5,
+  "use_default_offset": true,
+  "sim_dt": 0.005,
+  "decimation": 4,
+  "control_dt": 0.02,
+  "imu_site": "imu_site",
+  "spawn_height": 1.05,
+  "gait": {
+    "gait_freq": 1.4,
+    "stand_still_threshold": 0.1,
+    "start_phase": [
+      0.0,
+      3.141592653589793
+    ],
+    "stand_phase": [
+      1.5707963267948966,
+      3.141592653589793
+    ]
+  }
+}

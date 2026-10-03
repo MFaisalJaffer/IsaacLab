@@ -1,0 +1,23 @@
+{
+ "checkpoint": "/tmp/claude-1000/-home-faisal/d2f69e5f-1832-4795-ac3c-acfca88fa4e9/scratchpad/tm_v1d_400.pt",
+ "num_envs": 16,
+ "seconds": 8.0,
+ "cycles": {
+  "side_left": {
+   "episodes": 16,
+   "falls": 0,
+   "survival": 1.0,
+   "rmse_deg": 7.335943698883057,
+   "cmd": [
+    0.001,
+    0.129,
+    -0.0
+   ],
+   "achieved": [
+    0.009,
+    0.003,
+    0.005
+   ]
+  }
+ }
+}

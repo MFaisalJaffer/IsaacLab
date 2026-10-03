@@ -693,7 +693,7 @@ class KBotRoughEnvCfg(LocomotionVelocityRoughEnvCfg):
         self.scene.imu = ImuCfg(
             prim_path="{ENV_REGEX_NS}/Robot/imu",
             update_period=0.0,
-            debug_vis=True,
+            debug_vis=False,
             gravity_bias=(0.0, 0.0, 0.0),
             offset=ImuCfg.OffsetCfg(
                 pos=(0.0, 0.0, 0.0), rot=(1.0, 0.0, 0.0, 0.0)  # meters, quaternion

@@ -1,0 +1,6 @@
+==== SKATE DIAGNOSTIC @ model_203800.pt ====
+envs=256 window=500 steps (10s stand, pushes off) MU PINNED = 1.0
+slide (both feet, m/s): mean=0.0594 p50=0.0557 p90=0.0895 max=0.1634
+outward slide vel: mean=-0.0002 m/s (+ = away from midline = bracing; envs outward: 44%)
+width drift: mean=-0.07 cm p90=+9.00 cm
+gyro mean=0.123 rad/s (statue check)

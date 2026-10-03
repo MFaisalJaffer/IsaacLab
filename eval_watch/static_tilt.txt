@@ -1,0 +1,242 @@
+RIG_REPRO_33800: kinematic roll-tilt hold, 64 envs, 150 steps/tilt (measure last 100), gains pinned
+   tilt_deg  hiproll_diff_cmd_rad
+        -12                0.0199
+        -10               -0.0039
+         -8               -0.0340
+         -5               -0.0584
+         -3               -0.0560
+          0               -0.0293
+          3               -0.0456
+          5               -0.0553
+          8               -0.0549
+         10               -0.0298
+         12               -0.0133
+  correlation(roll, differential) = -0.373   (pass > 0.5)
+  |differential| at 10 deg = 0.0298 rad  (pass >= ~0.1; rig measured ~0.002)
+  |differential| at 0 deg  = 0.0293 rad (bias reference)
+
+SERVO_CHECK_4k: kinematic roll-tilt hold, 64 envs, 150 steps/tilt (measure last 100), gains pinned
+   tilt_deg  hiproll_diff_cmd_rad
+        -12               -0.0476
+        -10                0.0266
+         -8                0.0937
+         -5                0.1068
+         -3                0.0689
+          0                0.1173
+          3                0.1835
+          5                0.2372
+          8                0.2500
+         10                0.2598
+         12                0.2533
+  correlation(roll, differential) = +0.955   (pass > 0.5)
+  |differential| at 10 deg = 0.2598 rad  (pass >= ~0.1; rig measured ~0.002)
+  |differential| at 0 deg  = 0.1173 rad (bias reference)
+
+SERVO_CHECK_17k: kinematic roll-tilt hold, 64 envs, 150 steps/tilt (measure last 100), gains pinned
+   tilt_deg  hiproll_diff_cmd_rad
+        -12                0.0606
+        -10                0.1526
+         -8                0.1256
+         -5                0.0743
+         -3               -0.0039
+          0               -0.0410
+          3               -0.0573
+          5               -0.0211
+          8                0.1119
+         10                0.1359
+         12                0.1801
+  correlation(roll, differential) = +0.075   (pass > 0.5)
+  |differential| at 10 deg = 0.1359 rad  (pass >= ~0.1; rig measured ~0.002)
+  |differential| at 0 deg  = 0.0410 rad (bias reference)
+
+SERVO_17k_EARLY: kinematic roll-tilt hold, 64 envs, 50 steps/tilt (measure last 35), gains pinned
+   tilt_deg  hiproll_diff_cmd_rad
+        -12               -0.0892
+        -10                0.1427
+         -8                0.1627
+         -5                0.1371
+         -3                0.1032
+          0                0.0532
+          3               -0.0489
+          5               -0.0533
+          8                0.0431
+         10                0.1150
+         12                0.1956
+  correlation(roll, differential) = +0.097   (pass > 0.5)
+  |differential| at 10 deg = 0.1150 rad  (pass >= ~0.1; rig measured ~0.002)
+  |differential| at 0 deg  = 0.0532 rad (bias reference)
+
+A_55k_contacts: kinematic roll-tilt hold, 64 envs, 150 steps/tilt (measure last 100), gains pinned
+   tilt_deg  hiproll_diff_cmd_rad
+        -12                0.0978
+        -10                0.1360
+         -8                0.1413
+         -5                0.0935
+         -3                0.0125
+          0               -0.0788
+          3               -0.0651
+          5                0.0023
+          8                0.1155
+         10                0.1659
+         12                0.1447
+  correlation(roll, differential) = -0.005   (pass > 0.5)
+  |differential| at 10 deg = 0.1659 rad  (pass >= ~0.1; rig measured ~0.002)
+  |differential| at 0 deg  = 0.0788 rad (bias reference)
+    tilt  L_contact%  R_contact%   (roll + tilts toward L? uphill foot unloading = probe artifact)
+     -12          79          60
+     -10          81          64
+      -8          84          64
+      -5          83          74
+      -3          75          85
+       0          68          88
+       3          66          92
+       5          39          98
+       8          12          94
+      10           7          91
+      12           3          90
+
+B_55k_zcorrect: kinematic roll-tilt hold, 64 envs, 150 steps/tilt (measure last 100), gains pinned
+   tilt_deg  hiproll_diff_cmd_rad
+        -12               -0.0085
+        -10                0.0867
+         -8                0.0626
+         -5                0.0577
+         -3               -0.0135
+          0               -0.0651
+          3               -0.0952
+          5               -0.1068
+          8               -0.1195
+         10               -0.0983
+         12               -0.0890
+  correlation(roll, differential) = -0.849   (pass > 0.5)
+  |differential| at 10 deg = 0.0983 rad  (pass >= ~0.1; rig measured ~0.002)
+  |differential| at 0 deg  = 0.0651 rad (bias reference)
+    tilt  L_contact%  R_contact%   (roll + tilts toward L? uphill foot unloading = probe artifact)
+     -12          79          74
+     -10          74          73
+      -8          73          76
+      -5          79          80
+      -3          74          84
+       0          70          86
+       3          53          89
+       5          45          87
+       8          40          90
+      10          34          92
+      12          28          90
+
+C_49k_bisect: kinematic roll-tilt hold, 64 envs, 150 steps/tilt (measure last 100), gains pinned
+   tilt_deg  hiproll_diff_cmd_rad
+        -12                0.0299
+        -10                0.1043
+         -8                0.0967
+         -5                0.1065
+         -3                0.0843
+          0                0.0875
+          3                0.1698
+          5                0.2001
+          8                0.2387
+         10                0.2669
+         12                0.2604
+  correlation(roll, differential) = +0.930   (pass > 0.5)
+  |differential| at 10 deg = 0.2669 rad  (pass >= ~0.1; rig measured ~0.002)
+  |differential| at 0 deg  = 0.0875 rad (bias reference)
+    tilt  L_contact%  R_contact%   (roll + tilts toward L? uphill foot unloading = probe artifact)
+     -12          85          62
+     -10          88          53
+      -8          88          59
+      -5          83          66
+      -3          79          71
+       0          57          80
+       3          23          95
+       5           6          98
+       8           1          95
+      10           0          92
+      12           0          91
+
+D_43k_baseline_contacts: kinematic roll-tilt hold, 64 envs, 150 steps/tilt (measure last 100), gains pinned
+   tilt_deg  hiproll_diff_cmd_rad
+        -12               -0.0918
+        -10               -0.0805
+         -8               -0.0974
+         -5               -0.1067
+         -3               -0.0949
+          0                0.0373
+          3                0.1311
+          5                0.0731
+          8                0.0710
+         10                0.0421
+         12                0.0900
+  correlation(roll, differential) = +0.838   (pass > 0.5)
+  |differential| at 10 deg = 0.0421 rad  (pass >= ~0.1; rig measured ~0.002)
+  |differential| at 0 deg  = 0.0373 rad (bias reference)
+    tilt  L_contact%  R_contact%   (roll + tilts toward L? uphill foot unloading = probe artifact)
+     -12          85          68
+     -10          87          65
+      -8          89          70
+      -5          81          75
+      -3          74          77
+       0          73          71
+       3          43          86
+       5          18          96
+       8           4          93
+      10           2          94
+      12           1          91
+
+E_43k_zcorrect: kinematic roll-tilt hold, 64 envs, 150 steps/tilt (measure last 100), gains pinned
+   tilt_deg  hiproll_diff_cmd_rad
+        -12               -0.0876
+        -10               -0.0417
+         -8               -0.0307
+         -5               -0.0693
+         -3               -0.1001
+          0                0.0604
+          3                0.0504
+          5                0.1062
+          8                0.1013
+         10                0.1526
+         12                0.1653
+  correlation(roll, differential) = +0.914   (pass > 0.5)
+  |differential| at 10 deg = 0.1526 rad  (pass >= ~0.1; rig measured ~0.002)
+  |differential| at 0 deg  = 0.0604 rad (bias reference)
+    tilt  L_contact%  R_contact%   (roll + tilts toward L? uphill foot unloading = probe artifact)
+     -12          86          82
+     -10          82          82
+      -8          77          83
+      -5          83          85
+      -3          81          84
+       0          72          73
+       3          61          84
+       5          55          85
+       8          44          86
+      10          41          83
+      12          31          81
+
+F_49k_zcorrect: kinematic roll-tilt hold, 64 envs, 150 steps/tilt (measure last 100), gains pinned
+   tilt_deg  hiproll_diff_cmd_rad
+        -12                0.0948
+        -10                0.1652
+         -8                0.1945
+         -5                0.1521
+         -3                0.1240
+          0                0.0837
+          3                0.0740
+          5                0.0636
+          8                0.0675
+         10                0.0708
+         12                0.0735
+  correlation(roll, differential) = -0.741   (pass > 0.5)
+  |differential| at 10 deg = 0.0708 rad  (pass >= ~0.1; rig measured ~0.002)
+  |differential| at 0 deg  = 0.0837 rad (bias reference)
+    tilt  L_contact%  R_contact%   (roll + tilts toward L? uphill foot unloading = probe artifact)
+     -12          88          79
+     -10          83          65
+      -8          79          64
+      -5          82          73
+      -3          79          73
+       0          57          84
+       3          32          87
+       5          26          86
+       8          23          88
+      10          19          86
+      12          22          86
+

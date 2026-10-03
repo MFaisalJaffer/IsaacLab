@@ -1,0 +1,187 @@
+{
+ "schema": "sim2sim_bareplant_v1",
+ "side": "isaac",
+ "friction_arm": "off",
+ "base_pin_mode": "fixed",
+ "start_deg": 15.0,
+ "decay_s": 6.0,
+ "joint_order": [
+  "dof_right_hip_pitch_04",
+  "dof_right_hip_roll_04",
+  "dof_right_hip_yaw_03",
+  "dof_right_knee_04",
+  "dof_right_ankle_02",
+  "dof_left_hip_pitch_04",
+  "dof_left_hip_roll_04",
+  "dof_left_hip_yaw_03",
+  "dof_left_knee_04",
+  "dof_left_ankle_02"
+ ],
+ "rate_hz": 200.0,
+ "base": "pinned+lifted 0.6 m",
+ "total_mass_kg": 13.06,
+ "plant_control": {
+  "dof_right_hip_pitch_04": {
+   "Fc_nominal": 0.0,
+   "viscous_b": 0.0,
+   "series_k": 0.0,
+   "kp": 150.0
+  },
+  "dof_right_hip_roll_04": {
+   "Fc_nominal": 0.0,
+   "viscous_b": 0.0,
+   "series_k": 0.0,
+   "kp": 150.0
+  },
+  "dof_right_hip_yaw_03": {
+   "Fc_nominal": 0.0,
+   "viscous_b": 0.0,
+   "series_k": 0.0,
+   "kp": 60.0
+  },
+  "dof_right_knee_04": {
+   "Fc_nominal": 0.0,
+   "viscous_b": 0.0,
+   "series_k": 0.0,
+   "kp": 150.0
+  },
+  "dof_right_ankle_02": {
+   "Fc_nominal": 0.0,
+   "viscous_b": 0.0,
+   "series_k": 23.0,
+   "kp": 60.0
+  },
+  "dof_left_hip_pitch_04": {
+   "Fc_nominal": 0.0,
+   "viscous_b": 0.0,
+   "series_k": 0.0,
+   "kp": 150.0
+  },
+  "dof_left_hip_roll_04": {
+   "Fc_nominal": 0.0,
+   "viscous_b": 0.0,
+   "series_k": 0.0,
+   "kp": 150.0
+  },
+  "dof_left_hip_yaw_03": {
+   "Fc_nominal": 0.0,
+   "viscous_b": 0.0,
+   "series_k": 0.0,
+   "kp": 60.0
+  },
+  "dof_left_knee_04": {
+   "Fc_nominal": 0.0,
+   "viscous_b": 0.0,
+   "series_k": 0.0,
+   "kp": 150.0
+  },
+  "dof_left_ankle_02": {
+   "Fc_nominal": 0.0,
+   "viscous_b": 0.0,
+   "series_k": 23.0,
+   "kp": 60.0
+  }
+ },
+ "results": {
+  "dof_right_hip_pitch_04": {
+   "held_at_release_deg": 14.109,
+   "net_travel_deg": -25.478,
+   "qd_reversal_frac": 0.0067,
+   "peak_abs_qd_deg_s": 63.54,
+   "n_extrema": 8,
+   "swing_period_s": 1.36,
+   "abs_tau_mean_Nm": 0.0,
+   "verdict": "real swing"
+  },
+  "dof_right_hip_roll_04": {
+   "held_at_release_deg": -14.106,
+   "net_travel_deg": 24.251,
+   "qd_reversal_frac": 0.0075,
+   "peak_abs_qd_deg_s": 66.21,
+   "n_extrema": 9,
+   "swing_period_s": 1.3337,
+   "abs_tau_mean_Nm": 0.0,
+   "verdict": "real swing"
+  },
+  "dof_right_hip_yaw_03": {
+   "held_at_release_deg": 15.0,
+   "net_travel_deg": 0.796,
+   "qd_reversal_frac": 0.0,
+   "peak_abs_qd_deg_s": 0.27,
+   "n_extrema": 0,
+   "swing_period_s": null,
+   "abs_tau_mean_Nm": 0.0,
+   "verdict": "real swing"
+  },
+  "dof_right_knee_04": {
+   "held_at_release_deg": -14.959,
+   "net_travel_deg": 7.787,
+   "qd_reversal_frac": 0.0083,
+   "peak_abs_qd_deg_s": 22.98,
+   "n_extrema": 10,
+   "swing_period_s": 1.0933,
+   "abs_tau_mean_Nm": 0.0,
+   "verdict": "real swing"
+  },
+  "dof_right_ankle_02": {
+   "held_at_release_deg": 14.84,
+   "net_travel_deg": 57.167,
+   "qd_reversal_frac": 0.1218,
+   "peak_abs_qd_deg_s": 1277.64,
+   "n_extrema": 43,
+   "swing_period_s": 0.27,
+   "abs_tau_mean_Nm": 1.1253,
+   "verdict": "mixed"
+  },
+  "dof_left_hip_pitch_04": {
+   "held_at_release_deg": 14.057,
+   "net_travel_deg": -26.336,
+   "qd_reversal_frac": 0.0067,
+   "peak_abs_qd_deg_s": 66.3,
+   "n_extrema": 8,
+   "swing_period_s": 1.3614,
+   "abs_tau_mean_Nm": 0.0,
+   "verdict": "real swing"
+  },
+  "dof_left_hip_roll_04": {
+   "held_at_release_deg": 14.103,
+   "net_travel_deg": -24.057,
+   "qd_reversal_frac": 0.0075,
+   "peak_abs_qd_deg_s": 66.25,
+   "n_extrema": 9,
+   "swing_period_s": 1.3325,
+   "abs_tau_mean_Nm": 0.0,
+   "verdict": "real swing"
+  },
+  "dof_left_hip_yaw_03": {
+   "held_at_release_deg": 15.0,
+   "net_travel_deg": 2.425,
+   "qd_reversal_frac": 0.0,
+   "peak_abs_qd_deg_s": 0.82,
+   "n_extrema": 0,
+   "swing_period_s": null,
+   "abs_tau_mean_Nm": 0.0,
+   "verdict": "real swing"
+  },
+  "dof_left_knee_04": {
+   "held_at_release_deg": 14.96,
+   "net_travel_deg": -7.246,
+   "qd_reversal_frac": 0.0083,
+   "peak_abs_qd_deg_s": 22.7,
+   "n_extrema": 10,
+   "swing_period_s": 1.1089,
+   "abs_tau_mean_Nm": 0.0,
+   "verdict": "real swing"
+  },
+  "dof_left_ankle_02": {
+   "held_at_release_deg": -14.84,
+   "net_travel_deg": -57.166,
+   "qd_reversal_frac": 0.1134,
+   "peak_abs_qd_deg_s": 1211.71,
+   "n_extrema": 39,
+   "swing_period_s": 0.2955,
+   "abs_tau_mean_Nm": 1.0156,
+   "verdict": "mixed"
+  }
+ }
+}

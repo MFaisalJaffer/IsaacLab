@@ -1,0 +1,371 @@
+{
+ "clip": "asimov_walk_kbot.npz",
+ "window_s": [
+  12.0,
+  32.0
+ ],
+ "configs": [
+  [
+   2,
+   52.0
+  ],
+  [
+   5,
+   52.0
+  ],
+  [
+   2,
+   120.0
+  ],
+  [
+   5,
+   120.0
+  ]
+ ],
+ "results": {
+  "d2_k52": {
+   "dof_left_hip_pitch_04": {
+    "rmse_deg": 3.70455265045166,
+    "lag_ms": 40.0,
+    "tau_rms": 4.18665075302124,
+    "tau_peak": 9.5741605758667,
+    "rms_over_continuous": 0.558220100402832,
+    "tv_saturation_frac": 0.0
+   },
+   "dof_right_hip_pitch_04": {
+    "rmse_deg": 4.01128625869751,
+    "lag_ms": 40.0,
+    "tau_rms": 4.82509708404541,
+    "tau_peak": 13.650068283081055,
+    "rms_over_continuous": 0.6433462778727214,
+    "tv_saturation_frac": 0.0
+   },
+   "dof_left_hip_roll_04": {
+    "rmse_deg": 1.201014518737793,
+    "lag_ms": 140.0,
+    "tau_rms": 1.8578135967254639,
+    "tau_peak": 7.090348720550537,
+    "rms_over_continuous": 0.24770847956339517,
+    "tv_saturation_frac": 0.0
+   },
+   "dof_right_hip_roll_04": {
+    "rmse_deg": 0.8650813698768616,
+    "lag_ms": 100.0,
+    "tau_rms": 2.54276704788208,
+    "tau_peak": 5.995589733123779,
+    "rms_over_continuous": 0.3390356063842773,
+    "tv_saturation_frac": 0.0
+   },
+   "dof_left_hip_yaw_03": {
+    "rmse_deg": 0.4850977659225464,
+    "lag_ms": 20.0,
+    "tau_rms": 0.4227362871170044,
+    "tau_peak": 0.8653353452682495,
+    "rms_over_continuous": 0.08454725742340088,
+    "tv_saturation_frac": 0.0
+   },
+   "dof_right_hip_yaw_03": {
+    "rmse_deg": 0.4651646614074707,
+    "lag_ms": 40.0,
+    "tau_rms": 0.4881804585456848,
+    "tau_peak": 1.0101609230041504,
+    "rms_over_continuous": 0.09763609170913697,
+    "tv_saturation_frac": 0.0
+   },
+   "dof_left_knee_04": {
+    "rmse_deg": 0.8465107679367065,
+    "lag_ms": 0.0,
+    "tau_rms": 1.1084344387054443,
+    "tau_peak": 3.418583393096924,
+    "rms_over_continuous": 0.14779125849405925,
+    "tv_saturation_frac": 0.0
+   },
+   "dof_right_knee_04": {
+    "rmse_deg": 0.8730852603912354,
+    "lag_ms": 0.0,
+    "tau_rms": 1.2022876739501953,
+    "tau_peak": 4.943007469177246,
+    "rms_over_continuous": 0.16030502319335938,
+    "tv_saturation_frac": 0.0
+   },
+   "dof_left_ankle_02": {
+    "rmse_deg": 0.4591817557811737,
+    "lag_ms": 0.0,
+    "tau_rms": 0.1833352893590927,
+    "tau_peak": 0.5696671009063721,
+    "rms_over_continuous": 0.036667057871818544,
+    "tv_saturation_frac": 0.77
+   },
+   "dof_right_ankle_02": {
+    "rmse_deg": 0.49097713828086853,
+    "lag_ms": 0.0,
+    "tau_rms": 0.18477699160575867,
+    "tau_peak": 0.7637946605682373,
+    "rms_over_continuous": 0.03695539832115173,
+    "tv_saturation_frac": 0.6844444444444444
+   },
+   "ankle_series_deflection_deg": {
+    "rms": 0.2345687448978424,
+    "peak": 1.1282532215118408
+   }
+  },
+  "d5_k52": {
+   "dof_left_hip_pitch_04": {
+    "rmse_deg": 4.817174911499023,
+    "lag_ms": 60.0,
+    "tau_rms": 3.581432580947876,
+    "tau_peak": 7.062924385070801,
+    "rms_over_continuous": 0.47752434412638345,
+    "tv_saturation_frac": 0.0
+   },
+   "dof_right_hip_pitch_04": {
+    "rmse_deg": 5.239945888519287,
+    "lag_ms": 60.0,
+    "tau_rms": 4.184129238128662,
+    "tau_peak": 10.874592781066895,
+    "rms_over_continuous": 0.5578838984171549,
+    "tv_saturation_frac": 0.0
+   },
+   "dof_left_hip_roll_04": {
+    "rmse_deg": 1.2578321695327759,
+    "lag_ms": 140.0,
+    "tau_rms": 1.6351747512817383,
+    "tau_peak": 5.094724178314209,
+    "rms_over_continuous": 0.21802330017089844,
+    "tv_saturation_frac": 0.0
+   },
+   "dof_right_hip_roll_04": {
+    "rmse_deg": 0.9252800345420837,
+    "lag_ms": 100.0,
+    "tau_rms": 2.4618008136749268,
+    "tau_peak": 5.559131622314453,
+    "rms_over_continuous": 0.32824010848999025,
+    "tv_saturation_frac": 0.0
+   },
+   "dof_left_hip_yaw_03": {
+    "rmse_deg": 0.7058365941047668,
+    "lag_ms": 40.0,
+    "tau_rms": 0.4177204668521881,
+    "tau_peak": 1.1164122819900513,
+    "rms_over_continuous": 0.08354409337043762,
+    "tv_saturation_frac": 0.0
+   },
+   "dof_right_hip_yaw_03": {
+    "rmse_deg": 0.6566915512084961,
+    "lag_ms": 40.0,
+    "tau_rms": 0.4680136740207672,
+    "tau_peak": 1.1154295206069946,
+    "rms_over_continuous": 0.09360273480415345,
+    "tv_saturation_frac": 0.0
+   },
+   "dof_left_knee_04": {
+    "rmse_deg": 3.217444658279419,
+    "lag_ms": 20.0,
+    "tau_rms": 2.5342767238616943,
+    "tau_peak": 5.681623935699463,
+    "rms_over_continuous": 0.33790356318155923,
+    "tv_saturation_frac": 0.0
+   },
+   "dof_right_knee_04": {
+    "rmse_deg": 3.35872483253479,
+    "lag_ms": 20.0,
+    "tau_rms": 2.7169759273529053,
+    "tau_peak": 6.950540065765381,
+    "rms_over_continuous": 0.36226345698038737,
+    "tv_saturation_frac": 0.0
+   },
+   "dof_left_ankle_02": {
+    "rmse_deg": 1.2478331327438354,
+    "lag_ms": 20.0,
+    "tau_rms": 0.16758482158184052,
+    "tau_peak": 0.6871265172958374,
+    "rms_over_continuous": 0.0335169643163681,
+    "tv_saturation_frac": 0.8066666666666666
+   },
+   "dof_right_ankle_02": {
+    "rmse_deg": 1.380367398262024,
+    "lag_ms": 20.0,
+    "tau_rms": 0.19109119474887848,
+    "tau_peak": 0.8167964220046997,
+    "rms_over_continuous": 0.0382182389497757,
+    "tv_saturation_frac": 0.7788888888888889
+   },
+   "ankle_series_deflection_deg": {
+    "rms": 0.23750895261764526,
+    "peak": 1.2163259983062744
+   }
+  },
+  "d2_k120": {
+   "dof_left_hip_pitch_04": {
+    "rmse_deg": 3.7053442001342773,
+    "lag_ms": 40.0,
+    "tau_rms": 4.184681415557861,
+    "tau_peak": 9.526866912841797,
+    "rms_over_continuous": 0.5579575220743815,
+    "tv_saturation_frac": 0.0
+   },
+   "dof_right_hip_pitch_04": {
+    "rmse_deg": 4.011245250701904,
+    "lag_ms": 40.0,
+    "tau_rms": 4.8190693855285645,
+    "tau_peak": 13.58967399597168,
+    "rms_over_continuous": 0.6425425847371419,
+    "tv_saturation_frac": 0.0
+   },
+   "dof_left_hip_roll_04": {
+    "rmse_deg": 1.2115222215652466,
+    "lag_ms": 140.0,
+    "tau_rms": 1.899526834487915,
+    "tau_peak": 7.055115222930908,
+    "rms_over_continuous": 0.25327024459838865,
+    "tv_saturation_frac": 0.0
+   },
+   "dof_right_hip_roll_04": {
+    "rmse_deg": 0.8611835241317749,
+    "lag_ms": 100.0,
+    "tau_rms": 2.482595443725586,
+    "tau_peak": 5.951560974121094,
+    "rms_over_continuous": 0.3310127258300781,
+    "tv_saturation_frac": 0.0
+   },
+   "dof_left_hip_yaw_03": {
+    "rmse_deg": 0.48521143198013306,
+    "lag_ms": 20.0,
+    "tau_rms": 0.4246731996536255,
+    "tau_peak": 0.8251423835754395,
+    "rms_over_continuous": 0.0849346399307251,
+    "tv_saturation_frac": 0.0
+   },
+   "dof_right_hip_yaw_03": {
+    "rmse_deg": 0.4633781909942627,
+    "lag_ms": 40.0,
+    "tau_rms": 0.48339197039604187,
+    "tau_peak": 1.0559865236282349,
+    "rms_over_continuous": 0.09667839407920838,
+    "tv_saturation_frac": 0.0
+   },
+   "dof_left_knee_04": {
+    "rmse_deg": 0.841090977191925,
+    "lag_ms": 0.0,
+    "tau_rms": 1.0972611904144287,
+    "tau_peak": 3.3542771339416504,
+    "rms_over_continuous": 0.14630149205525717,
+    "tv_saturation_frac": 0.0
+   },
+   "dof_right_knee_04": {
+    "rmse_deg": 0.8676971197128296,
+    "lag_ms": 0.0,
+    "tau_rms": 1.2009044885635376,
+    "tau_peak": 4.795376777648926,
+    "rms_over_continuous": 0.16012059847513835,
+    "tv_saturation_frac": 0.0
+   },
+   "dof_left_ankle_02": {
+    "rmse_deg": 0.4694758653640747,
+    "lag_ms": 0.0,
+    "tau_rms": 0.5059791207313538,
+    "tau_peak": 1.3210299015045166,
+    "rms_over_continuous": 0.10119582414627075,
+    "tv_saturation_frac": 0.7677777777777778
+   },
+   "dof_right_ankle_02": {
+    "rmse_deg": 0.6072419285774231,
+    "lag_ms": 0.0,
+    "tau_rms": 0.5389607548713684,
+    "tau_peak": 1.7272310256958008,
+    "rms_over_continuous": 0.10779215097427368,
+    "tv_saturation_frac": 0.68
+   },
+   "ankle_series_deflection_deg": {
+    "rms": 0.23254036903381348,
+    "peak": 0.6479817032814026
+   }
+  },
+  "d5_k120": {
+   "dof_left_hip_pitch_04": {
+    "rmse_deg": 4.81837797164917,
+    "lag_ms": 60.0,
+    "tau_rms": 3.589578628540039,
+    "tau_peak": 7.102299690246582,
+    "rms_over_continuous": 0.47861048380533855,
+    "tv_saturation_frac": 0.0
+   },
+   "dof_right_hip_pitch_04": {
+    "rmse_deg": 5.240297794342041,
+    "lag_ms": 60.0,
+    "tau_rms": 4.183144569396973,
+    "tau_peak": 10.849944114685059,
+    "rms_over_continuous": 0.5577526092529297,
+    "tv_saturation_frac": 0.0
+   },
+   "dof_left_hip_roll_04": {
+    "rmse_deg": 1.2684069871902466,
+    "lag_ms": 140.0,
+    "tau_rms": 1.5818352699279785,
+    "tau_peak": 5.076446533203125,
+    "rms_over_continuous": 0.21091136932373047,
+    "tv_saturation_frac": 0.0
+   },
+   "dof_right_hip_roll_04": {
+    "rmse_deg": 0.922966480255127,
+    "lag_ms": 100.0,
+    "tau_rms": 2.444140911102295,
+    "tau_peak": 5.252440929412842,
+    "rms_over_continuous": 0.32588545481363934,
+    "tv_saturation_frac": 0.0
+   },
+   "dof_left_hip_yaw_03": {
+    "rmse_deg": 0.705036997795105,
+    "lag_ms": 40.0,
+    "tau_rms": 0.42380934953689575,
+    "tau_peak": 1.1012433767318726,
+    "rms_over_continuous": 0.08476186990737915,
+    "tv_saturation_frac": 0.0
+   },
+   "dof_right_hip_yaw_03": {
+    "rmse_deg": 0.6565995216369629,
+    "lag_ms": 40.0,
+    "tau_rms": 0.45680156350135803,
+    "tau_peak": 1.0448771715164185,
+    "rms_over_continuous": 0.0913603127002716,
+    "tv_saturation_frac": 0.0
+   },
+   "dof_left_knee_04": {
+    "rmse_deg": 3.2253477573394775,
+    "lag_ms": 20.0,
+    "tau_rms": 2.5538599491119385,
+    "tau_peak": 5.704797744750977,
+    "rms_over_continuous": 0.3405146598815918,
+    "tv_saturation_frac": 0.0
+   },
+   "dof_right_knee_04": {
+    "rmse_deg": 3.3676106929779053,
+    "lag_ms": 20.0,
+    "tau_rms": 2.7409231662750244,
+    "tau_peak": 7.076171398162842,
+    "rms_over_continuous": 0.36545642217000324,
+    "tv_saturation_frac": 0.0
+   },
+   "dof_left_ankle_02": {
+    "rmse_deg": 1.0703024864196777,
+    "lag_ms": 20.0,
+    "tau_rms": 0.4914548397064209,
+    "tau_peak": 1.403200387954712,
+    "rms_over_continuous": 0.09829096794128418,
+    "tv_saturation_frac": 0.5922222222222222
+   },
+   "dof_right_ankle_02": {
+    "rmse_deg": 1.2412326335906982,
+    "lag_ms": 20.0,
+    "tau_rms": 0.5777407288551331,
+    "tau_peak": 1.8014795780181885,
+    "rms_over_continuous": 0.11554814577102661,
+    "tv_saturation_frac": 0.7022222222222222
+   },
+   "ankle_series_deflection_deg": {
+    "rms": 0.3731198012828827,
+    "peak": 1.5335345268249512
+   }
+  }
+ }
+}

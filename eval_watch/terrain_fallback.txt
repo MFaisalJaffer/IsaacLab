@@ -1,0 +1,7 @@
+ROBUST TERRAIN FALLBACK BUILD (frozen 2026-07-24)
+  checkpoint: eval_watch/safe_ckpts/terrain_robust_fallback_model_142000.pt
+  source run: logs/rsl_rl/kbot_legs_rough/2026-07-25_00-02-15/model_142000.pt
+  state: Phase-1b gentle-on-terrain. terrain lvl 2.19, 0 falls, ep_len 850,
+         tracking 98-100%. Thermal: knee 1.00x, hip_pitch 1.23x, ankle 1.48x.
+  role: robust fallback while the FLAT-ONLY gentle branch develops. Resume from
+        this if the flat push regresses or terrain robustness is needed again.

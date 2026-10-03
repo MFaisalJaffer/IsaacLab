@@ -1,0 +1,9 @@
+steps=300 envs=64
+  is_standing_env flagged: 0/64 envs
+  min |cmd| seen over run: 0.0000   (threshold 0.1)
+  STANDING gate true: 1.6% of env-steps
+  CALM gate true:     12.4%
+  BOTH true:          0.2%   <-- stand_pose can only pay here
+  mean pose kernel (standing envs): 0.033
+  mean torque gate  (standing envs): 0.028
+  mean stand_pose term value: 0.00020  (x weight 15.0)

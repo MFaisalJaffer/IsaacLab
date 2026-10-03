@@ -1,0 +1,13 @@
+=== STOCHASTIC (training-like) + bursts ON  ckpt=model_219800.pt ===
+burst audit: 64 envs x 1500 steps  [actions: STOCHASTIC (training-like)]
+  event terms present: ['push_robot', 'sustained_push']
+  body[0] name = floating_base_link  (force target; must be the base/torso)
+  sustained_push params: {'force_range': (10.0, 30.0), 'duration_range': (0.5, 2.5), 'rest_range': (3.0, 8.0), 'lateral_bias': 0.5, 'lateral_spread_deg': 20.0}
+  APPLIED FORCE: nonzero on 21.4% of env-steps (1396/1500 steps had >=1 env pushed)
+    magnitude when active: mean=19.5 N  p50=19.2  p90=28.2  max=30.0
+    per-env active fraction: min=13% mean=21% max=32%
+  TERMINATIONS: 187 total over 1500 steps x 64 envs = 0.195% of env-steps
+    by cause: {'time_out': 10, 'base_contact': 0, 'bad_orientation': 142, 'base_height': 67}
+  tilt: mean=11.6 p95=22.6 max=57.3 deg; env-steps >25deg: 3.5%  >45deg: 0.7%
+
+[done] exit 0

@@ -1,0 +1,186 @@
+{
+ "schema": "sim2sim_bareplant_v1",
+ "side": "isaac",
+ "friction_arm": "on",
+ "start_deg": 15.0,
+ "decay_s": 6.0,
+ "joint_order": [
+  "dof_right_hip_pitch_04",
+  "dof_right_hip_roll_04",
+  "dof_right_hip_yaw_03",
+  "dof_right_knee_04",
+  "dof_right_ankle_02",
+  "dof_left_hip_pitch_04",
+  "dof_left_hip_roll_04",
+  "dof_left_hip_yaw_03",
+  "dof_left_knee_04",
+  "dof_left_ankle_02"
+ ],
+ "rate_hz": 200.0,
+ "base": "pinned+lifted 0.6 m",
+ "total_mass_kg": 13.06,
+ "plant_control": {
+  "dof_right_hip_pitch_04": {
+   "Fc_nominal": 4.0,
+   "viscous_b": 1.0,
+   "series_k": 0.0,
+   "kp": 150.0
+  },
+  "dof_right_hip_roll_04": {
+   "Fc_nominal": 4.0,
+   "viscous_b": 1.0,
+   "series_k": 0.0,
+   "kp": 150.0
+  },
+  "dof_right_hip_yaw_03": {
+   "Fc_nominal": 0.4,
+   "viscous_b": 0.0,
+   "series_k": 0.0,
+   "kp": 60.0
+  },
+  "dof_right_knee_04": {
+   "Fc_nominal": 0.6,
+   "viscous_b": 0.2,
+   "series_k": 0.0,
+   "kp": 150.0
+  },
+  "dof_right_ankle_02": {
+   "Fc_nominal": 0.1,
+   "viscous_b": 0.0,
+   "series_k": 23.0,
+   "kp": 60.0
+  },
+  "dof_left_hip_pitch_04": {
+   "Fc_nominal": 4.0,
+   "viscous_b": 1.0,
+   "series_k": 0.0,
+   "kp": 150.0
+  },
+  "dof_left_hip_roll_04": {
+   "Fc_nominal": 4.0,
+   "viscous_b": 1.0,
+   "series_k": 0.0,
+   "kp": 150.0
+  },
+  "dof_left_hip_yaw_03": {
+   "Fc_nominal": 0.4,
+   "viscous_b": 0.0,
+   "series_k": 0.0,
+   "kp": 60.0
+  },
+  "dof_left_knee_04": {
+   "Fc_nominal": 0.6,
+   "viscous_b": 0.2,
+   "series_k": 0.0,
+   "kp": 150.0
+  },
+  "dof_left_ankle_02": {
+   "Fc_nominal": 0.1,
+   "viscous_b": 0.0,
+   "series_k": 23.0,
+   "kp": 60.0
+  }
+ },
+ "results": {
+  "dof_right_hip_pitch_04": {
+   "held_at_release_deg": 15.055,
+   "net_travel_deg": 4.112,
+   "qd_reversal_frac": 1.0,
+   "peak_abs_qd_deg_s": 14.16,
+   "n_extrema": 0,
+   "swing_period_s": null,
+   "abs_tau_mean_Nm": 4.2084,
+   "verdict": "dither / limit cycle"
+  },
+  "dof_right_hip_roll_04": {
+   "held_at_release_deg": -15.02,
+   "net_travel_deg": 0.074,
+   "qd_reversal_frac": 1.0,
+   "peak_abs_qd_deg_s": 8.05,
+   "n_extrema": 1,
+   "swing_period_s": null,
+   "abs_tau_mean_Nm": 4.1359,
+   "verdict": "dither / limit cycle"
+  },
+  "dof_right_hip_yaw_03": {
+   "held_at_release_deg": 14.975,
+   "net_travel_deg": -18.208,
+   "qd_reversal_frac": 1.0,
+   "peak_abs_qd_deg_s": 10.45,
+   "n_extrema": 0,
+   "swing_period_s": null,
+   "abs_tau_mean_Nm": 0.3992,
+   "verdict": "dither / limit cycle"
+  },
+  "dof_right_knee_04": {
+   "held_at_release_deg": -14.958,
+   "net_travel_deg": 1.532,
+   "qd_reversal_frac": 1.0,
+   "peak_abs_qd_deg_s": 15.51,
+   "n_extrema": 1196,
+   "swing_period_s": 0.01,
+   "abs_tau_mean_Nm": 0.6474,
+   "verdict": "dither / limit cycle"
+  },
+  "dof_right_ankle_02": {
+   "held_at_release_deg": 14.9,
+   "net_travel_deg": -27.902,
+   "qd_reversal_frac": 0.8057,
+   "peak_abs_qd_deg_s": 25.41,
+   "n_extrema": 0,
+   "swing_period_s": null,
+   "abs_tau_mean_Nm": 0.1047,
+   "verdict": "dither / limit cycle"
+  },
+  "dof_left_hip_pitch_04": {
+   "held_at_release_deg": 15.014,
+   "net_travel_deg": -4.679,
+   "qd_reversal_frac": 1.0,
+   "peak_abs_qd_deg_s": 14.73,
+   "n_extrema": 0,
+   "swing_period_s": null,
+   "abs_tau_mean_Nm": 4.2111,
+   "verdict": "dither / limit cycle"
+  },
+  "dof_left_hip_roll_04": {
+   "held_at_release_deg": 14.979,
+   "net_travel_deg": -0.554,
+   "qd_reversal_frac": 1.0,
+   "peak_abs_qd_deg_s": 7.88,
+   "n_extrema": 0,
+   "swing_period_s": null,
+   "abs_tau_mean_Nm": 4.1315,
+   "verdict": "dither / limit cycle"
+  },
+  "dof_left_hip_yaw_03": {
+   "held_at_release_deg": 14.975,
+   "net_travel_deg": -17.132,
+   "qd_reversal_frac": 1.0,
+   "peak_abs_qd_deg_s": 10.0,
+   "n_extrema": 0,
+   "swing_period_s": null,
+   "abs_tau_mean_Nm": 0.3992,
+   "verdict": "dither / limit cycle"
+  },
+  "dof_left_knee_04": {
+   "held_at_release_deg": 15.04,
+   "net_travel_deg": -0.658,
+   "qd_reversal_frac": 1.0,
+   "peak_abs_qd_deg_s": 15.27,
+   "n_extrema": 1196,
+   "swing_period_s": 0.01,
+   "abs_tau_mean_Nm": 0.6467,
+   "verdict": "dither / limit cycle"
+  },
+  "dof_left_ankle_02": {
+   "held_at_release_deg": -14.973,
+   "net_travel_deg": 28.033,
+   "qd_reversal_frac": 0.8073,
+   "peak_abs_qd_deg_s": 24.88,
+   "n_extrema": 0,
+   "swing_period_s": null,
+   "abs_tau_mean_Nm": 0.1089,
+   "verdict": "dither / limit cycle"
+  }
+ }
+}

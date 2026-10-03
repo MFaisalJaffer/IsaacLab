@@ -1,0 +1,18 @@
+a3_posture_vx0.15: cmd_vx=0.15  (500 steps x 32 envs)
+  PITCH (fwd+ / back-) deg: first-qtr mean=+36.1  last-qtr mean=+36.3   p50=+36.3  p95=43.4
+  ROLL  (sideways)    deg: first-qtr mean=-0.7  last-qtr mean=+0.4   |p95|=8.2
+  -> steady lean if first~last; GROWING lean = falling
+  base height m: start=0.95  end=0.95   (spawn ~0.72; <0.45 = collapsed)
+  envs still standing tall at end: 32/32
+  forward speed m/s: first-qtr=0.123  last-qtr=0.125   (commanded 0.15)
+  stance-duty: 53%   both-feet-down: 9%   airborne(both up): 3%
+  tilt>25deg fraction of steps: 100%   | tilt>45: 22%
+a3_posture_vx0.30: cmd_vx=0.3  (500 steps x 32 envs)
+  PITCH (fwd+ / back-) deg: first-qtr mean=+35.5  last-qtr mean=+34.9   p50=+36.4  p95=43.4
+  ROLL  (sideways)    deg: first-qtr mean=+0.8  last-qtr mean=+2.4   |p95|=9.5
+  -> steady lean if first~last; GROWING lean = falling
+  base height m: start=0.93  end=0.93   (spawn ~0.72; <0.45 = collapsed)
+  envs still standing tall at end: 31/32
+  forward speed m/s: first-qtr=0.165  last-qtr=0.175   (commanded 0.3)
+  stance-duty: 51%   both-feet-down: 9%   airborne(both up): 6%
+  tilt>25deg fraction of steps: 99%   | tilt>45: 28%

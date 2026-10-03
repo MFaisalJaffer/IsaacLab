@@ -1,0 +1,354 @@
+L2_stand_quality: 64 envs, 12s quiet stand (no pushes)
+  stance width: mean=101.8 cm  p5=55.9  p95=146.1   (lineage-1 stand ~40 cm; hips are ~18 cm apart)
+  base height: mean=0.138 m (healthy ~1.01; kill line 0.55)
+  tilt: pitch mean=-21.3 p95=86.6 deg | roll mean=-0.3 p95=36.2 deg
+  body gyro |w|: mean=0.89 rad/s (rig-quiet ~0.1-0.3)
+  both-feet-down: 34%   foot lifts/min: 125
+  net drift over 12s: mean=41.9 cm  max=138.9 cm
+  HIP-ROLL torque |tau|: mean=15.7 Nm  p95=22.0  max=22.0   (continuous rating 5.0; A-frame brace signature ~15-20 sustained)
+  hip-roll |action|: mean=1.67 (deadband-relevant; brace-era railed ~2.0)
+
+L2_stand_quality_77200: 64 envs, 12s quiet stand (no pushes)
+  stance width: mean=47.8 cm  p5=0.5  p95=132.8   (lineage-1 stand ~40 cm; hips are ~18 cm apart)
+  base height: mean=0.180 m (healthy ~1.01; kill line 0.55)
+  tilt: pitch mean=-1.5 p95=89.4 deg | roll mean=-1.9 p95=81.5 deg
+  body gyro |w|: mean=0.27 rad/s (rig-quiet ~0.1-0.3)
+  both-feet-down: 7%   foot lifts/min: 39
+  net drift over 12s: mean=21.7 cm  max=128.9 cm
+  HIP-ROLL torque |tau|: mean=16.4 Nm  p95=22.0  max=22.0   (continuous rating 5.0; A-frame brace signature ~15-20 sustained)
+  hip-roll |action|: mean=2.23 (deadband-relevant; brace-era railed ~2.0)
+
+L2_stand_via_motion: 64 envs, 12s quiet stand (no pushes)
+  stance width: mean=110.2 cm  p5=58.4  p95=145.9   (lineage-1 stand ~40 cm; hips are ~18 cm apart)
+  base height: mean=0.155 m (healthy ~1.01; kill line 0.55)
+  tilt: pitch mean=+4.5 p95=83.7 deg | roll mean=-1.0 p95=41.8 deg
+  body gyro |w|: mean=0.74 rad/s (rig-quiet ~0.1-0.3)
+  both-feet-down: 40%   foot lifts/min: 125
+  net drift over 12s: mean=41.8 cm  max=130.8 cm
+  HIP-ROLL torque |tau|: mean=17.0 Nm  p95=22.0  max=22.0   (continuous rating 5.0; A-frame brace signature ~15-20 sustained)
+  hip-roll |action|: mean=1.45 (deadband-relevant; brace-era railed ~2.0)
+
+L2_stand_timecourse: 64 envs, 12s quiet stand (no pushes)
+  stance width: mean=104.4 cm  p5=53.6  p95=145.8   (lineage-1 stand ~40 cm; hips are ~18 cm apart)
+  base height: mean=0.143 m (healthy ~1.01; kill line 0.55)
+  tilt: pitch mean=-12.7 p95=86.9 deg | roll mean=+1.7 p95=36.6 deg
+  body gyro |w|: mean=0.88 rad/s (rig-quiet ~0.1-0.3)
+  both-feet-down: 35%   foot lifts/min: 129
+  net drift over 12s: mean=44.3 cm  max=125.5 cm
+  HIP-ROLL torque |tau|: mean=16.2 Nm  p95=22.0  max=22.0   (continuous rating 5.0; A-frame brace signature ~15-20 sustained)
+  hip-roll |action|: mean=1.64 (deadband-relevant; brace-era railed ~2.0)
+  TIMECOURSE — height at end of walk-in: 1.01 m; after stand switch:
+    +0.5s:0.39  +1s:0.30  +2s:0.23  +3s:0.18  +4s:0.15  +6s:0.15  +8s:0.14  +10s:0.14  +12s:0.13
+
+L2_stand_after_package: 64 envs, 12s quiet stand (no pushes)
+  stance width: mean=130.3 cm  p5=92.2  p95=150.3   (lineage-1 stand ~40 cm; hips are ~18 cm apart)
+  base height: mean=0.111 m (healthy ~1.01; kill line 0.55)
+  tilt: pitch mean=+40.0 p95=80.9 deg | roll mean=-26.9 p95=53.2 deg
+  body gyro |w|: mean=0.34 rad/s (rig-quiet ~0.1-0.3)
+  both-feet-down: 46%   foot lifts/min: 154
+  net drift over 12s: mean=18.5 cm  max=42.7 cm
+  HIP-ROLL torque |tau|: mean=18.1 Nm  p95=22.0  max=22.0   (continuous rating 5.0; A-frame brace signature ~15-20 sustained)
+  hip-roll |action|: mean=1.22 (deadband-relevant; brace-era railed ~2.0)
+  TIMECOURSE — height at end of walk-in: 1.01 m; after stand switch:
+    +0.5s:0.79  +1s:0.22  +2s:0.17  +3s:0.14  +4s:0.14  +6s:0.12  +8s:0.10  +10s:0.10  +12s:0.10
+
+L2_stand_via_corridor: 64 envs, 12s quiet stand (no pushes)
+  stance width: mean=126.3 cm  p5=92.5  p95=150.1   (lineage-1 stand ~40 cm; hips are ~18 cm apart)
+  base height: mean=0.114 m (healthy ~1.01; kill line 0.55)
+  tilt: pitch mean=+37.0 p95=72.5 deg | roll mean=-35.4 p95=53.2 deg
+  body gyro |w|: mean=0.25 rad/s (rig-quiet ~0.1-0.3)
+  both-feet-down: 55%   foot lifts/min: 139
+  net drift over 12s: mean=13.5 cm  max=63.1 cm
+  HIP-ROLL torque |tau|: mean=18.0 Nm  p95=22.0  max=22.0   (continuous rating 5.0; A-frame brace signature ~15-20 sustained)
+  hip-roll |action|: mean=1.49 (deadband-relevant; brace-era railed ~2.0)
+  TIMECOURSE — height at end of entry (post-corridor): 1.02 m; after ZERO-cmd switch:
+    +0.5s:0.79  +1s:0.17  +2s:0.15  +3s:0.13  +4s:0.13  +6s:0.12  +8s:0.11  +10s:0.11  +12s:0.11
+
+L3_morning_verdict: 64 envs, 12s quiet stand (no pushes)
+  stance width: mean=33.3 cm  p5=27.8  p95=43.3   (lineage-1 stand ~40 cm; hips are ~18 cm apart)
+  base height: mean=1.006 m (healthy ~1.01; kill line 0.55)
+  tilt: pitch mean=-0.0 p95=4.2 deg | roll mean=+0.0 p95=0.8 deg
+  body gyro |w|: mean=0.12 rad/s (rig-quiet ~0.1-0.3)
+  both-feet-down: 100%   foot lifts/min: 1
+  net drift over 12s: mean=2.1 cm  max=11.3 cm
+  HIP-ROLL torque |tau|: mean=2.2 Nm  p95=5.4  max=12.6   (continuous rating 5.0; A-frame brace signature ~15-20 sustained)
+  hip-roll |action|: mean=0.09 (deadband-relevant; brace-era railed ~2.0)
+  TIMECOURSE — height at end of entry (post-corridor): 1.00 m; after ZERO-cmd switch:
+    +0.5s:1.01  +1s:1.01  +2s:1.01  +3s:1.01  +4s:1.01  +6s:1.01  +8s:1.01  +10s:1.01  +12s:1.01
+
+L4B_3600_stand_rigid: 64 envs, 12s quiet stand (no pushes)
+  stance width: mean=31.4 cm  p5=23.5  p95=52.1   (lineage-1 stand ~40 cm; hips are ~18 cm apart)
+  base height: mean=0.973 m (healthy ~1.01; kill line 0.55)
+  tilt: pitch mean=-2.5 p95=7.7 deg | roll mean=+0.5 p95=2.6 deg
+  body gyro |w|: mean=0.47 rad/s (rig-quiet ~0.1-0.3)
+  both-feet-down: 73%   foot lifts/min: 229
+  net drift over 12s: mean=40.9 cm  max=176.7 cm
+  HIP-ROLL torque |tau|: mean=4.1 Nm  p95=10.6  max=22.0   (continuous rating 5.0; A-frame brace signature ~15-20 sustained)
+  hip-roll |action|: mean=0.13 (deadband-relevant; brace-era railed ~2.0)
+  TIMECOURSE — height at end of entry (post-corridor): 1.00 m; after ZERO-cmd switch:
+    +0.5s:1.00  +1s:1.00  +2s:1.01  +3s:1.01  +4s:1.01  +6s:0.98  +8s:0.98  +10s:0.97  +12s:0.95
+
+L4B_3600_stand_play15: 64 envs, 12s quiet stand (no pushes)
+  stance width: mean=42.2 cm  p5=25.4  p95=58.3   (lineage-1 stand ~40 cm; hips are ~18 cm apart)
+  base height: mean=0.961 m (healthy ~1.01; kill line 0.55)
+  tilt: pitch mean=+0.2 p95=7.3 deg | roll mean=+0.9 p95=2.4 deg
+  body gyro |w|: mean=0.20 rad/s (rig-quiet ~0.1-0.3)
+  both-feet-down: 93%   foot lifts/min: 42
+  net drift over 12s: mean=17.9 cm  max=130.3 cm
+  HIP-ROLL torque |tau|: mean=3.3 Nm  p95=7.8  max=22.0   (continuous rating 5.0; A-frame brace signature ~15-20 sustained)
+  hip-roll |action|: mean=0.22 (deadband-relevant; brace-era railed ~2.0)
+  TIMECOURSE — height at end of entry (post-corridor): 1.00 m; after ZERO-cmd switch:
+    +0.5s:1.00  +1s:1.00  +2s:1.00  +3s:1.00  +4s:1.00  +6s:0.98  +8s:0.96  +10s:0.95  +12s:0.94
+
+L4B2_3600_stand_rigid: 64 envs, 12s quiet stand (no pushes)
+  stance width: mean=42.7 cm  p5=32.7  p95=52.3   (lineage-1 stand ~40 cm; hips are ~18 cm apart)
+  base height: mean=1.006 m (healthy ~1.01; kill line 0.55)
+  tilt: pitch mean=+0.4 p95=2.2 deg | roll mean=+0.8 p95=1.6 deg
+  body gyro |w|: mean=0.22 rad/s (rig-quiet ~0.1-0.3)
+  both-feet-down: 92%   foot lifts/min: 97
+  net drift over 12s: mean=7.1 cm  max=71.2 cm
+  HIP-ROLL torque |tau|: mean=3.1 Nm  p95=7.7  max=22.0   (continuous rating 5.0; A-frame brace signature ~15-20 sustained)
+  hip-roll |action|: mean=0.20 (deadband-relevant; brace-era railed ~2.0)
+  TIMECOURSE — height at end of entry (post-corridor): 1.00 m; after ZERO-cmd switch:
+    +0.5s:1.00  +1s:1.00  +2s:1.01  +3s:1.01  +4s:1.01  +6s:1.01  +8s:1.01  +10s:1.01  +12s:1.01
+
+L4B2_3600_stand_play15: 64 envs, 12s quiet stand (no pushes)
+  stance width: mean=29.6 cm  p5=22.7  p95=38.0   (lineage-1 stand ~40 cm; hips are ~18 cm apart)
+  base height: mean=0.948 m (healthy ~1.01; kill line 0.55)
+  tilt: pitch mean=+1.0 p95=88.4 deg | roll mean=+1.5 p95=3.1 deg
+  body gyro |w|: mean=0.25 rad/s (rig-quiet ~0.1-0.3)
+  both-feet-down: 87%   foot lifts/min: 73
+  net drift over 12s: mean=31.7 cm  max=129.8 cm
+  HIP-ROLL torque |tau|: mean=3.3 Nm  p95=8.1  max=22.0   (continuous rating 5.0; A-frame brace signature ~15-20 sustained)
+  hip-roll |action|: mean=0.07 (deadband-relevant; brace-era railed ~2.0)
+  TIMECOURSE — height at end of entry (post-corridor): 1.00 m; after ZERO-cmd switch:
+    +0.5s:1.00  +1s:1.00  +2s:1.01  +3s:1.00  +4s:0.96  +6s:0.94  +8s:0.94  +10s:0.94  +12s:0.94
+
+L4C_10200_stand_play15: 64 envs, 12s quiet stand (no pushes)
+  stance width: mean=35.6 cm  p5=27.7  p95=54.1   (lineage-1 stand ~40 cm; hips are ~18 cm apart)
+  base height: mean=0.989 m (healthy ~1.01; kill line 0.55)
+  tilt: pitch mean=+4.2 p95=6.6 deg | roll mean=+1.7 p95=3.5 deg
+  body gyro |w|: mean=0.17 rad/s (rig-quiet ~0.1-0.3)
+  both-feet-down: 96%   foot lifts/min: 28
+  net drift over 12s: mean=12.8 cm  max=121.2 cm
+  HIP-ROLL torque |tau|: mean=3.3 Nm  p95=8.1  max=22.0   (continuous rating 5.0; A-frame brace signature ~15-20 sustained)
+  hip-roll |action|: mean=0.14 (deadband-relevant; brace-era railed ~2.0)
+  TIMECOURSE — height at end of entry (post-corridor): 1.00 m; after ZERO-cmd switch:
+    +0.5s:1.00  +1s:1.00  +2s:1.00  +3s:1.00  +4s:0.99  +6s:0.99  +8s:0.99  +10s:0.99  +12s:0.99
+
+L4C_10200_stand_rigid: 64 envs, 12s quiet stand (no pushes)
+  stance width: mean=44.1 cm  p5=31.7  p95=59.3   (lineage-1 stand ~40 cm; hips are ~18 cm apart)
+  base height: mean=1.004 m (healthy ~1.01; kill line 0.55)
+  tilt: pitch mean=-1.3 p95=2.5 deg | roll mean=+0.7 p95=1.2 deg
+  body gyro |w|: mean=0.15 rad/s (rig-quiet ~0.1-0.3)
+  both-feet-down: 97%   foot lifts/min: 41
+  net drift over 12s: mean=2.2 cm  max=8.9 cm
+  HIP-ROLL torque |tau|: mean=2.3 Nm  p95=5.8  max=14.4   (continuous rating 5.0; A-frame brace signature ~15-20 sustained)
+  hip-roll |action|: mean=0.24 (deadband-relevant; brace-era railed ~2.0)
+  TIMECOURSE — height at end of entry (post-corridor): 1.00 m; after ZERO-cmd switch:
+    +0.5s:1.01  +1s:1.01  +2s:1.01  +3s:1.00  +4s:1.00  +6s:1.00  +8s:1.00  +10s:1.00  +12s:1.00
+
+L4D_25600_stand_play15: 64 envs, 12s quiet stand (no pushes)
+  stance width: mean=31.9 cm  p5=26.6  p95=46.3   (lineage-1 stand ~40 cm; hips are ~18 cm apart)
+  base height: mean=0.979 m (healthy ~1.01; kill line 0.55)
+  tilt: pitch mean=+3.6 p95=7.4 deg | roll mean=+1.1 p95=3.7 deg
+  body gyro |w|: mean=0.24 rad/s (rig-quiet ~0.1-0.3)
+  both-feet-down: 94%   foot lifts/min: 40
+  net drift over 12s: mean=26.6 cm  max=172.8 cm
+  HIP-ROLL torque |tau|: mean=3.1 Nm  p95=8.0  max=22.0   (continuous rating 5.0; A-frame brace signature ~15-20 sustained)
+  hip-roll |action|: mean=0.08 (deadband-relevant; brace-era railed ~2.0)
+  TIMECOURSE — height at end of entry (post-corridor): 1.00 m; after ZERO-cmd switch:
+    +0.5s:1.00  +1s:1.00  +2s:1.00  +3s:1.00  +4s:1.00  +6s:0.99  +8s:0.98  +10s:0.97  +12s:0.97
+
+L4E_38800_stand_play15: 64 envs, 12s quiet stand (no pushes)
+  stance width: mean=37.9 cm  p5=28.6  p95=57.2   (lineage-1 stand ~40 cm; hips are ~18 cm apart)
+  base height: mean=0.994 m (healthy ~1.01; kill line 0.55)
+  tilt: pitch mean=+7.1 p95=9.1 deg | roll mean=+1.3 p95=3.8 deg
+  body gyro |w|: mean=0.16 rad/s (rig-quiet ~0.1-0.3)
+  both-feet-down: 96%   foot lifts/min: 32
+  net drift over 12s: mean=14.9 cm  max=172.5 cm
+  HIP-ROLL torque |tau|: mean=2.8 Nm  p95=7.3  max=22.0   (continuous rating 5.0; A-frame brace signature ~15-20 sustained)
+  hip-roll |action|: mean=0.16 (deadband-relevant; brace-era railed ~2.0)
+  TIMECOURSE — height at end of entry (post-corridor): 1.00 m; after ZERO-cmd switch:
+    +0.5s:1.00  +1s:1.00  +2s:1.00  +3s:1.00  +4s:1.00  +6s:1.00  +8s:1.00  +10s:0.99  +12s:0.99
+
+L4G_41400_stand_play15: 64 envs, 12s quiet stand (no pushes)
+  stance width: mean=38.0 cm  p5=26.0  p95=57.6   (lineage-1 stand ~40 cm; hips are ~18 cm apart)
+  base height: mean=0.971 m (healthy ~1.01; kill line 0.55)
+  tilt: pitch mean=+7.4 p95=13.0 deg | roll mean=+0.7 p95=3.3 deg
+  body gyro |w|: mean=0.23 rad/s (rig-quiet ~0.1-0.3)
+  both-feet-down: 92%   foot lifts/min: 46
+  net drift over 12s: mean=30.2 cm  max=208.0 cm
+  HIP-ROLL torque |tau|: mean=3.3 Nm  p95=8.7  max=22.0   (continuous rating 5.0; A-frame brace signature ~15-20 sustained)
+  hip-roll |action|: mean=0.15 (deadband-relevant; brace-era railed ~2.0)
+  TIMECOURSE — height at end of entry (post-corridor): 1.00 m; after ZERO-cmd switch:
+    +0.5s:0.99  +1s:0.99  +2s:0.99  +3s:0.98  +4s:0.98  +6s:0.97  +8s:0.97  +10s:0.97  +12s:0.97
+
+L5B_3600_stand_play4: 64 envs, 12s quiet stand (no pushes)
+  stance width: mean=44.0 cm  p5=28.6  p95=61.5   (lineage-1 stand ~40 cm; hips are ~18 cm apart)
+  base height: mean=0.988 m (healthy ~1.01; kill line 0.55)
+  tilt: pitch mean=-0.3 p95=4.6 deg | roll mean=+0.9 p95=2.0 deg
+  body gyro |w|: mean=0.10 rad/s (rig-quiet ~0.1-0.3)
+  both-feet-down: 98%   foot lifts/min: 8
+  net drift over 12s: mean=2.5 cm  max=8.7 cm
+  HIP-ROLL torque |tau|: mean=2.6 Nm  p95=6.3  max=20.5   (continuous rating 5.0; A-frame brace signature ~15-20 sustained)
+  hip-roll |action|: mean=0.25 (deadband-relevant; brace-era railed ~2.0)
+  TIMECOURSE — height at end of entry (post-corridor): 0.98 m; after ZERO-cmd switch:
+    +0.5s:0.99  +1s:0.99  +2s:0.99  +3s:0.99  +4s:0.99  +6s:0.99  +8s:0.99  +10s:0.99  +12s:0.99
+
+L5B_3600_stand_rigid: 64 envs, 12s quiet stand (no pushes)
+  stance width: mean=50.7 cm  p5=30.3  p95=66.7   (lineage-1 stand ~40 cm; hips are ~18 cm apart)
+  base height: mean=1.000 m (healthy ~1.01; kill line 0.55)
+  tilt: pitch mean=+0.1 p95=1.7 deg | roll mean=+1.1 p95=1.8 deg
+  body gyro |w|: mean=0.11 rad/s (rig-quiet ~0.1-0.3)
+  both-feet-down: 100%   foot lifts/min: 7
+  net drift over 12s: mean=1.0 cm  max=2.9 cm
+  HIP-ROLL torque |tau|: mean=2.9 Nm  p95=7.0  max=12.4   (continuous rating 5.0; A-frame brace signature ~15-20 sustained)
+  hip-roll |action|: mean=0.33 (deadband-relevant; brace-era railed ~2.0)
+  TIMECOURSE — height at end of entry (post-corridor): 1.00 m; after ZERO-cmd switch:
+    +0.5s:1.00  +1s:1.00  +2s:1.00  +3s:1.00  +4s:1.00  +6s:1.00  +8s:1.00  +10s:1.00  +12s:1.00
+
+L6B_3600_stand_play4: 64 envs, 12s quiet stand (no pushes)
+  stance width: mean=32.7 cm  p5=24.6  p95=47.0   (lineage-1 stand ~40 cm; hips are ~18 cm apart)
+  base height: mean=0.962 m (healthy ~1.01; kill line 0.55)
+  tilt: pitch mean=-0.5 p95=9.2 deg | roll mean=+0.3 p95=1.1 deg
+  body gyro |w|: mean=0.17 rad/s (rig-quiet ~0.1-0.3)
+  both-feet-down: 94%   foot lifts/min: 18
+  net drift over 12s: mean=2.8 cm  max=37.5 cm
+  HIP-ROLL torque |tau|: mean=2.8 Nm  p95=6.7  max=16.0   (continuous rating 5.0; A-frame brace signature ~15-20 sustained)
+  hip-roll |action|: mean=0.10 (deadband-relevant; brace-era railed ~2.0)
+  TIMECOURSE — height at end of entry (post-corridor): 0.96 m; after ZERO-cmd switch:
+    +0.5s:0.96  +1s:0.96  +2s:0.96  +3s:0.96  +4s:0.96  +6s:0.96  +8s:0.96  +10s:0.96  +12s:0.96
+
+L6B_3600_stand_rigid: 64 envs, 12s quiet stand (no pushes)
+  stance width: mean=37.7 cm  p5=27.9  p95=52.3   (lineage-1 stand ~40 cm; hips are ~18 cm apart)
+  base height: mean=0.991 m (healthy ~1.01; kill line 0.55)
+  tilt: pitch mean=-5.4 p95=5.7 deg | roll mean=+0.2 p95=0.5 deg
+  body gyro |w|: mean=0.14 rad/s (rig-quiet ~0.1-0.3)
+  both-feet-down: 98%   foot lifts/min: 14
+  net drift over 12s: mean=1.2 cm  max=3.7 cm
+  HIP-ROLL torque |tau|: mean=2.7 Nm  p95=6.5  max=14.5   (continuous rating 5.0; A-frame brace signature ~15-20 sustained)
+  hip-roll |action|: mean=0.14 (deadband-relevant; brace-era railed ~2.0)
+  TIMECOURSE — height at end of entry (post-corridor): 0.99 m; after ZERO-cmd switch:
+    +0.5s:0.99  +1s:0.99  +2s:0.99  +3s:0.99  +4s:0.99  +6s:0.99  +8s:0.99  +10s:0.99  +12s:0.99
+
+L5C_24800_stand_play4: 64 envs, 12s quiet stand (no pushes)
+  stance width: mean=46.8 cm  p5=36.6  p95=54.2   (lineage-1 stand ~40 cm; hips are ~18 cm apart)
+  base height: mean=1.003 m (healthy ~1.01; kill line 0.55)
+  tilt: pitch mean=+3.1 p95=4.5 deg | roll mean=+1.4 p95=1.9 deg
+  body gyro |w|: mean=0.10 rad/s (rig-quiet ~0.1-0.3)
+  both-feet-down: 100%   foot lifts/min: 2
+  net drift over 12s: mean=1.3 cm  max=6.5 cm
+  HIP-ROLL torque |tau|: mean=2.1 Nm  p95=5.1  max=12.6   (continuous rating 5.0; A-frame brace signature ~15-20 sustained)
+  hip-roll |action|: mean=0.29 (deadband-relevant; brace-era railed ~2.0)
+  TIMECOURSE — height at end of entry (post-corridor): 1.00 m; after ZERO-cmd switch:
+    +0.5s:1.00  +1s:1.00  +2s:1.00  +3s:1.00  +4s:1.00  +6s:1.00  +8s:1.00  +10s:1.00  +12s:1.00
+
+NP_L5_24800_stand: 64 envs, 12s quiet stand (no pushes)
+  stance width: mean=29.8 cm  p5=14.9  p95=50.4   (lineage-1 stand ~40 cm; hips are ~18 cm apart)
+  base height: mean=0.087 m (healthy ~1.01; kill line 0.55)
+  tilt: pitch mean=+69.8 p95=89.4 deg | roll mean=+6.2 p95=20.1 deg
+  body gyro |w|: mean=0.11 rad/s (rig-quiet ~0.1-0.3)
+  both-feet-down: 11%   foot lifts/min: 126
+  net drift over 12s: mean=3.2 cm  max=16.3 cm
+  HIP-ROLL torque |tau|: mean=15.6 Nm  p95=22.0  max=22.0   (continuous rating 5.0; A-frame brace signature ~15-20 sustained)
+  hip-roll |action|: mean=0.42 (deadband-relevant; brace-era railed ~2.0)
+  TIMECOURSE — height at end of entry (post-corridor): 0.07 m; after ZERO-cmd switch:
+    +0.5s:0.07  +1s:0.07  +2s:0.08  +3s:0.08  +4s:0.08  +6s:0.08  +8s:0.09  +10s:0.09  +12s:0.09
+
+NP_L4_39000_stand: 64 envs, 12s quiet stand (no pushes)
+  stance width: mean=32.7 cm  p5=19.7  p95=44.9   (lineage-1 stand ~40 cm; hips are ~18 cm apart)
+  base height: mean=0.069 m (healthy ~1.01; kill line 0.55)
+  tilt: pitch mean=+73.8 p95=89.4 deg | roll mean=+1.6 p95=16.2 deg
+  body gyro |w|: mean=0.11 rad/s (rig-quiet ~0.1-0.3)
+  both-feet-down: 3%   foot lifts/min: 109
+  net drift over 12s: mean=3.0 cm  max=78.0 cm
+  HIP-ROLL torque |tau|: mean=12.7 Nm  p95=22.0  max=22.0   (continuous rating 5.0; A-frame brace signature ~15-20 sustained)
+  hip-roll |action|: mean=0.27 (deadband-relevant; brace-era railed ~2.0)
+  TIMECOURSE — height at end of entry (post-corridor): 0.11 m; after ZERO-cmd switch:
+    +0.5s:0.10  +1s:0.10  +2s:0.08  +3s:0.08  +4s:0.07  +6s:0.07  +8s:0.07  +10s:0.07  +12s:0.07
+
+NP2_L5_24800_stand: 64 envs, 12s quiet stand (no pushes)
+  stance width: mean=31.6 cm  p5=17.8  p95=54.4   (lineage-1 stand ~40 cm; hips are ~18 cm apart)
+  base height: mean=0.093 m (healthy ~1.01; kill line 0.55)
+  tilt: pitch mean=+61.2 p95=89.4 deg | roll mean=+6.5 p95=20.4 deg
+  body gyro |w|: mean=0.08 rad/s (rig-quiet ~0.1-0.3)
+  both-feet-down: 6%   foot lifts/min: 132
+  net drift over 12s: mean=4.3 cm  max=104.6 cm
+  HIP-ROLL torque |tau|: mean=15.9 Nm  p95=22.0  max=22.0   (continuous rating 5.0; A-frame brace signature ~15-20 sustained)
+  hip-roll |action|: mean=0.39 (deadband-relevant; brace-era railed ~2.0)
+  TIMECOURSE — height at end of entry (post-corridor): 0.10 m; after ZERO-cmd switch:
+    +0.5s:0.09  +1s:0.09  +2s:0.09  +3s:0.10  +4s:0.10  +6s:0.10  +8s:0.10  +10s:0.09  +12s:0.09
+
+NP2_L4_39000_stand: 64 envs, 12s quiet stand (no pushes)
+  stance width: mean=33.4 cm  p5=21.3  p95=46.2   (lineage-1 stand ~40 cm; hips are ~18 cm apart)
+  base height: mean=0.075 m (healthy ~1.01; kill line 0.55)
+  tilt: pitch mean=+58.8 p95=89.4 deg | roll mean=+3.7 p95=19.1 deg
+  body gyro |w|: mean=0.13 rad/s (rig-quiet ~0.1-0.3)
+  both-feet-down: 5%   foot lifts/min: 121
+  net drift over 12s: mean=2.3 cm  max=9.2 cm
+  HIP-ROLL torque |tau|: mean=13.9 Nm  p95=22.0  max=22.0   (continuous rating 5.0; A-frame brace signature ~15-20 sustained)
+  hip-roll |action|: mean=0.30 (deadband-relevant; brace-era railed ~2.0)
+  TIMECOURSE — height at end of entry (post-corridor): 0.09 m; after ZERO-cmd switch:
+    +0.5s:0.09  +1s:0.07  +2s:0.07  +3s:0.08  +4s:0.08  +6s:0.08  +8s:0.07  +10s:0.08  +12s:0.07
+
+L7B_3600_stand: 64 envs, 12s quiet stand (no pushes)
+  stance width: mean=41.2 cm  p5=26.8  p95=69.2   (lineage-1 stand ~40 cm; hips are ~18 cm apart)
+  base height: mean=0.707 m (healthy ~1.01; kill line 0.55)
+  tilt: pitch mean=-3.1 p95=89.5 deg | roll mean=-0.2 p95=34.3 deg
+  body gyro |w|: mean=0.15 rad/s (rig-quiet ~0.1-0.3)
+  both-feet-down: 62%   foot lifts/min: 85
+  net drift over 12s: mean=29.8 cm  max=138.1 cm
+  HIP-ROLL torque |tau|: mean=15.0 Nm  p95=22.0  max=22.0   (continuous rating 5.0; A-frame brace signature ~15-20 sustained)
+  hip-roll |action|: mean=0.51 (deadband-relevant; brace-era railed ~2.0)
+  TIMECOURSE — height at end of entry (post-corridor): 0.84 m; after ZERO-cmd switch:
+    +0.5s:0.85  +1s:0.84  +2s:0.84  +3s:0.82  +4s:0.79  +6s:0.77  +8s:0.75  +10s:0.69  +12s:0.66
+
+NPB_52200_stand: 64 envs, 12s quiet stand (no pushes)
+  stance width: mean=36.1 cm  p5=30.1  p95=43.8   (lineage-1 stand ~40 cm; hips are ~18 cm apart)
+  base height: mean=1.007 m (healthy ~1.01; kill line 0.55)
+  tilt: pitch mean=+0.0 p95=3.6 deg | roll mean=+0.6 p95=1.9 deg
+  body gyro |w|: mean=0.20 rad/s (rig-quiet ~0.1-0.3)
+  both-feet-down: 96%   foot lifts/min: 50
+  net drift over 12s: mean=13.7 cm  max=86.1 cm
+  HIP-ROLL torque |tau|: mean=3.6 Nm  p95=8.0  max=20.5   (continuous rating 5.0; A-frame brace signature ~15-20 sustained)
+  hip-roll |action|: mean=0.16 (deadband-relevant; brace-era railed ~2.0)
+  TIMECOURSE — height at end of entry (post-corridor): 1.00 m; after ZERO-cmd switch:
+    +0.5s:1.01  +1s:1.01  +2s:1.01  +3s:1.01  +4s:1.01  +6s:1.01  +8s:1.01  +10s:1.01  +12s:1.01
+
+GB_65400_stand: 64 envs, 12s quiet stand (no pushes)
+  stance width: mean=35.7 cm  p5=31.6  p95=41.8   (lineage-1 stand ~40 cm; hips are ~18 cm apart)
+  base height: mean=1.006 m (healthy ~1.01; kill line 0.55)
+  tilt: pitch mean=-1.3 p95=4.5 deg | roll mean=+0.7 p95=1.6 deg
+  body gyro |w|: mean=0.17 rad/s (rig-quiet ~0.1-0.3)
+  both-feet-down: 98%   foot lifts/min: 25
+  net drift over 12s: mean=3.7 cm  max=20.5 cm
+  HIP-ROLL torque |tau|: mean=3.6 Nm  p95=8.2  max=22.0   (continuous rating 5.0; A-frame brace signature ~15-20 sustained)
+  hip-roll |action|: mean=0.15 (deadband-relevant; brace-era railed ~2.0)
+  TIMECOURSE — height at end of entry (post-corridor): 1.00 m; after ZERO-cmd switch:
+    +0.5s:1.01  +1s:1.01  +2s:1.01  +3s:1.01  +4s:1.01  +6s:1.01  +8s:1.01  +10s:1.01  +12s:1.01
+
+H3_82000_stand: 64 envs, 12s quiet stand (no pushes)
+  stance width: mean=47.1 cm  p5=37.6  p95=55.7   (lineage-1 stand ~40 cm; hips are ~18 cm apart)
+  base height: mean=1.003 m (healthy ~1.01; kill line 0.55)
+  tilt: pitch mean=-2.1 p95=5.3 deg | roll mean=+1.8 p95=2.8 deg
+  body gyro |w|: mean=0.18 rad/s (rig-quiet ~0.1-0.3)
+  both-feet-down: 99%   foot lifts/min: 12
+  net drift over 12s: mean=5.4 cm  max=14.6 cm
+  HIP-ROLL torque |tau|: mean=3.8 Nm  p95=8.9  max=22.0   (continuous rating 5.0; A-frame brace signature ~15-20 sustained)
+  hip-roll |action|: mean=0.28 (deadband-relevant; brace-era railed ~2.0)
+  TIMECOURSE — height at end of entry (post-corridor): 1.00 m; after ZERO-cmd switch:
+    +0.5s:1.00  +1s:1.00  +2s:1.00  +3s:1.00  +4s:1.00  +6s:1.00  +8s:1.00  +10s:1.00  +12s:1.00
+
+WS_45200_stand: 64 envs, 12s quiet stand (no pushes)
+  stance width: mean=56.8 cm  p5=42.1  p95=63.4   (lineage-1 stand ~40 cm; hips are ~18 cm apart)
+  base height: mean=0.996 m (healthy ~1.01; kill line 0.55)
+  tilt: pitch mean=-1.8 p95=5.0 deg | roll mean=+1.1 p95=1.7 deg
+  body gyro |w|: mean=0.15 rad/s (rig-quiet ~0.1-0.3)
+  both-feet-down: 99%   foot lifts/min: 10
+  net drift over 12s: mean=6.0 cm  max=29.5 cm
+  HIP-ROLL torque |tau|: mean=3.8 Nm  p95=8.7  max=22.0   (continuous rating 5.0; A-frame brace signature ~15-20 sustained)
+  hip-roll |action|: mean=0.41 (deadband-relevant; brace-era railed ~2.0)
+  TIMECOURSE — height at end of entry (post-corridor): 0.99 m; after ZERO-cmd switch:
+    +0.5s:1.00  +1s:1.00  +2s:1.00  +3s:1.00  +4s:1.00  +6s:1.00  +8s:1.00  +10s:1.00  +12s:1.00
+

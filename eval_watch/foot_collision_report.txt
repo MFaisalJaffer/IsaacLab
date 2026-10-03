@@ -1,0 +1,60 @@
+/kbotv2p0_nohands/KB_D_501L_L_LEG_FOOT
+    {'type': 'Xform', 'collisionAPI': False, 'schemas': ['PhysicsRigidBodyAPI', 'PhysicsMassAPI']}
+/kbotv2p0_nohands/KB_D_501L_L_LEG_FOOT/visuals
+    {'type': 'Xform', 'collisionAPI': False, 'schemas': []}
+/kbotv2p0_nohands/KB_D_501L_L_LEG_FOOT/visuals/KB_D_501L_L_LEG_FOOT_visual
+    {'type': 'Xform', 'collisionAPI': False, 'schemas': []}
+/kbotv2p0_nohands/KB_D_501L_L_LEG_FOOT/visuals/KB_D_501L_L_LEG_FOOT_visual/node_STL_BINARY_
+    {'type': 'Xform', 'collisionAPI': False, 'schemas': []}
+/kbotv2p0_nohands/KB_D_501L_L_LEG_FOOT/visuals/KB_D_501L_L_LEG_FOOT_visual/node_STL_BINARY_/Looks
+    {'type': 'Scope', 'collisionAPI': False, 'schemas': []}
+/kbotv2p0_nohands/KB_D_501L_L_LEG_FOOT/visuals/KB_D_501L_L_LEG_FOOT_visual/node_STL_BINARY_/Looks/DefaultMaterial
+    {'type': 'Material', 'collisionAPI': False, 'schemas': []}
+/kbotv2p0_nohands/KB_D_501L_L_LEG_FOOT/visuals/KB_D_501L_L_LEG_FOOT_visual/node_STL_BINARY_/Looks/DefaultMaterial/DefaultMaterial
+    {'type': 'Shader', 'collisionAPI': False, 'schemas': ['NodeDefAPI']}
+/kbotv2p0_nohands/KB_D_501L_L_LEG_FOOT/visuals/KB_D_501L_L_LEG_FOOT_visual/node_STL_BINARY_/mesh
+    {'type': 'Mesh', 'collisionAPI': False, 'schemas': ['MaterialBindingAPI'], 'extent': Vt.Vec3fArray(2, (Gf.Vec3f(-0.13488274812698364, -0.021999800577759743, -0.02200000174343586), Gf.Vec3f(0.07700000703334808, 0.04679606482386589, 0.05000000819563866)))}
+/kbotv2p0_nohands/KB_D_501L_L_LEG_FOOT/collisions
+    {'type': 'Xform', 'collisionAPI': False, 'schemas': []}
+/kbotv2p0_nohands/KB_D_501L_L_LEG_FOOT/collisions/KB_D_501L_L_LEG_FOOT_collision
+    {'type': 'Xform', 'collisionAPI': False, 'schemas': []}
+/kbotv2p0_nohands/KB_D_501L_L_LEG_FOOT/collisions/KB_D_501L_L_LEG_FOOT_collision/node_STL_BINARY_
+    {'type': 'Xform', 'collisionAPI': True, 'schemas': ['PhysicsCollisionAPI', 'PhysicsMeshCollisionAPI'], 'approximation': ('convexHull', 'authored')}
+/kbotv2p0_nohands/KB_D_501L_L_LEG_FOOT/collisions/KB_D_501L_L_LEG_FOOT_collision/node_STL_BINARY_/Looks
+    {'type': 'Scope', 'collisionAPI': False, 'schemas': []}
+/kbotv2p0_nohands/KB_D_501L_L_LEG_FOOT/collisions/KB_D_501L_L_LEG_FOOT_collision/node_STL_BINARY_/Looks/DefaultMaterial
+    {'type': 'Material', 'collisionAPI': False, 'schemas': []}
+/kbotv2p0_nohands/KB_D_501L_L_LEG_FOOT/collisions/KB_D_501L_L_LEG_FOOT_collision/node_STL_BINARY_/Looks/DefaultMaterial/DefaultMaterial
+    {'type': 'Shader', 'collisionAPI': False, 'schemas': ['NodeDefAPI']}
+/kbotv2p0_nohands/KB_D_501L_L_LEG_FOOT/collisions/KB_D_501L_L_LEG_FOOT_collision/node_STL_BINARY_/mesh
+    {'type': 'Mesh', 'collisionAPI': False, 'schemas': ['MaterialBindingAPI'], 'extent': Vt.Vec3fArray(2, (Gf.Vec3f(-0.13463619351387024, -0.02167567051947117, -0.02200000174343586), Gf.Vec3f(0.07700000703334808, 0.04679606482386589, 0.05000000819563866)))}
+/kbotv2p0_nohands/KB_D_501R_R_LEG_FOOT
+    {'type': 'Xform', 'collisionAPI': False, 'schemas': ['PhysicsRigidBodyAPI', 'PhysicsMassAPI']}
+/kbotv2p0_nohands/KB_D_501R_R_LEG_FOOT/visuals
+    {'type': 'Xform', 'collisionAPI': False, 'schemas': []}
+/kbotv2p0_nohands/KB_D_501R_R_LEG_FOOT/visuals/KB_D_501R_R_LEG_FOOT_visual
+    {'type': 'Xform', 'collisionAPI': False, 'schemas': []}
+/kbotv2p0_nohands/KB_D_501R_R_LEG_FOOT/visuals/KB_D_501R_R_LEG_FOOT_visual/node_STL_BINARY_
+    {'type': 'Xform', 'collisionAPI': False, 'schemas': []}
+/kbotv2p0_nohands/KB_D_501R_R_LEG_FOOT/visuals/KB_D_501R_R_LEG_FOOT_visual/node_STL_BINARY_/Looks
+    {'type': 'Scope', 'collisionAPI': False, 'schemas': []}
+/kbotv2p0_nohands/KB_D_501R_R_LEG_FOOT/visuals/KB_D_501R_R_LEG_FOOT_visual/node_STL_BINARY_/Looks/DefaultMaterial
+    {'type': 'Material', 'collisionAPI': False, 'schemas': []}
+/kbotv2p0_nohands/KB_D_501R_R_LEG_FOOT/visuals/KB_D_501R_R_LEG_FOOT_visual/node_STL_BINARY_/Looks/DefaultMaterial/DefaultMaterial
+    {'type': 'Shader', 'collisionAPI': False, 'schemas': ['NodeDefAPI']}
+/kbotv2p0_nohands/KB_D_501R_R_LEG_FOOT/visuals/KB_D_501R_R_LEG_FOOT_visual/node_STL_BINARY_/mesh
+    {'type': 'Mesh', 'collisionAPI': False, 'schemas': ['MaterialBindingAPI'], 'extent': Vt.Vec3fArray(2, (Gf.Vec3f(-0.13488274812698364, -0.021999800577759743, -0.05000000447034836), Gf.Vec3f(0.07700000703334808, 0.04679606482386589, 0.022000007331371307)))}
+/kbotv2p0_nohands/KB_D_501R_R_LEG_FOOT/collisions
+    {'type': 'Xform', 'collisionAPI': False, 'schemas': []}
+/kbotv2p0_nohands/KB_D_501R_R_LEG_FOOT/collisions/KB_D_501R_R_LEG_FOOT_collision
+    {'type': 'Xform', 'collisionAPI': False, 'schemas': []}
+/kbotv2p0_nohands/KB_D_501R_R_LEG_FOOT/collisions/KB_D_501R_R_LEG_FOOT_collision/node_STL_BINARY_
+    {'type': 'Xform', 'collisionAPI': True, 'schemas': ['PhysicsCollisionAPI', 'PhysicsMeshCollisionAPI'], 'approximation': ('convexHull', 'authored')}
+/kbotv2p0_nohands/KB_D_501R_R_LEG_FOOT/collisions/KB_D_501R_R_LEG_FOOT_collision/node_STL_BINARY_/Looks
+    {'type': 'Scope', 'collisionAPI': False, 'schemas': []}
+/kbotv2p0_nohands/KB_D_501R_R_LEG_FOOT/collisions/KB_D_501R_R_LEG_FOOT_collision/node_STL_BINARY_/Looks/DefaultMaterial
+    {'type': 'Material', 'collisionAPI': False, 'schemas': []}
+/kbotv2p0_nohands/KB_D_501R_R_LEG_FOOT/collisions/KB_D_501R_R_LEG_FOOT_collision/node_STL_BINARY_/Looks/DefaultMaterial/DefaultMaterial
+    {'type': 'Shader', 'collisionAPI': False, 'schemas': ['NodeDefAPI']}
+/kbotv2p0_nohands/KB_D_501R_R_LEG_FOOT/collisions/KB_D_501R_R_LEG_FOOT_collision/node_STL_BINARY_/mesh
+    {'type': 'Mesh', 'collisionAPI': False, 'schemas': ['MaterialBindingAPI'], 'extent': Vt.Vec3fArray(2, (Gf.Vec3f(-0.13463619351387024, -0.02167567051947117, -0.05000000074505806), Gf.Vec3f(0.0767955482006073, 0.04679606482386589, 0.022000005468726158)))}

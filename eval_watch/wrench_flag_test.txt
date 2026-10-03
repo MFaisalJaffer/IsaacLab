@@ -1,0 +1,26 @@
+=== num_envs=64 ===
+burst audit: 64 envs x 600 steps  [actions: deterministic]
+  event terms present: ['push_robot', 'sustained_push']
+  body[0] name = floating_base_link  (force target; must be the base/torso)
+  sustained_push params: {'force_range': (10.0, 30.0), 'duration_range': (0.5, 2.5), 'rest_range': (3.0, 8.0), 'lateral_bias': 0.5, 'lateral_spread_deg': 20.0}
+  APPLIED FORCE: nonzero on 18.7% of env-steps (496/600 steps had >=1 env pushed)
+    magnitude when active: mean=19.8 N  p50=20.1  p90=27.4  max=29.8
+    per-env active fraction: min=5% mean=19% max=34%
+  *** has_external_wrench TRUE on 408/600 steps (68.0%) — if LOW, forces are being CLOBBERED ***
+  TERMINATIONS: 58 total over 600 steps x 64 envs = 0.151% of env-steps
+    by cause: {'time_out': 0, 'base_contact': 0, 'bad_orientation': 44, 'base_height': 23}
+  tilt: mean=12.8 p95=22.5 max=57.3 deg; env-steps >25deg: 2.9%  >45deg: 0.6%
+
+=== num_envs=4096 ===
+burst audit: 4096 envs x 600 steps  [actions: deterministic]
+  event terms present: ['push_robot', 'sustained_push']
+  body[0] name = floating_base_link  (force target; must be the base/torso)
+  sustained_push params: {'force_range': (10.0, 30.0), 'duration_range': (0.5, 2.5), 'rest_range': (3.0, 8.0), 'lateral_bias': 0.5, 'lateral_spread_deg': 20.0}
+  APPLIED FORCE: nonzero on 19.6% of env-steps (496/600 steps had >=1 env pushed)
+    magnitude when active: mean=19.9 N  p50=20.0  p90=28.0  max=30.0
+    per-env active fraction: min=5% mean=20% max=42%
+  *** has_external_wrench TRUE on 226/600 steps (37.7%) — if LOW, forces are being CLOBBERED ***
+  TERMINATIONS: 579 total over 600 steps x 4096 envs = 0.024% of env-steps
+    by cause: {'time_out': 0, 'base_contact': 0, 'bad_orientation': 440, 'base_height': 206}
+  tilt: mean=12.1 p95=21.1 max=57.3 deg; env-steps >25deg: 0.6%  >45deg: 0.1%
+

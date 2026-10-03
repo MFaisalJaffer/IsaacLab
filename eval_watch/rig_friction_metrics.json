@@ -1,0 +1,348 @@
+{
+ "schema": "sim2sim_friction_v1",
+ "ladder_deg": [
+  0.5,
+  1.0,
+  2.0,
+  5.0,
+  10.0,
+  20.0
+ ],
+ "decay_start_deg": 15.0,
+ "kp": [
+  150.0,
+  150.0,
+  60.0,
+  150.0,
+  60.0,
+  150.0,
+  150.0,
+  60.0,
+  150.0,
+  60.0
+ ],
+ "kd": [
+  2.5,
+  1.5,
+  1.0,
+  1.0,
+  0.5,
+  2.5,
+  1.5,
+  1.0,
+  1.0,
+  0.5
+ ],
+ "joint_order": [
+  "dof_right_hip_pitch_04",
+  "dof_right_hip_roll_04",
+  "dof_right_hip_yaw_03",
+  "dof_right_knee_04",
+  "dof_right_ankle_02",
+  "dof_left_hip_pitch_04",
+  "dof_left_hip_roll_04",
+  "dof_left_hip_yaw_03",
+  "dof_left_knee_04",
+  "dof_left_ankle_02"
+ ],
+ "rate_hz": 100.0,
+ "base": "pinned+lifted (PIN_Z)",
+ "contact": "none",
+ "note": "ladder intercept*kp = Coulomb torque; ladder slope = compliance fraction; decay envelope linear=Coulomb, exponential=viscous",
+ "results": {
+  "dof_right_hip_pitch_04": {
+   "ladder_amp_deg": [
+    0.5,
+    1.0,
+    2.0,
+    5.0,
+    10.0,
+    20.0
+   ],
+   "ladder_err_deg": [
+    0.03008,
+    0.02737,
+    0.02195,
+    0.02755,
+    0.02231,
+    0.03369
+   ],
+   "fit_slope": 0.000266,
+   "fit_intercept_deg": 0.02545,
+   "implied_coulomb_Nm": 3.8171,
+   "implied_series_frac": 0.00027,
+   "decay_start_deg": 15.0,
+   "n_peaks": 39,
+   "linear_r2": 0.9977,
+   "exp_r2": 0.9337,
+   "halflife_s": 2.011,
+   "envelope_verdict": "COULOMB (linear)",
+   "settled_deg": 13.9338,
+   "residual_from_zero_deg": 13.9338
+  },
+  "dof_right_hip_roll_04": {
+   "ladder_amp_deg": [
+    0.5,
+    1.0,
+    2.0,
+    5.0,
+    10.0,
+    20.0
+   ],
+   "ladder_err_deg": [
+    -0.0355,
+    -0.0382,
+    -0.04362,
+    -0.03802,
+    -0.04326,
+    -0.03188
+   ],
+   "fit_slope": 0.000266,
+   "fit_intercept_deg": -0.04012,
+   "implied_coulomb_Nm": -6.0186,
+   "implied_series_frac": 0.00027,
+   "decay_start_deg": -15.0,
+   "n_peaks": 21,
+   "linear_r2": 0.9498,
+   "exp_r2": 0.9389,
+   "halflife_s": 2.491,
+   "envelope_verdict": "mixed/ambiguous",
+   "settled_deg": -15.2234,
+   "residual_from_zero_deg": 15.2234
+  },
+  "dof_right_hip_yaw_03": {
+   "ladder_amp_deg": [
+    0.5,
+    1.0,
+    2.0,
+    5.0,
+    10.0,
+    20.0
+   ],
+   "ladder_err_deg": [
+    0.03008,
+    0.02737,
+    0.02195,
+    0.02755,
+    0.02231,
+    0.03369
+   ],
+   "fit_slope": 0.000266,
+   "fit_intercept_deg": 0.02545,
+   "implied_coulomb_Nm": 1.5268,
+   "implied_series_frac": 0.00027,
+   "decay_start_deg": 15.0,
+   "n_peaks": 36,
+   "linear_r2": 0.9987,
+   "exp_r2": 0.91,
+   "halflife_s": 1.595,
+   "envelope_verdict": "COULOMB (linear)",
+   "settled_deg": 13.7152,
+   "residual_from_zero_deg": 13.7152
+  },
+  "dof_right_knee_04": {
+   "ladder_amp_deg": [
+    0.5,
+    1.0,
+    2.0,
+    5.0,
+    10.0,
+    20.0
+   ],
+   "ladder_err_deg": [
+    -0.0355,
+    -0.0382,
+    -0.04362,
+    -0.03802,
+    -0.04326,
+    -0.03188
+   ],
+   "fit_slope": 0.000266,
+   "fit_intercept_deg": -0.04012,
+   "implied_coulomb_Nm": -6.0186,
+   "implied_series_frac": 0.00027,
+   "decay_start_deg": -15.0,
+   "n_peaks": 30,
+   "linear_r2": 0.9997,
+   "exp_r2": 0.9055,
+   "halflife_s": 1.548,
+   "envelope_verdict": "COULOMB (linear)",
+   "settled_deg": -19.7696,
+   "residual_from_zero_deg": 19.7696
+  },
+  "dof_right_ankle_02": {
+   "ladder_amp_deg": [
+    0.5,
+    1.0,
+    2.0,
+    5.0,
+    10.0,
+    20.0
+   ],
+   "ladder_err_deg": [
+    0.03008,
+    0.02737,
+    0.02195,
+    0.02755,
+    0.02231,
+    0.03369
+   ],
+   "fit_slope": 0.000266,
+   "fit_intercept_deg": 0.02545,
+   "implied_coulomb_Nm": 1.5268,
+   "implied_series_frac": 0.00027,
+   "decay_start_deg": 15.0,
+   "n_peaks": 0,
+   "envelope_verdict": "no oscillation (overdamped or joint did not swing)",
+   "settled_deg": 14.6551,
+   "residual_from_zero_deg": 14.6551
+  },
+  "dof_left_hip_pitch_04": {
+   "ladder_amp_deg": [
+    0.5,
+    1.0,
+    2.0,
+    5.0,
+    10.0,
+    20.0
+   ],
+   "ladder_err_deg": [
+    0.03008,
+    0.02737,
+    0.02268,
+    0.02755,
+    0.02231,
+    0.03369
+   ],
+   "fit_slope": 0.000255,
+   "fit_intercept_deg": 0.02564,
+   "implied_coulomb_Nm": 3.8463,
+   "implied_series_frac": 0.00025,
+   "decay_start_deg": 15.0,
+   "n_peaks": 51,
+   "linear_r2": 0.9991,
+   "exp_r2": 0.8808,
+   "halflife_s": 1.505,
+   "envelope_verdict": "COULOMB (linear)",
+   "settled_deg": 13.3655,
+   "residual_from_zero_deg": 13.3655
+  },
+  "dof_left_hip_roll_04": {
+   "ladder_amp_deg": [
+    0.5,
+    1.0,
+    2.0,
+    5.0,
+    10.0,
+    20.0
+   ],
+   "ladder_err_deg": [
+    0.03008,
+    0.02737,
+    0.02195,
+    0.02755,
+    0.02231,
+    0.03369
+   ],
+   "fit_slope": 0.000266,
+   "fit_intercept_deg": 0.02545,
+   "implied_coulomb_Nm": 3.8171,
+   "implied_series_frac": 0.00027,
+   "decay_start_deg": 15.0,
+   "n_peaks": 25,
+   "linear_r2": 0.9561,
+   "exp_r2": 0.9204,
+   "halflife_s": 2.208,
+   "envelope_verdict": "mixed/ambiguous",
+   "settled_deg": 14.7206,
+   "residual_from_zero_deg": 14.7206
+  },
+  "dof_left_hip_yaw_03": {
+   "ladder_amp_deg": [
+    0.5,
+    1.0,
+    2.0,
+    5.0,
+    10.0,
+    20.0
+   ],
+   "ladder_err_deg": [
+    0.03008,
+    0.02737,
+    0.02195,
+    0.02755,
+    0.02231,
+    0.03369
+   ],
+   "fit_slope": 0.000266,
+   "fit_intercept_deg": 0.02545,
+   "implied_coulomb_Nm": 1.5268,
+   "implied_series_frac": 0.00027,
+   "decay_start_deg": 15.0,
+   "n_peaks": 37,
+   "linear_r2": 0.999,
+   "exp_r2": 0.8386,
+   "halflife_s": 1.576,
+   "envelope_verdict": "COULOMB (linear)",
+   "settled_deg": 13.1251,
+   "residual_from_zero_deg": 13.1251
+  },
+  "dof_left_knee_04": {
+   "ladder_amp_deg": [
+    0.5,
+    1.0,
+    2.0,
+    5.0,
+    10.0,
+    20.0
+   ],
+   "ladder_err_deg": [
+    0.03008,
+    0.02737,
+    0.02195,
+    0.02755,
+    0.02231,
+    0.03369
+   ],
+   "fit_slope": 0.000266,
+   "fit_intercept_deg": 0.02545,
+   "implied_coulomb_Nm": 3.8171,
+   "implied_series_frac": 0.00027,
+   "decay_start_deg": 15.0,
+   "n_peaks": 13,
+   "linear_r2": 0.9998,
+   "exp_r2": 0.9053,
+   "halflife_s": 1.786,
+   "envelope_verdict": "COULOMB (linear)",
+   "settled_deg": 9.9558,
+   "residual_from_zero_deg": 9.9558
+  },
+  "dof_left_ankle_02": {
+   "ladder_amp_deg": [
+    0.5,
+    1.0,
+    2.0,
+    5.0,
+    10.0,
+    20.0
+   ],
+   "ladder_err_deg": [
+    -0.0355,
+    -0.0382,
+    -0.04362,
+    -0.03802,
+    -0.04326,
+    -0.03188
+   ],
+   "fit_slope": 0.000266,
+   "fit_intercept_deg": -0.04012,
+   "implied_coulomb_Nm": -2.4074,
+   "implied_series_frac": 0.00027,
+   "decay_start_deg": -15.0,
+   "n_peaks": 0,
+   "envelope_verdict": "no oscillation (overdamped or joint did not swing)",
+   "settled_deg": -15.3764,
+   "residual_from_zero_deg": 15.3764
+  }
+ }
+}

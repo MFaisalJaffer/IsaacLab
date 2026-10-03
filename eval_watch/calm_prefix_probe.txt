@@ -1,0 +1,7 @@
+=== PRE-STAND-FIX anchor probe: model_29800 (was ep_len 634 + climbing) ===
+prefix_vx0.15 [gains=nominal] ALL FELL (alive 0/32; fallen>45deg 24/32) — no walking-fraction stats
+prefix_vx0.30 [gains=nominal] ALL FELL (alive 0/32; fallen>45deg 27/32) — no walking-fraction stats
+PREFIX_vx0.20: vx=0.2  (400 steps x 32 envs)  feet_phase target this build = 0.06 m
+  L_foot: swing-apex(mean top10%)=37.4 cm  p50=2.1  p90=10.7  p99=66.2  max=81.9 cm  |  off-ground=51% of time
+  R_foot: swing-apex(mean top10%)=32.7 cm  p50=2.3  p90=9.5  p99=64.1  max=69.3 cm  |  off-ground=52% of time
+  contact-sensor swing%: L=58  R=49  (stance-duty L=42%  R=51%)

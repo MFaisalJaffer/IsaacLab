@@ -1,0 +1,483 @@
+{
+ "schema": "sim2sim_step_v2",
+ "side": "isaac",
+ "rate_hz": 200.0,
+ "kp": [
+  150.0,
+  150.0,
+  60.0,
+  150.0,
+  60.0,
+  150.0,
+  150.0,
+  60.0,
+  150.0,
+  60.0
+ ],
+ "kd": [
+  2.5,
+  1.5,
+  1.0,
+  1.0,
+  0.5,
+  2.5,
+  1.5,
+  1.0,
+  1.0,
+  0.5
+ ],
+ "joint_order": [
+  "dof_right_hip_pitch_04",
+  "dof_right_hip_roll_04",
+  "dof_right_hip_yaw_03",
+  "dof_right_knee_04",
+  "dof_right_ankle_02",
+  "dof_left_hip_pitch_04",
+  "dof_left_hip_roll_04",
+  "dof_left_hip_yaw_03",
+  "dof_left_knee_04",
+  "dof_left_ankle_02"
+ ],
+ "amplitudes_deg": {
+  "dof_right_hip_pitch_04": [
+   20.0,
+   -20.0
+  ],
+  "dof_right_hip_roll_04": [
+   7.0,
+   -20.0
+  ],
+  "dof_right_hip_yaw_03": [
+   20.0,
+   -20.0
+  ],
+  "dof_right_knee_04": [
+   0.0,
+   -20.0
+  ],
+  "dof_right_ankle_02": [
+   20.0,
+   -7.0
+  ],
+  "dof_left_hip_pitch_04": [
+   20.0,
+   -20.0
+  ],
+  "dof_left_hip_roll_04": [
+   20.0,
+   -7.0
+  ],
+  "dof_left_hip_yaw_03": [
+   20.0,
+   -20.0
+  ],
+  "dof_left_knee_04": [
+   20.0,
+   0.0
+  ],
+  "dof_left_ankle_02": [
+   7.0,
+   -20.0
+  ]
+ },
+ "hold_s": 2.0,
+ "settle_s": 1.5,
+ "base": "pinned+lifted 0.6 m",
+ "contact": "none",
+ "gravity_z": -9.81,
+ "delay_arm": "mid",
+ "stack": "FULL: TVCurveActuator (T-V ceiling, per-family command delay, Coulomb+viscous friction in Nm, ankle series K_s=52.0 b=0.07 play 0.3 deg)",
+ "ankle_readout": "joint-side primary; motor_side sub-dict added per direction",
+ "asset_facts": {
+  "total_mass_kg": 12.9675,
+  "link_mass_kg": {
+   "floating_base_link": 0.0005,
+   "Torso_Side_Right": 6.4296,
+   "KC_D_102L_L_Hip_Yoke_Drive": 0.2696,
+   "KC_D_102R_R_Hip_Yoke_Drive": 0.2127,
+   "imu": 0.0026,
+   "RS03_5": 1.1879,
+   "RS03_4": 0.8799,
+   "KC_D_301L_L_Femur_Lower_Drive": 1.1895,
+   "KC_D_301R_R_Femur_Lower_Drive": 0.9523,
+   "KC_D_401L_L_Shin_Drive": 0.7063,
+   "KC_D_401R_R_Shin_Drive": 0.663,
+   "KB_D_501L_L_LEG_FOOT": 0.2495,
+   "KB_D_501R_R_LEG_FOOT": 0.2241
+  },
+  "joint_limits_deg": {
+   "dof_right_hip_pitch_04": [
+    -127.0,
+    60.0
+   ],
+   "dof_right_hip_roll_04": [
+    -130.0,
+    12.0
+   ],
+   "dof_right_hip_yaw_03": [
+    -90.0,
+    90.0
+   ],
+   "dof_right_knee_04": [
+    -155.0,
+    0.0
+   ],
+   "dof_right_ankle_02": [
+    -13.0,
+    72.0
+   ],
+   "dof_left_hip_pitch_04": [
+    -60.0,
+    127.0
+   ],
+   "dof_left_hip_roll_04": [
+    -12.0,
+    130.0
+   ],
+   "dof_left_hip_yaw_03": [
+    -90.0,
+    90.0
+   ],
+   "dof_left_knee_04": [
+    0.0,
+    155.0
+   ],
+   "dof_left_ankle_02": [
+    -72.0,
+    13.0
+   ]
+  },
+  "joint_limit_mismatch_vs_mjcf": {},
+  "foot_world_bbox_at_zero_pose_m": {
+   "KB_D_501L_L_LEG_FOOT": {
+    "min": [
+     3.6861,
+     -2.3165,
+     0.6437
+    ],
+    "max": [
+     3.8981,
+     -2.2444,
+     0.7125
+    ]
+   },
+   "KB_D_501R_R_LEG_FOOT": {
+    "min": [
+     3.6859,
+     -2.5702,
+     0.6437
+    ],
+    "max": [
+     3.8979,
+     -2.4981,
+     0.7125
+    ]
+   }
+  },
+  "foot_to_floor_clearance_at_standing_pin_mm": 643.7,
+  "com_minus_ankle_axis_x_m_zero_pose": -0.06143,
+  "com_x_rel_root_m_zero_pose": 0.01682,
+  "ankle_axis_x_rel_root_m_zero_pose": 0.07825,
+  "foot_polygon_x_rel_ankle_axis_m": [
+   0.2262,
+   0.4384
+  ],
+  "com_correction_applied": "YES - body-frame y -0.0243 m on Torso_Side_Right",
+  "position_quantum_deg": 0.0,
+  "position_quantum_note": "float32, no encoder quantiser anywhere in the chain",
+  "stiction_model": "NONE - identical -fc*tanh(qd/0.02) form to yours; zero at qd=0",
+  "ankle_readout": "BOTH reported: joint-side (pos_*) and motor-side (motorpos_*)"
+ },
+ "results": {
+  "dof_right_hip_pitch_04": {
+   "amplitudes_deg": [
+    20.0,
+    -20.0
+   ],
+   "pos": {
+    "rise_10_90_ms": 85.0,
+    "overshoot_pct": 24.1,
+    "settle_ms": null,
+    "steady_state_err_deg": -0.9246,
+    "onset_ms": 25.0,
+    "target_deg": 20.0,
+    "reached_deg": 19.084,
+    "peak_vel_deg_s": 219.93
+   },
+   "neg": {
+    "rise_10_90_ms": 90.0,
+    "overshoot_pct": 24.26,
+    "settle_ms": null,
+    "steady_state_err_deg": 1.0966,
+    "onset_ms": 25.0,
+    "target_deg": -20.0,
+    "reached_deg": -18.894,
+    "peak_vel_deg_s": 208.26
+   },
+   "max_leak_deg": 1.99,
+   "worst_leak_joint": "dof_right_knee_04",
+   "reach_control_pass": true
+  },
+  "dof_right_hip_roll_04": {
+   "amplitudes_deg": [
+    7.0,
+    -20.0
+   ],
+   "pos": {
+    "rise_10_90_ms": 80.0,
+    "overshoot_pct": 18.82,
+    "settle_ms": null,
+    "steady_state_err_deg": -0.1813,
+    "onset_ms": 30.0,
+    "target_deg": 7.0,
+    "reached_deg": 6.807,
+    "peak_vel_deg_s": 80.5
+   },
+   "neg": {
+    "rise_10_90_ms": 85.0,
+    "overshoot_pct": 31.67,
+    "settle_ms": null,
+    "steady_state_err_deg": 1.4209,
+    "onset_ms": 30.0,
+    "target_deg": -20.0,
+    "reached_deg": -18.591,
+    "peak_vel_deg_s": 223.84
+   },
+   "max_leak_deg": 0.244,
+   "worst_leak_joint": "dof_right_knee_04",
+   "reach_control_pass": true
+  },
+  "dof_right_hip_yaw_03": {
+   "amplitudes_deg": [
+    20.0,
+    -20.0
+   ],
+   "pos": {
+    "rise_10_90_ms": 25.0,
+    "overshoot_pct": 0.24,
+    "settle_ms": 60.0,
+    "steady_state_err_deg": -0.0003,
+    "onset_ms": 20.0,
+    "target_deg": 20.0,
+    "reached_deg": 19.979,
+    "peak_vel_deg_s": 737.34
+   },
+   "neg": {
+    "rise_10_90_ms": 25.0,
+    "overshoot_pct": 0.23,
+    "settle_ms": 60.0,
+    "steady_state_err_deg": 0.0002,
+    "onset_ms": 20.0,
+    "target_deg": -20.0,
+    "reached_deg": -19.978,
+    "peak_vel_deg_s": 744.6
+   },
+   "max_leak_deg": 0.225,
+   "worst_leak_joint": "dof_right_ankle_02",
+   "reach_control_pass": true
+  },
+  "dof_right_knee_04": {
+   "amplitudes_deg": [
+    0.0,
+    -20.0
+   ],
+   "neg": {
+    "rise_10_90_ms": 20.0,
+    "overshoot_pct": 17.48,
+    "settle_ms": 160.0,
+    "steady_state_err_deg": 0.085,
+    "onset_ms": 20.0,
+    "target_deg": -20.0,
+    "reached_deg": -19.89,
+    "peak_vel_deg_s": 830.76
+   },
+   "max_leak_deg": 3.39,
+   "worst_leak_joint": "dof_right_hip_pitch_04",
+   "reach_control_pass": true
+  },
+  "dof_right_ankle_02": {
+   "amplitudes_deg": [
+    20.0,
+    -7.0
+   ],
+   "pos": {
+    "rise_10_90_ms": 20.0,
+    "overshoot_pct": 33.31,
+    "settle_ms": 240.0,
+    "steady_state_err_deg": -0.2481,
+    "onset_ms": 20.0,
+    "target_deg": 20.0,
+    "reached_deg": 19.751,
+    "peak_vel_deg_s": 935.94,
+    "motor_side": {
+     "reached_deg": 19.954,
+     "rise_10_90_ms": 20.0,
+     "overshoot_pct": 21.24
+    }
+   },
+   "neg": {
+    "rise_10_90_ms": 15.0,
+    "overshoot_pct": 35.14,
+    "settle_ms": null,
+    "steady_state_err_deg": -0.192,
+    "onset_ms": 20.0,
+    "target_deg": -7.0,
+    "reached_deg": -7.193,
+    "peak_vel_deg_s": 447.4,
+    "motor_side": {
+     "reached_deg": -7.019,
+     "rise_10_90_ms": 20.0,
+     "overshoot_pct": 23.32
+    }
+   },
+   "max_leak_deg": 0.771,
+   "worst_leak_joint": "dof_right_knee_04",
+   "reach_control_pass": true
+  },
+  "dof_left_hip_pitch_04": {
+   "amplitudes_deg": [
+    20.0,
+    -20.0
+   ],
+   "pos": {
+    "rise_10_90_ms": 95.0,
+    "overshoot_pct": 24.53,
+    "settle_ms": null,
+    "steady_state_err_deg": -1.1711,
+    "onset_ms": 25.0,
+    "target_deg": 20.0,
+    "reached_deg": 18.82,
+    "peak_vel_deg_s": 200.99
+   },
+   "neg": {
+    "rise_10_90_ms": 90.0,
+    "overshoot_pct": 24.49,
+    "settle_ms": null,
+    "steady_state_err_deg": 1.0067,
+    "onset_ms": 25.0,
+    "target_deg": -20.0,
+    "reached_deg": -18.994,
+    "peak_vel_deg_s": 214.03
+   },
+   "max_leak_deg": 2.017,
+   "worst_leak_joint": "dof_left_knee_04",
+   "reach_control_pass": true
+  },
+  "dof_left_hip_roll_04": {
+   "amplitudes_deg": [
+    20.0,
+    -7.0
+   ],
+   "pos": {
+    "rise_10_90_ms": 80.0,
+    "overshoot_pct": 31.7,
+    "settle_ms": null,
+    "steady_state_err_deg": -1.2939,
+    "onset_ms": 25.0,
+    "target_deg": 20.0,
+    "reached_deg": 18.723,
+    "peak_vel_deg_s": 234.31
+   },
+   "neg": {
+    "rise_10_90_ms": 75.0,
+    "overshoot_pct": 19.89,
+    "settle_ms": null,
+    "steady_state_err_deg": 0.1911,
+    "onset_ms": 30.0,
+    "target_deg": -7.0,
+    "reached_deg": -6.793,
+    "peak_vel_deg_s": 86.59
+   },
+   "max_leak_deg": 0.255,
+   "worst_leak_joint": "dof_left_ankle_02",
+   "reach_control_pass": true
+  },
+  "dof_left_hip_yaw_03": {
+   "amplitudes_deg": [
+    20.0,
+    -20.0
+   ],
+   "pos": {
+    "rise_10_90_ms": 25.0,
+    "overshoot_pct": 0.13,
+    "settle_ms": 65.0,
+    "steady_state_err_deg": -0.0002,
+    "onset_ms": 20.0,
+    "target_deg": 20.0,
+    "reached_deg": 19.974,
+    "peak_vel_deg_s": 779.52
+   },
+   "neg": {
+    "rise_10_90_ms": 25.0,
+    "overshoot_pct": 0.13,
+    "settle_ms": 65.0,
+    "steady_state_err_deg": 0.0002,
+    "onset_ms": 20.0,
+    "target_deg": -20.0,
+    "reached_deg": -19.975,
+    "peak_vel_deg_s": 779.22
+   },
+   "max_leak_deg": 0.226,
+   "worst_leak_joint": "dof_left_ankle_02",
+   "reach_control_pass": true
+  },
+  "dof_left_knee_04": {
+   "amplitudes_deg": [
+    20.0,
+    0.0
+   ],
+   "pos": {
+    "rise_10_90_ms": 20.0,
+    "overshoot_pct": 16.33,
+    "settle_ms": 160.0,
+    "steady_state_err_deg": -0.0872,
+    "onset_ms": 20.0,
+    "target_deg": 20.0,
+    "reached_deg": 19.886,
+    "peak_vel_deg_s": 821.96
+   },
+   "max_leak_deg": 3.587,
+   "worst_leak_joint": "dof_left_hip_pitch_04",
+   "reach_control_pass": true
+  },
+  "dof_left_ankle_02": {
+   "amplitudes_deg": [
+    7.0,
+    -20.0
+   ],
+   "pos": {
+    "rise_10_90_ms": 10.0,
+    "overshoot_pct": 35.21,
+    "settle_ms": null,
+    "steady_state_err_deg": 0.1925,
+    "onset_ms": 20.0,
+    "target_deg": 7.0,
+    "reached_deg": 7.192,
+    "peak_vel_deg_s": 453.92,
+    "motor_side": {
+     "reached_deg": 7.02,
+     "rise_10_90_ms": 20.0,
+     "overshoot_pct": 24.43
+    }
+   },
+   "neg": {
+    "rise_10_90_ms": 15.0,
+    "overshoot_pct": 32.01,
+    "settle_ms": 225.0,
+    "steady_state_err_deg": 0.2474,
+    "onset_ms": 20.0,
+    "target_deg": -20.0,
+    "reached_deg": -19.753,
+    "peak_vel_deg_s": 912.02,
+    "motor_side": {
+     "reached_deg": -19.955,
+     "rise_10_90_ms": 20.0,
+     "overshoot_pct": 21.23
+    }
+   },
+   "max_leak_deg": 0.783,
+   "worst_leak_joint": "dof_left_knee_04",
+   "reach_control_pass": true
+  }
+ }
+}

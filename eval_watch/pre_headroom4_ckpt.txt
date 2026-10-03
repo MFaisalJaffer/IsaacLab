@@ -1,0 +1,1 @@
+/tmp/claude-1000/-home-faisal/57756a25-3b6d-4ade-908e-eb60ddd66495/scratchpad/model_319800.pt

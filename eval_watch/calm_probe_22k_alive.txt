@@ -1,0 +1,3 @@
+=== CALM formation probe (ALIVE-MASKED) @model_22800.pt ===
+alive_vx0.10 [gains=nominal] ALL FELL (alive 0/32; fallen>45deg 29/32) — no walking-fraction stats
+alive_vx0.20 [gains=nominal] ALL FELL (alive 0/32; fallen>45deg 25/32) — no walking-fraction stats

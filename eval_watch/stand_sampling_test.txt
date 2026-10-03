@@ -1,0 +1,5 @@
+rel_standing_envs (live cfg) = 0.2
+(A) forced resample x5 -> standing fraction: 20%, 14%, 20%, 31%, 16%   [expect ~20%]
+(B) episode lifetime — STANDING-commanded: n=30 mean=229 steps
+    episode lifetime — WALKING-commanded : n=0
+    env-step share: standing 0.9%  walking 99.1%   [sampling says 20% / 80%]

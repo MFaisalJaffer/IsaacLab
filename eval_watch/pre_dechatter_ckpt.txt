@@ -1,0 +1,1 @@
+logs/rsl_rl/kbot_legs_rough/2026-07-16_14-42-17//model_194200.pt

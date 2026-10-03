@@ -1,0 +1,285 @@
+DECAY_43k: FREE-BASE roll-step decay, 64 envs, trained entry (walk 150 -> decel 75 -> settle 150), gains pinned
+  pre-step quiet stand: roll mean=+0.29 deg  p95(|.|)=0.57
+  step +8 deg -> signed roll (mean): +0.1s:-5.1  +0.5s:+0.5  +1.0s:+0.2  +2.0s:+0.1  +3.0s:+0.0   recovered<2deg: 100%  fallen: 0%
+  step -8 deg -> signed roll (mean): +0.1s:-3.6  +0.5s:+0.2  +1.0s:-0.4  +2.0s:-0.2  +3.0s:-0.7   recovered<2deg: 98%  fallen: 2%
+
+DECAY_49k: FREE-BASE roll-step decay, 64 envs, trained entry (walk 150 -> decel 75 -> settle 150), gains pinned
+  pre-step quiet stand: roll mean=+0.13 deg  p95(|.|)=0.66
+  step +8 deg -> signed roll (mean): +0.1s:-5.2  +0.5s:+0.4  +1.0s:+0.2  +2.0s:+0.3  +3.0s:+0.3   recovered<2deg: 98%  fallen: 0%
+  step -8 deg -> signed roll (mean): +0.1s:-4.0  +0.5s:+0.1  +1.0s:-0.1  +2.0s:-0.2  +3.0s:-0.1   recovered<2deg: 100%  fallen: 0%
+
+DECAY_55k: FREE-BASE roll-step decay, 64 envs, trained entry (walk 150 -> decel 75 -> settle 150), gains pinned
+  pre-step quiet stand: roll mean=-0.01 deg  p95(|.|)=0.56
+  step +8 deg -> signed roll (mean): +0.1s:-5.4  +0.5s:+0.6  +1.0s:+0.6  +2.0s:+0.1  +3.0s:-0.0   recovered<2deg: 100%  fallen: 0%
+  step -8 deg -> signed roll (mean): +0.1s:-4.2  +0.5s:-0.4  +1.0s:+0.3  +2.0s:+0.7  +3.0s:+0.3   recovered<2deg: 97%  fallen: 2%
+
+L4B_3600_decay_roll_rigid: FREE-BASE roll-step decay, 64 envs, trained entry (walk 150 -> decel 75 -> settle 150), gains pinned
+  pre-step quiet stand: roll mean=+0.68 deg  p95(|.|)=2.67
+  step +8 deg -> signed roll (mean): +0.1s:-4.3  +0.5s:+0.9  +1.0s:+0.2  +2.0s:-0.7  +3.0s:-1.0   recovered<2deg: 86%  fallen: 12%
+  step -8 deg -> signed roll (mean): +0.1s:-4.8  +0.5s:+0.2  +1.0s:+0.2  +2.0s:-0.5  +3.0s:-0.8   recovered<2deg: 84%  fallen: 14%
+
+L4B_3600_decay_pitch_rigid: FREE-BASE pitch-step decay, 64 envs, trained entry (walk 150 -> decel 75 -> settle 150), gains pinned
+  pre-step quiet stand: roll mean=-2.14 deg  p95(|.|)=9.32
+  step +8 deg -> signed pitch (mean): +0.1s:+5.9  +0.5s:-2.3  +1.0s:-0.5  +2.0s:-1.1  +3.0s:-1.1   recovered<2deg: 80%  fallen: 8%
+  step -8 deg -> signed pitch (mean): +0.1s:+8.6  +0.5s:+3.6  +1.0s:+3.8  +2.0s:+11.3  +3.0s:+13.1   recovered<2deg: 66%  fallen: 23%
+
+L4B_3600_decay_roll_play15: FREE-BASE roll-step decay, 64 envs, trained entry (walk 150 -> decel 75 -> settle 150), gains pinned
+  pre-step quiet stand: roll mean=+0.92 deg  p95(|.|)=1.82
+  step +8 deg -> signed roll (mean): +0.1s:-3.8  +0.5s:+1.3  +1.0s:+0.7  +2.0s:-0.5  +3.0s:-0.4   recovered<2deg: 94%  fallen: 5%
+  step -8 deg -> signed roll (mean): +0.1s:-3.3  +0.5s:+0.7  +1.0s:-0.1  +2.0s:+2.2  +3.0s:+0.3   recovered<2deg: 91%  fallen: 9%
+
+L4B_3600_decay_pitch_play15: FREE-BASE pitch-step decay, 64 envs, trained entry (walk 150 -> decel 75 -> settle 150), gains pinned
+  pre-step quiet stand: roll mean=+2.39 deg  p95(|.|)=6.57
+  step +8 deg -> signed pitch (mean): +0.1s:+10.9  +0.5s:+4.4  +1.0s:+1.3  +2.0s:+3.2  +3.0s:-1.0   recovered<2deg: 16%  fallen: 17%
+  step -8 deg -> signed pitch (mean): +0.1s:+8.2  +0.5s:+7.8  +1.0s:+10.8  +2.0s:+12.4  +3.0s:+14.2   recovered<2deg: 19%  fallen: 33%
+
+L4B2_3600_decay_roll_play15: FREE-BASE roll-step decay, 64 envs, trained entry (walk 150 -> decel 75 -> settle 150), gains pinned
+  pre-step quiet stand: roll mean=+1.64 deg  p95(|.|)=3.74
+  step +8 deg -> signed roll (mean): +0.1s:-3.1  +0.5s:+1.2  +1.0s:+1.1  +2.0s:+1.5  +3.0s:+1.3   recovered<2deg: 55%  fallen: 12%
+  step -8 deg -> signed roll (mean): +0.1s:-5.0  +0.5s:-3.9  +1.0s:-4.8  +2.0s:-11.4  +3.0s:-6.2   recovered<2deg: 52%  fallen: 30%
+
+L4B2_3600_decay_pitch_play15: FREE-BASE pitch-step decay, 64 envs, trained entry (walk 150 -> decel 75 -> settle 150), gains pinned
+  pre-step quiet stand: roll mean=+0.85 deg  p95(|.|)=88.85
+  step +8 deg -> signed pitch (mean): +0.1s:+8.3  +0.5s:+1.6  +1.0s:-2.3  +2.0s:+0.9  +3.0s:+4.6   recovered<2deg: 8%  fallen: 27%
+  step -8 deg -> signed pitch (mean): +0.1s:+0.9  +0.5s:+1.3  +1.0s:+2.1  +2.0s:+3.5  +3.0s:+4.0   recovered<2deg: 5%  fallen: 34%
+
+L4B2_3600_decay_roll_rigid: FREE-BASE roll-step decay, 64 envs, trained entry (walk 150 -> decel 75 -> settle 150), gains pinned
+  pre-step quiet stand: roll mean=+1.10 deg  p95(|.|)=2.02
+  step +8 deg -> signed roll (mean): +0.1s:-3.9  +0.5s:+1.3  +1.0s:+0.4  +2.0s:+0.4  +3.0s:+0.3   recovered<2deg: 100%  fallen: 0%
+  step -8 deg -> signed roll (mean): +0.1s:-4.0  +0.5s:-0.2  +1.0s:-0.0  +2.0s:-0.3  +3.0s:-0.2   recovered<2deg: 100%  fallen: 0%
+
+L4C_10200_decay_roll_play15: FREE-BASE roll-step decay, 64 envs, trained entry (walk 150 -> decel 75 -> settle 150), gains pinned
+  pre-step quiet stand: roll mean=+1.63 deg  p95(|.|)=4.59
+  step +8 deg -> signed roll (mean): +0.1s:-4.2  +0.5s:+1.2  +1.0s:+1.2  +2.0s:+1.7  +3.0s:+2.0   recovered<2deg: 56%  fallen: 2%
+  step -8 deg -> signed roll (mean): +0.1s:-6.7  +0.5s:-3.7  +1.0s:-2.1  +2.0s:-1.5  +3.0s:-2.4   recovered<2deg: 64%  fallen: 6%
+
+L4C_10200_decay_pitch_play15: FREE-BASE pitch-step decay, 64 envs, trained entry (walk 150 -> decel 75 -> settle 150), gains pinned
+  pre-step quiet stand: roll mean=+4.88 deg  p95(|.|)=8.11
+  step +8 deg -> signed pitch (mean): +0.1s:+12.7  +0.5s:+6.3  +1.0s:+3.0  +2.0s:+6.9  +3.0s:+5.1   recovered<2deg: 28%  fallen: 12%
+  step -8 deg -> signed pitch (mean): +0.1s:+3.7  +0.5s:+2.2  +1.0s:+5.0  +2.0s:+7.7  +3.0s:+7.7   recovered<2deg: 14%  fallen: 27%
+
+L4D_25600_decay_pitch_play15: FREE-BASE pitch-step decay, 64 envs, trained entry (walk 150 -> decel 75 -> settle 150), gains pinned
+  pre-step quiet stand: roll mean=+6.24 deg  p95(|.|)=7.30
+  step +8 deg -> signed pitch (mean): +0.1s:+14.0  +0.5s:+5.9  +1.0s:+4.9  +2.0s:+10.3  +3.0s:+11.3   recovered<2deg: 12%  fallen: 9%
+  step -8 deg -> signed pitch (mean): +0.1s:-3.5  +0.5s:-3.9  +1.0s:-2.9  +2.0s:-2.4  +3.0s:-0.0   recovered<2deg: 8%  fallen: 17%
+
+L4D_25600_decay_roll_play15: FREE-BASE roll-step decay, 64 envs, trained entry (walk 150 -> decel 75 -> settle 150), gains pinned
+  pre-step quiet stand: roll mean=+0.78 deg  p95(|.|)=3.78
+  step +8 deg -> signed roll (mean): +0.1s:-4.9  +0.5s:-0.1  +1.0s:-0.2  +2.0s:+0.2  +3.0s:+0.6   recovered<2deg: 83%  fallen: 3%
+  step -8 deg -> signed roll (mean): +0.1s:-5.5  +0.5s:-2.7  +1.0s:-1.2  +2.0s:-1.0  +3.0s:-1.3   recovered<2deg: 66%  fallen: 8%
+
+L4E_38800_pitch_clean: FREE-BASE pitch-step decay, 64 envs, trained entry (walk 150 -> decel 75 -> settle 150), gains pinned
+  pre-step quiet stand: roll mean=+5.31 deg  p95(|.|)=9.36
+  step +8 deg -> signed pitch (mean): +0.1s:+14.5  +0.5s:+6.3  +1.0s:+3.1  +2.0s:+5.2  +3.0s:+5.6   recovered<2deg: 3%  fallen: 3%
+  step -8 deg -> signed pitch (mean): +0.1s:+2.4  +0.5s:+2.4  +1.0s:+2.0  +2.0s:-0.1  +3.0s:-2.0   recovered<2deg: 9%  fallen: 5%
+
+L4E_38800_roll_clean: FREE-BASE roll-step decay, 64 envs, trained entry (walk 150 -> decel 75 -> settle 150), gains pinned
+  pre-step quiet stand: roll mean=+1.39 deg  p95(|.|)=3.47
+  step +8 deg -> signed roll (mean): +0.1s:-3.9  +0.5s:+1.4  +1.0s:+1.7  +2.0s:+1.6  +3.0s:+1.8   recovered<2deg: 61%  fallen: 3%
+  step -8 deg -> signed roll (mean): +0.1s:-5.7  +0.5s:-4.1  +1.0s:-2.1  +2.0s:-1.9  +3.0s:-2.1   recovered<2deg: 44%  fallen: 3%
+
+L5B_3600_linearity_pitch_play4: FREE-BASE pitch-step decay, 64 envs, trained entry (walk 150 -> decel 75 -> settle 150), gains pinned
+  pre-step quiet stand: roll mean=+1.64 deg  p95(|.|)=4.45
+  step +1.0 deg -> signed pitch (mean): +0.1s:+2.5  +0.5s:+2.4  +1.0s:+2.1  +2.0s:+1.8  +3.0s:+1.8   recovered<2deg: 30%  fallen: 0%  jerk(1s): mean 0.180 p95 0.312
+  step +2.0 deg -> signed pitch (mean): +0.1s:+3.4  +0.5s:+2.8  +1.0s:+2.3  +2.0s:+1.8  +3.0s:+1.5   recovered<2deg: 50%  fallen: 0%  jerk(1s): mean 0.181 p95 0.314
+  step +3.0 deg -> signed pitch (mean): +0.1s:+4.1  +0.5s:+3.0  +1.0s:+2.4  +2.0s:+1.8  +3.0s:+1.5   recovered<2deg: 30%  fallen: 0%  jerk(1s): mean 0.184 p95 0.314
+  step +4.0 deg -> signed pitch (mean): +0.1s:+5.2  +0.5s:+3.7  +1.0s:+2.9  +2.0s:+2.1  +3.0s:+1.7   recovered<2deg: 45%  fallen: 0%  jerk(1s): mean 0.183 p95 0.318
+  step +5.0 deg -> signed pitch (mean): +0.1s:+6.4  +0.5s:+4.2  +1.0s:+3.0  +2.0s:+2.2  +3.0s:+1.8   recovered<2deg: 41%  fallen: 0%  jerk(1s): mean 0.195 p95 0.348
+  step -3.0 deg -> signed pitch (mean): +0.1s:+1.9  +0.5s:+1.3  +1.0s:+0.4  +2.0s:-0.1  +3.0s:-0.3   recovered<2deg: 41%  fallen: 2%  jerk(1s): mean 0.194 p95 0.352
+  step -5.0 deg -> signed pitch (mean): +0.1s:+4.5  +0.5s:+3.1  +1.0s:+0.8  +2.0s:-0.7  +3.0s:-0.8   recovered<2deg: 44%  fallen: 8%  jerk(1s): mean 0.289 p95 0.734
+
+L5B_3600_linearity_roll_play4: FREE-BASE roll-step decay, 64 envs, trained entry (walk 150 -> decel 75 -> settle 150), gains pinned
+  pre-step quiet stand: roll mean=+1.16 deg  p95(|.|)=2.07
+  step +1.0 deg -> signed roll (mean): +0.1s:+1.2  +0.5s:+1.2  +1.0s:+1.2  +2.0s:+1.1  +3.0s:+1.1   recovered<2deg: 91%  fallen: 0%  jerk(1s): mean 0.184 p95 0.322
+  step +2.0 deg -> signed roll (mean): +0.1s:+1.2  +0.5s:+1.1  +1.0s:+1.1  +2.0s:+1.1  +3.0s:+1.0   recovered<2deg: 94%  fallen: 0%  jerk(1s): mean 0.193 p95 0.355
+  step +3.0 deg -> signed roll (mean): +0.1s:+0.8  +0.5s:+1.0  +1.0s:+1.0  +2.0s:+0.9  +3.0s:+0.9   recovered<2deg: 95%  fallen: 0%  jerk(1s): mean 0.202 p95 0.372
+  step +4.0 deg -> signed roll (mean): +0.1s:-0.2  +0.5s:+0.8  +1.0s:+0.8  +2.0s:+0.8  +3.0s:+0.7   recovered<2deg: 98%  fallen: 0%  jerk(1s): mean 0.206 p95 0.375
+  step +5.0 deg -> signed roll (mean): +0.1s:-1.5  +0.5s:+0.5  +1.0s:+0.5  +2.0s:+0.5  +3.0s:+0.5   recovered<2deg: 100%  fallen: 0%  jerk(1s): mean 0.208 p95 0.375
+  step -3.0 deg -> signed roll (mean): +0.1s:-0.6  +0.5s:-0.4  +1.0s:-0.4  +2.0s:-0.4  +3.0s:-0.4   recovered<2deg: 100%  fallen: 0%  jerk(1s): mean 0.216 p95 0.406
+  step -5.0 deg -> signed roll (mean): +0.1s:-1.6  +0.5s:-0.3  +1.0s:-0.3  +2.0s:-0.3  +3.0s:-0.2   recovered<2deg: 100%  fallen: 0%  jerk(1s): mean 0.228 p95 0.431
+
+L6B_3600_linearity_pitch_play4: FREE-BASE pitch-step decay, 64 envs, trained entry (walk 150 -> decel 75 -> settle 150), gains pinned
+  pre-step quiet stand: roll mean=-5.05 deg  p95(|.|)=6.99
+  step +1.0 deg -> signed pitch (mean): +0.1s:-1.6  +0.5s:-1.8  +1.0s:-1.9  +2.0s:-2.1  +3.0s:-2.3   recovered<2deg: 59%  fallen: 3%  jerk(1s): mean 0.203 p95 0.341
+  step +2.0 deg -> signed pitch (mean): +0.1s:-0.6  +0.5s:-1.4  +1.0s:-2.0  +2.0s:-2.3  +3.0s:-2.4   recovered<2deg: 52%  fallen: 3%  jerk(1s): mean 0.210 p95 0.357
+  step +3.0 deg -> signed pitch (mean): +0.1s:+0.8  +0.5s:-0.9  +1.0s:-1.8  +2.0s:-2.4  +3.0s:-2.4   recovered<2deg: 47%  fallen: 3%  jerk(1s): mean 0.213 p95 0.368
+  step +4.0 deg -> signed pitch (mean): +0.1s:+2.1  +0.5s:-0.6  +1.0s:-1.6  +2.0s:-2.1  +3.0s:-2.2   recovered<2deg: 52%  fallen: 3%  jerk(1s): mean 0.231 p95 0.404
+  step +5.0 deg -> signed pitch (mean): +0.1s:+3.1  +0.5s:+0.5  +1.0s:-1.2  +2.0s:-2.3  +3.0s:-2.4   recovered<2deg: 52%  fallen: 3%  jerk(1s): mean 0.237 p95 0.429
+  step -3.0 deg -> signed pitch (mean): +0.1s:+5.8  +0.5s:+5.0  +1.0s:+4.4  +2.0s:+3.8  +3.0s:+3.6   recovered<2deg: 42%  fallen: 3%  jerk(1s): mean 0.220 p95 0.377
+  step -5.0 deg -> signed pitch (mean): +0.1s:+8.3  +0.5s:+7.1  +1.0s:+5.8  +2.0s:+5.0  +3.0s:+4.4   recovered<2deg: 25%  fallen: 9%  jerk(1s): mean 0.260 p95 0.516
+
+L6B_3600_linearity_roll_play4: FREE-BASE roll-step decay, 64 envs, trained entry (walk 150 -> decel 75 -> settle 150), gains pinned
+  pre-step quiet stand: roll mean=+0.53 deg  p95(|.|)=1.34
+  step +1.0 deg -> signed roll (mean): +0.1s:+0.5  +0.5s:+0.5  +1.0s:+0.5  +2.0s:+0.5  +3.0s:+0.5   recovered<2deg: 98%  fallen: 2%  jerk(1s): mean 0.215 p95 0.378
+  step +2.0 deg -> signed roll (mean): +0.1s:+0.8  +0.5s:+0.5  +1.0s:+0.4  +2.0s:+0.4  +3.0s:+0.4   recovered<2deg: 98%  fallen: 2%  jerk(1s): mean 0.210 p95 0.376
+  step +3.0 deg -> signed roll (mean): +0.1s:+0.4  +0.5s:+0.3  +1.0s:+0.4  +2.0s:+0.3  +3.0s:+0.3   recovered<2deg: 98%  fallen: 2%  jerk(1s): mean 0.216 p95 0.375
+  step +4.0 deg -> signed roll (mean): +0.1s:-0.3  +0.5s:+0.2  +1.0s:+0.3  +2.0s:+0.2  +3.0s:+0.2   recovered<2deg: 98%  fallen: 2%  jerk(1s): mean 0.224 p95 0.397
+  step +5.0 deg -> signed roll (mean): +0.1s:-1.4  +0.5s:+0.1  +1.0s:+0.1  +2.0s:+0.1  +3.0s:+0.1   recovered<2deg: 98%  fallen: 2%  jerk(1s): mean 0.227 p95 0.389
+  step -3.0 deg -> signed roll (mean): +0.1s:-0.2  +0.5s:-0.1  +1.0s:-0.1  +2.0s:-0.2  +3.0s:-0.1   recovered<2deg: 98%  fallen: 2%  jerk(1s): mean 0.220 p95 0.398
+  step -5.0 deg -> signed roll (mean): +0.1s:-1.5  +0.5s:+0.0  +1.0s:-0.1  +2.0s:-0.1  +3.0s:-0.1   recovered<2deg: 98%  fallen: 2%  jerk(1s): mean 0.218 p95 0.390
+
+L5C_24800_linearity_pitch_play4: FREE-BASE pitch-step decay, 64 envs, trained entry (walk 150 -> decel 75 -> settle 150), gains pinned
+  pre-step quiet stand: roll mean=+2.63 deg  p95(|.|)=3.79
+  step +1.0 deg -> signed pitch (mean): +0.1s:+3.6  +0.5s:+3.3  +1.0s:+3.0  +2.0s:+2.8  +3.0s:+2.7   recovered<2deg: 19%  fallen: 0%  jerk(1s): mean 0.170 p95 0.305
+  step +2.0 deg -> signed pitch (mean): +0.1s:+4.8  +0.5s:+3.6  +1.0s:+3.1  +2.0s:+2.6  +3.0s:+2.5   recovered<2deg: 23%  fallen: 0%  jerk(1s): mean 0.173 p95 0.313
+  step +3.0 deg -> signed pitch (mean): +0.1s:+5.5  +0.5s:+4.2  +1.0s:+3.4  +2.0s:+2.8  +3.0s:+2.6   recovered<2deg: 22%  fallen: 0%  jerk(1s): mean 0.176 p95 0.317
+  step +4.0 deg -> signed pitch (mean): +0.1s:+6.7  +0.5s:+5.1  +1.0s:+3.7  +2.0s:+3.0  +3.0s:+2.7   recovered<2deg: 11%  fallen: 0%  jerk(1s): mean 0.180 p95 0.327
+  step +5.0 deg -> signed pitch (mean): +0.1s:+7.7  +0.5s:+5.9  +1.0s:+4.2  +2.0s:+2.9  +3.0s:+2.8   recovered<2deg: 17%  fallen: 0%  jerk(1s): mean 0.183 p95 0.331
+  step -3.0 deg -> signed pitch (mean): +0.1s:+0.9  +0.5s:+0.1  +1.0s:-0.5  +2.0s:-1.3  +3.0s:-1.6   recovered<2deg: 39%  fallen: 0%  jerk(1s): mean 0.187 p95 0.349
+  step -5.0 deg -> signed pitch (mean): +0.1s:+3.5  +0.5s:+2.3  +1.0s:+1.1  +2.0s:+0.1  +3.0s:-0.4   recovered<2deg: 34%  fallen: 5%  jerk(1s): mean 0.215 p95 0.445
+
+L5C_24800_linearity_roll_play4: FREE-BASE roll-step decay, 64 envs, trained entry (walk 150 -> decel 75 -> settle 150), gains pinned
+  pre-step quiet stand: roll mean=+1.46 deg  p95(|.|)=2.13
+  step +1.0 deg -> signed roll (mean): +0.1s:+1.7  +0.5s:+1.6  +1.0s:+1.6  +2.0s:+1.6  +3.0s:+1.6   recovered<2deg: 84%  fallen: 0%  jerk(1s): mean 0.177 p95 0.334
+  step +2.0 deg -> signed roll (mean): +0.1s:+2.5  +0.5s:+1.9  +1.0s:+1.9  +2.0s:+1.9  +3.0s:+1.9   recovered<2deg: 72%  fallen: 0%  jerk(1s): mean 0.196 p95 0.422
+  step +3.0 deg -> signed roll (mean): +0.1s:+1.6  +0.5s:+1.7  +1.0s:+1.7  +2.0s:+1.7  +3.0s:+1.7   recovered<2deg: 62%  fallen: 0%  jerk(1s): mean 0.187 p95 0.351
+  step +4.0 deg -> signed roll (mean): +0.1s:+0.6  +0.5s:+1.5  +1.0s:+1.4  +2.0s:+1.5  +3.0s:+1.5   recovered<2deg: 86%  fallen: 0%  jerk(1s): mean 0.187 p95 0.355
+  step +5.0 deg -> signed roll (mean): +0.1s:-0.9  +0.5s:+1.0  +1.0s:+1.0  +2.0s:+1.0  +3.0s:+1.0   recovered<2deg: 97%  fallen: 0%  jerk(1s): mean 0.191 p95 0.361
+  step -3.0 deg -> signed roll (mean): +0.1s:-1.4  +0.5s:-1.0  +1.0s:-1.0  +2.0s:-1.1  +3.0s:-1.1   recovered<2deg: 91%  fallen: 0%  jerk(1s): mean 0.217 p95 0.482
+  step -5.0 deg -> signed roll (mean): +0.1s:-2.9  +0.5s:-0.9  +1.0s:-0.8  +2.0s:-0.8  +3.0s:-0.8   recovered<2deg: 92%  fallen: 2%  jerk(1s): mean 0.254 p95 0.567
+
+NP_L5_24800_lin_pitch: FREE-BASE pitch-step decay, 64 envs, trained entry (walk 150 -> decel 75 -> settle 150), gains pinned
+  pre-step quiet stand: roll mean=+63.54 deg  p95(|.|)=89.46
+  step +1.0 deg -> signed pitch (mean): +0.1s:+63.6  +0.5s:+63.4  +1.0s:+63.5  +2.0s:+62.5  +3.0s:+62.8   recovered<2deg: 0%  fallen: 100%  jerk(1s): mean 0.406 p95 0.967
+  step +2.0 deg -> signed pitch (mean): +0.1s:+62.0  +0.5s:+61.7  +1.0s:+61.1  +2.0s:+61.6  +3.0s:+61.2   recovered<2deg: 0%  fallen: 100%  jerk(1s): mean 0.427 p95 1.017
+  step +3.0 deg -> signed pitch (mean): +0.1s:+61.3  +0.5s:+61.2  +1.0s:+61.6  +2.0s:+61.6  +3.0s:+61.8   recovered<2deg: 0%  fallen: 100%  jerk(1s): mean 0.447 p95 1.073
+  step +4.0 deg -> signed pitch (mean): +0.1s:+61.6  +0.5s:+62.0  +1.0s:+62.1  +2.0s:+62.4  +3.0s:+62.2   recovered<2deg: 0%  fallen: 100%  jerk(1s): mean 0.436 p95 1.082
+  step +5.0 deg -> signed pitch (mean): +0.1s:+62.5  +0.5s:+62.8  +1.0s:+62.7  +2.0s:+62.4  +3.0s:+63.0   recovered<2deg: 0%  fallen: 100%  jerk(1s): mean 0.435 p95 1.068
+  step -3.0 deg -> signed pitch (mean): +0.1s:-62.9  +0.5s:-63.2  +1.0s:-63.1  +2.0s:-63.2  +3.0s:-63.0   recovered<2deg: 0%  fallen: 100%  jerk(1s): mean 0.384 p95 0.827
+  step -5.0 deg -> signed pitch (mean): +0.1s:-62.5  +0.5s:-63.1  +1.0s:-63.2  +2.0s:-63.3  +3.0s:-63.4   recovered<2deg: 0%  fallen: 100%  jerk(1s): mean 0.384 p95 0.831
+
+NP_L5_24800_lin_roll: FREE-BASE roll-step decay, 64 envs, trained entry (walk 150 -> decel 75 -> settle 150), gains pinned
+  pre-step quiet stand: roll mean=+4.00 deg  p95(|.|)=17.82
+  step +1.0 deg -> signed roll (mean): +0.1s:+3.8  +0.5s:+3.3  +1.0s:+3.6  +2.0s:+4.8  +3.0s:+5.3   recovered<2deg: 0%  fallen: 100%  jerk(1s): mean 0.391 p95 0.922
+  step +2.0 deg -> signed roll (mean): +0.1s:+5.5  +0.5s:+5.1  +1.0s:+6.2  +2.0s:+6.5  +3.0s:+5.7   recovered<2deg: 0%  fallen: 100%  jerk(1s): mean 0.412 p95 1.011
+  step +3.0 deg -> signed roll (mean): +0.1s:+6.9  +0.5s:+6.4  +1.0s:+6.4  +2.0s:+6.8  +3.0s:+6.2   recovered<2deg: 0%  fallen: 100%  jerk(1s): mean 0.426 p95 1.039
+  step +4.0 deg -> signed roll (mean): +0.1s:+6.4  +0.5s:+6.0  +1.0s:+5.8  +2.0s:+6.6  +3.0s:+6.2   recovered<2deg: 0%  fallen: 100%  jerk(1s): mean 0.407 p95 0.976
+  step +5.0 deg -> signed roll (mean): +0.1s:+6.2  +0.5s:+6.3  +1.0s:+6.4  +2.0s:+6.2  +3.0s:+6.4   recovered<2deg: 0%  fallen: 100%  jerk(1s): mean 0.419 p95 0.992
+  step -3.0 deg -> signed roll (mean): +0.1s:-6.2  +0.5s:-6.3  +1.0s:-6.0  +2.0s:-6.1  +3.0s:-5.4   recovered<2deg: 0%  fallen: 100%  jerk(1s): mean 0.407 p95 0.988
+  step -5.0 deg -> signed roll (mean): +0.1s:-5.5  +0.5s:-5.7  +1.0s:-5.2  +2.0s:-4.8  +3.0s:-5.8   recovered<2deg: 0%  fallen: 100%  jerk(1s): mean 0.385 p95 0.916
+
+NP_L4_39000_lin_pitch: FREE-BASE pitch-step decay, 64 envs, trained entry (walk 150 -> decel 75 -> settle 150), gains pinned
+  pre-step quiet stand: roll mean=+70.76 deg  p95(|.|)=89.45
+  step +1.0 deg -> signed pitch (mean): +0.1s:+70.6  +0.5s:+71.4  +1.0s:+72.2  +2.0s:+72.5  +3.0s:+73.8   recovered<2deg: 0%  fallen: 100%  jerk(1s): mean 0.729 p95 1.649
+  step +2.0 deg -> signed pitch (mean): +0.1s:+73.6  +0.5s:+74.1  +1.0s:+74.0  +2.0s:+74.0  +3.0s:+74.0   recovered<2deg: 0%  fallen: 100%  jerk(1s): mean 0.686 p95 1.649
+  step +3.0 deg -> signed pitch (mean): +0.1s:+73.9  +0.5s:+74.0  +1.0s:+74.0  +2.0s:+74.0  +3.0s:+74.2   recovered<2deg: 0%  fallen: 100%  jerk(1s): mean 0.693 p95 1.627
+  step +4.0 deg -> signed pitch (mean): +0.1s:+73.9  +0.5s:+74.2  +1.0s:+74.1  +2.0s:+74.4  +3.0s:+74.3   recovered<2deg: 0%  fallen: 100%  jerk(1s): mean 0.700 p95 1.652
+  step +5.0 deg -> signed pitch (mean): +0.1s:+74.2  +0.5s:+74.2  +1.0s:+74.1  +2.0s:+74.1  +3.0s:+73.9   recovered<2deg: 0%  fallen: 100%  jerk(1s): mean 0.653 p95 1.506
+  step -3.0 deg -> signed pitch (mean): +0.1s:-73.9  +0.5s:-73.7  +1.0s:-73.7  +2.0s:-73.6  +3.0s:-73.3   recovered<2deg: 0%  fallen: 100%  jerk(1s): mean 0.621 p95 1.421
+  step -5.0 deg -> signed pitch (mean): +0.1s:-73.0  +0.5s:-72.9  +1.0s:-72.9  +2.0s:-73.0  +3.0s:-73.0   recovered<2deg: 0%  fallen: 100%  jerk(1s): mean 0.608 p95 1.345
+
+NP2_L5_24800_pitch: FREE-BASE pitch-step decay, 64 envs, trained entry (walk 150 -> decel 75 -> settle 150), gains pinned
+  pre-step quiet stand: roll mean=+66.67 deg  p95(|.|)=89.43
+  step +2.0 deg -> signed pitch (mean): +0.1s:+66.6  +0.5s:+67.0  +1.0s:+67.8  +2.0s:+66.9  +3.0s:+66.0   recovered<2deg: 0%  fallen: 100%  jerk(1s): mean 0.427 p95 1.022
+  step +4.0 deg -> signed pitch (mean): +0.1s:+65.7  +0.5s:+65.5  +1.0s:+64.7  +2.0s:+65.0  +3.0s:+64.3   recovered<2deg: 0%  fallen: 100%  jerk(1s): mean 0.483 p95 1.159
+  step -3.0 deg -> signed pitch (mean): +0.1s:-64.1  +0.5s:-63.8  +1.0s:-63.5  +2.0s:-64.4  +3.0s:-63.6   recovered<2deg: 0%  fallen: 100%  jerk(1s): mean 0.473 p95 1.152
+
+L7B_3600_lin_pitch: FREE-BASE pitch-step decay, 64 envs, trained entry (walk 150 -> decel 75 -> settle 150), gains pinned
+  pre-step quiet stand: roll mean=+0.26 deg  p95(|.|)=89.03
+  step +1.0 deg -> signed pitch (mean): +0.1s:-0.5  +0.5s:-1.2  +1.0s:-1.4  +2.0s:-1.9  +3.0s:-3.1   recovered<2deg: 22%  fallen: 25%  jerk(1s): mean 0.376 p95 0.646
+  step +2.0 deg -> signed pitch (mean): +0.1s:-1.5  +0.5s:-2.2  +1.0s:-2.7  +2.0s:-3.0  +3.0s:-3.2   recovered<2deg: 5%  fallen: 45%  jerk(1s): mean 0.385 p95 0.670
+  step +3.0 deg -> signed pitch (mean): +0.1s:-3.2  +0.5s:-4.6  +1.0s:-5.6  +2.0s:-6.6  +3.0s:-6.7   recovered<2deg: 2%  fallen: 58%  jerk(1s): mean 0.373 p95 0.650
+  step +4.0 deg -> signed pitch (mean): +0.1s:-10.1  +0.5s:-12.3  +1.0s:-13.9  +2.0s:-15.6  +3.0s:-16.7   recovered<2deg: 2%  fallen: 73%  jerk(1s): mean 0.361 p95 0.613
+  step +5.0 deg -> signed pitch (mean): +0.1s:-15.8  +0.5s:-18.5  +1.0s:-20.8  +2.0s:-22.9  +3.0s:-24.4   recovered<2deg: 0%  fallen: 88%  jerk(1s): mean 0.366 p95 0.620
+  step -3.0 deg -> signed pitch (mean): +0.1s:+20.4  +0.5s:+19.1  +1.0s:+19.0  +2.0s:+18.9  +3.0s:+20.9   recovered<2deg: 0%  fallen: 92%  jerk(1s): mean 0.345 p95 0.562
+  step -5.0 deg -> signed pitch (mean): +0.1s:+14.6  +0.5s:+12.6  +1.0s:+11.0  +2.0s:+12.1  +3.0s:+7.1   recovered<2deg: 0%  fallen: 95%  jerk(1s): mean 0.332 p95 0.593
+
+L7B_3600_lin_roll: FREE-BASE roll-step decay, 64 envs, trained entry (walk 150 -> decel 75 -> settle 150), gains pinned
+  pre-step quiet stand: roll mean=+0.30 deg  p95(|.|)=15.14
+  step +1.0 deg -> signed roll (mean): +0.1s:-1.2  +0.5s:-0.9  +1.0s:-0.9  +2.0s:-0.7  +3.0s:-0.5   recovered<2deg: 48%  fallen: 34%  jerk(1s): mean 0.359 p95 0.620
+  step +2.0 deg -> signed roll (mean): +0.1s:-2.0  +0.5s:-1.3  +1.0s:-1.4  +2.0s:-1.2  +3.0s:-1.1   recovered<2deg: 36%  fallen: 47%  jerk(1s): mean 0.431 p95 0.786
+  step +3.0 deg -> signed roll (mean): +0.1s:-4.6  +0.5s:-2.7  +1.0s:-3.2  +2.0s:-3.7  +3.0s:-4.6   recovered<2deg: 8%  fallen: 67%  jerk(1s): mean 0.410 p95 0.695
+  step +4.0 deg -> signed roll (mean): +0.1s:-6.0  +0.5s:-4.2  +1.0s:-3.9  +2.0s:-3.3  +3.0s:-4.4   recovered<2deg: 3%  fallen: 81%  jerk(1s): mean 0.391 p95 0.675
+  step +5.0 deg -> signed roll (mean): +0.1s:-8.6  +0.5s:-6.0  +1.0s:-6.2  +2.0s:-7.3  +3.0s:-7.7   recovered<2deg: 0%  fallen: 98%  jerk(1s): mean 0.474 p95 0.742
+  step -3.0 deg -> signed roll (mean): +0.1s:+10.8  +0.5s:+10.5  +1.0s:+10.7  +2.0s:+10.3  +3.0s:+9.8   recovered<2deg: 0%  fallen: 100%  jerk(1s): mean 0.529 p95 1.139
+  step -5.0 deg -> signed roll (mean): +0.1s:+9.1  +0.5s:+8.7  +1.0s:+8.6  +2.0s:+8.4  +3.0s:+8.3   recovered<2deg: 0%  fallen: 100%  jerk(1s): mean 0.545 p95 1.210
+
+NPB_52200_lin_pitch: FREE-BASE pitch-step decay, 64 envs, trained entry (walk 150 -> decel 75 -> settle 150), gains pinned
+  pre-step quiet stand: roll mean=-0.88 deg  p95(|.|)=3.31
+  step +1.0 deg -> signed pitch (mean): +0.1s:-0.0  +0.5s:-0.3  +1.0s:-0.4  +2.0s:-0.2  +3.0s:-0.2   recovered<2deg: 72%  fallen: 0%  jerk(1s): mean 0.170 p95 0.307
+  step +2.0 deg -> signed pitch (mean): +0.1s:+1.7  +0.5s:+1.2  +1.0s:+0.4  +2.0s:+0.4  +3.0s:+0.4   recovered<2deg: 77%  fallen: 0%  jerk(1s): mean 0.172 p95 0.315
+  step +3.0 deg -> signed pitch (mean): +0.1s:+2.9  +0.5s:+2.1  +1.0s:+1.2  +2.0s:+0.7  +3.0s:+0.7   recovered<2deg: 62%  fallen: 0%  jerk(1s): mean 0.165 p95 0.299
+  step +4.0 deg -> signed pitch (mean): +0.1s:+4.7  +0.5s:+3.1  +1.0s:+1.8  +2.0s:+0.8  +3.0s:+0.7   recovered<2deg: 64%  fallen: 0%  jerk(1s): mean 0.177 p95 0.332
+  step +5.0 deg -> signed pitch (mean): +0.1s:+5.1  +0.5s:+3.5  +1.0s:+2.4  +2.0s:+1.3  +3.0s:+0.9   recovered<2deg: 59%  fallen: 0%  jerk(1s): mean 0.171 p95 0.316
+  step -3.0 deg -> signed pitch (mean): +0.1s:+2.7  +0.5s:+1.6  +1.0s:+0.6  +2.0s:-0.2  +3.0s:-0.3   recovered<2deg: 67%  fallen: 0%  jerk(1s): mean 0.174 p95 0.338
+  step -5.0 deg -> signed pitch (mean): +0.1s:+4.2  +0.5s:+2.3  +1.0s:+1.0  +2.0s:+0.0  +3.0s:-0.5   recovered<2deg: 67%  fallen: 0%  jerk(1s): mean 0.197 p95 0.417
+
+NPB_52200_lin_roll: FREE-BASE roll-step decay, 64 envs, trained entry (walk 150 -> decel 75 -> settle 150), gains pinned
+  pre-step quiet stand: roll mean=+0.86 deg  p95(|.|)=1.66
+  step +1.0 deg -> signed roll (mean): +0.1s:+1.0  +0.5s:+0.9  +1.0s:+0.8  +2.0s:+0.7  +3.0s:+0.6   recovered<2deg: 97%  fallen: 0%  jerk(1s): mean 0.176 p95 0.325
+  step +2.0 deg -> signed roll (mean): +0.1s:+0.6  +0.5s:+0.6  +1.0s:+0.5  +2.0s:+0.5  +3.0s:+0.4   recovered<2deg: 98%  fallen: 0%  jerk(1s): mean 0.179 p95 0.349
+  step +3.0 deg -> signed roll (mean): +0.1s:-0.5  +0.5s:+0.1  +1.0s:+0.3  +2.0s:+0.2  +3.0s:+0.4   recovered<2deg: 100%  fallen: 0%  jerk(1s): mean 0.183 p95 0.345
+  step +4.0 deg -> signed roll (mean): +0.1s:-1.3  +0.5s:+0.1  +1.0s:+0.4  +2.0s:+0.5  +3.0s:+0.6   recovered<2deg: 97%  fallen: 0%  jerk(1s): mean 0.185 p95 0.357
+  step +5.0 deg -> signed roll (mean): +0.1s:-2.2  +0.5s:-0.0  +1.0s:+0.1  +2.0s:+0.3  +3.0s:+0.5   recovered<2deg: 98%  fallen: 0%  jerk(1s): mean 0.183 p95 0.353
+  step -3.0 deg -> signed roll (mean): +0.1s:-0.9  +0.5s:-0.8  +1.0s:-0.8  +2.0s:-0.6  +3.0s:-0.6   recovered<2deg: 98%  fallen: 2%  jerk(1s): mean 0.162 p95 0.307
+  step -5.0 deg -> signed roll (mean): +0.1s:-2.3  +0.5s:-0.8  +1.0s:-0.7  +2.0s:-0.6  +3.0s:-0.5   recovered<2deg: 98%  fallen: 2%  jerk(1s): mean 0.193 p95 0.388
+
+GB_65400_lin_pitch: FREE-BASE pitch-step decay, 64 envs, trained entry (walk 150 -> decel 75 -> settle 150), gains pinned
+  pre-step quiet stand: roll mean=-1.38 deg  p95(|.|)=3.45
+  step +1.0 deg -> signed pitch (mean): +0.1s:-0.5  +0.5s:-0.9  +1.0s:-1.1  +2.0s:-1.1  +3.0s:-1.2   recovered<2deg: 67%  fallen: 0%  jerk(1s): mean 0.154 p95 0.274
+  step +2.0 deg -> signed pitch (mean): +0.1s:+0.6  +0.5s:-0.1  +1.0s:-0.4  +2.0s:-0.8  +3.0s:-0.9   recovered<2deg: 72%  fallen: 0%  jerk(1s): mean 0.158 p95 0.289
+  step +3.0 deg -> signed pitch (mean): +0.1s:+2.2  +0.5s:+1.2  +1.0s:+0.1  +2.0s:-0.4  +3.0s:-0.7   recovered<2deg: 80%  fallen: 0%  jerk(1s): mean 0.160 p95 0.287
+  step +4.0 deg -> signed pitch (mean): +0.1s:+3.3  +0.5s:+1.9  +1.0s:+0.6  +2.0s:-0.3  +3.0s:-0.8   recovered<2deg: 83%  fallen: 0%  jerk(1s): mean 0.169 p95 0.309
+  step +5.0 deg -> signed pitch (mean): +0.1s:+4.4  +0.5s:+2.8  +1.0s:+1.0  +2.0s:-0.2  +3.0s:-0.8   recovered<2deg: 86%  fallen: 0%  jerk(1s): mean 0.174 p95 0.309
+  step -3.0 deg -> signed pitch (mean): +0.1s:+4.0  +0.5s:+2.8  +1.0s:+1.8  +2.0s:+1.3  +3.0s:+0.8   recovered<2deg: 77%  fallen: 0%  jerk(1s): mean 0.154 p95 0.285
+  step -5.0 deg -> signed pitch (mean): +0.1s:+5.8  +0.5s:+4.3  +1.0s:+2.7  +2.0s:+1.4  +3.0s:+0.8   recovered<2deg: 77%  fallen: 0%  jerk(1s): mean 0.172 p95 0.332
+
+GB_65400_lin_roll: FREE-BASE roll-step decay, 64 envs, trained entry (walk 150 -> decel 75 -> settle 150), gains pinned
+  pre-step quiet stand: roll mean=+0.88 deg  p95(|.|)=1.72
+  step +1.0 deg -> signed roll (mean): +0.1s:+1.0  +0.5s:+0.9  +1.0s:+0.8  +2.0s:+0.8  +3.0s:+0.8   recovered<2deg: 98%  fallen: 0%  jerk(1s): mean 0.162 p95 0.301
+  step +2.0 deg -> signed roll (mean): +0.1s:+1.1  +0.5s:+1.0  +1.0s:+0.8  +2.0s:+0.8  +3.0s:+0.8   recovered<2deg: 95%  fallen: 0%  jerk(1s): mean 0.173 p95 0.342
+  step +3.0 deg -> signed roll (mean): +0.1s:+0.1  +0.5s:+0.5  +1.0s:+0.5  +2.0s:+0.6  +3.0s:+0.6   recovered<2deg: 100%  fallen: 0%  jerk(1s): mean 0.165 p95 0.321
+  step +4.0 deg -> signed roll (mean): +0.1s:-1.2  +0.5s:+0.3  +1.0s:+0.4  +2.0s:+0.5  +3.0s:+0.4   recovered<2deg: 100%  fallen: 0%  jerk(1s): mean 0.169 p95 0.319
+  step +5.0 deg -> signed roll (mean): +0.1s:-2.3  +0.5s:+0.0  +1.0s:+0.2  +2.0s:+0.3  +3.0s:+0.2   recovered<2deg: 100%  fallen: 0%  jerk(1s): mean 0.178 p95 0.338
+  step -3.0 deg -> signed roll (mean): +0.1s:-0.6  +0.5s:-0.3  +1.0s:-0.3  +2.0s:-0.3  +3.0s:-0.3   recovered<2deg: 100%  fallen: 0%  jerk(1s): mean 0.160 p95 0.302
+  step -5.0 deg -> signed roll (mean): +0.1s:-1.9  +0.5s:-0.2  +1.0s:-0.2  +2.0s:-0.2  +3.0s:-0.2   recovered<2deg: 100%  fallen: 0%  jerk(1s): mean 0.173 p95 0.330
+
+H3_82000_leansweep: LEAN SWEEP (rig 6.5; hardware ratio 3.6, rig sim 3.1)
+  lean 0.5 deg: d(body)=2.75 d(ankle_enc)=2.400 RATIO=1.14
+  lean 1.0 deg: d(body)=3.16 d(ankle_enc)=2.749 RATIO=1.15
+  lean 1.5 deg: d(body)=3.55 d(ankle_enc)=2.835 RATIO=1.25
+  lean 2.0 deg: d(body)=3.81 d(ankle_enc)=3.392 RATIO=1.12
+  lean 2.5 deg: d(body)=4.40 d(ankle_enc)=3.194 RATIO=1.38
+
+H3_82000_lin_pitch: FREE-BASE pitch-step decay, 64 envs, trained entry (walk 150 -> decel 75 -> settle 150), gains pinned
+  pre-step quiet stand: roll mean=-2.92 deg  p95(|.|)=5.23
+  step +1.0 deg -> signed pitch (mean): +0.1s:-1.9  +0.5s:-1.8  +1.0s:-1.8  +2.0s:-2.3  +3.0s:-2.5   recovered<2deg: 41%  fallen: 0%  jerk(1s): mean 0.252 p95 0.472
+  step +2.0 deg -> signed pitch (mean): +0.1s:-0.7  +0.5s:-0.8  +1.0s:-1.1  +2.0s:-1.7  +3.0s:-2.0   recovered<2deg: 36%  fallen: 0%  jerk(1s): mean 0.253 p95 0.478
+  step +3.0 deg -> signed pitch (mean): +0.1s:+0.9  +0.5s:+0.7  +1.0s:+0.4  +2.0s:-0.5  +3.0s:-1.0   recovered<2deg: 53%  fallen: 0%  jerk(1s): mean 0.264 p95 0.497
+  step +4.0 deg -> signed pitch (mean): +0.1s:+2.5  +0.5s:+2.1  +1.0s:+1.4  +2.0s:+0.1  +3.0s:-0.4   recovered<2deg: 62%  fallen: 0%  jerk(1s): mean 0.282 p95 0.549
+  step +5.0 deg -> signed pitch (mean): +0.1s:+4.0  +0.5s:+3.2  +1.0s:+2.1  +2.0s:+1.2  +3.0s:+0.5   recovered<2deg: 58%  fallen: 0%  jerk(1s): mean 0.308 p95 0.653
+  step -3.0 deg -> signed pitch (mean): +0.1s:+3.4  +0.5s:+3.3  +1.0s:+2.8  +2.0s:+2.1  +3.0s:+1.3   recovered<2deg: 42%  fallen: 0%  jerk(1s): mean 0.264 p95 0.511
+  step -5.0 deg -> signed pitch (mean): +0.1s:+6.0  +0.5s:+4.6  +1.0s:+3.2  +2.0s:+1.5  +3.0s:+1.1   recovered<2deg: 44%  fallen: 0%  jerk(1s): mean 0.288 p95 0.601
+
+H3_leansweep_pinned: LEAN SWEEP (rig 6.5; hardware ratio 3.6, rig sim 3.1)
+  lean 0.5 deg: d(body)=3.32 d(ankle_enc)=4.404 RATIO=0.75
+  lean 1.0 deg: d(body)=3.79 d(ankle_enc)=5.676 RATIO=0.67
+  lean 1.5 deg: d(body)=4.30 d(ankle_enc)=4.953 RATIO=0.87
+  lean 2.0 deg: d(body)=4.81 d(ankle_enc)=5.503 RATIO=0.87
+  lean 2.5 deg: d(body)=5.34 d(ankle_enc)=4.485 RATIO=1.19
+
+H3_leansweep_hold: LEAN SWEEP (rig 6.5; hardware ratio 3.6, rig sim 3.1)
+  lean 0.5 deg: d(body)=0.51 d(ankle_enc)=0.396 RATIO=1.29
+  lean 1.0 deg: d(body)=0.99 d(ankle_enc)=0.420 RATIO=2.37
+  lean 1.5 deg: d(body)=1.50 d(ankle_enc)=0.448 RATIO=3.36
+  lean 2.0 deg: d(body)=2.01 d(ankle_enc)=0.467 RATIO=4.29
+  lean 2.5 deg: d(body)=2.51 d(ankle_enc)=0.477 RATIO=5.27
+
+H3_82000_lin_roll: FREE-BASE roll-step decay, 64 envs, trained entry (walk 150 -> decel 75 -> settle 150), gains pinned
+  pre-step quiet stand: roll mean=+2.26 deg  p95(|.|)=2.91
+  step +1.0 deg -> signed roll (mean): +0.1s:+2.2  +0.5s:+2.3  +1.0s:+2.3  +2.0s:+2.2  +3.0s:+2.2   recovered<2deg: 20%  fallen: 0%  jerk(1s): mean 0.255 p95 0.472
+  step +2.0 deg -> signed roll (mean): +0.1s:+2.1  +0.5s:+2.1  +1.0s:+2.1  +2.0s:+2.1  +3.0s:+2.1   recovered<2deg: 30%  fallen: 0%  jerk(1s): mean 0.264 p95 0.505
+  step +3.0 deg -> signed roll (mean): +0.1s:+1.0  +0.5s:+1.9  +1.0s:+1.9  +2.0s:+1.8  +3.0s:+1.8   recovered<2deg: 41%  fallen: 0%  jerk(1s): mean 0.265 p95 0.505
+  step +4.0 deg -> signed roll (mean): +0.1s:+0.0  +0.5s:+1.5  +1.0s:+1.5  +2.0s:+1.5  +3.0s:+1.6   recovered<2deg: 56%  fallen: 0%  jerk(1s): mean 0.265 p95 0.506
+  step +5.0 deg -> signed roll (mean): +0.1s:-1.3  +0.5s:+1.0  +1.0s:+1.1  +2.0s:+1.1  +3.0s:+1.1   recovered<2deg: 75%  fallen: 0%  jerk(1s): mean 0.271 p95 0.505
+  step -3.0 deg -> signed roll (mean): +0.1s:-1.6  +0.5s:-1.1  +1.0s:-1.1  +2.0s:-0.9  +3.0s:-0.9   recovered<2deg: 83%  fallen: 0%  jerk(1s): mean 0.281 p95 0.544
+  step -5.0 deg -> signed roll (mean): +0.1s:-2.8  +0.5s:-0.4  +1.0s:-0.8  +2.0s:-0.7  +3.0s:-0.5   recovered<2deg: 80%  fallen: 0%  jerk(1s): mean 0.312 p95 0.637
+
+JLIN_45600_pitch: FREE-BASE pitch-step decay, 64 envs, trained entry (walk 150 -> decel 75 -> settle 150), gains pinned
+  pre-step quiet stand: roll mean=+0.10 deg  p95(|.|)=3.11
+  step +1.0 deg -> signed pitch (mean): +0.1s:+1.1  +0.5s:+1.0  +1.0s:+0.8  +2.0s:-0.2  +3.0s:-0.5   recovered<2deg: 81%  fallen: 0%  jerk(1s): mean 0.352 p95 0.722
+  step +2.0 deg -> signed pitch (mean): +0.1s:+1.8  +0.5s:+1.8  +1.0s:+1.4  +2.0s:+0.2  +3.0s:-0.4   recovered<2deg: 77%  fallen: 0%  jerk(1s): mean 0.343 p95 0.681
+  step +3.0 deg -> signed pitch (mean): +0.1s:+2.5  +0.5s:+2.4  +1.0s:+1.8  +2.0s:+0.3  +3.0s:-0.5   recovered<2deg: 81%  fallen: 0%  jerk(1s): mean 0.376 p95 0.748
+  step +4.0 deg -> signed pitch (mean): +0.1s:+4.2  +0.5s:+3.9  +1.0s:+2.6  +2.0s:+0.0  +3.0s:-1.7   recovered<2deg: 56%  fallen: 0%  jerk(1s): mean 0.404 p95 0.816
+  step +5.0 deg -> signed pitch (mean): +0.1s:+4.5  +0.5s:+4.3  +1.0s:+3.1  +2.0s:+0.5  +3.0s:-1.1   recovered<2deg: 73%  fallen: 0%  jerk(1s): mean 0.436 p95 0.893
+

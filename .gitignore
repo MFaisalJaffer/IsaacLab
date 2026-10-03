@@ -69,3 +69,23 @@ tests/
 
 # Docker history
 .isaac-lab-docker-history
+
+# ---- K-Bot legs campaign (2026-10-02): local environment, checkpoints, bundles, renders, datasets, logs ----
+kbot_env/
+archive_anchors/
+deploy_candidates/
+*.pt.keep
+eval_watch/**/*.gif
+eval_watch/**/*.mp4
+eval_watch/**/*.png
+eval_watch/**/*.npz
+eval_watch/**/*.pt
+eval_watch/**/*.onnx
+eval_watch/**/*.log
+eval_watch/**/*.done
+eval_watch/**/*.tgz
+eval_watch/**/*.pyc
+eval_watch/__pycache__/
+eval_watch/amp_refs/
+eval_watch/lafan1_g1/
+eval_watch/safe_ckpts/

@@ -1,0 +1,6 @@
+=== FLAT-0.12 torque (model_177200.pt) ===
+flat012_vx0.30 [gains=nominal] vx=0.311/0.3 (104%)  tilt mean=9.4 p95(max)=15.2 max=17.4  fallen=0/32
+    T-V saturation%: right_ankle_02=37  left_ankle_02=36  left_hip_pitch_04=17  right_hip_pitch_04=15  left_knee_04=14  right_knee_04=12  left_hip_roll_04=4  right_hip_roll_04=3  right_hip_yaw_03=0  left_hip_yaw_03=0
+    qd tick-flip%: left_hip_pitch_04=21  right_hip_pitch_04=21  left_hip_roll_04=31  right_hip_roll_04=30  left_hip_yaw_03=46  right_hip_yaw_03=45  left_knee_04=32  right_knee_04=34  left_ankle_02=25  right_ankle_02=25
+    contact: flicker=9.4 trans/s/foot  stance-duty=78%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=8.8(10.6)  right_hip_pitch_04=8.5(10.3)  left_hip_roll_04=6.5(8.0)  right_hip_roll_04=6.3(7.8)  left_hip_yaw_03=1.1(1.5)  right_hip_yaw_03=1.1(1.5)  left_knee_04=4.9(8.0)  right_knee_04=4.6(7.6)  left_ankle_02=6.1(7.1)  right_ankle_02=6.2(7.2)

@@ -1,0 +1,1 @@
+logs/rsl_rl/kbot_legs_rough_rigcand_dechatter/2026-07-16_23-36-36/model_210000.pt

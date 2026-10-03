@@ -1,0 +1,8 @@
+{
+ "checkpoint": "archive_anchors/amp_pilot2_hard_mirroroff.pt",
+ "cmd": "-0.3:0:0",
+ "standing": null,
+ "walking_envs": 128,
+ "survival_walking": 0.0,
+ "note": "no walking env survived"
+}

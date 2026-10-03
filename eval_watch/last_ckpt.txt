@@ -1,0 +1,1 @@
+/home/faisal/IsaacLab/logs/rsl_rl/kbot_legs_bent/2026-06-17_10-13-23/model_9750.pt

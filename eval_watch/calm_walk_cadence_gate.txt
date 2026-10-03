@@ -1,0 +1,23 @@
+=== CADENCE-ONLY RE-GATE: model_216600.pt (gait_freq 1.15, headroom -2.5/0.93) ===
+cad_vx0.15   [gains=nominal] vx=0.117/0.15 (78%)  tilt mean=10.0 p95(max)=18.7 max=21.1  fallen=1/32
+    T-V saturation%: left_hip_pitch_04=59  right_hip_pitch_04=58  right_ankle_02=47  left_ankle_02=43  left_knee_04=22  right_knee_04=21  right_hip_roll_04=5  left_hip_roll_04=3  right_hip_yaw_03=0  left_hip_yaw_03=0
+    sat split mot/brk/stall %: left_hip_pitch_04=30/10/18  right_hip_pitch_04=35/9/13  right_ankle_02=28/14/5  left_ankle_02=26/11/6  left_knee_04=18/3/1  right_knee_04=17/3/1  right_hip_roll_04=4/1/1  left_hip_roll_04=2/0/1
+    qd tick-flip%: left_hip_pitch_04=30  right_hip_pitch_04=25  left_hip_roll_04=34  right_hip_roll_04=32  left_hip_yaw_03=43  right_hip_yaw_03=42  left_knee_04=32  right_knee_04=34  left_ankle_02=31  right_ankle_02=32
+    contact: flicker=9.0 trans/s/foot  stance-duty=80%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=14.1(15.5)  right_hip_pitch_04=14.0(15.3)  left_hip_roll_04=5.9(7.4)  right_hip_roll_04=5.9(7.6)  left_hip_yaw_03=1.7(2.2)  right_hip_yaw_03=1.6(2.1)  left_knee_04=7.1(10.2)  right_knee_04=7.2(10.2)  left_ankle_02=6.6(7.5)  right_ankle_02=6.9(7.7)
+cad_vx0.30   [gains=nominal] vx=0.238/0.3 (79%)  tilt mean=10.5 p95(max)=18.9 max=21.6  fallen=0/32
+    T-V saturation%: left_hip_pitch_04=58  right_hip_pitch_04=56  left_ankle_02=45  right_ankle_02=43  left_knee_04=19  right_knee_04=18  right_hip_roll_04=5  left_hip_roll_04=4  right_hip_yaw_03=0  left_hip_yaw_03=0
+    sat split mot/brk/stall %: left_hip_pitch_04=36/7/16  right_hip_pitch_04=38/7/11  left_ankle_02=25/16/3  right_ankle_02=26/15/3  left_knee_04=15/3/1  right_knee_04=15/3/1  right_hip_roll_04=4/0/1  left_hip_roll_04=3/1/1
+    qd tick-flip%: left_hip_pitch_04=23  right_hip_pitch_04=21  left_hip_roll_04=31  right_hip_roll_04=31  left_hip_yaw_03=42  right_hip_yaw_03=41  left_knee_04=32  right_knee_04=35  left_ankle_02=27  right_ankle_02=26
+    contact: flicker=9.4 trans/s/foot  stance-duty=78%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=13.8(15.1)  right_hip_pitch_04=13.5(14.9)  left_hip_roll_04=6.3(7.9)  right_hip_roll_04=6.0(7.7)  left_hip_yaw_03=1.6(2.1)  right_hip_yaw_03=1.6(2.1)  left_knee_04=6.4(9.5)  right_knee_04=6.7(9.7)  left_ankle_02=6.8(7.7)  right_ankle_02=6.7(7.6)
+cad_vx0.50   [gains=nominal] vx=0.464/0.5 (93%)  tilt mean=9.3 p95(max)=19.4 max=21.0  fallen=0/32
+    T-V saturation%: right_ankle_02=46  left_ankle_02=45  right_hip_pitch_04=43  left_hip_pitch_04=42  left_knee_04=19  right_knee_04=16  right_hip_roll_04=7  left_hip_roll_04=6  left_hip_yaw_03=0  right_hip_yaw_03=0
+    sat split mot/brk/stall %: right_ankle_02=31/13/2  left_ankle_02=28/15/2  right_hip_pitch_04=35/4/4  left_hip_pitch_04=32/4/6  left_knee_04=15/3/1  right_knee_04=13/2/0  right_hip_roll_04=5/1/1  left_hip_roll_04=3/2/1
+    qd tick-flip%: left_hip_pitch_04=19  right_hip_pitch_04=17  left_hip_roll_04=30  right_hip_roll_04=29  left_hip_yaw_03=43  right_hip_yaw_03=43  left_knee_04=34  right_knee_04=37  left_ankle_02=24  right_ankle_02=21
+    contact: flicker=9.5 trans/s/foot  stance-duty=70%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=11.8(13.4)  right_hip_pitch_04=12.2(13.7)  left_hip_roll_04=6.4(8.2)  right_hip_roll_04=6.3(8.1)  left_hip_yaw_03=1.7(2.3)  right_hip_yaw_03=1.4(1.9)  left_knee_04=6.5(9.6)  right_knee_04=6.3(9.2)  left_ankle_02=6.7(7.7)  right_ankle_02=6.8(7.8)
+CAD_vx0.30: vx=0.3  (400 steps x 32 envs)  feet_phase target this build = 0.06 m
+  L_foot: swing-apex(mean top10%)=2.0 cm  p50=0.0  p90=1.4  p99=2.7  max=18.7 cm  |  off-ground=4% of time
+  R_foot: swing-apex(mean top10%)=1.7 cm  p50=0.0  p90=1.1  p99=2.3  max=4.2 cm  |  off-ground=2% of time
+  contact-sensor swing%: L=17  R=19  (stance-duty L=83%  R=81%)

@@ -1,0 +1,72 @@
+#!/usr/bin/env bash
+# Single-run watcher for the Isaac DR legs training. Each cycle:
+#   1. find the latest checkpoint of the newest kbot_legs_rough run
+#   2. render it (play.py, RTX 'preview' mode = parts visible, low VRAM) -> mp4
+#   3. (a) make a GIF + filmstrip for the :8800 web page, AND
+#      (b) log the mp4 into the run's TensorBoard dir (policy/rollout video)
+# Renders from a saved checkpoint in a separate process, so it does NOT slow
+# training (no --video on the trainer).
+set -u
+IL=/home/faisal/IsaacLab
+OUT=$IL/eval_watch
+PY=$IL/kbot_env/bin/python
+FF=$IL/kbot_env/lib/python3.11/site-packages/imageio_ffmpeg/binaries/ffmpeg-linux-x86_64-v7.0.2
+SLEEP_SECS=600          # 10 min between renders
+BOOT_WAIT=300           # max seconds to wait for play.py to emit an mp4
+
+mkdir -p "$OUT"
+log() { echo "[$(date '+%H:%M:%S')] $*" >> "$OUT/watcher_isaac.log"; }
+VGLOB="$IL/logs/rsl_rl/kbot_legs_rough/*/videos/play"
+
+log "isaac DR watcher started"
+echo 0 > "$OUT/dr_last_ckpt.txt"
+while true; do
+    RUN=$(ls -dt $IL/logs/rsl_rl/kbot_legs_rough/*/ 2>/dev/null | head -1)
+    newest=$(ls -t "$RUN"model_*.pt 2>/dev/null | head -1)
+    if [ -z "$newest" ]; then log "no checkpoint yet"; sleep 60; continue; fi
+    last=$(cat "$OUT/dr_last_ckpt.txt" 2>/dev/null)
+    if [ "$newest" = "$last" ]; then sleep "$SLEEP_SECS"; continue; fi
+    iter=$(basename "$newest" .pt | sed 's/model_//')
+    log "rendering iter=$iter (run $(basename "$RUN"))"
+    rm -f $VGLOB/*.mp4 2>/dev/null
+    cd "$IL"
+    # TERRAIN RENDER (2026-07-17): KBOT_FLAT dropped — training moved to the
+    # blind-walkable rough+slopes mix, so the GIF should show it. KBOT_MAXINIT=2
+    # spawns the render robots near the fleet's current mean terrain level
+    # (~1.3 climbing) — bump as the curriculum climbs so the GIF stays
+    # representative. NB quantitative evals still run KBOT_FLAT=1 (eval-terrain
+    # trap); this is the qualitative view only.
+    # CACHE GUARD (2026-07-18): every terrain boot cooks a fresh multi-100MB
+    # DerivedDataCache blob for its randomly generated grid and kit never
+    # evicts — 69 GB in one day (disk 61G -> 34G). Purge entries older than
+    # 90 min before each render: protects the live training's and current
+    # render's entries, deletes the dead ones.
+    find "$IL/kbot_env/lib/python3.11/site-packages/isaacsim/kit/cache/DerivedDataCache" \
+        -mindepth 1 -mmin +90 -delete 2>/dev/null
+    env KBOT_MAXINIT=2 "$PY" scripts/reinforcement_learning/rsl_rl/play.py \
+        --task Isaac-Velocity-Rough-KbotLegs-v0 --num_envs 2 \
+        --checkpoint "$newest" --video --video_length 200 --headless \
+        --rendering_mode preview > "$OUT/play_dr.log" 2>&1 &
+    play_pid=$!
+    waited=0; mp4=""
+    while [ $waited -lt $BOOT_WAIT ]; do
+        mp4=$(ls -t $VGLOB/*.mp4 2>/dev/null | head -1)
+        [ -n "$mp4" ] && break
+        sleep 5; waited=$((waited+5))
+    done
+    [ -n "$mp4" ] && sleep 8
+    kill -9 "$play_pid" 2>/dev/null
+    pkill -9 -f "play.py --task Isaac-Velocity" 2>/dev/null
+    sleep 3
+    if [ -z "$mp4" ]; then log "no mp4 (boot/hang); retry next cycle"; sleep "$SLEEP_SECS"; continue; fi
+    # (a) :8800 GIF + filmstrip
+    "$FF" -y -i "$mp4" -vf "select='not(mod(n\,28))',scale=360:-1,tile=7x1" -frames:v 1 "$OUT/dr_filmstrip.png" >/dev/null 2>&1
+    "$FF" -y -i "$mp4" -vf "fps=12,scale=620:-1" "$OUT/dr_latest.gif" >/dev/null 2>&1
+    echo "iter $iter   rendered $(date '+%Y-%m-%d %H:%M:%S')" > "$OUT/dr_status.txt"
+    # (b) TB video into the run's own dir (kbot-tb logdir=logs/rsl_rl picks it up).
+    # Pass the ffmpeg GIF (not the mp4) — TB renders it animated in IMAGES.
+    "$PY" "$OUT/video_to_tb.py" "$OUT/dr_latest.gif" "$RUN" "$iter" >> "$OUT/watcher_isaac.log" 2>&1
+    echo "$newest" > "$OUT/dr_last_ckpt.txt"
+    log "done iter=$iter"
+    sleep "$SLEEP_SECS"
+done

@@ -1,0 +1,2 @@
+ckpt=/home/faisal/IsaacLab/logs/rsl_rl/kbot_legs_rough_rigcand_terrain/2026-07-17_22-09-59/model_289400.pt
+steps=600 envs=2 vx_cmd=0.3 vx_achieved=0.337

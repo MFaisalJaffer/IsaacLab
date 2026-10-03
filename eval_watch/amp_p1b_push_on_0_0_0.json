@@ -1,0 +1,17 @@
+{
+ "checkpoint": "archive_anchors/amp_pilot1b_model_1999.pt",
+ "cmd": "0:0:0",
+ "standing": {
+  "envs": 256,
+  "survival": 0.8515625,
+  "tilt_deg": {
+   "mean": 1.4942184686660767,
+   "p90": 2.9829074859619147
+  },
+  "foot_lift_max_cm": 5.935865640640259,
+  "foot_travel_mps_mean": 0.0591878704726696,
+  "width_cm": 33.6952269077301,
+  "base_speed_abs_mps": 0.053542155772447586
+ },
+ "walking_envs": 0
+}

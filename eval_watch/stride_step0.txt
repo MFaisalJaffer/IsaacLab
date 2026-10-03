@@ -1,0 +1,4 @@
+=== STRIDE STEP-0: model_198600.pt (restored build, fixed sep target 0.30) ===
+step0_vx0.15: cmd=0.15 act_vx=0.148  sep amp mean=9.7 cm (p10=0.6 p90=13.1)  sep mean-offset=-0.3 cm  realized cadence=1.12 Hz  | natural stride v/f=10.6 cm  target(now)=30.0 cm  overreach x2.84
+step0_vx0.30: cmd=0.3 act_vx=0.264  sep amp mean=12.5 cm (p10=0.3 p90=18.8)  sep mean-offset=+0.2 cm  realized cadence=1.01 Hz  | natural stride v/f=18.9 cm  target(now)=30.0 cm  overreach x1.59
+step0_vx0.50: cmd=0.5 act_vx=0.438  sep amp mean=18.0 cm (p10=0.2 p90=23.7)  sep mean-offset=+1.2 cm  realized cadence=1.10 Hz  | natural stride v/f=31.3 cm  target(now)=30.0 cm  overreach x0.96

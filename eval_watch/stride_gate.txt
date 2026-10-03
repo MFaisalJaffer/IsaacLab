@@ -1,0 +1,24 @@
+=== STRIDE-LEVER GATE: model_208600.pt (speed_scale_sep on, floor 0.08 cap 0.30) ===
+sg_vx0.15    [gains=nominal] vx=0.151/0.15 (101%)  tilt mean=9.7 p95(max)=14.9 max=16.6  fallen=0/32
+    T-V saturation%: left_ankle_02=54  right_ankle_02=54  left_knee_04=23  left_hip_pitch_04=20  right_hip_pitch_04=20  right_knee_04=19  right_hip_roll_04=3  left_hip_roll_04=2  right_hip_yaw_03=0  left_hip_yaw_03=0
+    sat split mot/brk/stall %: left_ankle_02=29/18/7  right_ankle_02=29/19/5  left_knee_04=19/2/1  left_hip_pitch_04=12/3/5  right_hip_pitch_04=11/5/5  right_knee_04=17/1/1  right_hip_roll_04=2/1/1  left_hip_roll_04=1/1/0
+    qd tick-flip%: left_hip_pitch_04=21  right_hip_pitch_04=22  left_hip_roll_04=31  right_hip_roll_04=31  left_hip_yaw_03=44  right_hip_yaw_03=45  left_knee_04=26  right_knee_04=27  left_ankle_02=30  right_ankle_02=30
+    contact: flicker=8.7 trans/s/foot  stance-duty=81%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=10.8(12.1)  right_hip_pitch_04=10.6(12.0)  left_hip_roll_04=5.6(7.1)  right_hip_roll_04=5.8(7.3)  left_hip_yaw_03=1.0(1.3)  right_hip_yaw_03=1.1(1.5)  left_knee_04=7.0(10.1)  right_knee_04=6.4(9.5)  left_ankle_02=7.4(8.2)  right_ankle_02=7.4(8.2)
+sg_vx0.30    [gains=nominal] vx=0.316/0.3 (105%)  tilt mean=8.7 p95(max)=14.5 max=15.2  fallen=0/32
+    T-V saturation%: left_ankle_02=54  right_ankle_02=51  left_knee_04=22  right_knee_04=20  right_hip_pitch_04=14  left_hip_pitch_04=12  right_hip_roll_04=5  left_hip_roll_04=4  right_hip_yaw_03=0  left_hip_yaw_03=0
+    sat split mot/brk/stall %: left_ankle_02=28/23/3  right_ankle_02=24/24/3  left_knee_04=18/2/1  right_knee_04=18/2/0  right_hip_pitch_04=10/2/2  left_hip_pitch_04=9/1/2  right_hip_roll_04=3/1/1  left_hip_roll_04=2/2/1
+    qd tick-flip%: left_hip_pitch_04=17  right_hip_pitch_04=16  left_hip_roll_04=27  right_hip_roll_04=28  left_hip_yaw_03=44  right_hip_yaw_03=45  left_knee_04=27  right_knee_04=27  left_ankle_02=26  right_ankle_02=26
+    contact: flicker=8.1 trans/s/foot  stance-duty=78%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=9.3(10.7)  right_hip_pitch_04=9.5(10.9)  left_hip_roll_04=6.2(7.8)  right_hip_roll_04=6.1(7.7)  left_hip_yaw_03=1.0(1.3)  right_hip_yaw_03=1.0(1.3)  left_knee_04=6.7(9.8)  right_knee_04=6.3(9.4)  left_ankle_02=7.5(8.3)  right_ankle_02=7.3(8.1)
+sg_vx0.50    [gains=nominal] vx=0.523/0.5 (105%)  tilt mean=6.9 p95(max)=14.4 max=15.9  fallen=0/32
+    T-V saturation%: right_ankle_02=53  left_ankle_02=46  right_knee_04=19  left_knee_04=18  right_hip_roll_04=10  left_hip_roll_04=9  right_hip_pitch_04=9  left_hip_pitch_04=8  right_hip_yaw_03=0  left_hip_yaw_03=0
+    sat split mot/brk/stall %: right_ankle_02=27/24/2  left_ankle_02=25/19/2  right_knee_04=16/2/0  left_knee_04=15/3/0  right_hip_roll_04=6/3/2  left_hip_roll_04=4/3/2  right_hip_pitch_04=7/1/1  left_hip_pitch_04=7/1/0
+    qd tick-flip%: left_hip_pitch_04=13  right_hip_pitch_04=11  left_hip_roll_04=22  right_hip_roll_04=23  left_hip_yaw_03=42  right_hip_yaw_03=44  left_knee_04=25  right_knee_04=26  left_ankle_02=23  right_ankle_02=21
+    contact: flicker=7.3 trans/s/foot  stance-duty=72%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=7.6(9.1)  right_hip_pitch_04=7.7(9.3)  left_hip_roll_04=6.8(8.7)  right_hip_roll_04=6.9(8.9)  left_hip_yaw_03=1.0(1.4)  right_hip_yaw_03=1.1(1.5)  left_knee_04=6.0(9.0)  right_knee_04=6.1(9.1)  left_ankle_02=6.8(7.8)  right_ankle_02=7.4(8.3)
+SG_vx0.30: vx=0.3  (400 steps x 32 envs)  feet_phase target this build = 0.06 m
+  L_foot: swing-apex(mean top10%)=2.6 cm  p50=0.1  p90=1.9  p99=3.4  max=4.9 cm  |  off-ground=9% of time
+  R_foot: swing-apex(mean top10%)=2.7 cm  p50=0.0  p90=1.9  p99=3.5  max=5.6 cm  |  off-ground=9% of time
+  contact-sensor swing%: L=18  R=19  (stance-duty L=82%  R=81%)
+SG_stride_vx0.15: cmd=0.15 act_vx=0.116  sep amp mean=7.8 cm (p10=1.6 p90=10.4)  sep mean-offset=+0.6 cm  realized cadence=1.16 Hz  | natural stride v/f=8.3 cm  target(now)=30.0 cm  overreach x3.63

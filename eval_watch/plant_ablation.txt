@@ -1,0 +1,2 @@
+ARM all       | end-of-walk: alive 100% tilt   2.7 deg walked  -7.0 cm | post-decel: alive 100% tilt   1.4 | settled: alive 100% tilt   1.4 | +2s stand: alive 100% tilt   1.2
+ARM old       | end-of-walk: alive 100% tilt   1.6 deg walked  -3.8 cm | post-decel: alive 100% tilt   1.6 | settled: alive 100% tilt   2.3 | +2s stand: alive 100% tilt   2.8

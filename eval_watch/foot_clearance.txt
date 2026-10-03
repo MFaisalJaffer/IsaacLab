@@ -1,0 +1,37 @@
+=== FOOT CLEARANCE: current FLAT (model_146400.pt, 6cm) vs ORIGINAL (101000, 12cm) ===
+FLAT-6cm_vx0.15: vx=0.15  (400 steps x 32 envs)  feet_phase target this build = 0.06 m
+  L_foot: swing-apex(mean top10%)=0.5 cm  p50=0.0  p90=0.3  p99=0.7  max=2.9 cm  |  off-ground=0% of time
+  R_foot: swing-apex(mean top10%)=0.7 cm  p50=0.0  p90=0.4  p99=1.1  max=2.2 cm  |  off-ground=0% of time
+  contact-sensor swing%: L=9  R=11  (stance-duty L=91%  R=89%)
+FLAT-6cm_vx0.30: vx=0.3  (400 steps x 32 envs)  feet_phase target this build = 0.06 m
+  L_foot: swing-apex(mean top10%)=1.2 cm  p50=0.0  p90=0.9  p99=1.6  max=2.4 cm  |  off-ground=0% of time
+  R_foot: swing-apex(mean top10%)=1.3 cm  p50=0.0  p90=0.8  p99=1.8  max=3.6 cm  |  off-ground=0% of time
+  contact-sensor swing%: L=15  R=15  (stance-duty L=85%  R=85%)
+FLAT-6cm_vx0.50: vx=0.5  (400 steps x 32 envs)  feet_phase target this build = 0.06 m
+  L_foot: swing-apex(mean top10%)=1.9 cm  p50=0.0  p90=1.4  p99=2.4  max=3.3 cm  |  off-ground=3% of time
+  R_foot: swing-apex(mean top10%)=1.9 cm  p50=0.0  p90=1.4  p99=2.4  max=4.0 cm  |  off-ground=3% of time
+  contact-sensor swing%: L=21  R=20  (stance-duty L=79%  R=80%)
+ORIG-12cm_vx0.30: vx=0.3  (400 steps x 32 envs)  feet_phase target this build = 0.06 m
+  L_foot: swing-apex(mean top10%)=2.7 cm  p50=0.0  p90=1.8  p99=3.6  max=5.4 cm  |  off-ground=8% of time
+  R_foot: swing-apex(mean top10%)=2.4 cm  p50=0.0  p90=1.6  p99=3.2  max=6.2 cm  |  off-ground=7% of time
+  contact-sensor swing%: L=21  R=18  (stance-duty L=79%  R=82%)
+
+=== FLAT-0.12 build (model_177200.pt, 12cm target restored, knee 0.35) ===
+FLAT-12cm_vx0.15: vx=0.15  (400 steps x 32 envs)  feet_phase target this build = 0.06 m
+  L_foot: swing-apex(mean top10%)=1.9 cm  p50=0.0  p90=1.3  p99=2.8  max=4.5 cm  |  off-ground=4% of time
+  R_foot: swing-apex(mean top10%)=1.8 cm  p50=0.0  p90=1.1  p99=2.5  max=5.4 cm  |  off-ground=2% of time
+  contact-sensor swing%: L=20  R=19  (stance-duty L=80%  R=81%)
+FLAT-12cm_vx0.30: vx=0.3  (400 steps x 32 envs)  feet_phase target this build = 0.06 m
+  L_foot: swing-apex(mean top10%)=1.7 cm  p50=0.0  p90=1.1  p99=2.3  max=3.4 cm  |  off-ground=2% of time
+  R_foot: swing-apex(mean top10%)=1.6 cm  p50=0.0  p90=1.0  p99=2.2  max=3.9 cm  |  off-ground=2% of time
+  contact-sensor swing%: L=17  R=18  (stance-duty L=83%  R=82%)
+FLAT-12cm_vx0.50: vx=0.5  (400 steps x 32 envs)  feet_phase target this build = 0.06 m
+  L_foot: swing-apex(mean top10%)=2.2 cm  p50=0.0  p90=1.7  p99=2.9  max=4.0 cm  |  off-ground=6% of time
+  R_foot: swing-apex(mean top10%)=2.0 cm  p50=0.0  p90=1.4  p99=2.7  max=4.4 cm  |  off-ground=4% of time
+  contact-sensor swing%: L=23  R=22  (stance-duty L=77%  R=78%)
+
+=== CALM-WALK REFERENCE clearance: model_198400.pt (knee 0.55 restored) ===
+REF-restored_vx0.30: vx=0.3  (400 steps x 32 envs)  feet_phase target this build = 0.06 m
+  L_foot: swing-apex(mean top10%)=2.8 cm  p50=0.0  p90=2.1  p99=3.5  max=4.7 cm  |  off-ground=11% of time
+  R_foot: swing-apex(mean top10%)=3.0 cm  p50=0.0  p90=2.2  p99=3.9  max=5.7 cm  |  off-ground=11% of time
+  contact-sensor swing%: L=19  R=16  (stance-duty L=81%  R=84%)

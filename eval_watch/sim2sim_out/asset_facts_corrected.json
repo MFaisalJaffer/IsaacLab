@@ -1,0 +1,168 @@
+{
+ "randomisers_nulled": [
+  "physics_material (randomize_rigid_body_material)",
+  "push_robot (push_by_setting_velocity_cmd_scaled)",
+  "add_limb_masses (randomize_rigid_body_mass)",
+  "randomize_actuator_gains (randomize_actuator_gains)",
+  "randomize_gains_small_joints (randomize_actuator_gains)",
+  "randomize_gains_04_joints (randomize_actuator_gains)",
+  "randomize_joint_friction_ankles (randomize_joint_parameters)"
+ ],
+ "randomisation_bands_that_were_active": {
+  "physics_material": {
+   "static_friction_range": "(0.4, 1.4)",
+   "dynamic_friction_range": "(0.3, 1.1)",
+   "restitution_range": "(0.0, 0.2)"
+  },
+  "push_robot": {
+   "velocity_range": "{'x': (-0.01, 0.01), 'y': (-0.01, 0.01)}"
+  },
+  "add_limb_masses": {
+   "mass_distribution_params": "(0.8, 1.2)"
+  },
+  "randomize_actuator_gains": {
+   "damping_distribution_params": "(0.75, 1.0)"
+  },
+  "randomize_gains_small_joints": {
+   "stiffness_distribution_params": "(0.8, 1.2)"
+  },
+  "randomize_gains_04_joints": {
+   "stiffness_distribution_params": "(0.9, 1.1)"
+  },
+  "randomize_joint_friction_ankles": {
+   "friction_distribution_params": "(0.03, 0.18)"
+  }
+ },
+ "total_mass_kg": 13.06,
+ "link_mass_kg": {
+  "floating_base_link": 0.00046,
+  "Torso_Side_Right": 6.23178,
+  "KC_D_102L_L_Hip_Yoke_Drive": 0.24455,
+  "KC_D_102R_R_Hip_Yoke_Drive": 0.24455,
+  "imu": 0.00263,
+  "RS03_5": 1.09419,
+  "RS03_4": 1.09416,
+  "KC_D_301L_L_Femur_Lower_Drive": 1.08054,
+  "KC_D_301R_R_Femur_Lower_Drive": 1.08054,
+  "KC_D_401L_L_Shin_Drive": 0.7702,
+  "KC_D_401R_R_Shin_Drive": 0.77023,
+  "KB_D_501L_L_LEG_FOOT": 0.22308,
+  "KB_D_501R_R_LEG_FOOT": 0.22308
+ },
+ "mass_identical_across_envs": true,
+ "lr_mass_pairs_checked": 4,
+ "lr_mass_asymmetries": {},
+ "link_com_offset_local_m": {
+  "floating_base_link": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "Torso_Side_Right": [
+   0.09317,
+   -0.02526,
+   -0.06324
+  ],
+  "KC_D_102L_L_Hip_Yoke_Drive": [
+   -0.00564,
+   0.00423,
+   -0.0382
+  ],
+  "KC_D_102R_R_Hip_Yoke_Drive": [
+   -0.00564,
+   -0.00423,
+   -0.0382
+  ],
+  "imu": [
+   0.01474,
+   -0.012,
+   0.003
+  ],
+  "RS03_5": [
+   0.00025,
+   0.05802,
+   0.02558
+  ],
+  "RS03_4": [
+   -0.00025,
+   0.05802,
+   0.02558
+  ],
+  "KC_D_301L_L_Femur_Lower_Drive": [
+   0.00101,
+   -0.01339,
+   0.17146
+  ],
+  "KC_D_301R_R_Femur_Lower_Drive": [
+   -0.00101,
+   -0.01339,
+   0.17146
+  ],
+  "KC_D_401L_L_Shin_Drive": [
+   -0.02455,
+   -0.10415,
+   0.01818
+  ],
+  "KC_D_401R_R_Shin_Drive": [
+   -0.02455,
+   0.10415,
+   0.01818
+  ],
+  "KB_D_501L_L_LEG_FOOT": [
+   -0.01484,
+   0.02714,
+   0.0161
+  ],
+  "KB_D_501R_R_LEG_FOOT": [
+   -0.01484,
+   0.02714,
+   -0.0161
+  ]
+ },
+ "com_x_rel_root_m_zero_pose": 0.01306,
+ "ankle_axis_x_rel_root_m_zero_pose": 0.01318,
+ "com_minus_ankle_axis_x_mm_zero_pose": -0.116,
+ "joint_limits_deg": {
+  "dof_right_hip_pitch_04": [
+   -127.0,
+   60.0
+  ],
+  "dof_right_hip_roll_04": [
+   -130.0,
+   12.0
+  ],
+  "dof_right_hip_yaw_03": [
+   -90.0,
+   90.0
+  ],
+  "dof_right_knee_04": [
+   -155.0,
+   0.0
+  ],
+  "dof_right_ankle_02": [
+   -13.0,
+   72.0
+  ],
+  "dof_left_hip_pitch_04": [
+   -60.0,
+   127.0
+  ],
+  "dof_left_hip_roll_04": [
+   -12.0,
+   130.0
+  ],
+  "dof_left_hip_yaw_03": [
+   -90.0,
+   90.0
+  ],
+  "dof_left_knee_04": [
+   0.0,
+   155.0
+  ],
+  "dof_left_ankle_02": [
+   -72.0,
+   13.0
+  ]
+ },
+ "joint_limit_mismatch_vs_mjcf": {}
+}

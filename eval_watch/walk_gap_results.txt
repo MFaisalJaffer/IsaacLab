@@ -1,0 +1,271 @@
+base         [baseline] vx=0.369/0.3 (123%)  tilt mean=7.2 p95(max)=14.3 max=23.4  fallen=0/32
+delay60      [delay=60ms] vx=0.344/0.3 (115%)  tilt mean=6.7 p95(max)=39.3 max=42.6  fallen=16/32
+delay80      [delay=80ms] vx=0.169/0.3 (56%)  tilt mean=8.8 p95(max)=37.3 max=38.9  fallen=29/32
+mu07         [mu=0.7] vx=0.358/0.3 (119%)  tilt mean=7.2 p95(max)=14.1 max=15.1  fallen=0/32
+kp08         [kp x0.8] vx=0.356/0.3 (119%)  tilt mean=6.4 p95(max)=13.2 max=13.6  fallen=0/32
+kp07         [kp x0.7] vx=0.351/0.3 (117%)  tilt mean=6.0 p95(max)=12.4 max=14.3  fallen=0/32
+delay50      [delay=50ms] vx=0.356/0.3 (119%)  tilt mean=5.6 p95(max)=23.0 max=23.9  fallen=4/32
+delay70      [delay=70ms] vx=0.236/0.3 (79%)  tilt mean=8.0 p95(max)=41.1 max=42.2  fallen=20/32
+jitter2060   [delay=20-60ms] vx=0.347/0.3 (116%)  tilt mean=6.1 p95(max)=15.7 max=19.8  fallen=1/32
+jitter2080   [delay=20-80ms] vx=0.325/0.3 (108%)  tilt mean=6.3 p95(max)=25.2 max=26.3  fallen=9/32
+fric_mid     [ankle_fric=0.25, hipknee_fric=0.08] vx=0.343/0.3 (114%)  tilt mean=4.2 p95(max)=10.2 max=10.6  fallen=5/32
+fric_mid2    [ankle_fric=0.3, hipknee_fric=0.1] vx=0.343/0.3 (114%)  tilt mean=3.9 p95(max)=11.7 max=12.8  fallen=26/32
+combo_d50f25 [delay=50ms, ankle_fric=0.25, hipknee_fric=0.08] vx=0.378/0.3 (126%)  tilt mean=4.1 p95(max)=13.3 max=13.4  fallen=29/32
+combo_j2060f25 [delay=20-60ms, ankle_fric=0.25, hipknee_fric=0.08] vx=0.337/0.3 (112%)  tilt mean=4.1 p95(max)=13.1 max=13.2  fallen=23/32
+sat_stand    [baseline] vx=0.003/0.0 (inf%)  tilt mean=3.6 p95(max)=6.1 max=6.6  fallen=0/32
+    T-V saturation%: right_knee_04=100  left_knee_04=100  right_hip_roll_04=95  left_hip_roll_04=95  right_ankle_02=27  left_ankle_02=19  left_hip_yaw_03=6  right_hip_yaw_03=6  right_hip_pitch_04=0  left_hip_pitch_04=0
+sat_walk     [baseline] vx=0.377/0.3 (126%)  tilt mean=7.0 p95(max)=13.5 max=14.1  fallen=0/32
+    T-V saturation%: left_ankle_02=83  right_ankle_02=82  left_hip_roll_04=79  right_hip_roll_04=78  right_knee_04=61  left_knee_04=58  left_hip_pitch_04=12  right_hip_pitch_04=12  right_hip_yaw_03=4  left_hip_yaw_03=3
+hz200_d15    [delay=15ms] vx=0.394/0.3 (131%)  tilt mean=7.0 p95(max)=12.6 max=13.4  fallen=0/32
+    T-V saturation%: left_ankle_02=84  right_ankle_02=84  right_hip_roll_04=82  left_hip_roll_04=81  right_knee_04=78  left_knee_04=77  left_hip_pitch_04=13  right_hip_pitch_04=13  left_hip_yaw_03=8  right_hip_yaw_03=7
+    qd tick-flip%: left_hip_pitch_04=17  right_hip_pitch_04=19  left_hip_roll_04=22  right_hip_roll_04=19  left_hip_yaw_03=50  right_hip_yaw_03=49  left_knee_04=36  right_knee_04=36  left_ankle_02=36  right_ankle_02=34
+hz400_d15    [delay=30ms, physics 400Hz (decim 8)] vx=0.364/0.3 (121%)  tilt mean=7.1 p95(max)=12.7 max=14.1  fallen=0/32
+    T-V saturation%: right_hip_roll_04=81  left_hip_roll_04=80  left_ankle_02=72  right_ankle_02=71  right_knee_04=68  left_knee_04=66  right_hip_pitch_04=9  left_hip_pitch_04=8  right_hip_yaw_03=1  left_hip_yaw_03=1
+    qd tick-flip%: left_hip_pitch_04=16  right_hip_pitch_04=18  left_hip_roll_04=21  right_hip_roll_04=20  left_hip_yaw_03=51  right_hip_yaw_03=50  left_knee_04=34  right_knee_04=33  left_ankle_02=38  right_ankle_02=34
+dechat_walk  [delay=15ms] vx=0.355/0.3 (118%)  tilt mean=9.4 p95(max)=14.6 max=14.6  fallen=0/32
+    T-V saturation%: right_hip_roll_04=83  left_hip_roll_04=80  right_knee_04=78  left_knee_04=78  left_ankle_02=63  right_ankle_02=60  right_hip_pitch_04=13  left_hip_pitch_04=12  right_hip_yaw_03=1  left_hip_yaw_03=1
+    qd tick-flip%: left_hip_pitch_04=19  right_hip_pitch_04=19  left_hip_roll_04=20  right_hip_roll_04=20  left_hip_yaw_03=53  right_hip_yaw_03=51  left_knee_04=36  right_knee_04=35  left_ankle_02=33  right_ankle_02=29
+dechat_stand [delay=15ms] vx=0.000/0.0 (inf%)  tilt mean=3.1 p95(max)=6.6 max=6.7  fallen=3/32
+    T-V saturation%: right_knee_04=100  left_knee_04=100  right_hip_roll_04=99  left_hip_roll_04=92  left_ankle_02=22  right_ankle_02=12  left_hip_pitch_04=4  right_hip_yaw_03=3  left_hip_yaw_03=3  right_hip_pitch_04=3
+    qd tick-flip%: left_hip_pitch_04=41  right_hip_pitch_04=41  left_hip_roll_04=38  right_hip_roll_04=36  left_hip_yaw_03=46  right_hip_yaw_03=47  left_knee_04=39  right_knee_04=44  left_ankle_02=36  right_ankle_02=34
+gaindr_walk  [delay=15ms] vx=0.389/0.3 (130%)  tilt mean=5.1 p95(max)=10.5 max=11.5  fallen=0/32
+    T-V saturation%: right_hip_roll_04=82  left_hip_roll_04=79  right_knee_04=76  left_knee_04=74  left_ankle_02=62  right_ankle_02=60  left_hip_pitch_04=11  right_hip_pitch_04=11  left_hip_yaw_03=0  right_hip_yaw_03=0
+    qd tick-flip%: left_hip_pitch_04=16  right_hip_pitch_04=18  left_hip_roll_04=21  right_hip_roll_04=20  left_hip_yaw_03=49  right_hip_yaw_03=52  left_knee_04=35  right_knee_04=35  left_ankle_02=31  right_ankle_02=28
+terraingate_walk [delay=15ms] vx=0.252/0.3 (84%)  tilt mean=4.8 p95(max)=13.5 max=14.5  fallen=0/32
+    T-V saturation%: right_knee_04=87  left_knee_04=85  left_hip_roll_04=75  right_hip_roll_04=74  left_ankle_02=70  right_ankle_02=70  right_hip_pitch_04=41  left_hip_pitch_04=40  right_hip_yaw_03=4  left_hip_yaw_03=3
+    qd tick-flip%: left_hip_pitch_04=23  right_hip_pitch_04=26  left_hip_roll_04=30  right_hip_roll_04=29  left_hip_yaw_03=55  right_hip_yaw_03=52  left_knee_04=41  right_knee_04=39  left_ankle_02=39  right_ankle_02=35
+regate249_walk [delay=15ms] vx=0.317/0.3 (106%)  tilt mean=4.4 p95(max)=12.5 max=22.4  fallen=0/32
+    T-V saturation%: left_knee_04=91  right_knee_04=90  right_hip_roll_04=75  left_hip_roll_04=74  right_ankle_02=66  left_ankle_02=65  left_hip_pitch_04=35  right_hip_pitch_04=33  right_hip_yaw_03=3  left_hip_yaw_03=3
+    qd tick-flip%: left_hip_pitch_04=22  right_hip_pitch_04=24  left_hip_roll_04=26  right_hip_roll_04=26  left_hip_yaw_03=52  right_hip_yaw_03=51  left_knee_04=40  right_knee_04=39  left_ankle_02=37  right_ankle_02=32
+fb289_walk   [delay=15ms] vx=0.318/0.3 (106%)  tilt mean=4.6 p95(max)=12.5 max=16.2  fallen=0/32
+    T-V saturation%: right_knee_04=87  left_knee_04=87  left_ankle_02=70  left_hip_roll_04=67  right_ankle_02=67  right_hip_roll_04=65  right_hip_pitch_04=21  left_hip_pitch_04=20  right_hip_yaw_03=2  left_hip_yaw_03=1
+    qd tick-flip%: left_hip_pitch_04=23  right_hip_pitch_04=22  left_hip_roll_04=29  right_hip_roll_04=29  left_hip_yaw_03=53  right_hip_yaw_03=54  left_knee_04=42  right_knee_04=39  left_ankle_02=37  right_ankle_02=34
+rigcond_walk [delay=15ms, mu=1.0, gains=nominal] vx=0.323/0.3 (108%)  tilt mean=4.2 p95(max)=13.1 max=14.1  fallen=0/32
+    T-V saturation%: right_knee_04=87  left_knee_04=87  left_ankle_02=70  right_ankle_02=68  left_hip_roll_04=67  right_hip_roll_04=65  right_hip_pitch_04=20  left_hip_pitch_04=19  right_hip_yaw_03=2  left_hip_yaw_03=1
+    qd tick-flip%: left_hip_pitch_04=22  right_hip_pitch_04=23  left_hip_roll_04=29  right_hip_roll_04=30  left_hip_yaw_03=53  right_hip_yaw_03=54  left_knee_04=40  right_knee_04=40  left_ankle_02=36  right_ankle_02=33
+spd200       [delay=15ms, mu=1.0, gains=nominal] vx=0.317/0.3 (106%)  tilt mean=4.3 p95(max)=11.3 max=12.4  fallen=0/32
+    T-V saturation%: right_knee_04=87  left_knee_04=87  left_ankle_02=71  right_ankle_02=68  left_hip_roll_04=67  right_hip_roll_04=65  right_hip_pitch_04=20  left_hip_pitch_04=18  left_hip_yaw_03=1  right_hip_yaw_03=1
+    qd tick-flip%: left_hip_pitch_04=24  right_hip_pitch_04=22  left_hip_roll_04=29  right_hip_roll_04=30  left_hip_yaw_03=55  right_hip_yaw_03=55  left_knee_04=40  right_knee_04=39  left_ankle_02=37  right_ankle_02=33
+    contact: flicker=10.4 trans/s/foot  stance-duty=57%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+spd400       [delay=30ms, mu=1.0, physics 400Hz (decim 8), gains=nominal] vx=0.311/0.3 (104%)  tilt mean=4.1 p95(max)=11.0 max=14.6  fallen=0/32
+    T-V saturation%: left_knee_04=80  right_knee_04=80  left_hip_roll_04=63  right_hip_roll_04=62  left_ankle_02=55  right_ankle_02=50  right_hip_pitch_04=15  left_hip_pitch_04=13  right_hip_yaw_03=0  left_hip_yaw_03=0
+    qd tick-flip%: left_hip_pitch_04=21  right_hip_pitch_04=21  left_hip_roll_04=28  right_hip_roll_04=29  left_hip_yaw_03=52  right_hip_yaw_03=52  left_knee_04=39  right_knee_04=36  left_ankle_02=39  right_ankle_02=34
+    contact: flicker=12.7 trans/s/foot  stance-duty=51%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+spd500       [delay=40ms, mu=1.0, physics 500Hz (decim 10), gains=nominal] vx=0.319/0.3 (106%)  tilt mean=4.2 p95(max)=11.0 max=11.3  fallen=0/32
+    T-V saturation%: left_knee_04=82  right_knee_04=81  left_hip_roll_04=65  right_hip_roll_04=63  left_ankle_02=51  right_ankle_02=47  right_hip_pitch_04=16  left_hip_pitch_04=15  right_hip_yaw_03=0  left_hip_yaw_03=0
+    qd tick-flip%: left_hip_pitch_04=19  right_hip_pitch_04=20  left_hip_roll_04=29  right_hip_roll_04=30  left_hip_yaw_03=51  right_hip_yaw_03=51  left_knee_04=38  right_knee_04=35  left_ankle_02=39  right_ankle_02=35
+    contact: flicker=11.7 trans/s/foot  stance-duty=54%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+smoke_headroom [delay=15ms] vx=nan/0.3 (nan%)  tilt mean=nan p95(max)=0.0 max=0.0  fallen=0/16
+bent00       [delay=15ms, mu=1.0, gains=nominal] vx=-0.001/0.0 (-inf%)  tilt mean=5.1 p95(max)=7.4 max=7.8  fallen=1/32
+    T-V saturation%: left_knee_04=100  right_knee_04=100  right_hip_roll_04=99  left_hip_roll_04=99  right_ankle_02=12  left_ankle_02=8  right_hip_yaw_03=3  left_hip_yaw_03=3  left_hip_pitch_04=3  right_hip_pitch_04=3
+    qd tick-flip%: left_hip_pitch_04=44  right_hip_pitch_04=44  left_hip_roll_04=46  right_hip_roll_04=44  left_hip_yaw_03=51  right_hip_yaw_03=50  left_knee_04=43  right_knee_04=49  left_ankle_02=35  right_ankle_02=38
+    contact: flicker=1.5 trans/s/foot  stance-duty=96%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+bent10       [delay=15ms, mu=1.0, gains=nominal, joint_offset=+/-0.1rad] vx=-0.001/0.0 (-inf%)  tilt mean=5.3 p95(max)=8.4 max=9.0  fallen=4/32
+    T-V saturation%: left_knee_04=100  right_knee_04=100  right_hip_roll_04=98  left_hip_roll_04=97  right_ankle_02=19  left_ankle_02=16  left_hip_pitch_04=10  left_hip_yaw_03=10  right_hip_yaw_03=10  right_hip_pitch_04=9
+    qd tick-flip%: left_hip_pitch_04=44  right_hip_pitch_04=43  left_hip_roll_04=44  right_hip_roll_04=42  left_hip_yaw_03=49  right_hip_yaw_03=49  left_knee_04=42  right_knee_04=48  left_ankle_02=37  right_ankle_02=39
+    contact: flicker=2.6 trans/s/foot  stance-duty=90%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+bent20       [delay=15ms, mu=1.0, gains=nominal, joint_offset=+/-0.2rad] vx=-0.001/0.0 (-inf%)  tilt mean=5.2 p95(max)=7.3 max=7.4  fallen=6/32
+    T-V saturation%: right_knee_04=100  left_knee_04=99  right_hip_roll_04=98  left_hip_roll_04=97  right_ankle_02=25  left_ankle_02=23  left_hip_yaw_03=17  right_hip_yaw_03=16  left_hip_pitch_04=16  right_hip_pitch_04=15
+    qd tick-flip%: left_hip_pitch_04=44  right_hip_pitch_04=43  left_hip_roll_04=43  right_hip_roll_04=42  left_hip_yaw_03=48  right_hip_yaw_03=48  left_knee_04=43  right_knee_04=49  left_ankle_02=39  right_ankle_02=42
+    contact: flicker=3.4 trans/s/foot  stance-duty=84%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+bent35       [delay=15ms, mu=1.0, gains=nominal, joint_offset=+/-0.35rad] vx=0.001/0.0 (inf%)  tilt mean=5.0 p95(max)=7.2 max=8.3  fallen=9/32
+    T-V saturation%: right_knee_04=99  left_knee_04=99  right_hip_roll_04=97  left_hip_roll_04=97  right_ankle_02=32  left_ankle_02=28  left_hip_pitch_04=23  right_hip_pitch_04=22  right_hip_yaw_03=22  left_hip_yaw_03=21
+    qd tick-flip%: left_hip_pitch_04=43  right_hip_pitch_04=44  left_hip_roll_04=42  right_hip_roll_04=41  left_hip_yaw_03=47  right_hip_yaw_03=46  left_knee_04=44  right_knee_04=45  left_ankle_02=41  right_ankle_02=40
+    contact: flicker=3.4 trans/s/foot  stance-duty=76%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+smoke_resetoffset [delay=15ms] vx=0.000/0.0 (nan%)  tilt mean=0.0 p95(max)=0.0 max=0.0  fallen=0/16
+g310_walk    [delay=15ms, mu=1.0, gains=nominal] vx=0.272/0.3 (91%)  tilt mean=3.7 p95(max)=13.0 max=15.7  fallen=0/32
+    T-V saturation%: left_knee_04=89  right_knee_04=89  left_ankle_02=70  right_ankle_02=69  left_hip_roll_04=67  right_hip_roll_04=66  left_hip_pitch_04=14  right_hip_pitch_04=12  left_hip_yaw_03=1  right_hip_yaw_03=0
+    qd tick-flip%: left_hip_pitch_04=25  right_hip_pitch_04=21  left_hip_roll_04=29  right_hip_roll_04=28  left_hip_yaw_03=55  right_hip_yaw_03=54  left_knee_04=40  right_knee_04=39  left_ankle_02=37  right_ankle_02=34
+    contact: flicker=11.1 trans/s/foot  stance-duty=57%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+g310_bent20  [delay=15ms, mu=1.0, gains=nominal, joint_offset=+/-0.2rad] vx=0.000/0.0 (inf%)  tilt mean=4.1 p95(max)=6.7 max=7.0  fallen=3/32
+    T-V saturation%: left_knee_04=100  right_knee_04=100  right_hip_roll_04=99  left_hip_roll_04=99  right_ankle_02=17  left_ankle_02=15  left_hip_pitch_04=9  right_hip_pitch_04=9  left_hip_yaw_03=9  right_hip_yaw_03=9
+    qd tick-flip%: left_hip_pitch_04=45  right_hip_pitch_04=42  left_hip_roll_04=47  right_hip_roll_04=44  left_hip_yaw_03=52  right_hip_yaw_03=48  left_knee_04=41  right_knee_04=47  left_ankle_02=33  right_ankle_02=38
+    contact: flicker=1.6 trans/s/foot  stance-duty=93%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+g320_bent20  [delay=15ms, mu=1.0, gains=nominal, joint_offset=+/-0.2rad] vx=-0.001/0.0 (-inf%)  tilt mean=3.2 p95(max)=5.8 max=5.9  fallen=1/32
+    T-V saturation%: right_knee_04=100  left_knee_04=99  right_hip_roll_04=98  left_hip_roll_04=97  right_ankle_02=9  left_ankle_02=6  left_hip_pitch_04=1  right_hip_pitch_04=1  left_hip_yaw_03=0  right_hip_yaw_03=0
+    qd tick-flip%: left_hip_pitch_04=39  right_hip_pitch_04=42  left_hip_roll_04=46  right_hip_roll_04=44  left_hip_yaw_03=49  right_hip_yaw_03=49  left_knee_04=40  right_knee_04=46  left_ankle_02=30  right_ankle_02=36
+    contact: flicker=0.8 trans/s/foot  stance-duty=96%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+smoke_hr4    [delay=15ms, mu=1.0, gains=nominal] vx=nan/0.3 (nan%)  tilt mean=nan p95(max)=0.0 max=0.0  fallen=0/16
+thermal_319k [delay=15ms, mu=1.0, gains=nominal] vx=-0.001/0.0 (-inf%)  tilt mean=3.1 p95(max)=5.5 max=5.7  fallen=2/32
+    T-V saturation%: right_knee_04=100  left_knee_04=99  right_hip_roll_04=97  left_hip_roll_04=95  right_ankle_02=13  left_ankle_02=8  right_hip_pitch_04=2  left_hip_pitch_04=2  right_hip_yaw_03=0  left_hip_yaw_03=0
+    qd tick-flip%: left_hip_pitch_04=42  right_hip_pitch_04=44  left_hip_roll_04=46  right_hip_roll_04=42  left_hip_yaw_03=48  right_hip_yaw_03=50  left_knee_04=42  right_knee_04=48  left_ankle_02=32  right_ankle_02=36
+    contact: flicker=1.2 trans/s/foot  stance-duty=93%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=3.3(4.6)  right_hip_pitch_04=3.4(4.8)  left_hip_roll_04=18.8(19.1)  right_hip_roll_04=18.8(19.0)  left_hip_yaw_03=1.2(1.3)  right_hip_yaw_03=1.0(1.1)  left_knee_04=20.2(20.4)  right_knee_04=19.8(20.0)  left_ankle_02=3.0(4.0)  right_ankle_02=3.7(4.8)
+thermal_210k [delay=15ms, mu=1.0, gains=nominal] vx=-0.002/0.0 (-inf%)  tilt mean=3.1 p95(max)=6.6 max=6.7  fallen=0/32
+    T-V saturation%: right_knee_04=100  left_knee_04=100  right_hip_roll_04=99  left_hip_roll_04=99  left_ankle_02=11  right_ankle_02=4  right_hip_pitch_04=0  left_hip_yaw_03=0  right_hip_yaw_03=0  left_hip_pitch_04=0
+    qd tick-flip%: left_hip_pitch_04=40  right_hip_pitch_04=40  left_hip_roll_04=45  right_hip_roll_04=46  left_hip_yaw_03=49  right_hip_yaw_03=49  left_knee_04=36  right_knee_04=44  left_ankle_02=32  right_ankle_02=30
+    contact: flicker=0.9 trans/s/foot  stance-duty=99%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=3.6(4.6)  right_hip_pitch_04=3.1(4.1)  left_hip_roll_04=19.3(19.5)  right_hip_roll_04=19.5(19.6)  left_hip_yaw_03=1.4(1.6)  right_hip_yaw_03=0.8(1.0)  left_knee_04=20.6(20.7)  right_knee_04=19.8(20.0)  left_ankle_02=4.1(4.9)  right_ankle_02=3.0(3.8)
+smoke_thermal [delay=15ms, mu=1.0, gains=nominal] vx=0.000/0.0 (inf%)  tilt mean=3.2 p95(max)=5.3 max=5.5  fallen=0/16
+    T-V saturation%: left_hip_roll_04=100  right_hip_roll_04=100  right_ankle_02=7  left_ankle_02=2  right_knee_04=0  right_hip_yaw_03=0  right_hip_pitch_04=0  left_knee_04=0  left_hip_yaw_03=0  left_hip_pitch_04=0
+    qd tick-flip%: left_hip_pitch_04=43  right_hip_pitch_04=46  left_hip_roll_04=46  right_hip_roll_04=43  left_hip_yaw_03=49  right_hip_yaw_03=49  left_knee_04=41  right_knee_04=47  left_ankle_02=36  right_ankle_02=39
+    contact: flicker=1.1 trans/s/foot  stance-duty=99%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=2.6(3.3)  right_hip_pitch_04=2.7(3.4)  left_hip_roll_04=19.1(19.3)  right_hip_roll_04=19.1(19.2)  left_hip_yaw_03=1.1(1.2)  right_hip_yaw_03=1.0(1.2)  left_knee_04=0.2(0.4)  right_knee_04=0.2(0.4)  left_ankle_02=2.5(3.3)  right_ankle_02=3.3(4.3)
+thermal_326k [delay=15ms, mu=1.0, gains=nominal] vx=-0.002/0.0 (-inf%)  tilt mean=4.1 p95(max)=5.8 max=5.9  fallen=2/32
+    T-V saturation%: right_hip_roll_04=99  left_hip_roll_04=99  left_ankle_02=11  right_ankle_02=9  left_hip_pitch_04=2  right_hip_pitch_04=1  left_hip_yaw_03=0  right_hip_yaw_03=0  right_knee_04=0  left_knee_04=0
+    qd tick-flip%: left_hip_pitch_04=40  right_hip_pitch_04=42  left_hip_roll_04=43  right_hip_roll_04=41  left_hip_yaw_03=47  right_hip_yaw_03=46  left_knee_04=39  right_knee_04=47  left_ankle_02=33  right_ankle_02=34
+    contact: flicker=0.6 trans/s/foot  stance-duty=93%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=2.9(4.3)  right_hip_pitch_04=2.6(3.6)  left_hip_roll_04=19.0(19.2)  right_hip_roll_04=19.1(19.2)  left_hip_yaw_03=1.5(1.9)  right_hip_yaw_03=1.2(1.6)  left_knee_04=0.2(0.5)  right_knee_04=0.3(0.6)  left_ankle_02=3.2(4.3)  right_ankle_02=3.0(4.1)
+smoke_standtq [delay=15ms, mu=1.0, gains=nominal] vx=-0.004/0.0 (-inf%)  tilt mean=4.4 p95(max)=8.9 max=10.9  fallen=2/16
+    T-V saturation%: left_hip_roll_04=98  right_hip_roll_04=97  left_ankle_02=15  right_ankle_02=14  right_hip_pitch_04=5  left_hip_pitch_04=4  right_hip_yaw_03=4  left_hip_yaw_03=4  right_knee_04=0  left_knee_04=0
+    qd tick-flip%: left_hip_pitch_04=40  right_hip_pitch_04=42  left_hip_roll_04=41  right_hip_roll_04=39  left_hip_yaw_03=44  right_hip_yaw_03=45  left_knee_04=41  right_knee_04=45  left_ankle_02=34  right_ankle_02=31
+    contact: flicker=1.2 trans/s/foot  stance-duty=95%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=3.6(5.5)  right_hip_pitch_04=3.7(5.6)  left_hip_roll_04=19.0(19.2)  right_hip_roll_04=18.8(19.0)  left_hip_yaw_03=1.9(2.7)  right_hip_yaw_03=1.8(2.7)  left_knee_04=0.3(0.7)  right_knee_04=0.2(0.6)  left_ankle_02=3.6(4.8)  right_ankle_02=3.5(4.7)
+thermal_333k [delay=15ms, mu=1.0, gains=nominal] vx=-0.000/0.0 (-inf%)  tilt mean=3.1 p95(max)=8.0 max=13.8  fallen=15/32
+    T-V saturation%: right_hip_roll_04=96  left_hip_roll_04=96  right_ankle_02=49  left_ankle_02=48  left_hip_pitch_04=35  right_hip_pitch_04=34  right_hip_yaw_03=28  left_hip_yaw_03=28  left_knee_04=26  right_knee_04=26
+    qd tick-flip%: left_hip_pitch_04=43  right_hip_pitch_04=43  left_hip_roll_04=49  right_hip_roll_04=49  left_hip_yaw_03=53  right_hip_yaw_03=52  left_knee_04=52  right_knee_04=51  left_ankle_02=43  right_ankle_02=45
+    contact: flicker=1.8 trans/s/foot  stance-duty=61%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=9.1(12.3)  right_hip_pitch_04=9.1(12.2)  left_hip_roll_04=19.1(19.4)  right_hip_roll_04=19.5(19.8)  left_hip_yaw_03=3.8(5.5)  right_hip_yaw_03=3.8(5.5)  left_knee_04=6.0(10.6)  right_knee_04=6.1(10.7)  left_ankle_02=6.1(7.2)  right_ankle_02=6.3(7.4)
+smoke_hrbrace [delay=15ms, mu=1.0, gains=nominal] vx=-0.008/0.0 (-inf%)  tilt mean=4.2 p95(max)=8.5 max=9.9  fallen=2/16
+    T-V saturation%: right_hip_roll_04=99  left_hip_roll_04=98  left_ankle_02=15  right_ankle_02=15  right_hip_pitch_04=7  left_hip_pitch_04=6  right_hip_yaw_03=6  left_hip_yaw_03=6  right_knee_04=0  left_knee_04=0
+    qd tick-flip%: left_hip_pitch_04=43  right_hip_pitch_04=43  left_hip_roll_04=41  right_hip_roll_04=39  left_hip_yaw_03=50  right_hip_yaw_03=49  left_knee_04=40  right_knee_04=46  left_ankle_02=31  right_ankle_02=33
+    contact: flicker=0.9 trans/s/foot  stance-duty=96%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=4.0(5.9)  right_hip_pitch_04=3.7(5.8)  left_hip_roll_04=19.0(19.2)  right_hip_roll_04=19.2(19.3)  left_hip_yaw_03=1.9(2.9)  right_hip_yaw_03=1.9(3.0)  left_knee_04=0.3(0.9)  right_knee_04=0.4(1.1)  left_ankle_02=3.8(4.9)  right_ankle_02=3.4(4.6)
+brace_gate339 [delay=15ms, mu=1.0, gains=nominal] vx=0.000/0.0 (inf%)  tilt mean=3.8 p95(max)=5.9 max=6.7  fallen=3/32
+    T-V saturation%: left_hip_roll_04=99  right_hip_roll_04=99  right_ankle_02=12  left_ankle_02=11  left_hip_pitch_04=2  left_hip_yaw_03=1  right_hip_yaw_03=0  right_hip_pitch_04=0  right_knee_04=0  left_knee_04=0
+    qd tick-flip%: left_hip_pitch_04=38  right_hip_pitch_04=42  left_hip_roll_04=46  right_hip_roll_04=44  left_hip_yaw_03=49  right_hip_yaw_03=49  left_knee_04=42  right_knee_04=49  left_ankle_02=32  right_ankle_02=40
+    contact: flicker=0.2 trans/s/foot  stance-duty=90%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=3.2(4.6)  right_hip_pitch_04=2.7(3.4)  left_hip_roll_04=19.2(19.4)  right_hip_roll_04=19.4(19.5)  left_hip_yaw_03=1.3(1.7)  right_hip_yaw_03=1.3(1.6)  left_knee_04=0.4(0.7)  right_knee_04=0.3(0.6)  left_ankle_02=3.1(4.2)  right_ankle_02=3.7(4.7)
+smoke_pruned [baseline] vx=-0.036/0.0 (-inf%)  tilt mean=4.7 p95(max)=11.2 max=14.2  fallen=5/16
+    T-V saturation%: left_hip_roll_04=91  right_hip_roll_04=90  right_ankle_02=36  left_ankle_02=31  left_hip_pitch_04=8  right_hip_pitch_04=6  right_hip_yaw_03=4  left_hip_yaw_03=2  right_knee_04=1  left_knee_04=1
+    qd tick-flip%: left_hip_pitch_04=38  right_hip_pitch_04=36  left_hip_roll_04=30  right_hip_roll_04=34  left_hip_yaw_03=45  right_hip_yaw_03=44  left_knee_04=43  right_knee_04=41  left_ankle_02=39  right_ankle_02=31
+    contact: flicker=2.1 trans/s/foot  stance-duty=76%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=5.6(7.6)  right_hip_pitch_04=5.0(6.9)  left_hip_roll_04=17.9(18.3)  right_hip_roll_04=17.5(18.0)  left_hip_yaw_03=1.5(2.2)  right_hip_yaw_03=1.5(2.4)  left_knee_04=0.9(2.4)  right_knee_04=1.0(2.5)  left_ankle_02=4.9(6.1)  right_ankle_02=5.9(6.9)
+l2_40k_stand [delay=15ms, mu=1.0, gains=nominal] vx=0.003/0.0 (inf%)  tilt mean=2.5 p95(max)=5.9 max=16.6  fallen=2/32
+    T-V saturation%: right_hip_roll_04=99  left_hip_roll_04=96  right_ankle_02=14  left_ankle_02=10  right_hip_pitch_04=6  left_hip_pitch_04=6  right_knee_04=0  left_knee_04=0  left_hip_yaw_03=0  right_hip_yaw_03=0
+    qd tick-flip%: left_hip_pitch_04=38  right_hip_pitch_04=43  left_hip_roll_04=44  right_hip_roll_04=43  left_hip_yaw_03=49  right_hip_yaw_03=48  left_knee_04=38  right_knee_04=48  left_ankle_02=28  right_ankle_02=35
+    contact: flicker=0.5 trans/s/foot  stance-duty=96%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=3.4(5.6)  right_hip_pitch_04=3.6(6.0)  left_hip_roll_04=18.8(19.1)  right_hip_roll_04=19.4(19.6)  left_hip_yaw_03=1.3(1.5)  right_hip_yaw_03=1.1(1.4)  left_knee_04=0.5(1.6)  right_knee_04=0.4(1.7)  left_ankle_02=2.9(4.0)  right_ankle_02=4.0(5.0)
+l2_40k_walk  [delay=15ms, mu=1.0, gains=nominal] vx=0.288/0.3 (96%)  tilt mean=3.9 p95(max)=8.9 max=10.9  fallen=0/32
+    T-V saturation%: right_hip_roll_04=65  left_hip_roll_04=64  left_ankle_02=57  right_ankle_02=47  left_knee_04=28  right_knee_04=27  left_hip_pitch_04=10  right_hip_pitch_04=10  left_hip_yaw_03=0  right_hip_yaw_03=0
+    qd tick-flip%: left_hip_pitch_04=20  right_hip_pitch_04=20  left_hip_roll_04=36  right_hip_roll_04=36  left_hip_yaw_03=56  right_hip_yaw_03=54  left_knee_04=35  right_knee_04=37  left_ankle_02=33  right_ankle_02=33
+    contact: flicker=10.3 trans/s/foot  stance-duty=64%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=7.9(9.6)  right_hip_pitch_04=7.8(9.5)  left_hip_roll_04=16.2(17.6)  right_hip_roll_04=16.3(17.7)  left_hip_yaw_03=1.8(2.4)  right_hip_yaw_03=1.9(2.4)  left_knee_04=8.2(11.4)  right_knee_04=7.9(11.2)  left_ankle_02=7.6(8.4)  right_ankle_02=6.9(7.8)
+smoke_calmgate [baseline] vx=-0.030/0.0 (-inf%)  tilt mean=3.4 p95(max)=13.3 max=19.1  fallen=2/16
+    T-V saturation%: right_hip_roll_04=93  left_hip_roll_04=91  right_ankle_02=26  left_ankle_02=20  left_hip_pitch_04=5  right_hip_pitch_04=5  right_knee_04=0  left_knee_04=0  right_hip_yaw_03=0  left_hip_yaw_03=0
+    qd tick-flip%: left_hip_pitch_04=36  right_hip_pitch_04=40  left_hip_roll_04=36  right_hip_roll_04=36  left_hip_yaw_03=43  right_hip_yaw_03=45  left_knee_04=41  right_knee_04=43  left_ankle_02=34  right_ankle_02=33
+    contact: flicker=3.0 trans/s/foot  stance-duty=89%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=3.8(5.8)  right_hip_pitch_04=3.8(5.7)  left_hip_roll_04=17.9(18.3)  right_hip_roll_04=18.3(18.7)  left_hip_yaw_03=1.2(1.5)  right_hip_yaw_03=1.1(1.4)  left_knee_04=0.7(1.8)  right_knee_04=0.5(1.7)  left_ankle_02=4.0(5.3)  right_ankle_02=4.9(5.9)
+l2_gate_stand [delay=15ms, mu=1.0, gains=nominal] vx=0.002/0.0 (inf%)  tilt mean=6.2 p95(max)=13.9 max=21.5  fallen=1/32
+    T-V saturation%: right_hip_roll_04=98  left_hip_roll_04=97  right_ankle_02=35  left_ankle_02=12  right_hip_pitch_04=3  left_hip_pitch_04=2  left_knee_04=1  right_hip_yaw_03=0  right_knee_04=0  left_hip_yaw_03=0
+    qd tick-flip%: left_hip_pitch_04=41  right_hip_pitch_04=45  left_hip_roll_04=44  right_hip_roll_04=45  left_hip_yaw_03=50  right_hip_yaw_03=48  left_knee_04=44  right_knee_04=45  left_ankle_02=33  right_ankle_02=39
+    contact: flicker=0.7 trans/s/foot  stance-duty=94%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=3.2(4.6)  right_hip_pitch_04=3.9(5.2)  left_hip_roll_04=19.3(19.6)  right_hip_roll_04=19.1(19.3)  left_hip_yaw_03=1.2(1.5)  right_hip_yaw_03=1.2(1.6)  left_knee_04=0.8(2.3)  right_knee_04=0.2(1.2)  left_ankle_02=3.2(4.4)  right_ankle_02=6.0(6.8)
+smoke_h3h4   [delay=15ms, mu=1.0, gains=nominal] vx=0.015/0.0 (inf%)  tilt mean=5.5 p95(max)=7.8 max=9.2  fallen=0/16
+    T-V saturation%: right_hip_roll_04=99  left_hip_roll_04=99  right_ankle_02=17  left_ankle_02=6  right_knee_04=0  right_hip_yaw_03=0  right_hip_pitch_04=0  left_knee_04=0  left_hip_yaw_03=0  left_hip_pitch_04=0
+    qd tick-flip%: left_hip_pitch_04=45  right_hip_pitch_04=44  left_hip_roll_04=50  right_hip_roll_04=47  left_hip_yaw_03=50  right_hip_yaw_03=50  left_knee_04=48  right_knee_04=44  left_ankle_02=35  right_ankle_02=42
+    contact: flicker=0.5 trans/s/foot  stance-duty=99%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=3.0(3.7)  right_hip_pitch_04=3.1(3.9)  left_hip_roll_04=19.5(19.6)  right_hip_roll_04=19.1(19.3)  left_hip_yaw_03=1.1(1.3)  right_hip_yaw_03=1.0(1.2)  left_knee_04=0.5(0.8)  right_knee_04=0.1(0.1)  left_ankle_02=3.0(3.9)  right_ankle_02=4.9(5.7)
+l2_h3h4_early [delay=15ms, mu=1.0, gains=nominal] vx=-0.000/0.0 (-inf%)  tilt mean=2.8 p95(max)=4.6 max=4.9  fallen=0/32
+    T-V saturation%: right_ankle_02=5  left_ankle_02=2  left_hip_pitch_04=0  right_knee_04=0  right_hip_yaw_03=0  right_hip_roll_04=0  right_hip_pitch_04=0  left_knee_04=0  left_hip_yaw_03=0  left_hip_roll_04=0
+    qd tick-flip%: left_hip_pitch_04=47  right_hip_pitch_04=44  left_hip_roll_04=45  right_hip_roll_04=46  left_hip_yaw_03=53  right_hip_yaw_03=52  left_knee_04=44  right_knee_04=47  left_ankle_02=40  right_ankle_02=38
+    contact: flicker=0.4 trans/s/foot  stance-duty=100%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=3.5(4.3)  right_hip_pitch_04=3.5(4.4)  left_hip_roll_04=4.8(5.4)  right_hip_roll_04=4.5(5.6)  left_hip_yaw_03=0.9(1.2)  right_hip_yaw_03=0.9(1.1)  left_knee_04=0.6(0.9)  right_knee_04=0.2(0.4)  left_ankle_02=2.5(3.2)  right_ankle_02=3.4(4.2)
+l2c_stand    [delay=15ms, mu=1.0, gains=nominal] vx=0.000/0.0 (inf%)  tilt mean=3.1 p95(max)=5.3 max=5.4  fallen=0/32
+    T-V saturation%: right_ankle_02=18  left_ankle_02=1  left_hip_pitch_04=0  right_knee_04=0  right_hip_yaw_03=0  right_hip_roll_04=0  right_hip_pitch_04=0  left_knee_04=0  left_hip_yaw_03=0  left_hip_roll_04=0
+    qd tick-flip%: left_hip_pitch_04=50  right_hip_pitch_04=41  left_hip_roll_04=49  right_hip_roll_04=49  left_hip_yaw_03=55  right_hip_yaw_03=55  left_knee_04=51  right_knee_04=44  left_ankle_02=43  right_ankle_02=42
+    contact: flicker=0.4 trans/s/foot  stance-duty=100%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=4.2(5.1)  right_hip_pitch_04=4.4(5.3)  left_hip_roll_04=2.7(3.4)  right_hip_roll_04=2.6(3.3)  left_hip_yaw_03=0.9(1.1)  right_hip_yaw_03=0.8(1.0)  left_knee_04=1.3(1.9)  right_knee_04=0.1(0.4)  left_ankle_02=2.6(3.3)  right_ankle_02=5.0(5.8)
+l2c_walk     [delay=15ms, mu=1.0, gains=nominal] vx=0.243/0.3 (81%)  tilt mean=7.3 p95(max)=11.8 max=13.2  fallen=0/32
+    T-V saturation%: right_ankle_02=53  left_ankle_02=44  left_knee_04=28  right_knee_04=25  right_hip_pitch_04=19  left_hip_pitch_04=14  left_hip_roll_04=8  right_hip_roll_04=4  right_hip_yaw_03=0  left_hip_yaw_03=0
+    qd tick-flip%: left_hip_pitch_04=18  right_hip_pitch_04=16  left_hip_roll_04=25  right_hip_roll_04=24  left_hip_yaw_03=51  right_hip_yaw_03=51  left_knee_04=30  right_knee_04=31  left_ankle_02=30  right_ankle_02=26
+    contact: flicker=9.4 trans/s/foot  stance-duty=73%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=9.2(10.8)  right_hip_pitch_04=9.8(11.4)  left_hip_roll_04=7.2(8.9)  right_hip_roll_04=6.5(8.1)  left_hip_yaw_03=1.7(2.2)  right_hip_yaw_03=1.6(2.1)  left_knee_04=7.8(11.2)  right_knee_04=7.3(10.7)  left_ankle_02=6.7(7.6)  right_ankle_02=7.4(8.2)
+l2_70k_walk  [delay=15ms, mu=1.0, gains=nominal] vx=0.234/0.3 (78%)  tilt mean=7.6 p95(max)=12.5 max=14.5  fallen=0/32
+    T-V saturation%: left_ankle_02=46  right_ankle_02=43  left_knee_04=28  right_knee_04=27  right_hip_pitch_04=16  left_hip_pitch_04=14  right_hip_roll_04=4  left_hip_roll_04=2  left_hip_yaw_03=0  right_hip_yaw_03=0
+    qd tick-flip%: left_hip_pitch_04=19  right_hip_pitch_04=16  left_hip_roll_04=24  right_hip_roll_04=24  left_hip_yaw_03=47  right_hip_yaw_03=50  left_knee_04=32  right_knee_04=32  left_ankle_02=27  right_ankle_02=26
+    contact: flicker=9.5 trans/s/foot  stance-duty=74%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=9.0(10.6)  right_hip_pitch_04=9.1(10.8)  left_hip_roll_04=5.9(7.3)  right_hip_roll_04=6.3(7.9)  left_hip_yaw_03=1.6(2.0)  right_hip_yaw_03=1.6(2.1)  left_knee_04=7.8(11.1)  right_knee_04=7.5(10.9)  left_ankle_02=6.9(7.8)  right_ankle_02=6.6(7.6)
+spd_0.15     [delay=15ms, mu=1.0, gains=nominal] vx=0.114/0.15 (76%)  tilt mean=7.7 p95(max)=12.1 max=12.7  fallen=0/32
+    T-V saturation%: left_ankle_02=39  right_ankle_02=36  left_knee_04=29  right_knee_04=26  right_hip_pitch_04=16  left_hip_pitch_04=14  right_hip_roll_04=2  left_hip_roll_04=2  right_hip_yaw_03=0  left_hip_yaw_03=0
+    qd tick-flip%: left_hip_pitch_04=23  right_hip_pitch_04=21  left_hip_roll_04=26  right_hip_roll_04=26  left_hip_yaw_03=46  right_hip_yaw_03=44  left_knee_04=31  right_knee_04=31  left_ankle_02=33  right_ankle_02=32
+    contact: flicker=9.8 trans/s/foot  stance-duty=79%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=9.6(11.1)  right_hip_pitch_04=9.6(11.2)  left_hip_roll_04=5.5(6.9)  right_hip_roll_04=5.5(7.0)  left_hip_yaw_03=1.5(1.9)  right_hip_yaw_03=1.5(1.9)  left_knee_04=7.8(11.2)  right_knee_04=7.4(10.8)  left_ankle_02=6.3(7.2)  right_ankle_02=6.1(7.1)
+spd_0.45     [delay=15ms, mu=1.0, gains=nominal] vx=0.406/0.45 (90%)  tilt mean=6.8 p95(max)=12.9 max=13.8  fallen=0/32
+    T-V saturation%: left_ankle_02=50  right_ankle_02=48  right_knee_04=28  left_knee_04=27  right_hip_pitch_04=14  left_hip_pitch_04=12  right_hip_roll_04=8  left_hip_roll_04=5  right_hip_yaw_03=0  left_hip_yaw_03=0
+    qd tick-flip%: left_hip_pitch_04=15  right_hip_pitch_04=12  left_hip_roll_04=21  right_hip_roll_04=21  left_hip_yaw_03=50  right_hip_yaw_03=50  left_knee_04=32  right_knee_04=32  left_ankle_02=24  right_ankle_02=21
+    contact: flicker=8.8 trans/s/foot  stance-duty=69%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=8.5(10.1)  right_hip_pitch_04=8.5(10.2)  left_hip_roll_04=6.9(8.4)  right_hip_roll_04=7.1(8.9)  left_hip_yaw_03=1.5(1.9)  right_hip_yaw_03=1.6(2.1)  left_knee_04=7.7(11.0)  right_knee_04=7.7(11.1)  left_ankle_02=7.1(8.0)  right_ankle_02=6.9(7.9)
+spd_0.60     [delay=15ms, mu=1.0, gains=nominal] vx=0.598/0.6 (100%)  tilt mean=5.2 p95(max)=13.7 max=14.3  fallen=0/32
+    T-V saturation%: right_ankle_02=56  left_ankle_02=54  right_knee_04=27  left_knee_04=26  right_hip_pitch_04=14  right_hip_roll_04=13  left_hip_pitch_04=13  left_hip_roll_04=10  right_hip_yaw_03=0  left_hip_yaw_03=0
+    qd tick-flip%: left_hip_pitch_04=13  right_hip_pitch_04=12  left_hip_roll_04=19  right_hip_roll_04=20  left_hip_yaw_03=49  right_hip_yaw_03=51  left_knee_04=32  right_knee_04=34  left_ankle_02=21  right_ankle_02=20
+    contact: flicker=8.1 trans/s/foot  stance-duty=63%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=8.4(10.0)  right_hip_pitch_04=8.5(10.1)  left_hip_roll_04=8.1(9.8)  right_hip_roll_04=8.4(10.1)  left_hip_yaw_03=1.6(2.1)  right_hip_yaw_03=1.7(2.2)  left_knee_04=7.8(10.9)  right_knee_04=8.1(11.2)  left_ankle_02=7.4(8.3)  right_ankle_02=7.5(8.3)
+L4F_39k_walk_rigid [baseline] vx=0.181/0.3 (60%)  tilt mean=2.6 p95(max)=8.6 max=11.9  alive=32/32 (fell-in-window=0) [stats = alive envs only]
+    T-V saturation%: right_ankle_02=40  left_ankle_02=39  right_knee_04=4  left_knee_04=4  right_hip_roll_04=3  right_hip_pitch_04=1  left_hip_roll_04=0  left_hip_pitch_04=0  left_hip_yaw_03=0  right_hip_yaw_03=0
+    sat split mot/brk/stall %: right_ankle_02=23/14/2  left_ankle_02=28/9/2  right_knee_04=3/1/0  left_knee_04=4/0/0  right_hip_roll_04=3/0/0  right_hip_pitch_04=1/0/0
+    qd tick-flip%: left_hip_pitch_04=19  right_hip_pitch_04=18  left_hip_roll_04=22  right_hip_roll_04=21  left_hip_yaw_03=44  right_hip_yaw_03=44  left_knee_04=24  right_knee_04=21  left_ankle_02=28  right_ankle_02=27
+    contact: flicker=7.4 trans/s/foot  stance-duty=81%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=4.0(5.1)  right_hip_pitch_04=4.7(6.0)  left_hip_roll_04=4.0(5.2)  right_hip_roll_04=6.3(7.8)  left_hip_yaw_03=1.1(1.6)  right_hip_yaw_03=1.1(1.4)  left_knee_04=4.1(6.3)  right_knee_04=4.8(6.8)  left_ankle_02=6.2(7.3)  right_ankle_02=6.3(7.3)
+L4F_39k_walk_rigid [baseline] vx=0.187/0.3 (62%)  tilt mean=2.8 p95(max)=8.1 max=8.3  alive=32/32 (fell-in-window=0) [stats = alive envs only]
+    T-V saturation%: left_ankle_02=41  right_ankle_02=40  right_knee_04=4  left_knee_04=4  right_hip_roll_04=3  right_hip_pitch_04=0  left_hip_roll_04=0  left_hip_pitch_04=0  right_hip_yaw_03=0  left_hip_yaw_03=0
+    sat split mot/brk/stall %: left_ankle_02=29/10/3  right_ankle_02=24/14/2  right_knee_04=3/1/0  left_knee_04=3/0/0  right_hip_roll_04=2/0/0
+    qd tick-flip%: left_hip_pitch_04=19  right_hip_pitch_04=16  left_hip_roll_04=24  right_hip_roll_04=23  left_hip_yaw_03=44  right_hip_yaw_03=43  left_knee_04=25  right_knee_04=21  left_ankle_02=28  right_ankle_02=28
+    contact: flicker=7.3 trans/s/foot  stance-duty=81%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=3.9(5.0)  right_hip_pitch_04=4.3(5.5)  left_hip_roll_04=4.0(5.1)  right_hip_roll_04=6.1(7.6)  left_hip_yaw_03=1.1(1.5)  right_hip_yaw_03=1.1(1.4)  left_knee_04=4.0(6.1)  right_knee_04=4.7(6.7)  left_ankle_02=6.4(7.4)  right_ankle_02=6.4(7.3)
+L4F_39k_walk_rigid [baseline] vx=0.182/0.3 (61%)  tilt mean=2.7 p95(max)=8.5 max=9.2  alive=32/32 (fell-in-window=0) [stats = alive envs only]
+    T-V saturation%: right_ankle_02=38  left_ankle_02=37  right_knee_04=6  right_hip_roll_04=3  left_knee_04=3  left_hip_roll_04=1  right_hip_pitch_04=1  left_hip_pitch_04=0  left_hip_yaw_03=0  right_hip_yaw_03=0
+    sat split mot/brk/stall %: right_ankle_02=22/14/2  left_ankle_02=25/9/2  right_knee_04=5/1/0  right_hip_roll_04=2/0/0  left_knee_04=2/0/0
+    qd tick-flip%: left_hip_pitch_04=18  right_hip_pitch_04=16  left_hip_roll_04=23  right_hip_roll_04=22  left_hip_yaw_03=43  right_hip_yaw_03=42  left_knee_04=24  right_knee_04=20  left_ankle_02=27  right_ankle_02=26
+    contact: flicker=6.6 trans/s/foot  stance-duty=82%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=4.1(5.2)  right_hip_pitch_04=4.5(5.6)  left_hip_roll_04=4.2(5.4)  right_hip_roll_04=6.1(7.6)  left_hip_yaw_03=1.1(1.6)  right_hip_yaw_03=1.1(1.4)  left_knee_04=3.4(5.3)  right_knee_04=5.2(7.4)  left_ankle_02=6.0(7.1)  right_ankle_02=6.2(7.2)
+L4F_39k_walk_rigid [baseline] vx=0.189/0.3 (63%)  tilt mean=2.6 p95(max)=7.5 max=8.2  alive=32/32 (fell-in-window=0) [stats = alive envs only]
+    T-V saturation%: right_ankle_02=42  left_ankle_02=40  right_knee_04=5  left_knee_04=5  right_hip_roll_04=4  left_hip_roll_04=1  right_hip_pitch_04=1  left_hip_pitch_04=0  left_hip_yaw_03=0  right_hip_yaw_03=0
+    sat split mot/brk/stall %: right_ankle_02=24/15/3  left_ankle_02=28/9/3  right_knee_04=4/1/0  left_knee_04=4/0/0  right_hip_roll_04=3/0/0
+    qd tick-flip%: left_hip_pitch_04=19  right_hip_pitch_04=17  left_hip_roll_04=22  right_hip_roll_04=21  left_hip_yaw_03=45  right_hip_yaw_03=44  left_knee_04=24  right_knee_04=21  left_ankle_02=27  right_ankle_02=26
+    contact: flicker=7.0 trans/s/foot  stance-duty=81%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=4.3(5.4)  right_hip_pitch_04=4.6(5.8)  left_hip_roll_04=4.3(5.5)  right_hip_roll_04=6.3(7.8)  left_hip_yaw_03=1.1(1.5)  right_hip_yaw_03=1.1(1.4)  left_knee_04=4.4(6.6)  right_knee_04=5.1(7.2)  left_ankle_02=6.3(7.3)  right_ankle_02=6.5(7.4)
+L4F_39k_walk_rigid [baseline] vx=0.182/0.3 (61%)  tilt mean=2.6 p95(max)=7.5 max=9.1  alive=32/32 (fell-in-window=0) [stats = alive envs only]
+    T-V saturation%: right_ankle_02=38  left_ankle_02=36  right_knee_04=4  left_knee_04=3  right_hip_roll_04=3  left_hip_roll_04=1  right_hip_pitch_04=0  left_hip_pitch_04=0  right_hip_yaw_03=0  left_hip_yaw_03=0
+    sat split mot/brk/stall %: right_ankle_02=22/14/2  left_ankle_02=25/9/2  right_knee_04=3/1/0  left_knee_04=3/0/0  right_hip_roll_04=2/0/0
+    qd tick-flip%: left_hip_pitch_04=19  right_hip_pitch_04=16  left_hip_roll_04=22  right_hip_roll_04=21  left_hip_yaw_03=44  right_hip_yaw_03=43  left_knee_04=24  right_knee_04=21  left_ankle_02=27  right_ankle_02=26
+    contact: flicker=6.6 trans/s/foot  stance-duty=82%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=3.9(5.0)  right_hip_pitch_04=4.4(5.5)  left_hip_roll_04=4.2(5.4)  right_hip_roll_04=6.2(7.6)  left_hip_yaw_03=1.1(1.5)  right_hip_yaw_03=1.0(1.4)  left_knee_04=3.7(5.8)  right_knee_04=4.7(6.7)  left_ankle_02=6.0(7.1)  right_ankle_02=6.3(7.2)
+L6B_3600_walk_rigid [baseline] vx=0.006/0.3 (2%)  tilt mean=3.3 p95(max)=7.1 max=7.3  alive=32/32 (fell-in-window=0) [stats = alive envs only]
+    T-V saturation%: right_ankle_02=3  right_hip_roll_04=2  left_ankle_02=1  left_hip_roll_04=1  right_knee_04=0  right_hip_yaw_03=0  right_hip_pitch_04=0  left_knee_04=0  left_hip_yaw_03=0  left_hip_pitch_04=0
+    sat split mot/brk/stall %: right_ankle_02=2/1/0  right_hip_roll_04=1/0/1
+    qd tick-flip%: left_hip_pitch_04=22  right_hip_pitch_04=26  left_hip_roll_04=30  right_hip_roll_04=31  left_hip_yaw_03=43  right_hip_yaw_03=42  left_knee_04=18  right_knee_04=19  left_ankle_02=20  right_ankle_02=20
+    contact: flicker=1.7 trans/s/foot  stance-duty=98%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=2.2(2.8)  right_hip_pitch_04=2.4(3.0)  left_hip_roll_04=6.3(7.4)  right_hip_roll_04=6.9(8.1)  left_hip_yaw_03=0.7(0.9)  right_hip_yaw_03=0.8(1.1)  left_knee_04=2.0(2.8)  right_knee_04=2.0(3.0)  left_ankle_02=2.4(3.0)  right_ankle_02=2.8(3.5)
+L5C_24800_walk_rigid [baseline] vx=0.201/0.3 (67%)  tilt mean=2.6 p95(max)=7.0 max=8.6  alive=32/32 (fell-in-window=0) [stats = alive envs only]
+    T-V saturation%: right_ankle_02=30  left_ankle_02=28  right_knee_04=4  right_hip_roll_04=4  left_knee_04=1  left_hip_roll_04=0  right_hip_pitch_04=0  left_hip_yaw_03=0  left_hip_pitch_04=0  right_hip_yaw_03=0
+    sat split mot/brk/stall %: right_ankle_02=16/13/1  left_ankle_02=19/7/1  right_knee_04=3/1/0  right_hip_roll_04=2/1/1  left_knee_04=1/0/0
+    qd tick-flip%: left_hip_pitch_04=11  right_hip_pitch_04=13  left_hip_roll_04=19  right_hip_roll_04=19  left_hip_yaw_03=42  right_hip_yaw_03=42  left_knee_04=20  right_knee_04=19  left_ankle_02=21  right_ankle_02=23
+    contact: flicker=4.9 trans/s/foot  stance-duty=83%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=3.1(4.0)  right_hip_pitch_04=3.8(4.8)  left_hip_roll_04=4.3(5.4)  right_hip_roll_04=5.9(7.4)  left_hip_yaw_03=1.0(1.3)  right_hip_yaw_03=1.1(1.4)  left_knee_04=3.2(4.9)  right_knee_04=4.4(6.5)  left_ankle_02=5.1(6.4)  right_ankle_02=5.5(6.6)
+L7B_3600_walk [baseline] vx=0.010/0.3 (3%)  tilt mean=4.3 p95(max)=14.3 max=17.0  alive=21/32 (fell-in-window=11) [stats = alive envs only]
+    T-V saturation%: right_hip_pitch_04=100  right_hip_roll_04=100  left_hip_roll_04=92  left_hip_pitch_04=73  right_knee_04=72  left_knee_04=66  left_hip_yaw_03=59  right_hip_yaw_03=57  left_ankle_02=15  right_ankle_02=9
+    sat split mot/brk/stall %: right_hip_pitch_04=8/4/87  right_hip_roll_04=2/2/95  left_hip_roll_04=1/0/90  left_hip_pitch_04=1/6/65  right_knee_04=17/2/53  left_knee_04=23/1/42  left_hip_yaw_03=28/4/27  right_hip_yaw_03=20/3/34  left_ankle_02=11/1/3  right_ankle_02=6/2/2
+    qd tick-flip%: left_hip_pitch_04=29  right_hip_pitch_04=37  left_hip_roll_04=36  right_hip_roll_04=39  left_hip_yaw_03=34  right_hip_yaw_03=37  left_knee_04=30  right_knee_04=32  left_ankle_02=35  right_ankle_02=35
+    contact: flicker=5.0 trans/s/foot  stance-duty=91%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=16.7(17.8)  right_hip_pitch_04=19.4(19.6)  left_hip_roll_04=18.2(18.6)  right_hip_roll_04=19.4(19.6)  left_hip_yaw_03=7.1(7.7)  right_hip_yaw_03=7.0(7.7)  left_knee_04=14.1(15.5)  right_knee_04=15.5(16.4)  left_ankle_02=4.2(5.1)  right_ankle_02=3.6(4.6)
+NPB_52200_walk [baseline] vx=0.256/0.3 (85%)  tilt mean=3.8 p95(max)=8.4 max=8.6  alive=32/32 (fell-in-window=0) [stats = alive envs only]
+    T-V saturation%: left_ankle_02=26  right_ankle_02=20  right_hip_roll_04=8  left_hip_roll_04=3  right_knee_04=1  left_knee_04=1  right_hip_pitch_04=0  left_hip_yaw_03=0  left_hip_pitch_04=0  right_hip_yaw_03=0
+    sat split mot/brk/stall %: left_ankle_02=13/10/3  right_ankle_02=8/10/1  right_hip_roll_04=3/3/2  left_hip_roll_04=2/1/0  right_knee_04=1/1/0
+    qd tick-flip%: left_hip_pitch_04=11  right_hip_pitch_04=17  left_hip_roll_04=31  right_hip_roll_04=32  left_hip_yaw_03=44  right_hip_yaw_03=42  left_knee_04=17  right_knee_04=12  left_ankle_02=32  right_ankle_02=27
+    contact: flicker=3.3 trans/s/foot  stance-duty=88%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=3.2(4.3)  right_hip_pitch_04=3.6(4.9)  left_hip_roll_04=6.0(7.5)  right_hip_roll_04=6.8(8.7)  left_hip_yaw_03=1.4(1.8)  right_hip_yaw_03=1.1(1.4)  left_knee_04=3.3(4.7)  right_knee_04=4.1(5.7)  left_ankle_02=4.8(5.9)  right_ankle_02=4.8(5.8)
+GB_65400_walk [baseline] vx=0.264/0.3 (88%)  tilt mean=3.8 p95(max)=8.1 max=8.2  alive=32/32 (fell-in-window=0) [stats = alive envs only]
+    T-V saturation%: left_ankle_02=29  right_ankle_02=23  right_hip_roll_04=10  left_hip_roll_04=4  right_knee_04=1  left_knee_04=1  right_hip_pitch_04=0  left_hip_pitch_04=0  right_hip_yaw_03=0  left_hip_yaw_03=0
+    sat split mot/brk/stall %: left_ankle_02=16/10/3  right_ankle_02=10/11/2  right_hip_roll_04=5/3/2  left_hip_roll_04=2/1/0
+    qd tick-flip%: left_hip_pitch_04=9  right_hip_pitch_04=19  left_hip_roll_04=33  right_hip_roll_04=32  left_hip_yaw_03=43  right_hip_yaw_03=44  left_knee_04=17  right_knee_04=13  left_ankle_02=32  right_ankle_02=27
+    contact: flicker=3.7 trans/s/foot  stance-duty=87%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=3.1(4.1)  right_hip_pitch_04=3.5(4.7)  left_hip_roll_04=7.0(8.5)  right_hip_roll_04=7.3(9.2)  left_hip_yaw_03=1.1(1.5)  right_hip_yaw_03=1.2(1.5)  left_knee_04=3.1(4.5)  right_knee_04=3.6(5.1)  left_ankle_02=5.1(6.2)  right_ankle_02=5.0(6.0)
+H3_82000_walk [baseline] vx=0.260/0.3 (87%)  tilt mean=3.9 p95(max)=11.4 max=14.8  alive=32/32 (fell-in-window=0) [stats = alive envs only]
+    T-V saturation%: right_hip_roll_04=8  left_hip_roll_04=7  right_knee_04=1  left_knee_04=0  right_hip_pitch_04=0  left_hip_pitch_04=0  left_hip_yaw_03=0  right_hip_yaw_03=0
+    sat split mot/brk/stall %: right_hip_roll_04=4/3/1  left_hip_roll_04=4/2/0  right_knee_04=1/1/0
+    qd tick-flip%: left_hip_pitch_04=12  right_hip_pitch_04=19  left_hip_roll_04=30  right_hip_roll_04=31  left_hip_yaw_03=44  right_hip_yaw_03=43  left_knee_04=17  right_knee_04=14  left_ankle_02=28  right_ankle_02=22
+    contact: flicker=2.7 trans/s/foot  stance-duty=90%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=3.0(4.0)  right_hip_pitch_04=3.7(4.8)  left_hip_roll_04=7.1(8.8)  right_hip_roll_04=7.3(9.1)  left_hip_yaw_03=1.4(1.8)  right_hip_yaw_03=1.2(1.5)  left_knee_04=3.6(5.0)  right_knee_04=4.2(5.8)  left_ankle_02=4.7(5.7)  right_ankle_02=4.9(6.0)
+WS_45200_walk030 [baseline] vx=0.202/0.3 (67%)  tilt mean=2.4 p95(max)=7.1 max=7.8  alive=32/32 (fell-in-window=0) [stats = alive envs only]
+    T-V saturation%: left_knee_04=11  right_knee_04=10  right_hip_roll_04=1  right_hip_pitch_04=0  left_hip_roll_04=0  left_hip_pitch_04=0  left_hip_yaw_03=0  right_hip_yaw_03=0
+    sat split mot/brk/stall %: left_knee_04=10/1/0  right_knee_04=10/1/0
+    qd tick-flip%: left_hip_pitch_04=28  right_hip_pitch_04=28  left_hip_roll_04=31  right_hip_roll_04=32  left_hip_yaw_03=42  right_hip_yaw_03=45  left_knee_04=31  right_knee_04=31  left_ankle_02=30  right_ankle_02=29
+    contact: flicker=5.4 trans/s/foot  stance-duty=93%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=4.6(5.7)  right_hip_pitch_04=5.3(6.5)  left_hip_roll_04=4.7(5.9)  right_hip_roll_04=4.7(5.9)  left_hip_yaw_03=1.4(1.8)  right_hip_yaw_03=1.2(1.5)  left_knee_04=4.6(7.3)  right_knee_04=5.5(8.1)  left_ankle_02=3.9(4.8)  right_ankle_02=4.4(5.3)
+WS_45200_walk015 [baseline] vx=0.120/0.15 (80%)  tilt mean=2.5 p95(max)=6.7 max=7.1  alive=32/32 (fell-in-window=0) [stats = alive envs only]
+    T-V saturation%: left_knee_04=8  right_knee_04=7  right_hip_roll_04=1  right_hip_pitch_04=0  left_hip_pitch_04=0  left_hip_roll_04=0  right_hip_yaw_03=0  left_hip_yaw_03=0
+    sat split mot/brk/stall %: left_knee_04=8/1/0  right_knee_04=6/0/0
+    qd tick-flip%: left_hip_pitch_04=31  right_hip_pitch_04=31  left_hip_roll_04=32  right_hip_roll_04=32  left_hip_yaw_03=45  right_hip_yaw_03=46  left_knee_04=31  right_knee_04=32  left_ankle_02=31  right_ankle_02=31
+    contact: flicker=4.2 trans/s/foot  stance-duty=95%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=4.6(5.7)  right_hip_pitch_04=5.3(6.5)  left_hip_roll_04=4.6(5.7)  right_hip_roll_04=4.7(6.0)  left_hip_yaw_03=1.3(1.7)  right_hip_yaw_03=1.1(1.4)  left_knee_04=4.1(6.5)  right_knee_04=4.5(6.8)  left_ankle_02=3.6(4.5)  right_ankle_02=3.9(4.9)

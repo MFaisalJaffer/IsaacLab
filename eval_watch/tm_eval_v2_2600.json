@@ -1,0 +1,109 @@
+{
+ "checkpoint": "/home/faisal/IsaacLab/logs/autopilot/tm_v2_2600.pt",
+ "num_envs": 256,
+ "seconds": 20.0,
+ "cycles": {
+  "forward": {
+   "episodes": 89,
+   "falls": 0,
+   "drift_ends": 54,
+   "survival": 1.0,
+   "rmse_deg": 5.334106922149658,
+   "cmd": [
+    0.405,
+    0.0,
+    -0.0
+   ],
+   "achieved": [
+    0.394,
+    -0.002,
+    -0.017
+   ]
+  },
+  "backward": {
+   "episodes": 111,
+   "falls": 0,
+   "drift_ends": 66,
+   "survival": 1.0,
+   "rmse_deg": 4.011521339416504,
+   "cmd": [
+    -0.401,
+    0.0,
+    -0.0
+   ],
+   "achieved": [
+    -0.392,
+    0.003,
+    0.014
+   ]
+  },
+  "side_left": {
+   "episodes": 85,
+   "falls": 0,
+   "drift_ends": 24,
+   "survival": 1.0,
+   "rmse_deg": 5.885321617126465,
+   "cmd": [
+    0.0,
+    0.129,
+    -0.0
+   ],
+   "achieved": [
+    0.015,
+    0.096,
+    0.014
+   ]
+  },
+  "side_right": {
+   "episodes": 76,
+   "falls": 0,
+   "drift_ends": 30,
+   "survival": 1.0,
+   "rmse_deg": 5.8247199058532715,
+   "cmd": [
+    0.0,
+    -0.129,
+    -0.0
+   ],
+   "achieved": [
+    0.016,
+    -0.091,
+    -0.031
+   ]
+  },
+  "pivot_left": {
+   "episodes": 72,
+   "falls": 0,
+   "drift_ends": 34,
+   "survival": 1.0,
+   "rmse_deg": 6.244061470031738,
+   "cmd": [
+    0.0,
+    0.0,
+    0.562
+   ],
+   "achieved": [
+    0.015,
+    -0.036,
+    0.495
+   ]
+  },
+  "pivot_right": {
+   "episodes": 67,
+   "falls": 0,
+   "drift_ends": 37,
+   "survival": 1.0,
+   "rmse_deg": 6.204553127288818,
+   "cmd": [
+    0.0,
+    -0.0,
+    -0.562
+   ],
+   "achieved": [
+    -0.034,
+    0.035,
+    -0.492
+   ]
+  }
+ }
+}

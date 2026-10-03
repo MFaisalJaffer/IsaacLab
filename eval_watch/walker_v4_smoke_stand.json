@@ -1,0 +1,8 @@
+{
+ "checkpoint": "/tmp/claude-1000/-home-faisal/d2f69e5f-1832-4795-ac3c-acfca88fa4e9/scratchpad/walker_v4_smoke29.pt",
+ "cmd": "0:0:0",
+ "standing": null,
+ "walking_envs": 0,
+ "survival_walking": null,
+ "note": "no walking envs"
+}

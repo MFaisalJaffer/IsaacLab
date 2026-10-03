@@ -1,0 +1,597 @@
+{
+ "schema": "sim2sim_frictionsweep_v1",
+ "speeds_deg_s": [
+  10.0,
+  20.0,
+  40.0,
+  80.0
+ ],
+ "span_deg": 12.0,
+ "kp": [
+  150.0,
+  150.0,
+  60.0,
+  150.0,
+  60.0,
+  150.0,
+  150.0,
+  60.0,
+  150.0,
+  60.0
+ ],
+ "kd": [
+  2.5,
+  1.5,
+  1.0,
+  1.0,
+  0.5,
+  2.5,
+  1.5,
+  1.0,
+  1.0,
+  0.5
+ ],
+ "joint_order": [
+  "dof_right_hip_pitch_04",
+  "dof_right_hip_roll_04",
+  "dof_right_hip_yaw_03",
+  "dof_right_knee_04",
+  "dof_right_ankle_02",
+  "dof_left_hip_pitch_04",
+  "dof_left_hip_roll_04",
+  "dof_left_hip_yaw_03",
+  "dof_left_knee_04",
+  "dof_left_ankle_02"
+ ],
+ "method": "tau_friction = (tau_fwd - tau_bwd)/2 at matched |v|; gravity cancels",
+ "torque_source": "MEASURED from vcan MIT feedback 0x008 (12-bit, +-50 Nm)",
+ "results": {
+  "dof_right_hip_pitch_04": {
+   "points": [
+    {
+     "speed_deg_s": 10.0,
+     "ctrl_fwd_Nm": 4.8753,
+     "ctrl_bwd_Nm": -4.6288,
+     "friction_Nm": 4.7521,
+     "gravity_Nm": 0.1232,
+     "net_wire_tau_fwd": -0.0966,
+     "track_err_fwd_deg": -1.882,
+     "track_err_bwd_deg": 1.81,
+     "vel_achieved_deg_s": 11.85,
+     "control_pass": true
+    },
+    {
+     "speed_deg_s": 20.0,
+     "ctrl_fwd_Nm": 5.5349,
+     "ctrl_bwd_Nm": -5.3141,
+     "friction_Nm": 5.4245,
+     "gravity_Nm": 0.1104,
+     "net_wire_tau_fwd": -0.1939,
+     "track_err_fwd_deg": -2.153,
+     "track_err_bwd_deg": 2.101,
+     "vel_achieved_deg_s": 23.3,
+     "control_pass": true
+    },
+    {
+     "speed_deg_s": 40.0,
+     "ctrl_fwd_Nm": 7.1378,
+     "ctrl_bwd_Nm": -6.702,
+     "friction_Nm": 6.9199,
+     "gravity_Nm": 0.2179,
+     "net_wire_tau_fwd": -0.3564,
+     "track_err_fwd_deg": -2.963,
+     "track_err_bwd_deg": 2.72,
+     "vel_achieved_deg_s": 51.88,
+     "control_pass": true
+    },
+    {
+     "speed_deg_s": 80.0,
+     "ctrl_fwd_Nm": 10.8544,
+     "ctrl_bwd_Nm": -10.9314,
+     "friction_Nm": 10.8929,
+     "gravity_Nm": -0.0385,
+     "net_wire_tau_fwd": 0.1864,
+     "track_err_fwd_deg": -4.495,
+     "track_err_bwd_deg": 4.599,
+     "vel_achieved_deg_s": 103.19,
+     "control_pass": true
+    }
+   ],
+   "coulomb_Nm": 3.676,
+   "viscous_Nm_per_deg_s": 0.08857,
+   "nominal_Fc_Nm": 4.0
+  },
+  "dof_right_hip_roll_04": {
+   "points": [
+    {
+     "speed_deg_s": 10.0,
+     "ctrl_fwd_Nm": 4.8361,
+     "ctrl_bwd_Nm": -4.5508,
+     "friction_Nm": 4.6934,
+     "gravity_Nm": 0.1427,
+     "net_wire_tau_fwd": -0.0949,
+     "track_err_fwd_deg": -1.868,
+     "track_err_bwd_deg": 1.769,
+     "vel_achieved_deg_s": 12.57,
+     "control_pass": true
+    },
+    {
+     "speed_deg_s": 20.0,
+     "ctrl_fwd_Nm": 5.3926,
+     "ctrl_bwd_Nm": -5.1501,
+     "friction_Nm": 5.2714,
+     "gravity_Nm": 0.1213,
+     "net_wire_tau_fwd": -0.2237,
+     "track_err_fwd_deg": -2.094,
+     "track_err_bwd_deg": 2.014,
+     "vel_achieved_deg_s": 24.03,
+     "control_pass": true
+    },
+    {
+     "speed_deg_s": 40.0,
+     "ctrl_fwd_Nm": 6.6194,
+     "ctrl_bwd_Nm": -6.9719,
+     "friction_Nm": 6.7956,
+     "gravity_Nm": -0.1762,
+     "net_wire_tau_fwd": -0.5877,
+     "track_err_fwd_deg": -2.643,
+     "track_err_bwd_deg": 2.86,
+     "vel_achieved_deg_s": 55.58,
+     "control_pass": true
+    },
+    {
+     "speed_deg_s": 80.0,
+     "ctrl_fwd_Nm": 12.2992,
+     "ctrl_bwd_Nm": -13.836,
+     "friction_Nm": 13.0676,
+     "gravity_Nm": -0.7684,
+     "net_wire_tau_fwd": 2.0147,
+     "track_err_fwd_deg": -4.996,
+     "track_err_bwd_deg": 5.686,
+     "vel_achieved_deg_s": 114.96,
+     "control_pass": true
+    }
+   ],
+   "coulomb_Nm": 2.8782,
+   "viscous_Nm_per_deg_s": 0.122102,
+   "nominal_Fc_Nm": 4.0
+  },
+  "dof_right_hip_yaw_03": {
+   "points": [
+    {
+     "speed_deg_s": 10.0,
+     "ctrl_fwd_Nm": 0.678,
+     "ctrl_bwd_Nm": -0.5709,
+     "friction_Nm": 0.6245,
+     "gravity_Nm": 0.0535,
+     "net_wire_tau_fwd": -0.0479,
+     "track_err_fwd_deg": -0.66,
+     "track_err_bwd_deg": 0.583,
+     "vel_achieved_deg_s": 11.52,
+     "control_pass": true
+    },
+    {
+     "speed_deg_s": 20.0,
+     "ctrl_fwd_Nm": 0.8824,
+     "ctrl_bwd_Nm": -0.8018,
+     "friction_Nm": 0.8421,
+     "gravity_Nm": 0.0403,
+     "net_wire_tau_fwd": -0.0855,
+     "track_err_fwd_deg": -0.904,
+     "track_err_bwd_deg": 0.895,
+     "vel_achieved_deg_s": 25.72,
+     "control_pass": true
+    },
+    {
+     "speed_deg_s": 40.0,
+     "ctrl_fwd_Nm": 1.2969,
+     "ctrl_bwd_Nm": -1.1882,
+     "friction_Nm": 1.2426,
+     "gravity_Nm": 0.0543,
+     "net_wire_tau_fwd": -0.1636,
+     "track_err_fwd_deg": -1.343,
+     "track_err_bwd_deg": 1.26,
+     "vel_achieved_deg_s": 46.9,
+     "control_pass": true
+    },
+    {
+     "speed_deg_s": 80.0,
+     "ctrl_fwd_Nm": 2.1117,
+     "ctrl_bwd_Nm": -2.0254,
+     "friction_Nm": 2.0685,
+     "gravity_Nm": 0.0432,
+     "net_wire_tau_fwd": -0.3329,
+     "track_err_fwd_deg": -2.232,
+     "track_err_bwd_deg": 2.138,
+     "vel_achieved_deg_s": 92.58,
+     "control_pass": true
+    }
+   ],
+   "coulomb_Nm": 0.4234,
+   "viscous_Nm_per_deg_s": 0.02056,
+   "nominal_Fc_Nm": 0.4
+  },
+  "dof_right_knee_04": {
+   "points": [
+    {
+     "speed_deg_s": 10.0,
+     "ctrl_fwd_Nm": 6.0327,
+     "ctrl_bwd_Nm": 4.9171,
+     "friction_Nm": 0.5578,
+     "gravity_Nm": 5.4749,
+     "net_wire_tau_fwd": 0.0871,
+     "track_err_fwd_deg": -2.276,
+     "track_err_bwd_deg": -1.901,
+     "vel_achieved_deg_s": 6.22,
+     "control_pass": true
+    },
+    {
+     "speed_deg_s": 20.0,
+     "ctrl_fwd_Nm": 4.8696,
+     "ctrl_bwd_Nm": 2.9837,
+     "friction_Nm": 0.9429,
+     "gravity_Nm": 3.9267,
+     "net_wire_tau_fwd": 0.1481,
+     "track_err_fwd_deg": -1.82,
+     "track_err_bwd_deg": -1.196,
+     "vel_achieved_deg_s": 12.79,
+     "control_pass": true
+    },
+    {
+     "speed_deg_s": 40.0,
+     "ctrl_fwd_Nm": 5.7586,
+     "ctrl_bwd_Nm": 2.3657,
+     "friction_Nm": 1.6964,
+     "gravity_Nm": 4.0622,
+     "net_wire_tau_fwd": 0.0252,
+     "track_err_fwd_deg": -2.104,
+     "track_err_bwd_deg": -1.039,
+     "vel_achieved_deg_s": 22.65,
+     "control_pass": false
+    },
+    {
+     "speed_deg_s": 80.0,
+     "ctrl_fwd_Nm": 6.356,
+     "ctrl_bwd_Nm": 1.4168,
+     "friction_Nm": 2.4696,
+     "gravity_Nm": 3.8864,
+     "net_wire_tau_fwd": -0.8897,
+     "track_err_fwd_deg": -2.377,
+     "track_err_bwd_deg": -0.901,
+     "vel_achieved_deg_s": 49.17,
+     "control_pass": true
+    }
+   ],
+   "coulomb_Nm": 0.3459,
+   "viscous_Nm_per_deg_s": 0.02666,
+   "nominal_Fc_Nm": 0.6
+  },
+  "dof_right_ankle_02": {
+   "points": [
+    {
+     "speed_deg_s": 10.0,
+     "ctrl_fwd_Nm": 0.4273,
+     "ctrl_bwd_Nm": -0.3444,
+     "friction_Nm": 0.3858,
+     "gravity_Nm": 0.0415,
+     "net_wire_tau_fwd": 0.1417,
+     "track_err_fwd_deg": -0.418,
+     "track_err_bwd_deg": 0.349,
+     "vel_achieved_deg_s": 11.81,
+     "control_pass": true
+    },
+    {
+     "speed_deg_s": 20.0,
+     "ctrl_fwd_Nm": 0.6013,
+     "ctrl_bwd_Nm": -0.5405,
+     "friction_Nm": 0.5709,
+     "gravity_Nm": 0.0304,
+     "net_wire_tau_fwd": 0.1099,
+     "track_err_fwd_deg": -0.591,
+     "track_err_bwd_deg": 0.565,
+     "vel_achieved_deg_s": 23.96,
+     "control_pass": true
+    },
+    {
+     "speed_deg_s": 40.0,
+     "ctrl_fwd_Nm": 0.9901,
+     "ctrl_bwd_Nm": -0.8805,
+     "friction_Nm": 0.9353,
+     "gravity_Nm": 0.0548,
+     "net_wire_tau_fwd": 0.0469,
+     "track_err_fwd_deg": -0.999,
+     "track_err_bwd_deg": 0.886,
+     "vel_achieved_deg_s": 45.93,
+     "control_pass": true
+    },
+    {
+     "speed_deg_s": 80.0,
+     "ctrl_fwd_Nm": 1.6664,
+     "ctrl_bwd_Nm": -1.5799,
+     "friction_Nm": 1.6232,
+     "gravity_Nm": 0.0433,
+     "net_wire_tau_fwd": -0.149,
+     "track_err_fwd_deg": -1.65,
+     "track_err_bwd_deg": 1.615,
+     "vel_achieved_deg_s": 89.85,
+     "control_pass": true
+    }
+   ],
+   "coulomb_Nm": 0.2172,
+   "viscous_Nm_per_deg_s": 0.017643,
+   "nominal_Fc_Nm": 0.3
+  },
+  "dof_left_hip_pitch_04": {
+   "points": [
+    {
+     "speed_deg_s": 10.0,
+     "ctrl_fwd_Nm": 4.8845,
+     "ctrl_bwd_Nm": -4.6098,
+     "friction_Nm": 4.7471,
+     "gravity_Nm": 0.1374,
+     "net_wire_tau_fwd": -0.1097,
+     "track_err_fwd_deg": -1.891,
+     "track_err_bwd_deg": 1.81,
+     "vel_achieved_deg_s": 12.25,
+     "control_pass": true
+    },
+    {
+     "speed_deg_s": 20.0,
+     "ctrl_fwd_Nm": 5.5633,
+     "ctrl_bwd_Nm": -5.4414,
+     "friction_Nm": 5.5024,
+     "gravity_Nm": 0.0609,
+     "net_wire_tau_fwd": -0.2188,
+     "track_err_fwd_deg": -2.181,
+     "track_err_bwd_deg": 2.195,
+     "vel_achieved_deg_s": 25.16,
+     "control_pass": true
+    },
+    {
+     "speed_deg_s": 40.0,
+     "ctrl_fwd_Nm": 6.9969,
+     "ctrl_bwd_Nm": -6.6748,
+     "friction_Nm": 6.8358,
+     "gravity_Nm": 0.161,
+     "net_wire_tau_fwd": -0.4589,
+     "track_err_fwd_deg": -2.861,
+     "track_err_bwd_deg": 2.741,
+     "vel_achieved_deg_s": 51.39,
+     "control_pass": true
+    },
+    {
+     "speed_deg_s": 80.0,
+     "ctrl_fwd_Nm": 11.2109,
+     "ctrl_bwd_Nm": -11.0697,
+     "friction_Nm": 11.1403,
+     "gravity_Nm": 0.0706,
+     "net_wire_tau_fwd": 0.3877,
+     "track_err_fwd_deg": -4.698,
+     "track_err_bwd_deg": 4.697,
+     "vel_achieved_deg_s": 106.52,
+     "control_pass": true
+    }
+   ],
+   "coulomb_Nm": 3.6167,
+   "viscous_Nm_per_deg_s": 0.091727,
+   "nominal_Fc_Nm": 4.0
+  },
+  "dof_left_hip_roll_04": {
+   "points": [
+    {
+     "speed_deg_s": 10.0,
+     "ctrl_fwd_Nm": 4.7742,
+     "ctrl_bwd_Nm": -4.5802,
+     "friction_Nm": 4.6772,
+     "gravity_Nm": 0.097,
+     "net_wire_tau_fwd": -0.1205,
+     "track_err_fwd_deg": -1.835,
+     "track_err_bwd_deg": 1.779,
+     "vel_achieved_deg_s": 12.03,
+     "control_pass": true
+    },
+    {
+     "speed_deg_s": 20.0,
+     "ctrl_fwd_Nm": 5.5077,
+     "ctrl_bwd_Nm": -5.1887,
+     "friction_Nm": 5.3482,
+     "gravity_Nm": 0.1595,
+     "net_wire_tau_fwd": -0.1721,
+     "track_err_fwd_deg": -2.15,
+     "track_err_bwd_deg": 2.038,
+     "vel_achieved_deg_s": 25.08,
+     "control_pass": true
+    },
+    {
+     "speed_deg_s": 40.0,
+     "ctrl_fwd_Nm": 6.6761,
+     "ctrl_bwd_Nm": -6.532,
+     "friction_Nm": 6.6041,
+     "gravity_Nm": 0.0721,
+     "net_wire_tau_fwd": -0.521,
+     "track_err_fwd_deg": -2.684,
+     "track_err_bwd_deg": 2.652,
+     "vel_achieved_deg_s": 54.54,
+     "control_pass": true
+    },
+    {
+     "speed_deg_s": 80.0,
+     "ctrl_fwd_Nm": 13.1248,
+     "ctrl_bwd_Nm": -12.3983,
+     "friction_Nm": 12.7615,
+     "gravity_Nm": 0.3633,
+     "net_wire_tau_fwd": 2.7814,
+     "track_err_fwd_deg": -5.356,
+     "track_err_bwd_deg": 5.076,
+     "vel_achieved_deg_s": 114.17,
+     "control_pass": true
+    }
+   ],
+   "coulomb_Nm": 2.9566,
+   "viscous_Nm_per_deg_s": 0.117098,
+   "nominal_Fc_Nm": 4.0
+  },
+  "dof_left_hip_yaw_03": {
+   "points": [
+    {
+     "speed_deg_s": 10.0,
+     "ctrl_fwd_Nm": 0.6771,
+     "ctrl_bwd_Nm": -0.5767,
+     "friction_Nm": 0.6269,
+     "gravity_Nm": 0.0502,
+     "net_wire_tau_fwd": -0.0488,
+     "track_err_fwd_deg": -0.661,
+     "track_err_bwd_deg": 0.608,
+     "vel_achieved_deg_s": 12.14,
+     "control_pass": true
+    },
+    {
+     "speed_deg_s": 20.0,
+     "ctrl_fwd_Nm": 0.8716,
+     "ctrl_bwd_Nm": -0.7689,
+     "friction_Nm": 0.8203,
+     "gravity_Nm": 0.0513,
+     "net_wire_tau_fwd": -0.09,
+     "track_err_fwd_deg": -0.868,
+     "track_err_bwd_deg": 0.805,
+     "vel_achieved_deg_s": 23.2,
+     "control_pass": true
+    },
+    {
+     "speed_deg_s": 40.0,
+     "ctrl_fwd_Nm": 1.3179,
+     "ctrl_bwd_Nm": -1.1954,
+     "friction_Nm": 1.2567,
+     "gravity_Nm": 0.0612,
+     "net_wire_tau_fwd": -0.1674,
+     "track_err_fwd_deg": -1.348,
+     "track_err_bwd_deg": 1.307,
+     "vel_achieved_deg_s": 47.64,
+     "control_pass": true
+    },
+    {
+     "speed_deg_s": 80.0,
+     "ctrl_fwd_Nm": 2.1334,
+     "ctrl_bwd_Nm": -2.0394,
+     "friction_Nm": 2.0864,
+     "gravity_Nm": 0.047,
+     "net_wire_tau_fwd": -0.3297,
+     "track_err_fwd_deg": -2.261,
+     "track_err_bwd_deg": 2.145,
+     "vel_achieved_deg_s": 92.64,
+     "control_pass": true
+    }
+   ],
+   "coulomb_Nm": 0.4121,
+   "viscous_Nm_per_deg_s": 0.020946,
+   "nominal_Fc_Nm": 0.4
+  },
+  "dof_left_knee_04": {
+   "points": [
+    {
+     "speed_deg_s": 10.0,
+     "ctrl_fwd_Nm": -4.5207,
+     "ctrl_bwd_Nm": -5.6736,
+     "friction_Nm": 0.5764,
+     "gravity_Nm": -5.0971,
+     "net_wire_tau_fwd": -0.0324,
+     "track_err_fwd_deg": 1.76,
+     "track_err_bwd_deg": 2.145,
+     "vel_achieved_deg_s": 5.85,
+     "control_pass": false
+    },
+    {
+     "speed_deg_s": 20.0,
+     "ctrl_fwd_Nm": -2.8896,
+     "ctrl_bwd_Nm": -4.7513,
+     "friction_Nm": 0.9308,
+     "gravity_Nm": -3.8205,
+     "net_wire_tau_fwd": -0.0969,
+     "track_err_fwd_deg": 1.166,
+     "track_err_bwd_deg": 1.764,
+     "vel_achieved_deg_s": 11.5,
+     "control_pass": false
+    },
+    {
+     "speed_deg_s": 40.0,
+     "ctrl_fwd_Nm": -2.1564,
+     "ctrl_bwd_Nm": -5.2054,
+     "friction_Nm": 1.5245,
+     "gravity_Nm": -3.6809,
+     "net_wire_tau_fwd": -0.1311,
+     "track_err_fwd_deg": 0.977,
+     "track_err_bwd_deg": 1.901,
+     "vel_achieved_deg_s": 21.95,
+     "control_pass": false
+    },
+    {
+     "speed_deg_s": 80.0,
+     "ctrl_fwd_Nm": -1.2599,
+     "ctrl_bwd_Nm": -6.6223,
+     "friction_Nm": 2.6812,
+     "gravity_Nm": -3.9411,
+     "net_wire_tau_fwd": 0.2244,
+     "track_err_fwd_deg": 0.9,
+     "track_err_bwd_deg": 2.484,
+     "vel_achieved_deg_s": 45.19,
+     "control_pass": false
+    }
+   ]
+  },
+  "dof_left_ankle_02": {
+   "points": [
+    {
+     "speed_deg_s": 10.0,
+     "ctrl_fwd_Nm": 0.4251,
+     "ctrl_bwd_Nm": -0.3409,
+     "friction_Nm": 0.383,
+     "gravity_Nm": 0.0421,
+     "net_wire_tau_fwd": 0.1448,
+     "track_err_fwd_deg": -0.41,
+     "track_err_bwd_deg": 0.344,
+     "vel_achieved_deg_s": 11.38,
+     "control_pass": true
+    },
+    {
+     "speed_deg_s": 20.0,
+     "ctrl_fwd_Nm": 0.6073,
+     "ctrl_bwd_Nm": -0.5186,
+     "friction_Nm": 0.5629,
+     "gravity_Nm": 0.0444,
+     "net_wire_tau_fwd": 0.1131,
+     "track_err_fwd_deg": -0.595,
+     "track_err_bwd_deg": 0.525,
+     "vel_achieved_deg_s": 22.68,
+     "control_pass": true
+    },
+    {
+     "speed_deg_s": 40.0,
+     "ctrl_fwd_Nm": 0.9745,
+     "ctrl_bwd_Nm": -0.8783,
+     "friction_Nm": 0.9264,
+     "gravity_Nm": 0.0481,
+     "net_wire_tau_fwd": 0.0469,
+     "track_err_fwd_deg": -0.986,
+     "track_err_bwd_deg": 0.884,
+     "vel_achieved_deg_s": 46.01,
+     "control_pass": true
+    },
+    {
+     "speed_deg_s": 80.0,
+     "ctrl_fwd_Nm": 1.6317,
+     "ctrl_bwd_Nm": -1.6351,
+     "friction_Nm": 1.6334,
+     "gravity_Nm": -0.0017,
+     "net_wire_tau_fwd": -0.1913,
+     "track_err_fwd_deg": -1.634,
+     "track_err_bwd_deg": 1.62,
+     "vel_achieved_deg_s": 88.07,
+     "control_pass": true
+    }
+   ],
+   "coulomb_Nm": 0.2066,
+   "viscous_Nm_per_deg_s": 0.017861,
+   "nominal_Fc_Nm": 0.3
+  }
+ }
+}

@@ -321,7 +321,7 @@ class AppLauncher:
             "--rendering_mode",
             type=str,
             action=ExplicitAction,
-            choices={"performance", "balanced", "quality", "xr"},
+            choices={"performance", "balanced", "quality", "xr", "preview"},
             help=(
                 "Sets the rendering mode. Preset settings files can be found in apps/rendering_modes."
                 ' Can be "performance", "balanced", "quality", or "xr".'
@@ -828,7 +828,10 @@ class AppLauncher:
         carb_settings_iface.set_bool("/physics/fabricUpdateTransformations", self._rendering_enabled())
 
         # disable physics backwards compatibility check
-        carb_settings_iface.set_int(physx_impl.SETTING_BACKWARD_COMPATIBILITY, 0)
+        # NOTE: SETTING_BACKWARD_COMPATIBILITY was removed in newer omni.physx
+        # (Isaac Sim 5.1). Guard so this older IsaacLab fork still launches.
+        if hasattr(physx_impl, "SETTING_BACKWARD_COMPATIBILITY"):
+            carb_settings_iface.set_int(physx_impl.SETTING_BACKWARD_COMPATIBILITY, 0)
 
     def _hide_stop_button(self):
         """Hide the stop button in the toolbar.

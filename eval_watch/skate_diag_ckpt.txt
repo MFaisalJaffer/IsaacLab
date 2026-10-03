@@ -1,0 +1,1 @@
+/tmp/claude-1000/-home-faisal/69c05df0-9eeb-4854-9e0f-b1e36e30a4b8/scratchpad/skate_diag/model_203800.pt

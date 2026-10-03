@@ -1,0 +1,29 @@
+# TRACKER v2 watch 2026-10-02 00:17 — run 2026-10-02_00-13-52 (achieved/commanded: m/s for forward, backward, side; rad/s for pivot)
+- 10-02 00:39 model_400: score 0.630 | forward +0.38/+0.41 surv 0.99 rmse 6.8; backward -0.36/-0.40 surv 1.00 rmse 9.2; side_left +0.02/+0.13 surv 1.00 rmse 7.2; side_right -0.03/-0.13 surv 1.00 rmse 7.2; pivot_left +0.44/+0.56 surv 1.00 rmse 7.1; pivot_right -0.46/-0.56 surv 1.00 rmse 7.1
+- 10-02 00:39   -> new best (score 0.630): archive_anchors/trackmulti_v2_best.pt = model_400
+- 10-02 01:04 model_800: score 0.759 | forward +0.38/+0.41 surv 1.00 rmse 6.7; backward -0.41/-0.40 surv 1.00 rmse 7.7; side_left +0.06/+0.13 surv 1.00 rmse 6.9; side_right -0.07/-0.13 surv 1.00 rmse 6.9; pivot_left +0.46/+0.56 surv 1.00 rmse 6.9; pivot_right -0.44/-0.56 surv 1.00 rmse 6.9
+- 10-02 01:04   -> new best (score 0.759): archive_anchors/trackmulti_v2_best.pt = model_800
+- 10-02 01:28 model_1200: score 0.789 | forward +0.40/+0.41 surv 1.00 rmse 6.3; backward -0.41/-0.40 surv 1.00 rmse 6.1; side_left +0.07/+0.13 surv 1.00 rmse 6.6; side_right -0.08/-0.13 surv 1.00 rmse 6.5; pivot_left +0.47/+0.56 surv 1.00 rmse 6.7; pivot_right -0.41/-0.56 surv 1.00 rmse 6.7
+- 10-02 01:28   -> new best (score 0.789): archive_anchors/trackmulti_v2_best.pt = model_1200
+- 10-02 01:52 model_1600: score 0.819 | forward +0.41/+0.41 surv 0.99 rmse 5.7; backward -0.41/-0.40 surv 1.00 rmse 5.1; side_left +0.08/+0.13 surv 1.00 rmse 6.5; side_right -0.08/-0.13 surv 1.00 rmse 6.4; pivot_left +0.47/+0.56 surv 1.00 rmse 6.6; pivot_right -0.47/-0.56 surv 1.00 rmse 6.6
+- 10-02 01:52   -> new best (score 0.819): archive_anchors/trackmulti_v2_best.pt = model_1600
+- 10-02 02:15 model_2000: score 0.825 | forward +0.42/+0.41 surv 0.98 rmse 5.8; backward -0.41/-0.40 surv 1.00 rmse 4.2; side_left +0.08/+0.13 surv 1.00 rmse 6.1; side_right -0.09/-0.13 surv 1.00 rmse 6.1; pivot_left +0.51/+0.56 surv 1.00 rmse 6.4; pivot_right -0.42/-0.56 surv 1.00 rmse 6.4
+- 10-02 02:15   -> new best (score 0.825): archive_anchors/trackmulti_v2_best.pt = model_2000
+- 10-02 02:50 model_2600: score 0.859 | forward +0.39/+0.41 surv 1.00 rmse 5.3; backward -0.39/-0.40 surv 1.00 rmse 4.0; side_left +0.10/+0.13 surv 1.00 rmse 5.9; side_right -0.09/-0.13 surv 1.00 rmse 5.8; pivot_left +0.49/+0.56 surv 1.00 rmse 6.2; pivot_right -0.49/-0.56 surv 1.00 rmse 6.2
+- 10-02 02:50   -> new best (score 0.859): archive_anchors/trackmulti_v2_best.pt = model_2600
+- 10-02 03:24 model_3200: score 0.874 | forward +0.39/+0.41 surv 1.00 rmse 5.2; backward -0.41/-0.40 surv 1.00 rmse 3.7; side_left +0.10/+0.13 surv 1.00 rmse 5.6; side_right -0.10/-0.13 surv 1.00 rmse 5.6; pivot_left +0.51/+0.56 surv 0.99 rmse 6.0; pivot_right -0.49/-0.56 surv 1.00 rmse 6.2
+- 10-02 03:24   -> new best (score 0.874): archive_anchors/trackmulti_v2_best.pt = model_3200
+- 10-02 04:10 model_4000: score 0.892 | forward +0.36/+0.41 surv 1.00 rmse 5.1; backward -0.43/-0.40 surv 1.00 rmse 3.6; side_left +0.10/+0.13 surv 1.00 rmse 5.2; side_right -0.11/-0.13 surv 1.00 rmse 5.2; pivot_left +0.53/+0.56 surv 1.00 rmse 6.0; pivot_right -0.48/-0.56 surv 1.00 rmse 6.1
+- 10-02 04:10   -> new best (score 0.892): archive_anchors/trackmulti_v2_best.pt = model_4000
+- 10-02 05:07 model_5000: score 0.893 | forward +0.38/+0.41 surv 1.00 rmse 4.7; backward -0.40/-0.40 surv 1.00 rmse 3.4; side_left +0.11/+0.13 surv 1.00 rmse 4.7; side_right -0.11/-0.13 surv 1.00 rmse 4.7; pivot_left +0.51/+0.56 surv 1.00 rmse 6.0; pivot_right -0.49/-0.56 surv 1.00 rmse 6.1
+- 10-02 05:07   -> new best (score 0.893): archive_anchors/trackmulti_v2_best.pt = model_5000
+- 10-02 06:04 model_6000: score 0.904 | forward +0.40/+0.41 surv 1.00 rmse 4.4; backward -0.39/-0.40 surv 1.00 rmse 3.4; side_left +0.11/+0.13 surv 1.00 rmse 4.4; side_right -0.11/-0.13 surv 1.00 rmse 4.4; pivot_left +0.51/+0.56 surv 1.00 rmse 6.2; pivot_right -0.51/-0.56 surv 1.00 rmse 6.6
+- 10-02 06:04   -> new best (score 0.904): archive_anchors/trackmulti_v2_best.pt = model_6000
+- 10-02 07:01 model_7000: score 0.895 | forward +0.39/+0.41 surv 0.99 rmse 4.3; backward -0.40/-0.40 surv 1.00 rmse 3.2; side_left +0.10/+0.13 surv 1.00 rmse 4.0; side_right -0.10/-0.13 surv 1.00 rmse 4.0; pivot_left +0.52/+0.56 surv 1.00 rmse 6.4; pivot_right -0.51/-0.56 surv 1.00 rmse 6.5
+- 10-02 07:58 model_8000: score 0.915 | forward +0.41/+0.41 surv 0.99 rmse 4.2; backward -0.40/-0.40 surv 1.00 rmse 3.2; side_left +0.11/+0.13 surv 1.00 rmse 3.8; side_right -0.12/-0.13 surv 1.00 rmse 3.9; pivot_left +0.50/+0.56 surv 1.00 rmse 5.3; pivot_right -0.49/-0.56 surv 1.00 rmse 5.5
+- 10-02 07:58   -> new best (score 0.915): archive_anchors/trackmulti_v2_best.pt = model_8000
+- 10-02 09:01 model_9000: score 0.937 | forward +0.41/+0.41 surv 1.00 rmse 4.2; backward -0.41/-0.40 surv 1.00 rmse 3.0; side_left +0.12/+0.13 surv 1.00 rmse 3.6; side_right -0.11/-0.13 surv 0.98 rmse 3.7; pivot_left +0.53/+0.56 surv 1.00 rmse 5.2; pivot_right -0.50/-0.56 surv 1.00 rmse 5.3
+- 10-02 09:01   -> new best (score 0.937): archive_anchors/trackmulti_v2_best.pt = model_9000
+- 10-02 10:10 model_9999: score 0.938 | forward +0.40/+0.41 surv 0.99 rmse 3.9; backward -0.41/-0.40 surv 1.00 rmse 3.0; side_left +0.12/+0.13 surv 1.00 rmse 3.4; side_right -0.12/-0.13 surv 1.00 rmse 3.5; pivot_left +0.50/+0.56 surv 0.99 rmse 5.2; pivot_right -0.52/-0.56 surv 1.00 rmse 5.1
+- 10-02 10:10   -> new best (score 0.938): archive_anchors/trackmulti_v2_best.pt = model_9999
+- 10-02 10:10 DONE: all scheduled checkpoints evaluated; best score 0.938

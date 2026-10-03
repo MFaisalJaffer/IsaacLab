@@ -1,0 +1,17 @@
+=== ATTEMPT 3 (1.0Hz, NO tau^2 price) @model_21000.pt ===
+a3_vx0.15    [gains=nominal] ALL FELL (alive 0/32; fallen>45deg 12/32) — no walking-fraction stats
+    T-V saturation%: right_hip_roll_04=100  right_hip_pitch_04=100  right_ankle_02=100  left_knee_04=100  left_hip_roll_04=100  left_hip_pitch_04=100  left_ankle_02=100  right_hip_yaw_03=33  left_hip_yaw_03=33  right_knee_04=0
+    sat split mot/brk/stall %: right_hip_pitch_04=33/33/33  right_hip_roll_04=100/0/0  right_ankle_02=67/33/0  left_hip_pitch_04=100/0/0  left_hip_roll_04=0/0/100  left_knee_04=100/0/0  left_ankle_02=67/0/33  right_hip_yaw_03=0/33/0  left_hip_yaw_03=33/0/0
+    qd tick-flip%: left_hip_pitch_04=0  right_hip_pitch_04=50  left_hip_roll_04=0  right_hip_roll_04=0  left_hip_yaw_03=50  right_hip_yaw_03=100  left_knee_04=100  right_knee_04=50  left_ankle_02=0  right_ankle_02=50
+    contact: flicker=0.0 trans/s/foot  stance-duty=50%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=16.1(16.1)  right_hip_pitch_04=18.5(18.7)  left_hip_roll_04=22.0(22.0)  right_hip_roll_04=17.1(17.1)  left_hip_yaw_03=4.2(5.5)  right_hip_yaw_03=5.5(6.7)  left_knee_04=20.1(20.3)  right_knee_04=0.9(0.9)  left_ankle_02=8.1(8.1)  right_ankle_02=10.1(10.2)
+a3_vx0.30    [gains=nominal] ALL FELL (alive 0/32; fallen>45deg 17/32) — no walking-fraction stats
+    T-V saturation%: right_hip_roll_04=100  right_ankle_02=82  left_ankle_02=82  right_hip_pitch_04=73  left_hip_roll_04=73  left_hip_pitch_04=73  right_knee_04=55  left_hip_yaw_03=55  left_knee_04=36  right_hip_yaw_03=18
+    sat split mot/brk/stall %: right_hip_roll_04=73/18/9  right_ankle_02=73/9/0  left_ankle_02=64/18/0  right_hip_pitch_04=64/0/9  left_hip_pitch_04=45/27/0  left_hip_roll_04=45/18/9  right_knee_04=36/18/0  left_hip_yaw_03=55/0/0  left_knee_04=36/0/0  right_hip_yaw_03=18/0/0
+    qd tick-flip%: left_hip_pitch_04=10  right_hip_pitch_04=30  left_hip_roll_04=20  right_hip_roll_04=30  left_hip_yaw_03=40  right_hip_yaw_03=20  left_knee_04=60  right_knee_04=20  left_ankle_02=60  right_ankle_02=30
+    contact: flicker=9.1 trans/s/foot  stance-duty=50%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=15.5(16.6)  right_hip_pitch_04=15.3(15.7)  left_hip_roll_04=15.5(16.4)  right_hip_roll_04=17.9(18.0)  left_hip_yaw_03=6.5(7.2)  right_hip_yaw_03=3.1(4.3)  left_knee_04=10.9(13.3)  right_knee_04=11.9(14.7)  left_ankle_02=9.9(10.1)  right_ankle_02=8.7(8.9)
+A3_vx0.20: vx=0.2  (400 steps x 32 envs)  feet_phase target this build = 0.06 m
+  L_foot: swing-apex(mean top10%)=10.8 cm  p50=1.6  p90=9.1  p99=12.7  max=27.0 cm  |  off-ground=44% of time
+  R_foot: swing-apex(mean top10%)=9.8 cm  p50=1.5  p90=8.5  p99=11.3  max=17.1 cm  |  off-ground=47% of time
+  contact-sensor swing%: L=53  R=44  (stance-duty L=47%  R=56%)

@@ -1,0 +1,103 @@
+{
+ "checkpoint": "archive_anchors/amp_track_asimov_model_2598_std1.pt",
+ "num_envs": 128,
+ "seconds": 6.0,
+ "cycles": {
+  "forward": {
+   "episodes": 64,
+   "falls": 0,
+   "survival": 1.0,
+   "rmse_deg": 2.5082242488861084,
+   "cmd": [
+    0.405,
+    -0.0,
+    0.0
+   ],
+   "achieved": [
+    0.435,
+    -0.017,
+    -0.009
+   ]
+  },
+  "backward": {
+   "episodes": 61,
+   "falls": 54,
+   "survival": 0.11475409836065575,
+   "rmse_deg": 12.135127067565918,
+   "cmd": [
+    -0.398,
+    0.0,
+    -0.0
+   ],
+   "achieved": [
+    0.01,
+    -0.2,
+    -0.075
+   ]
+  },
+  "side_left": {
+   "episodes": 28,
+   "falls": 17,
+   "survival": 0.3928571428571429,
+   "rmse_deg": 9.642600059509277,
+   "cmd": [
+    0.001,
+    0.128,
+    0.0
+   ],
+   "achieved": [
+    0.397,
+    0.012,
+    0.069
+   ]
+  },
+  "side_right": {
+   "episodes": 39,
+   "falls": 20,
+   "survival": 0.4871794871794872,
+   "rmse_deg": 9.639582633972168,
+   "cmd": [
+    0.001,
+    -0.128,
+    0.0
+   ],
+   "achieved": [
+    0.414,
+    -0.058,
+    -0.009
+   ]
+  },
+  "pivot_left": {
+   "episodes": 36,
+   "falls": 24,
+   "survival": 0.33333333333333337,
+   "rmse_deg": 10.197637557983398,
+   "cmd": [
+    0.001,
+    -0.0,
+    0.56
+   ],
+   "achieved": [
+    0.333,
+    -0.045,
+    0.035
+   ]
+  },
+  "pivot_right": {
+   "episodes": 26,
+   "falls": 11,
+   "survival": 0.5769230769230769,
+   "rmse_deg": 9.720125198364258,
+   "cmd": [
+    0.001,
+    0.0,
+    -0.561
+   ],
+   "achieved": [
+    0.336,
+    -0.068,
+    -0.004
+   ]
+  }
+ }
+}

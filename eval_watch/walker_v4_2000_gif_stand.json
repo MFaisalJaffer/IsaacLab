@@ -1,0 +1,19 @@
+{
+ "checkpoint": "logs/autopilot/walker_v4_2000.pt",
+ "cmd": "0:0:0",
+ "standing": {
+  "envs": 16,
+  "survival": 1.0,
+  "tilt_deg": {
+   "mean": 1.438746690750122,
+   "p90": 2.9697772741317756
+  },
+  "foot_lift_max_cm": 3.9142072200775146,
+  "foot_travel_mps_mean": 0.06477586925029755,
+  "width_cm": 28.522351384162903,
+  "base_speed_abs_mps": 0.05832576006650925
+ },
+ "walking_envs": 0,
+ "survival_walking": null,
+ "note": "no walking envs"
+}

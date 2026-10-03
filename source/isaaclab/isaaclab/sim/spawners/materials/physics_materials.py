@@ -67,8 +67,20 @@ def spawn_rigid_body_material(prim_path: str, cfg: physics_materials_cfg.RigidBo
         value = cfg.pop(attr_name, None)
         safe_set_attribute_on_usd_schema(usd_physics_material_api, attr_name, value, camel_case=True)
     # set into PhysX API
+    # NOTE: tolerate attributes removed/renamed in newer Isaac Sim (5.1),
+    # e.g. improve_patch_friction. This older IsaacLab fork sets attrs that
+    # no longer exist on the PhysxMaterialAPI schema; skip those instead of
+    # crashing env creation.
     for attr_name, value in cfg.items():
-        safe_set_attribute_on_usd_schema(physx_material_api, attr_name, value, camel_case=True)
+        try:
+            safe_set_attribute_on_usd_schema(physx_material_api, attr_name, value, camel_case=True)
+        except Exception as e:  # noqa: BLE001
+            import omni.log
+
+            omni.log.warn(
+                f"[kbot-compat] skipping unsupported PhysX material attr '{attr_name}' "
+                f"(not in this Isaac Sim version): {e}"
+            )
     # return the prim
     return prim
 

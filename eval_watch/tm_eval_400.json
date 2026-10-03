@@ -1,0 +1,103 @@
+{
+ "checkpoint": "logs/rsl_rl/kbot_legs_trackmulti/2026-10-01_22-24-55//model_400.pt",
+ "num_envs": 256,
+ "seconds": 20.0,
+ "cycles": {
+  "forward": {
+   "episodes": 61,
+   "falls": 5,
+   "survival": 0.9180327868852459,
+   "rmse_deg": 9.423809051513672,
+   "cmd": [
+    0.406,
+    0.0,
+    0.0
+   ],
+   "achieved": [
+    0.121,
+    0.007,
+    0.061
+   ]
+  },
+  "backward": {
+   "episodes": 55,
+   "falls": 15,
+   "survival": 0.7272727272727273,
+   "rmse_deg": 17.56028938293457,
+   "cmd": [
+    -0.401,
+    -0.0,
+    -0.0
+   ],
+   "achieved": [
+    -0.138,
+    0.007,
+    -0.034
+   ]
+  },
+  "side_left": {
+   "episodes": 33,
+   "falls": 1,
+   "survival": 0.9696969696969697,
+   "rmse_deg": 9.102117538452148,
+   "cmd": [
+    0.0,
+    0.129,
+    0.0
+   ],
+   "achieved": [
+    -0.019,
+    0.006,
+    -0.027
+   ]
+  },
+  "side_right": {
+   "episodes": 36,
+   "falls": 0,
+   "survival": 1.0,
+   "rmse_deg": 9.129837989807129,
+   "cmd": [
+    0.0,
+    -0.129,
+    -0.0
+   ],
+   "achieved": [
+    -0.018,
+    0.003,
+    -0.013
+   ]
+  },
+  "pivot_left": {
+   "episodes": 47,
+   "falls": 2,
+   "survival": 0.9574468085106383,
+   "rmse_deg": 9.283939361572266,
+   "cmd": [
+    0.0,
+    -0.0,
+    0.562
+   ],
+   "achieved": [
+    -0.007,
+    -0.001,
+    0.089
+   ]
+  },
+  "pivot_right": {
+   "episodes": 48,
+   "falls": 1,
+   "survival": 0.9791666666666666,
+   "rmse_deg": 9.340934753417969,
+   "cmd": [
+    0.0,
+    0.0,
+    -0.562
+   ],
+   "achieved": [
+    -0.029,
+    0.012,
+    -0.138
+   ]
+  }
+ }
+}

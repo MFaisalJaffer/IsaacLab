@@ -1,0 +1,83 @@
+{
+ "clip": "cyc_side_left.npz",
+ "frames": 300,
+ "fps": 50.0,
+ "time_scale": 1.0,
+ "sign_map": {
+  "n/a_already mapped": 1
+ },
+ "t_range": "",
+ "stance_width_cm": {
+  "median": 36.47787272930145,
+  "p10": 30.278488993644714,
+  "p90": 37.13966608047485
+ },
+ "swing_apex_clearance_cm": [
+  6.756412982940674,
+  6.694161891937256
+ ],
+ "implied_speed_mps": {
+  "mean": 0.07011222131777221,
+  "p10": 0.0,
+  "p90": 0.3370555624024973
+ },
+ "touchdown_foot_pitch_deg": {
+  "median_abs": 6.666348457336426,
+  "n": 11
+ },
+ "joint_limit_margin_deg": {
+  "dof_left_hip_pitch_04": 64.35112762451172,
+  "dof_right_hip_pitch_04": 64.35112762451172,
+  "dof_left_hip_roll_04": 13.750901222229004,
+  "dof_right_hip_roll_04": 13.750901222229004,
+  "dof_left_hip_yaw_03": 84.00132751464844,
+  "dof_right_hip_yaw_03": 84.00132751464844,
+  "dof_left_knee_04": 16.747060775756836,
+  "dof_right_knee_04": 16.747060775756836,
+  "dof_left_ankle_02": 21.828035354614258,
+  "dof_right_ankle_02": 21.828035354614258
+ },
+ "peak_joint_speed_frac_of_urdf_limit": {
+  "dof_left_hip_pitch_04": 0.21532923664832923,
+  "dof_right_hip_pitch_04": 0.20644639951857754,
+  "dof_left_hip_roll_04": 0.04156639378548541,
+  "dof_right_hip_roll_04": 0.04156639378548541,
+  "dof_left_hip_yaw_03": 0.0,
+  "dof_right_hip_yaw_03": 0.0,
+  "dof_left_knee_04": 0.4404461231126986,
+  "dof_right_knee_04": 0.42227676780749546,
+  "dof_left_ankle_02": 0.0,
+  "dof_right_ankle_02": 0.0
+ },
+ "hip_roll_range_deg": {
+  "dof_left_hip_roll_04": [
+   1.7508755922317505,
+   7.7350263595581055
+  ],
+  "dof_right_hip_roll_04": [
+   -7.750874996185303,
+   -1.7508755922317505
+  ]
+ },
+ "knee_range_deg": {
+  "dof_left_knee_04": [
+   16.747060775756836,
+   61.50054168701172
+  ],
+  "dof_right_knee_04": [
+   -61.50054168701172,
+   -16.747060775756836
+  ]
+ },
+ "ankle_range_deg": {
+  "dof_left_ankle_02": [
+   -8.828025817871094,
+   -8.828025817871094
+  ],
+  "dof_right_ankle_02": [
+   8.828025817871094,
+   8.828025817871094
+  ]
+ },
+ "standing_base_height_m": 1.0075298767089857
+}

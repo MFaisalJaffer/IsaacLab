@@ -1,0 +1,39 @@
+# Custom "preview" rendering mode for the eval-watcher's play.py.
+# Goal: distinguishable robot parts (shadowed direct lighting + ambient
+# occlusion) while staying inside the VRAM left by 16384-env training.
+# = performance.kit + sampledLighting + ambientOcclusion, but WITHOUT the
+# expensive VRAM hogs (DL denoiser, cached RT, reflections, indirect GI).
+
+rtx.translucency.enabled = false
+
+rtx.reflections.enabled = false
+rtx.reflections.denoiser.enabled = false
+
+# Shadowed direct lighting -> shading contrast between adjacent links.
+rtx.directLighting.sampledLighting.enabled = true
+rtx.directLighting.sampledLighting.denoisingTechnique = 0
+
+rtx.sceneDb.ambientLightIntensity = 1.0
+
+rtx.shadows.enabled = true
+
+rtx.indirectDiffuse.enabled = false
+rtx.indirectDiffuse.denoiser.enabled = false
+
+rtx.domeLight.upperLowerStrategy = 3
+
+# Ambient occlusion darkens crevices between parts -> parts "pop".
+rtx.ambientOcclusion.enabled = true
+rtx.ambientOcclusion.denoiserMode = 1
+
+rtx.raytracing.subpixel.mode = 0
+rtx.raytracing.cached.enabled = false
+
+# Keep the DL frame-gen / denoiser OFF (these are the big VRAM consumers).
+rtx-transient.dlssg.enabled = false
+rtx-transient.dldenoiser.enabled = false
+
+rtx.post.dlss.execMode = 0 # Performance DLSS (cheapest)
+
+rtx.pathtracing.maxSamplesPerLaunch = 1000000
+rtx.viewTile.limit = 1000000

@@ -1,0 +1,166 @@
+{
+ "source": "K-Bot Step Atlas artifact 36333c9b, hardware traces 2026-08-20, robot suspended, deploy gains, 5.73 deg step via LegCmd->ros2_control->CAN, logged at 100 Hz with command at t=0",
+ "note": "onset = first 100 Hz sample deviating >0.15 deg from pre-step baseline; resolution 10 ms. ALL joints: baseline at +10 ms, moving at +20 ms.",
+ "joints": {
+  "R hip pitch": {
+   "kp": 150,
+   "kd": 2.5,
+   "hw_onset_ms_upper": 20.0,
+   "hw_t63_ms": 30,
+   "hw_overshoot_pct": 7.0,
+   "hw_final_pct": 99.7,
+   "hw_q_at_-10_0_+10_+20_+30_ms": [
+    0.313,
+    0.303,
+    0.322,
+    0.734,
+    3.678
+   ],
+   "august_fit_lag_ms_NOT_an_onset": 0
+  },
+  "R hip roll": {
+   "kp": 150,
+   "kd": 1.5,
+   "hw_onset_ms_upper": 20.0,
+   "hw_t63_ms": 30,
+   "hw_overshoot_pct": 5.6,
+   "hw_final_pct": 96.7,
+   "hw_q_at_-10_0_+10_+20_+30_ms": [
+    -0.033,
+    -0.033,
+    -0.031,
+    0.344,
+    4.164
+   ],
+   "august_fit_lag_ms_NOT_an_onset": 0
+  },
+  "R hip yaw": {
+   "kp": 60,
+   "kd": 1.0,
+   "hw_onset_ms_upper": 20.0,
+   "hw_t63_ms": 40,
+   "hw_overshoot_pct": 3.7,
+   "hw_final_pct": 99.1,
+   "hw_q_at_-10_0_+10_+20_+30_ms": [
+    -0.038,
+    -0.011,
+    -0.021,
+    0.424,
+    2.918
+   ],
+   "august_fit_lag_ms_NOT_an_onset": 10
+  },
+  "R knee": {
+   "kp": 150,
+   "kd": 1.0,
+   "hw_onset_ms_upper": 20.0,
+   "hw_t63_ms": 30,
+   "hw_overshoot_pct": 19.0,
+   "hw_final_pct": 103.3,
+   "hw_q_at_-10_0_+10_+20_+30_ms": [
+    0.225,
+    0.224,
+    0.231,
+    0.547,
+    4.843
+   ],
+   "august_fit_lag_ms_NOT_an_onset": 10
+  },
+  "R ankle": {
+   "kp": 60,
+   "kd": 0.5,
+   "hw_onset_ms_upper": 20.0,
+   "hw_t63_ms": 30,
+   "hw_overshoot_pct": 16.3,
+   "hw_final_pct": 98.1,
+   "hw_q_at_-10_0_+10_+20_+30_ms": [
+    -0.089,
+    -0.112,
+    -0.096,
+    0.398,
+    4.765
+   ],
+   "august_fit_lag_ms_NOT_an_onset": 20
+  },
+  "L hip pitch": {
+   "kp": 150,
+   "kd": 2.5,
+   "hw_onset_ms_upper": 20.0,
+   "hw_t63_ms": 60,
+   "hw_overshoot_pct": 6.1,
+   "hw_final_pct": 90.2,
+   "hw_q_at_-10_0_+10_+20_+30_ms": [
+    -0.35,
+    -0.347,
+    -0.345,
+    0.062,
+    2.676
+   ],
+   "august_fit_lag_ms_NOT_an_onset": 0
+  },
+  "L hip roll": {
+   "kp": 150,
+   "kd": 1.5,
+   "hw_onset_ms_upper": 21.0,
+   "hw_t63_ms": 31,
+   "hw_overshoot_pct": 9.0,
+   "hw_final_pct": 96.5,
+   "hw_q_at_-10_0_+10_+20_+30_ms": [
+    -0.02,
+    -0.021,
+    -0.02,
+    0.486,
+    4.085
+   ],
+   "august_fit_lag_ms_NOT_an_onset": 0
+  },
+  "L hip yaw": {
+   "kp": 60,
+   "kd": 1.0,
+   "hw_onset_ms_upper": 20.0,
+   "hw_t63_ms": 40,
+   "hw_overshoot_pct": 0.3,
+   "hw_final_pct": 98.8,
+   "hw_q_at_-10_0_+10_+20_+30_ms": [
+    -0.093,
+    -0.092,
+    -0.088,
+    0.219,
+    2.701
+   ],
+   "august_fit_lag_ms_NOT_an_onset": 10
+  },
+  "L knee": {
+   "kp": 150,
+   "kd": 1.0,
+   "hw_onset_ms_upper": 20.0,
+   "hw_t63_ms": 30,
+   "hw_overshoot_pct": 26.3,
+   "hw_final_pct": 100.3,
+   "hw_q_at_-10_0_+10_+20_+30_ms": [
+    0.198,
+    0.197,
+    0.195,
+    0.683,
+    5.127
+   ],
+   "august_fit_lag_ms_NOT_an_onset": 10
+  },
+  "L ankle": {
+   "kp": 60,
+   "kd": 0.5,
+   "hw_onset_ms_upper": 20.0,
+   "hw_t63_ms": 30,
+   "hw_overshoot_pct": 17.3,
+   "hw_final_pct": 99.7,
+   "hw_q_at_-10_0_+10_+20_+30_ms": [
+    -0.06,
+    -0.071,
+    -0.057,
+    0.101,
+    4.09
+   ],
+   "august_fit_lag_ms_NOT_an_onset": 20
+  }
+ }
+}

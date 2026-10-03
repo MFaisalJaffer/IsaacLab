@@ -1,0 +1,402 @@
+{
+ "schema": "sim2sim_friction_v1",
+ "side": "isaac",
+ "ladder_deg": [
+  0.5,
+  1.0,
+  2.0,
+  5.0,
+  10.0,
+  20.0
+ ],
+ "decay_start_deg": 15.0,
+ "kp": [
+  150.0,
+  150.0,
+  60.0,
+  150.0,
+  60.0,
+  150.0,
+  150.0,
+  60.0,
+  150.0,
+  60.0
+ ],
+ "joint_order": [
+  "dof_right_hip_pitch_04",
+  "dof_right_hip_roll_04",
+  "dof_right_hip_yaw_03",
+  "dof_right_knee_04",
+  "dof_right_ankle_02",
+  "dof_left_hip_pitch_04",
+  "dof_left_hip_roll_04",
+  "dof_left_hip_yaw_03",
+  "dof_left_knee_04",
+  "dof_left_ankle_02"
+ ],
+ "rate_hz": 200.0,
+ "base": "pinned+lifted 0.6 m",
+ "contact": "none",
+ "position_quantum_deg": 0.0,
+ "note": "no encoder quantiser on this side (float32), so ladder intercepts are MEASUREMENTS not upper bounds; friction model is -fc*tanh(qd/0.02), i.e. NO stiction, same gap as yours",
+ "results": {
+  "dof_right_hip_pitch_04": {
+   "ladder_amp_deg": [
+    0.5,
+    1.0,
+    2.0,
+    5.0,
+    10.0,
+    20.0
+   ],
+   "ladder_err_deg": [
+    -0.01534,
+    -0.01679,
+    -0.0192,
+    -0.01944,
+    -0.01502,
+    -0.01437
+   ],
+   "fit_slope": 0.000159,
+   "fit_intercept_deg": -0.01771,
+   "implied_coulomb_Nm": -0.0464,
+   "intercept_in_lsb": null,
+   "quantisation_limited": false,
+   "implied_series_frac": 0.00016,
+   "decay_start_deg": 15.0,
+   "n_peaks": 0,
+   "peak_prominence_deg": 0.0811,
+   "osc_freq_hz": 0.0,
+   "peak_to_peak_first_0p5s_deg": 0.3619,
+   "detector_dither_flag": false,
+   "envelope_verdict": "no oscillation (overdamped or joint did not swing)",
+   "settled_deg": 19.0524,
+   "residual_from_zero_deg": 19.0524
+  },
+  "dof_right_hip_roll_04": {
+   "ladder_amp_deg": [
+    0.5,
+    1.0,
+    2.0,
+    5.0,
+    10.0,
+    20.0
+   ],
+   "ladder_err_deg": [
+    0.00058,
+    0.00041,
+    0.00035,
+    0.00086,
+    -0.00299,
+    0.00089
+   ],
+   "fit_slope": -2.5e-05,
+   "fit_intercept_deg": 0.00018,
+   "implied_coulomb_Nm": 0.0005,
+   "intercept_in_lsb": null,
+   "quantisation_limited": false,
+   "implied_series_frac": -2e-05,
+   "decay_start_deg": -15.0,
+   "n_peaks": 1,
+   "peak_prominence_deg": 0.05,
+   "osc_freq_hz": 0.083,
+   "peak_to_peak_first_0p5s_deg": 0.0519,
+   "detector_dither_flag": false,
+   "envelope_verdict": "no oscillation (overdamped or joint did not swing)",
+   "settled_deg": -14.4788,
+   "residual_from_zero_deg": 14.4788
+  },
+  "dof_right_hip_yaw_03": {
+   "ladder_amp_deg": [
+    0.5,
+    1.0,
+    2.0,
+    5.0,
+    10.0,
+    20.0
+   ],
+   "ladder_err_deg": [
+    -0.00133,
+    0.00066,
+    -0.00183,
+    -0.00096,
+    0.00147,
+    -0.00178
+   ],
+   "fit_slope": -1.8e-05,
+   "fit_intercept_deg": -0.00051,
+   "implied_coulomb_Nm": -0.0005,
+   "intercept_in_lsb": null,
+   "quantisation_limited": false,
+   "implied_series_frac": -2e-05,
+   "decay_start_deg": 15.0,
+   "n_peaks": 0,
+   "peak_prominence_deg": 0.3992,
+   "osc_freq_hz": 0.0,
+   "peak_to_peak_first_0p5s_deg": 1.754,
+   "detector_dither_flag": false,
+   "envelope_verdict": "no oscillation (overdamped or joint did not swing)",
+   "settled_deg": 34.9698,
+   "residual_from_zero_deg": 34.9698
+  },
+  "dof_right_knee_04": {
+   "ladder_amp_deg": [
+    0.5,
+    1.0,
+    2.0,
+    5.0,
+    10.0,
+    20.0
+   ],
+   "ladder_err_deg": [
+    -0.00011,
+    -0.00042,
+    1e-05,
+    -0.00015,
+    1e-05,
+    0.00014
+   ],
+   "fit_slope": 1.7e-05,
+   "fit_intercept_deg": -0.0002,
+   "implied_coulomb_Nm": -0.0005,
+   "intercept_in_lsb": null,
+   "quantisation_limited": false,
+   "implied_series_frac": 2e-05,
+   "decay_start_deg": -15.0,
+   "n_peaks": 1147,
+   "peak_prominence_deg": 0.05,
+   "osc_freq_hz": 95.583,
+   "peak_to_peak_first_0p5s_deg": 0.2271,
+   "detector_dither_flag": true,
+   "envelope_verdict": "REJECTED - extremum detector saturated (dither, not swing)",
+   "settled_deg": -13.5304,
+   "residual_from_zero_deg": 13.5304
+  },
+  "dof_right_ankle_02": {
+   "ladder_amp_deg": [
+    0.5,
+    1.0,
+    2.0,
+    5.0,
+    10.0,
+    20.0
+   ],
+   "ladder_err_deg": [
+    0.16582,
+    0.16965,
+    0.16627,
+    0.16858,
+    0.09429,
+    0.17467
+   ],
+   "fit_slope": -0.000575,
+   "fit_intercept_deg": 0.16023,
+   "implied_coulomb_Nm": 0.1678,
+   "intercept_in_lsb": null,
+   "quantisation_limited": false,
+   "implied_series_frac": -0.00057,
+   "motor_side": {
+    "ladder_err_deg": [
+     0.00734,
+     0.00912,
+     0.0076,
+     0.00864,
+     0.0,
+     0.0114
+    ],
+    "fit_slope": 5.7e-05,
+    "fit_intercept_deg": 0.00699,
+    "implied_coulomb_Nm": 0.0073,
+    "note": "directly comparable to YOUR ankle rows, which are motor side"
+   },
+   "decay_start_deg": 15.0,
+   "n_peaks": 0,
+   "peak_prominence_deg": 0.05,
+   "osc_freq_hz": 0.0,
+   "peak_to_peak_first_0p5s_deg": 0.0556,
+   "detector_dither_flag": false,
+   "envelope_verdict": "no oscillation (overdamped or joint did not swing)",
+   "settled_deg": 14.1766,
+   "residual_from_zero_deg": 14.1766
+  },
+  "dof_left_hip_pitch_04": {
+   "ladder_amp_deg": [
+    0.5,
+    1.0,
+    2.0,
+    5.0,
+    10.0,
+    20.0
+   ],
+   "ladder_err_deg": [
+    0.01613,
+    0.01713,
+    0.01575,
+    0.01229,
+    0.01721,
+    0.0154
+   ],
+   "fit_slope": -1.5e-05,
+   "fit_intercept_deg": 0.01575,
+   "implied_coulomb_Nm": 0.0412,
+   "intercept_in_lsb": null,
+   "quantisation_limited": false,
+   "implied_series_frac": -2e-05,
+   "decay_start_deg": 15.0,
+   "n_peaks": 0,
+   "peak_prominence_deg": 0.0856,
+   "osc_freq_hz": 0.0,
+   "peak_to_peak_first_0p5s_deg": 0.3866,
+   "detector_dither_flag": false,
+   "envelope_verdict": "no oscillation (overdamped or joint did not swing)",
+   "settled_deg": 10.7173,
+   "residual_from_zero_deg": 10.7173
+  },
+  "dof_left_hip_roll_04": {
+   "ladder_amp_deg": [
+    0.5,
+    1.0,
+    2.0,
+    5.0,
+    10.0,
+    20.0
+   ],
+   "ladder_err_deg": [
+    0.00073,
+    0.00034,
+    0.00048,
+    0.00058,
+    0.00061,
+    0.00022
+   ],
+   "fit_slope": -1.4e-05,
+   "fit_intercept_deg": 0.00058,
+   "implied_coulomb_Nm": 0.0015,
+   "intercept_in_lsb": null,
+   "quantisation_limited": false,
+   "implied_series_frac": -1e-05,
+   "decay_start_deg": 15.0,
+   "n_peaks": 1,
+   "peak_prominence_deg": 0.05,
+   "osc_freq_hz": 0.083,
+   "peak_to_peak_first_0p5s_deg": 0.0588,
+   "detector_dither_flag": false,
+   "envelope_verdict": "no oscillation (overdamped or joint did not swing)",
+   "settled_deg": 14.8782,
+   "residual_from_zero_deg": 14.8782
+  },
+  "dof_left_hip_yaw_03": {
+   "ladder_amp_deg": [
+    0.5,
+    1.0,
+    2.0,
+    5.0,
+    10.0,
+    20.0
+   ],
+   "ladder_err_deg": [
+    -0.00086,
+    -0.00102,
+    0.00083,
+    -0.00043,
+    -0.00085,
+    0.0002
+   ],
+   "fit_slope": 2.6e-05,
+   "fit_intercept_deg": -0.00052,
+   "implied_coulomb_Nm": -0.0005,
+   "intercept_in_lsb": null,
+   "quantisation_limited": false,
+   "implied_series_frac": 3e-05,
+   "decay_start_deg": 15.0,
+   "n_peaks": 0,
+   "peak_prominence_deg": 0.2843,
+   "osc_freq_hz": 0.0,
+   "peak_to_peak_first_0p5s_deg": 1.1636,
+   "detector_dither_flag": false,
+   "envelope_verdict": "no oscillation (overdamped or joint did not swing)",
+   "settled_deg": 0.7783,
+   "residual_from_zero_deg": 0.7783
+  },
+  "dof_left_knee_04": {
+   "ladder_amp_deg": [
+    0.5,
+    1.0,
+    2.0,
+    5.0,
+    10.0,
+    20.0
+   ],
+   "ladder_err_deg": [
+    -0.00013,
+    -8e-05,
+    -5e-05,
+    -0.00041,
+    0.00023,
+    -0.0
+   ],
+   "fit_slope": 1e-05,
+   "fit_intercept_deg": -0.00014,
+   "implied_coulomb_Nm": -0.0004,
+   "intercept_in_lsb": null,
+   "quantisation_limited": false,
+   "implied_series_frac": 1e-05,
+   "decay_start_deg": 15.0,
+   "n_peaks": 1142,
+   "peak_prominence_deg": 0.05,
+   "osc_freq_hz": 95.167,
+   "peak_to_peak_first_0p5s_deg": 0.2375,
+   "detector_dither_flag": true,
+   "envelope_verdict": "REJECTED - extremum detector saturated (dither, not swing)",
+   "settled_deg": 13.6894,
+   "residual_from_zero_deg": 13.6894
+  },
+  "dof_left_ankle_02": {
+   "ladder_amp_deg": [
+    0.5,
+    1.0,
+    2.0,
+    5.0,
+    10.0,
+    20.0
+   ],
+   "ladder_err_deg": [
+    0.16803,
+    0.1676,
+    0.16394,
+    0.16397,
+    0.16544,
+    0.16709
+   ],
+   "fit_slope": 1.5e-05,
+   "fit_intercept_deg": 0.16592,
+   "implied_coulomb_Nm": 0.1737,
+   "intercept_in_lsb": null,
+   "quantisation_limited": false,
+   "implied_series_frac": 1e-05,
+   "motor_side": {
+    "ladder_err_deg": [
+     0.00842,
+     0.00816,
+     0.00637,
+     0.00644,
+     0.0071,
+     0.00795
+    ],
+    "fit_slope": 8e-06,
+    "fit_intercept_deg": 0.00736,
+    "implied_coulomb_Nm": 0.0077,
+    "note": "directly comparable to YOUR ankle rows, which are motor side"
+   },
+   "decay_start_deg": -15.0,
+   "n_peaks": 0,
+   "peak_prominence_deg": 0.05,
+   "osc_freq_hz": 0.0,
+   "peak_to_peak_first_0p5s_deg": 0.0825,
+   "detector_dither_flag": false,
+   "envelope_verdict": "no oscillation (overdamped or joint did not swing)",
+   "settled_deg": -13.8477,
+   "residual_from_zero_deg": 13.8477
+  }
+ }
+}

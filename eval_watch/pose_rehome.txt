@@ -1,0 +1,308 @@
+REHOME_55k: 64 envs, 20 N x 1.5s ramped root push, 10s recovery, gains pinned
+  BASELINE (settled stand):        pose_err= 2.45 deg  width=36.2 cm  stagger= 1.8 cm
+  +10s quiet (NO push, control):   pose_err= 2.39 deg  width=36.1 cm  stagger= 1.5 cm
+  PUSH +Y (left): pre pose_err= 2.39 deg  width=36.1 cm  stagger= 1.5 cm
+       push end (peak dev):        pose_err= 8.42 deg  width=46.9 cm  stagger=10.1 cm
+       + 0.5s after push:          pose_err= 5.23 deg  width=45.7 cm  stagger= 8.4 cm
+       +   1s after push:          pose_err= 3.90 deg  width=45.5 cm  stagger= 7.9 cm
+       +   2s after push:          pose_err= 3.56 deg  width=45.6 cm  stagger= 7.3 cm
+       +   5s after push:          pose_err= 3.38 deg  width=45.6 cm  stagger= 6.5 cm
+       +  10s after push:          pose_err= 3.34 deg  width=45.6 cm  stagger= 6.0 cm
+       fallen: 0%
+  PUSH -Y (right): pre pose_err= 3.34 deg  width=45.6 cm  stagger= 6.0 cm
+       push end (peak dev):        pose_err= 7.76 deg  width=44.0 cm  stagger=10.3 cm
+       + 0.5s after push:          pose_err= 6.52 deg  width=44.4 cm  stagger= 8.1 cm
+       +   1s after push:          pose_err= 4.72 deg  width=44.3 cm  stagger= 7.1 cm
+       +   2s after push:          pose_err= 3.98 deg  width=44.4 cm  stagger= 6.0 cm
+       +   5s after push:          pose_err= 3.93 deg  width=45.1 cm  stagger= 5.4 cm
+       +  10s after push:          pose_err= 3.97 deg  width=45.0 cm  stagger= 5.2 cm
+       fallen: 3%
+  PUSH +X (front): pre pose_err= 3.97 deg  width=45.0 cm  stagger= 5.2 cm
+       push end (peak dev):        pose_err=12.03 deg  width=52.7 cm  stagger=14.9 cm
+       + 0.5s after push:          pose_err= 9.34 deg  width=48.6 cm  stagger= 8.7 cm
+       +   1s after push:          pose_err= 7.15 deg  width=48.2 cm  stagger= 8.2 cm
+       +   2s after push:          pose_err= 5.96 deg  width=49.7 cm  stagger= 6.7 cm
+       +   5s after push:          pose_err= 6.32 deg  width=50.7 cm  stagger= 6.4 cm
+       +  10s after push:          pose_err= 6.21 deg  width=50.7 cm  stagger= 6.5 cm
+       fallen: 14%
+
+L4B_3600_rehome: 64 envs, 20 N x 1.5s ramped root push, 10s recovery, gains pinned
+  BASELINE (settled stand):        pose_err= 4.59 deg  width=41.5 cm  stagger= 2.4 cm
+  +10s quiet (NO push, control):   pose_err= 3.86 deg  width=28.8 cm  stagger= 2.1 cm
+  PUSH +Y (left): pre pose_err= 3.86 deg  width=28.8 cm  stagger= 2.1 cm
+       push end (peak dev):        pose_err= 9.58 deg  width=29.8 cm  stagger= 6.2 cm
+       + 0.5s after push:          pose_err= 9.83 deg  width=31.4 cm  stagger= 9.7 cm
+       +   1s after push:          pose_err= 9.05 deg  width=29.7 cm  stagger= 6.6 cm
+       +   2s after push:          pose_err= 8.60 deg  width=32.8 cm  stagger= 3.3 cm
+       +   5s after push:          pose_err= 8.24 deg  width=41.0 cm  stagger= 1.5 cm
+       +  10s after push:          pose_err= 8.23 deg  width=39.5 cm  stagger= 1.8 cm
+       fallen: 98%
+  PUSH -Y (right): pre pose_err= 8.23 deg  width=39.5 cm  stagger= 1.8 cm
+       push end (peak dev):        pose_err= 8.67 deg  width=38.2 cm  stagger= 1.5 cm
+       + 0.5s after push:          pose_err= 8.50 deg  width=39.0 cm  stagger= 1.7 cm
+       +   1s after push:          pose_err= 8.66 deg  width=38.9 cm  stagger= 2.0 cm
+       +   2s after push:          pose_err= 8.88 deg  width=39.9 cm  stagger= 1.8 cm
+       +   5s after push:          pose_err= 8.69 deg  width=39.6 cm  stagger= 1.9 cm
+       +  10s after push:          pose_err= 8.81 deg  width=40.1 cm  stagger= 1.6 cm
+       fallen: 100%
+  PUSH +X (front): pre pose_err= 8.81 deg  width=40.1 cm  stagger= 1.6 cm
+       push end (peak dev):        pose_err= 8.43 deg  width=39.6 cm  stagger= 2.0 cm
+       + 0.5s after push:          pose_err= 8.52 deg  width=40.3 cm  stagger= 2.2 cm
+       +   1s after push:          pose_err= 8.47 deg  width=40.3 cm  stagger= 1.6 cm
+       +   2s after push:          pose_err= 8.43 deg  width=40.3 cm  stagger= 1.7 cm
+       +   5s after push:          pose_err= 8.84 deg  width=40.2 cm  stagger= 1.7 cm
+       +  10s after push:          pose_err= 8.63 deg  width=40.1 cm  stagger= 1.8 cm
+       fallen: 100%
+
+L4B2_3600_rehome: 64 envs, 20 N x 1.5s ramped root push, 10s recovery, gains pinned
+  BASELINE (settled stand):        pose_err= 3.38 deg  width=45.3 cm  stagger= 4.7 cm
+  +10s quiet (NO push, control):   pose_err= 2.68 deg  width=39.8 cm  stagger= 4.3 cm
+  PUSH +Y (left): pre pose_err= 2.68 deg  width=39.8 cm  stagger= 4.3 cm
+       push end (peak dev):        pose_err= 6.53 deg  width=13.5 cm  stagger=16.3 cm
+       + 0.5s after push:          pose_err= 7.41 deg  width=19.5 cm  stagger=14.1 cm
+       +   1s after push:          pose_err= 6.45 deg  width=18.9 cm  stagger= 6.7 cm
+       +   2s after push:          pose_err= 5.69 deg  width=22.4 cm  stagger= 3.9 cm
+       +   5s after push:          pose_err= 5.62 deg  width=24.8 cm  stagger= 2.8 cm
+       +  10s after push:          pose_err= 5.84 deg  width=26.5 cm  stagger= 2.9 cm
+       fallen: 98%
+  PUSH -Y (right): pre pose_err= 5.84 deg  width=26.5 cm  stagger= 2.9 cm
+       push end (peak dev):        pose_err= 5.65 deg  width=26.2 cm  stagger= 2.8 cm
+       + 0.5s after push:          pose_err= 6.10 deg  width=26.6 cm  stagger= 3.2 cm
+       +   1s after push:          pose_err= 5.89 deg  width=27.2 cm  stagger= 2.9 cm
+       +   2s after push:          pose_err= 5.65 deg  width=26.4 cm  stagger= 3.1 cm
+       +   5s after push:          pose_err= 6.01 deg  width=26.6 cm  stagger= 2.8 cm
+       +  10s after push:          pose_err= 5.70 deg  width=26.3 cm  stagger= 2.9 cm
+       fallen: 100%
+  PUSH +X (front): pre pose_err= 5.70 deg  width=26.3 cm  stagger= 2.9 cm
+       push end (peak dev):        pose_err= 6.07 deg  width=25.8 cm  stagger= 3.4 cm
+       + 0.5s after push:          pose_err= 5.75 deg  width=25.8 cm  stagger= 2.8 cm
+       +   1s after push:          pose_err= 5.98 deg  width=25.6 cm  stagger= 2.8 cm
+       +   2s after push:          pose_err= 5.80 deg  width=25.4 cm  stagger= 2.8 cm
+       +   5s after push:          pose_err= 5.97 deg  width=26.4 cm  stagger= 3.0 cm
+       +  10s after push:          pose_err= 5.62 deg  width=26.2 cm  stagger= 2.7 cm
+       fallen: 100%
+
+L4C_10200_rehome_play15: 64 envs, 20 N x 1.5s ramped root push, 10s recovery, gains pinned
+  BASELINE (settled stand):        pose_err= 4.25 deg  width=36.3 cm  stagger= 6.8 cm
+  +10s quiet (NO push, control):   pose_err= 4.01 deg  width=36.4 cm  stagger= 6.9 cm
+  PUSH +Y (left): pre pose_err= 4.01 deg  width=36.4 cm  stagger= 6.9 cm
+       push end (peak dev):        pose_err= 9.03 deg  width=23.8 cm  stagger=12.9 cm
+       + 0.5s after push:          pose_err= 7.85 deg  width=27.3 cm  stagger=10.3 cm
+       +   1s after push:          pose_err= 8.31 deg  width=31.1 cm  stagger= 9.2 cm
+       +   2s after push:          pose_err=10.24 deg  width=33.8 cm  stagger=10.0 cm
+       +   5s after push:          pose_err= 9.91 deg  width=34.3 cm  stagger= 8.2 cm
+       +  10s after push:          pose_err= 9.72 deg  width=36.1 cm  stagger= 7.3 cm
+       fallen: 58%
+  PUSH -Y (right): pre pose_err= 9.72 deg  width=36.1 cm  stagger= 7.3 cm
+       push end (peak dev):        pose_err=11.93 deg  width=39.0 cm  stagger=14.7 cm
+       + 0.5s after push:          pose_err=15.00 deg  width=37.0 cm  stagger=15.5 cm
+       +   1s after push:          pose_err=16.98 deg  width=40.9 cm  stagger= 9.7 cm
+       +   2s after push:          pose_err=18.54 deg  width=45.0 cm  stagger= 8.6 cm
+       +   5s after push:          pose_err=18.36 deg  width=45.8 cm  stagger= 6.2 cm
+       +  10s after push:          pose_err=18.67 deg  width=44.8 cm  stagger= 6.0 cm
+       fallen: 100%
+  PUSH +X (front): pre pose_err=18.67 deg  width=44.8 cm  stagger= 6.0 cm
+       push end (peak dev):        pose_err=18.71 deg  width=42.5 cm  stagger= 5.7 cm
+       + 0.5s after push:          pose_err=19.57 deg  width=44.5 cm  stagger= 6.7 cm
+       +   1s after push:          pose_err=17.94 deg  width=43.6 cm  stagger= 7.0 cm
+       +   2s after push:          pose_err=18.02 deg  width=43.2 cm  stagger= 5.8 cm
+       +   5s after push:          pose_err=17.89 deg  width=46.1 cm  stagger= 6.4 cm
+       +  10s after push:          pose_err=17.45 deg  width=45.9 cm  stagger= 6.1 cm
+       fallen: 100%
+
+L4D_25600_rehome_play15: 64 envs, 20 N x 1.5s ramped root push, 10s recovery, gains pinned
+  BASELINE (settled stand):        pose_err= 3.12 deg  width=30.4 cm  stagger= 5.4 cm  [alive 100%]
+  +10s quiet (NO push, control):   pose_err= 3.65 deg  width=32.9 cm  stagger= 4.6 cm  [alive  95%]
+  PUSH +Y (left): pre pose_err= 3.38 deg  width=32.9 cm  stagger= 4.1 cm  [alive  83%]
+       push end (peak dev):        pose_err= 9.64 deg  width=26.4 cm  stagger=12.9 cm  [alive  83%]
+       + 0.5s after push:          pose_err= 5.77 deg  width=26.4 cm  stagger=11.0 cm  [alive  77%]
+       +   1s after push:          pose_err= 3.79 deg  width=25.9 cm  stagger= 9.3 cm  [alive  73%]
+       +   2s after push:          pose_err= 3.29 deg  width=28.3 cm  stagger= 8.5 cm  [alive  70%]
+       +   5s after push:          pose_err= 3.90 deg  width=33.7 cm  stagger= 5.3 cm  [alive  70%]
+       +  10s after push:          pose_err= 3.78 deg  width=35.5 cm  stagger= 4.5 cm  [alive  70%]
+       fallen: 30%
+  PUSH -Y (right): pre pose_err= 3.87 deg  width=36.1 cm  stagger= 4.6 cm  [alive  59%]
+       push end (peak dev):        pose_err= 8.13 deg  width=26.6 cm  stagger= 9.0 cm  [alive  59%]
+       + 0.5s after push:          pose_err= 5.22 deg  width=26.6 cm  stagger= 9.9 cm  [alive  53%]
+       +   1s after push:          pose_err= 3.87 deg  width=26.1 cm  stagger= 9.0 cm  [alive  50%]
+       +   2s after push:          pose_err= 3.87 deg  width=28.8 cm  stagger= 7.9 cm  [alive  50%]
+       +   5s after push:          pose_err= 3.46 deg  width=32.9 cm  stagger= 5.6 cm  [alive  50%]
+       +  10s after push:          pose_err= 3.46 deg  width=33.4 cm  stagger= 5.1 cm  [alive  50%]
+       fallen: 50%
+  PUSH +X (front): pre pose_err= 3.43 deg  width=33.5 cm  stagger= 4.6 cm  [alive  38%]
+       push end (peak dev):        pose_err=10.35 deg  width=27.2 cm  stagger=18.8 cm  [alive  38%]
+       + 0.5s after push:          pose_err= 5.36 deg  width=26.1 cm  stagger=16.4 cm  [alive  36%]
+       +   1s after push:          pose_err= 4.74 deg  width=27.1 cm  stagger=13.5 cm  [alive  36%]
+       +   2s after push:          pose_err= 4.63 deg  width=28.3 cm  stagger=11.3 cm  [alive  36%]
+       +   5s after push:          pose_err= 3.88 deg  width=32.3 cm  stagger= 9.5 cm  [alive  36%]
+       +  10s after push:          pose_err= 3.81 deg  width=33.4 cm  stagger= 7.0 cm  [alive  36%]
+       fallen: 64%
+
+L5B_3600_rehome_play4: 64 envs, 20 N x 1.5s ramped root push, 10s recovery, gains pinned
+  BASELINE (settled stand):        pose_err= 3.51 deg  width=48.6 cm  stagger= 6.3 cm  [alive  98%]
+  +10s quiet (NO push, control):   pose_err= 3.35 deg  width=48.2 cm  stagger= 5.3 cm  [alive  98%]
+  PUSH +Y (left): pre pose_err= 3.73 deg  width=52.0 cm  stagger= 5.1 cm  [alive  75%]
+       push end (peak dev):        pose_err= 5.66 deg  width=33.2 cm  stagger=10.1 cm  [alive  75%]
+       + 0.5s after push:          pose_err= 4.19 deg  width=44.2 cm  stagger= 7.8 cm  [alive  48%]
+       +   1s after push:          pose_err= 4.14 deg  width=49.9 cm  stagger= 6.2 cm  [alive  42%]
+       +   2s after push:          pose_err= 3.77 deg  width=49.7 cm  stagger= 6.2 cm  [alive  42%]
+       +   5s after push:          pose_err= 3.67 deg  width=49.6 cm  stagger= 5.7 cm  [alive  42%]
+       +  10s after push:          pose_err= 3.55 deg  width=49.4 cm  stagger= 5.2 cm  [alive  42%]
+       fallen: 58%
+  PUSH -Y (right): pre pose_err= 4.11 deg  width=55.9 cm  stagger= 4.7 cm  [alive  28%]
+       push end (peak dev):        pose_err= 5.86 deg  width=42.2 cm  stagger= 5.2 cm  [alive  28%]
+       + 0.5s after push:          pose_err= 4.42 deg  width=49.1 cm  stagger= 3.6 cm  [alive  22%]
+       +   1s after push:          pose_err= 4.24 deg  width=51.5 cm  stagger= 3.7 cm  [alive  20%]
+       +   2s after push:          pose_err= 3.62 deg  width=51.4 cm  stagger= 3.8 cm  [alive  20%]
+       +   5s after push:          pose_err= 3.60 deg  width=51.3 cm  stagger= 3.9 cm  [alive  20%]
+       +  10s after push:          pose_err= 3.51 deg  width=51.2 cm  stagger= 4.0 cm  [alive  20%]
+       fallen: 80%
+  PUSH +X (front): pre pose_err= 3.82 deg  width=54.8 cm  stagger= 3.8 cm  [alive  14%]
+       push end (peak dev):        pose_err= 6.44 deg  width=19.0 cm  stagger= 5.7 cm  [alive  14%]
+       + 0.5s after push:          pose_err= 5.98 deg  width=16.2 cm  stagger= 5.6 cm  [alive   9%]
+       +   1s after push:          pose_err= 4.69 deg  width=17.2 cm  stagger= 5.1 cm  [alive   8%]
+       +   2s after push:          pose_err= 2.41 deg  width=19.3 cm  stagger= 3.4 cm  [alive   6%]
+       +   5s after push:          pose_err= 2.46 deg  width=19.6 cm  stagger= 3.4 cm  [alive   6%]
+       +  10s after push:          pose_err= 2.38 deg  width=20.0 cm  stagger= 3.2 cm  [alive   6%]
+       fallen: 94%
+
+L6B_3600_rehome_play4: 64 envs, 20 N x 1.5s ramped root push, 10s recovery, gains pinned
+  BASELINE (settled stand):        pose_err= 4.56 deg  width=34.3 cm  stagger= 3.8 cm  [alive  97%]
+  +10s quiet (NO push, control):   pose_err= 4.15 deg  width=32.8 cm  stagger= 3.0 cm  [alive  97%]
+  PUSH +Y (left): pre pose_err= 5.03 deg  width=46.6 cm  stagger= 2.6 cm  [alive  11%]
+       push end (peak dev):        pose_err= 5.50 deg  width=14.4 cm  stagger= 4.6 cm  [alive  11%]
+       + 0.5s after push:          pose_err= 5.35 deg  width=18.9 cm  stagger= 6.0 cm  [alive   5%]
+       +   1s after push:          pose_err= 4.32 deg  width=16.4 cm  stagger= 4.7 cm  [alive   5%]
+       +   2s after push:          pose_err= 2.77 deg  width=23.9 cm  stagger= 3.0 cm  [alive   3%]
+       +   5s after push:          pose_err= 3.15 deg  width=24.1 cm  stagger= 2.7 cm  [alive   3%]
+       +  10s after push:          pose_err= 3.06 deg  width=23.8 cm  stagger= 2.5 cm  [alive   3%]
+       fallen: 97%
+  PUSH -Y (right): pre pose_err= 6.14 deg  width=24.9 cm  stagger= 3.6 cm  [alive   0%]
+       push end (peak dev):        pose_err= 6.16 deg  width=24.4 cm  stagger= 4.1 cm  [alive   0%]
+       + 0.5s after push:          pose_err= 6.26 deg  width=24.6 cm  stagger= 3.9 cm  [alive   0%]
+       +   1s after push:          pose_err= 6.40 deg  width=24.4 cm  stagger= 4.3 cm  [alive   0%]
+       +   2s after push:          pose_err= 6.33 deg  width=24.1 cm  stagger= 3.9 cm  [alive   0%]
+       +   5s after push:          pose_err= 6.28 deg  width=24.0 cm  stagger= 3.8 cm  [alive   0%]
+       +  10s after push:          pose_err= 6.32 deg  width=23.6 cm  stagger= 3.8 cm  [alive   0%]
+       fallen: 100%
+  PUSH +X (front): pre pose_err= 6.32 deg  width=23.6 cm  stagger= 3.8 cm  [alive   0%]
+       push end (peak dev):        pose_err= 5.75 deg  width=22.4 cm  stagger= 3.2 cm  [alive   0%]
+       + 0.5s after push:          pose_err= 5.86 deg  width=22.5 cm  stagger= 3.2 cm  [alive   0%]
+       +   1s after push:          pose_err= 5.83 deg  width=22.5 cm  stagger= 3.3 cm  [alive   0%]
+       +   2s after push:          pose_err= 5.84 deg  width=22.5 cm  stagger= 3.4 cm  [alive   0%]
+       +   5s after push:          pose_err= 5.95 deg  width=22.7 cm  stagger= 3.3 cm  [alive   0%]
+       +  10s after push:          pose_err= 5.81 deg  width=22.7 cm  stagger= 3.3 cm  [alive   0%]
+       fallen: 100%
+
+L5C_24800_rehome_play4: 64 envs, 20 N x 1.5s ramped root push, 10s recovery, gains pinned
+  BASELINE (settled stand):        pose_err= 3.43 deg  width=46.4 cm  stagger= 3.8 cm  [alive 100%]
+  +10s quiet (NO push, control):   pose_err= 3.39 deg  width=46.3 cm  stagger= 3.8 cm  [alive 100%]
+  PUSH +Y (left): pre pose_err= 3.39 deg  width=46.3 cm  stagger= 3.8 cm  [alive 100%]
+       push end (peak dev):        pose_err= 7.68 deg  width=44.4 cm  stagger=11.2 cm  [alive 100%]
+       + 0.5s after push:          pose_err= 5.31 deg  width=46.0 cm  stagger= 8.3 cm  [alive 100%]
+       +   1s after push:          pose_err= 3.82 deg  width=45.4 cm  stagger= 7.9 cm  [alive 100%]
+       +   2s after push:          pose_err= 3.76 deg  width=45.9 cm  stagger= 7.1 cm  [alive  98%]
+       +   5s after push:          pose_err= 3.33 deg  width=45.7 cm  stagger= 6.5 cm  [alive  98%]
+       +  10s after push:          pose_err= 3.33 deg  width=45.5 cm  stagger= 6.5 cm  [alive  98%]
+       fallen: 2%
+  PUSH -Y (right): pre pose_err= 3.34 deg  width=45.8 cm  stagger= 6.3 cm  [alive  94%]
+       push end (peak dev):        pose_err= 8.59 deg  width=33.3 cm  stagger= 9.4 cm  [alive  94%]
+       + 0.5s after push:          pose_err= 6.32 deg  width=38.6 cm  stagger= 9.7 cm  [alive  75%]
+       +   1s after push:          pose_err= 3.77 deg  width=40.1 cm  stagger= 6.0 cm  [alive  66%]
+       +   2s after push:          pose_err= 2.90 deg  width=40.8 cm  stagger= 5.5 cm  [alive  62%]
+       +   5s after push:          pose_err= 2.93 deg  width=41.1 cm  stagger= 5.0 cm  [alive  62%]
+       +  10s after push:          pose_err= 2.95 deg  width=41.0 cm  stagger= 4.9 cm  [alive  62%]
+       fallen: 38%
+  PUSH +X (front): pre pose_err= 2.97 deg  width=41.4 cm  stagger= 5.0 cm  [alive  59%]
+       push end (peak dev):        pose_err= 9.84 deg  width=49.1 cm  stagger=21.2 cm  [alive  59%]
+       + 0.5s after push:          pose_err= 5.98 deg  width=45.7 cm  stagger=10.3 cm  [alive  56%]
+       +   1s after push:          pose_err= 5.06 deg  width=46.6 cm  stagger= 8.1 cm  [alive  52%]
+       +   2s after push:          pose_err= 4.07 deg  width=47.4 cm  stagger= 6.1 cm  [alive  52%]
+       +   5s after push:          pose_err= 3.38 deg  width=47.0 cm  stagger= 5.2 cm  [alive  52%]
+       +  10s after push:          pose_err= 3.46 deg  width=46.9 cm  stagger= 5.3 cm  [alive  52%]
+       fallen: 48%
+
+L7B_3600_rehome: 64 envs, 20 N x 1.5s ramped root push, 10s recovery, gains pinned
+  BASELINE (settled stand):        pose_err= 7.85 deg  width=28.9 cm  stagger=11.0 cm  [alive  86%]
+  +10s quiet (NO push, control):   pose_err=15.86 deg  width=35.0 cm  stagger=29.1 cm  [alive  67%]
+  PUSH +Y (left): pre pose_err=21.48 deg  width=40.5 cm  stagger=43.1 cm  [alive   5%]
+       push end (peak dev):        pose_err=28.79 deg  width=39.5 cm  stagger=44.7 cm  [alive   5%]
+       + 0.5s after push:          pose_err=34.92 deg  width=40.1 cm  stagger=77.8 cm  [alive   2%]
+       +   1s after push:          pose_err=17.37 deg  width=39.6 cm  stagger=28.7 cm  [alive   0%]
+       +   2s after push:          pose_err=17.02 deg  width=41.5 cm  stagger=29.1 cm  [alive   0%]
+       +   5s after push:          pose_err=15.32 deg  width=44.1 cm  stagger=26.1 cm  [alive   0%]
+       +  10s after push:          pose_err=13.29 deg  width=42.6 cm  stagger=17.0 cm  [alive   0%]
+       fallen: 100%
+  PUSH -Y (right): pre pose_err=13.29 deg  width=42.6 cm  stagger=17.0 cm  [alive   0%]
+       push end (peak dev):        pose_err=12.63 deg  width=42.3 cm  stagger=15.2 cm  [alive   0%]
+       + 0.5s after push:          pose_err=12.63 deg  width=42.4 cm  stagger=14.6 cm  [alive   0%]
+       +   1s after push:          pose_err=12.54 deg  width=42.2 cm  stagger=14.3 cm  [alive   0%]
+       +   2s after push:          pose_err=12.34 deg  width=42.1 cm  stagger=13.3 cm  [alive   0%]
+       +   5s after push:          pose_err=11.93 deg  width=41.5 cm  stagger=11.3 cm  [alive   0%]
+       +  10s after push:          pose_err=11.66 deg  width=41.3 cm  stagger=10.2 cm  [alive   0%]
+       fallen: 100%
+  PUSH +X (front): pre pose_err=11.66 deg  width=41.3 cm  stagger=10.2 cm  [alive   0%]
+       push end (peak dev):        pose_err=11.78 deg  width=41.1 cm  stagger= 9.8 cm  [alive   0%]
+       + 0.5s after push:          pose_err=11.81 deg  width=41.3 cm  stagger= 9.7 cm  [alive   0%]
+       +   1s after push:          pose_err=11.88 deg  width=41.2 cm  stagger= 9.8 cm  [alive   0%]
+       +   2s after push:          pose_err=11.83 deg  width=41.4 cm  stagger= 9.9 cm  [alive   0%]
+       +   5s after push:          pose_err=11.79 deg  width=41.8 cm  stagger=10.1 cm  [alive   0%]
+       +  10s after push:          pose_err=11.79 deg  width=42.0 cm  stagger=10.5 cm  [alive   0%]
+       fallen: 100%
+
+NPB_52200_rehome: 64 envs, 20 N x 1.5s ramped root push, 10s recovery, gains pinned
+  BASELINE (settled stand):        pose_err= 4.06 deg  width=39.3 cm  stagger= 5.2 cm  [alive 100%]
+  +10s quiet (NO push, control):   pose_err= 4.01 deg  width=33.3 cm  stagger= 8.8 cm  [alive 100%]
+  PUSH +Y (left): pre pose_err= 4.01 deg  width=33.3 cm  stagger= 8.8 cm  [alive 100%]
+       push end (peak dev):        pose_err= 6.89 deg  width=33.9 cm  stagger=12.7 cm  [alive 100%]
+       + 0.5s after push:          pose_err= 5.06 deg  width=35.7 cm  stagger= 9.3 cm  [alive 100%]
+       +   1s after push:          pose_err= 4.64 deg  width=35.2 cm  stagger= 8.5 cm  [alive 100%]
+       +   2s after push:          pose_err= 4.22 deg  width=34.5 cm  stagger= 8.3 cm  [alive 100%]
+       +   5s after push:          pose_err= 4.04 deg  width=33.1 cm  stagger= 8.6 cm  [alive 100%]
+       +  10s after push:          pose_err= 3.92 deg  width=31.4 cm  stagger= 8.7 cm  [alive 100%]
+       fallen: 0%
+  PUSH -Y (right): pre pose_err= 3.95 deg  width=31.5 cm  stagger= 8.7 cm  [alive  88%]
+       push end (peak dev):        pose_err= 9.41 deg  width=44.2 cm  stagger=13.5 cm  [alive  88%]
+       + 0.5s after push:          pose_err= 6.56 deg  width=45.0 cm  stagger= 8.2 cm  [alive  77%]
+       +   1s after push:          pose_err= 5.02 deg  width=42.5 cm  stagger= 6.2 cm  [alive  77%]
+       +   2s after push:          pose_err= 4.46 deg  width=40.8 cm  stagger= 5.8 cm  [alive  77%]
+       +   5s after push:          pose_err= 4.24 deg  width=38.5 cm  stagger= 6.6 cm  [alive  77%]
+       +  10s after push:          pose_err= 4.14 deg  width=36.0 cm  stagger= 7.2 cm  [alive  77%]
+       fallen: 23%
+  PUSH +X (front): pre pose_err= 4.14 deg  width=36.0 cm  stagger= 7.2 cm  [alive  77%]
+       push end (peak dev):        pose_err= 9.52 deg  width=51.4 cm  stagger=14.0 cm  [alive  77%]
+       + 0.5s after push:          pose_err= 6.80 deg  width=45.7 cm  stagger= 8.8 cm  [alive  75%]
+       +   1s after push:          pose_err= 5.91 deg  width=41.9 cm  stagger= 6.2 cm  [alive  75%]
+       +   2s after push:          pose_err= 4.21 deg  width=39.8 cm  stagger= 6.0 cm  [alive  75%]
+       +   5s after push:          pose_err= 4.12 deg  width=36.9 cm  stagger= 6.8 cm  [alive  75%]
+       +  10s after push:          pose_err= 4.01 deg  width=34.1 cm  stagger= 8.3 cm  [alive  75%]
+       fallen: 25%
+
+GB_65400_rehome: 64 envs, 20 N x 1.5s ramped root push, 10s recovery, gains pinned
+  BASELINE (settled stand):        pose_err= 3.56 deg  width=37.2 cm  stagger= 4.4 cm  [alive 100%]
+  +10s quiet (NO push, control):   pose_err= 3.31 deg  width=34.0 cm  stagger= 5.0 cm  [alive 100%]
+  PUSH +Y (left): pre pose_err= 3.31 deg  width=34.0 cm  stagger= 5.0 cm  [alive 100%]
+       push end (peak dev):        pose_err= 7.23 deg  width=41.7 cm  stagger= 7.5 cm  [alive 100%]
+       + 0.5s after push:          pose_err= 4.74 deg  width=40.2 cm  stagger= 4.8 cm  [alive 100%]
+       +   1s after push:          pose_err= 3.72 deg  width=39.5 cm  stagger= 4.0 cm  [alive 100%]
+       +   2s after push:          pose_err= 3.35 deg  width=38.5 cm  stagger= 3.2 cm  [alive  98%]
+       +   5s after push:          pose_err= 3.18 deg  width=37.0 cm  stagger= 3.2 cm  [alive  98%]
+       +  10s after push:          pose_err= 3.25 deg  width=35.0 cm  stagger= 3.6 cm  [alive  98%]
+       fallen: 2%
+  PUSH -Y (right): pre pose_err= 3.25 deg  width=35.0 cm  stagger= 3.6 cm  [alive  97%]
+       push end (peak dev):        pose_err= 8.87 deg  width=39.3 cm  stagger=14.5 cm  [alive  97%]
+       + 0.5s after push:          pose_err= 6.69 deg  width=44.0 cm  stagger= 9.6 cm  [alive  81%]
+       +   1s after push:          pose_err= 4.49 deg  width=45.2 cm  stagger= 4.1 cm  [alive  75%]
+       +   2s after push:          pose_err= 3.74 deg  width=43.9 cm  stagger= 3.0 cm  [alive  75%]
+       +   5s after push:          pose_err= 3.38 deg  width=41.7 cm  stagger= 3.0 cm  [alive  75%]
+       +  10s after push:          pose_err= 3.42 deg  width=39.1 cm  stagger= 3.6 cm  [alive  75%]
+       fallen: 25%
+  PUSH +X (front): pre pose_err= 3.42 deg  width=39.1 cm  stagger= 3.6 cm  [alive  75%]
+       push end (peak dev):        pose_err= 8.53 deg  width=47.8 cm  stagger=13.2 cm  [alive  75%]
+       + 0.5s after push:          pose_err= 4.87 deg  width=41.1 cm  stagger= 5.5 cm  [alive  75%]
+       +   1s after push:          pose_err= 5.23 deg  width=41.6 cm  stagger= 4.7 cm  [alive  75%]
+       +   2s after push:          pose_err= 3.38 deg  width=39.9 cm  stagger= 3.4 cm  [alive  72%]
+       +   5s after push:          pose_err= 3.25 deg  width=38.1 cm  stagger= 3.3 cm  [alive  72%]
+       +  10s after push:          pose_err= 3.22 deg  width=36.1 cm  stagger= 3.4 cm  [alive  72%]
+       fallen: 28%
+

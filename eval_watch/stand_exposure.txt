@@ -1,0 +1,6 @@
+stand_exposure_v1: 512 envs x 1500 steps
+  standing flag: 0.62% of env-steps | reward-gate (cmd<0.1): 0.62%
+  standing env-steps by episode age: <=10: 772  11-499: 155  >=500: 3826
+  stand onsets: n=313  age min=0  median=499  max=999
+  mean base height while standing: 0.94 m (healthy stand ~1.0; collapsed <0.55)
+

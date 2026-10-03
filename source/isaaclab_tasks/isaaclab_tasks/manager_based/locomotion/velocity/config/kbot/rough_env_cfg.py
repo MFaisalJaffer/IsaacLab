@@ -160,15 +160,21 @@ def velocity_push_curriculum(
 
     The return dict is logged to tensorboard.
     """
+    # Resume fast-forward: common_step_counter restarts at 0 with every process,
+    # so a resumed run used to re-ramp pushes from zero after each restart or
+    # watchdog rollback (wasted re-adaptation every time). The launcher exports
+    # KBOT_RESUME_STEP_OFFSET = resume_iter * num_steps_per_env so the ramp
+    # continues from where the RUN is, not where the process is.
+    import os
+
+    step = env.common_step_counter + int(os.environ.get("KBOT_RESUME_STEP_OFFSET", "0"))
     # Only start curriculum after the specified start step
-    if env.common_step_counter < curriculum_start_step:
+    if step < curriculum_start_step:
         progress = 0.0
     else:
         # Calculate curriculum progress (0.0 to 1.0) from start_step to stop_step
         curriculum_duration = curriculum_stop_step - curriculum_start_step
-        progress = (
-            env.common_step_counter - curriculum_start_step
-        ) / curriculum_duration
+        progress = (step - curriculum_start_step) / curriculum_duration
         progress = min(progress, 1.0)
 
     # Start with min velocity and increase to max
@@ -519,9 +525,30 @@ class KBotRoughEnvCfg(LocomotionVelocityRoughEnvCfg):
         # post init of parent
         super().__post_init__()
 
+        # Track the robot with the viewer camera so recorded videos actually
+        # show the robot (default looks at world origin and the robot walks
+        # out of frame on terrain).
+        self.viewer.origin_type = "asset_root"
+        self.viewer.asset_name = "robot"
+        self.viewer.eye = (2.5, 2.5, 1.5)
+        self.viewer.lookat = (0.0, 0.0, 0.5)
+
         # Scene
         self.scene.robot = KBOT_CFG.replace(prim_path="{ENV_REGEX_NS}/Robot")
         self.scene.height_scanner.prim_path = "{ENV_REGEX_NS}/Robot/base"
+
+        # Fall-termination fix: the URDF "base" link is a massless reference
+        # frame with no real collider, so the default contact-on-"base"
+        # termination never fires (the body passed through terrain). Add an
+        # orientation-based termination (terrain-independent: a fallen robot
+        # tilts past ~57deg regardless of terrain height), and retarget the
+        # contact termination at the real torso body which now has a collider
+        # (USD regenerated with collision_from_visuals=True).
+        self.terminations.bad_orientation = DoneTerm(
+            func=mdp.bad_orientation,
+            params={"limit_angle": 1.0},
+        )
+        self.terminations.base_contact.params["sensor_cfg"].body_names = "Torso_Side_Right"
 
         # Terrains
         # Override terrain generator with custom KBot configuration
@@ -535,7 +562,7 @@ class KBotRoughEnvCfg(LocomotionVelocityRoughEnvCfg):
         self.scene.imu = ImuCfg(
             prim_path="{ENV_REGEX_NS}/Robot/imu",
             update_period=0.0,
-            debug_vis=True,
+            debug_vis=False,  # markers crash on Isaac Sim 5.1; useless headless
             gravity_bias=(0.0, 0.0, 0.0),
             offset=ImuCfg.OffsetCfg(
                 pos=(0.0, 0.0, 0.0), rot=(1.0, 0.0, 0.0, 0.0)  # meters, quaternion

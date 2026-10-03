@@ -1,0 +1,76 @@
+{
+ "checkpoint": "logs/rsl_rl/kbot_legs_track/2026-09-29_20-53-17/model_1200.pt",
+ "num_envs": 128,
+ "seconds": 20.0,
+ "dr": true,
+ "stochastic": true,
+ "survival_frac": 0.234375,
+ "first_fall_cause_counts": {
+  "time_out": 0,
+  "base_contact": 0,
+  "bad_orientation": 96,
+  "base_height": 32
+ },
+ "fall_time_s_percentiles_10_25_50_75_90": [
+  0.914,
+  1.18,
+  1.82,
+  4.91,
+  8.34
+ ],
+ "fall_time_s_median": 1.82,
+ "rmse_deg": {
+  "dof_left_hip_pitch_04": 2.316129207611084,
+  "dof_right_hip_pitch_04": 2.2490837574005127,
+  "dof_left_hip_roll_04": 1.8944427967071533,
+  "dof_right_hip_roll_04": 1.840274453163147,
+  "dof_left_hip_yaw_03": 1.3621736764907837,
+  "dof_right_hip_yaw_03": 1.3672939538955688,
+  "dof_left_knee_04": 3.761509895324707,
+  "dof_right_knee_04": 3.5640649795532227,
+  "dof_left_ankle_02": 3.592642307281494,
+  "dof_right_ankle_02": 3.507938861846924
+ },
+ "rmse_all_deg": 2.705326557159424,
+ "speed_mps": {
+  "mean": 0.4483339488506317,
+  "lateral_abs": 0.22348321974277496,
+  "cmd": 0.4055926644594204
+ },
+ "yaw_rate_abs": 0.5226997137069702,
+ "tilt_deg_mean": 5.693247318267822,
+ "stance_width_cm": {
+  "median": 31.13676905632019,
+  "p90": 34.29405093193054
+ },
+ "clearance_cm": 12.00379729270935,
+ "stride_period_s": {
+  "median": 1.06,
+  "ref": 1.06,
+  "n": 477
+ },
+ "torque_rms_over_continuous": {
+  "dof_left_hip_pitch_04": 1.3229979197184245,
+  "dof_right_hip_pitch_04": 1.2970160166422526,
+  "dof_left_hip_roll_04": 1.3326151529947916,
+  "dof_right_hip_roll_04": 1.354681396484375,
+  "dof_left_hip_yaw_03": 0.5111597061157227,
+  "dof_right_hip_yaw_03": 0.5120155811309814,
+  "dof_left_knee_04": 0.9570756912231445,
+  "dof_right_knee_04": 0.9843983968098958,
+  "dof_left_ankle_02": 0.5621444702148437,
+  "dof_right_ankle_02": 0.533087682723999
+ },
+ "torque_peak_nm": {
+  "dof_left_hip_pitch_04": 22.0,
+  "dof_right_hip_pitch_04": 22.0,
+  "dof_left_hip_roll_04": 22.0,
+  "dof_right_hip_roll_04": 22.0,
+  "dof_left_hip_yaw_03": 11.0,
+  "dof_right_hip_yaw_03": 11.0,
+  "dof_left_knee_04": 22.0,
+  "dof_right_knee_04": 22.0,
+  "dof_left_ankle_02": 10.490497589111328,
+  "dof_right_ankle_02": 10.13495922088623
+ }
+}

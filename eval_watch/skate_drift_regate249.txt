@@ -1,0 +1,13 @@
+==== SKATE DIAGNOSTIC @ model_249200.pt ====
+envs=256 window=1500 steps (30s stand, pushes off) MU PINNED = 1.0
+slide (both feet, m/s): mean=0.0534 p50=0.0503 p90=0.0812 max=0.2595
+outward slide vel: mean=-0.0006 m/s (+ = away from midline = bracing; envs outward: 87%)
+width drift: mean=+2.10 cm p90=+9.78 cm
+WORLD-FRAME (rig instrument, normalized /30s, window 30s):
+  base_drift cm/30s: mean=15.4 p50=8.0 p90=28.6 max=133.9
+  foot net cm/30s: L=20.6 R=18.7 (rig 204800: base 17.2, feet 15/16; rig 171500: base 6.8, feet 6/5)
+OSCILLATORY GLIDE (nets to ~0, invisible to the above):
+  cumulative path cm/30s (both feet): mean=160 p50=151 p90=243
+  stance width oscillation std: mean=5.18 cm p90=5.20 cm
+  planted-foot roll/pitch rate: mean=0.235 rad/s (high + tracks glide = ROCKING on hull; low = true slip)
+gyro mean=0.139 rad/s (statue check)

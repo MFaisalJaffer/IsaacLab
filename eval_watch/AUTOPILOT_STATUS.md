@@ -1,0 +1,23 @@
+# AUTOPILOT 2026-10-01 17:34 — v7 run 2026-10-01_17-03-42
+- 10-01 17:34 started; v7 alive: yes; GPU procs 1
+- 10-01 18:02 v7 model_1000: score 0.339 — survival 0.98, rmse 7.7 deg, backward -0.07/-0.25, side 0.02/0.16, fwd 0.08/0.20 m/s, pivot yaw err 0.42
+- 10-01 18:07 autopilot v1 stopped while idle (user: go) — relaunching as v7b with the kinematic library v4 added to the AMP judge
+# AUTOPILOT v7b 2026-10-01 18:08 — v7 run 2026-10-01_17-03-42; AMP judge = v1 + v2 + v3 (v7 recording, small) + kinematic library v4 (x2)
+- 10-01 18:08 started; v7 alive: yes; GPU procs 1
+- 10-01 18:08 v7 model_1000 (eval reused): score 0.339 — survival 0.98, rmse 7.7 deg, backward -0.07/-0.25, side 0.02/0.16, fwd 0.08/0.20 m/s, pivot yaw err 0.42
+- 10-01 19:43 v7 ended before model_1500
+- 10-01 19:45 v7 final model_2999: score 0.438 — survival 0.98, rmse 7.1 deg, backward -0.09/-0.25, side 0.03/0.16, fwd 0.10/0.19 m/s, pivot yaw err 0.35
+- 10-01 19:45 v7 BEST = model_2999 (score 0.438) anchored as archive_anchors/trackclip_v7_best_model_2999.pt; v7 stopped
+- 10-01 19:47 dataset v3 recorded: MotionDataset: 1 file(s), 95161 real transitions + mirror = 190322 rows x 40 features, joints=10 | falls masked: 325 frames
+- 10-01 19:50 AMP stage launched: 2026-10-01_19-47-12 — warm amp_pilot2_hard_mirroroff, judge v1+v2+v3+kinematic library v4 (x2), vx -0.3..0.5 vy ±0.15 wz ±0.5, pushes frozen, style 2.0, stance x5, mirror loss off, std 0.1, 2000 iters
+- 10-01 21:58 AMP stage finished: model_1999.pt anchored as archive_anchors/amp_v3_final.pt
+- 10-01 21:59 AMP v3 cmd 0.4:0:0: walking survival 0.51953125, speed {'cmd_mean': 0.40000003576278687, 'achieved_fwd_mean': 0.35747039318084717, 'tracking_err_mean': 0.061266347765922546, 'lateral_abs': 0.10021951049566269, 'lateral_mean_signed': -0.0059452666901052, 'cmd_lateral_mean': 0.0}, yaw {'cmd_mean': 0.0, 'achieved_mean_signed': 0.03450847417116165, 'tracking_err_mean': 0.04801993444561958}
+- 10-01 22:00 AMP v3 cmd -0.3:0:0: walking survival 0.65234375, speed {'cmd_mean': 0.2999999523162842, 'achieved_fwd_mean': -0.11115321516990662, 'tracking_err_mean': 0.18884679675102234, 'lateral_abs': 0.07515111565589905, 'lateral_mean_signed': 0.01194249652326107, 'cmd_lateral_mean': 0.0}, yaw {'cmd_mean': 0.0, 'achieved_mean_signed': 0.009683985263109207, 'tracking_err_mean': 0.027110358700156212}
+- 10-01 22:01 AMP v3 cmd 0:0.15:0: walking survival 0.78125, speed {'cmd_mean': 0.0, 'achieved_fwd_mean': -0.0031891344115138054, 'tracking_err_mean': 0.008844633586704731, 'lateral_abs': 0.03338653966784477, 'lateral_mean_signed': 0.0015700273215770721, 'cmd_lateral_mean': 0.1499999761581421}, yaw {'cmd_mean': 0.0, 'achieved_mean_signed': -0.0076776351779699326, 'tracking_err_mean': 0.014356276951730251}
+- 10-01 22:02 AMP v3 cmd 0:0:0.5: walking survival 0.69140625, speed {'cmd_mean': 0.0, 'achieved_fwd_mean': 0.012487913481891155, 'tracking_err_mean': 0.013070661574602127, 'lateral_abs': 0.038385145366191864, 'lateral_mean_signed': -0.005448677111417055, 'cmd_lateral_mean': 0.0}, yaw {'cmd_mean': 0.5, 'achieved_mean_signed': 0.05285358428955078, 'tracking_err_mean': 0.44714638590812683}
+- 10-01 22:03 AMP v3 standing: survival 0.73828125, tilt 3.334027051925659 deg, width 32.07073509693146 cm
+- 10-01 22:05 gif for cmd -0.3:0:0: eval_watch/amp_v3_gif_back.gif
+- 10-01 22:06 gif for cmd 0:0.15:0: eval_watch/amp_v3_gif_0_0.15_0.gif
+- 10-01 22:06 hardening skipped (walk 0.51953125 >= 0.8 and backward 0.65234375 >= 0.6 needed, or past 22:30) — left for review
+- 10-01 22:06 DONE. GPU idle. Lineage 11 still paused.
+- 10-01 22:06 OPTION 2: multi-cycle tracker launched (6 clean cycles, 8192 envs, 3000 iters): logs/track_pilot/trackmulti_v1_20261001_220640.log

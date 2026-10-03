@@ -1,0 +1,8 @@
+=== CALM WALK VERDICT @model_56400.pt (1.0Hz, cmd<=0.3, tau^2 priced from iter0) ===
+verdict_vx0.15 [gains=nominal] ALL FELL (alive 0/32; fallen>45deg 29/32) — no walking-fraction stats
+verdict_vx0.20 [gains=nominal] ALL FELL (alive 0/32; fallen>45deg 28/32) — no walking-fraction stats
+verdict_vx0.30 [gains=nominal] ALL FELL (alive 0/32; fallen>45deg 30/32) — no walking-fraction stats
+VERDICT_vx0.20: vx=0.2  (400 steps x 32 envs)  feet_phase target this build = 0.06 m
+  L_foot: swing-apex(mean top10%)=41.9 cm  p50=3.5  p90=12.3  p99=65.3  max=79.6 cm  |  off-ground=56% of time
+  R_foot: swing-apex(mean top10%)=39.6 cm  p50=4.8  p90=16.5  p99=65.5  max=88.7 cm  |  off-ground=67% of time
+  contact-sensor swing%: L=61  R=65  (stance-duty L=39%  R=35%)

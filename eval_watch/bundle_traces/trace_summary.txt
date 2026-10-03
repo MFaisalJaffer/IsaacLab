@@ -1,0 +1,2 @@
+ckpt=/home/faisal/IsaacLab/logs/rsl_rl/kbot_legs_rough/2026-07-27_22-09-05/model_198600.pt
+steps=600 envs=2 vx_cmd=0.5 vx_achieved=0.567

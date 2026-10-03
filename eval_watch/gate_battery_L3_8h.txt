@@ -1,0 +1,178 @@
+COMPARISON BATTERY on: logs/rsl_rl/kbot_legs_rough/2026-08-14_15-25-27/model_33800.pt
+CMP_20N_1024: SUSTAINED 20.0 N x 1500 ms along y, cmd_vx=0.0, 1024 envs, dt=20 ms
+  pre-push baseline: tilt 3.4 deg, action std/joint hip_pitch:0.029 hip_roll:0.033 hip_yaw:0.021
+   t(ms) z_hip_roll  z_ankle z_hip_pitch  z_knee |  tilt  roll    vel |  dTq_hr
+       0        0.8      0.8         0.9     0.9 |   3.4  +0.9   0.03 |     2.0
+      20        0.8      0.8         0.9     0.9 |   3.4  +0.9   0.06 |     2.2
+      40        0.9      0.8         0.9     0.9 |   3.4  +0.9   0.09 |     2.5
+      60        0.9      0.9         1.0     0.9 |   3.4  +0.9   0.11 |     3.0
+      80        1.0      0.9         1.0     1.0 |   3.4  +0.9   0.12 |     3.4
+     100        1.0      1.0         1.0     1.0 |   3.4  +1.0   0.14 |     3.7
+     120        1.1      1.1         1.1     1.1 |   3.4  +1.1   0.15 |     4.1
+     140        1.3      1.3         1.2     1.3 |   3.5  +1.2   0.16 |     4.4
+     160        1.4      1.5         1.4     1.6 |   3.6  +1.3   0.18 |     4.6
+     180        1.6      1.8         1.6     1.9 |   3.7  +1.5   0.19 |     4.7
+     200        2.0      2.3         2.0     2.5 |   3.8  +1.8   0.20 |     5.0
+     220        2.4      2.8         2.4     3.4 |   4.0  +2.1   0.21 |     5.4
+     240        2.9      3.4         3.1     4.4 |   4.3  +2.4   0.22 |     5.8
+     260        3.6      3.9         3.8     5.7 |   4.5  +2.8   0.23 |     6.2
+     280        4.4      4.6         4.7     7.2 |   4.7  +3.1   0.24 |     6.5
+     300        4.8      5.2         5.6     8.8 |   5.0  +3.5   0.24 |     7.0
+     400        8.1      7.4         8.5    18.8 |   5.9  +4.3   0.25 |     8.8
+     600        9.7     10.0         8.9    37.0 |   6.7  +4.8   0.24 |    10.2
+     800        8.6      9.2         8.9    39.4 |   7.7  +4.5   0.13 |     9.0
+    1000        7.7      8.2         8.6    33.2 |   8.2  +3.7   0.13 |     8.1
+    1200        7.6      7.8         8.7    28.2 |   8.5  +3.9   0.17 |     7.7
+    1400        7.6      8.1         8.6    28.4 |   8.6  +3.8   0.20 |     7.6
+    1600        6.4      6.3         7.7    26.3 |   8.3  +2.9  -0.01 |     7.1
+    1800        4.9      4.0         6.6    17.6 |   8.4  +2.0  -0.01 |     5.4
+    2000        4.6      3.3         5.6    11.5 |   7.8  +1.8   0.01 |     4.5
+    2200        4.6      2.8         5.2     8.8 |   7.2  +1.6   0.01 |     3.9
+    2400        4.6      2.6         5.1     7.0 |   6.8  +1.6   0.00 |     3.8
+    2600        4.6      2.5         5.1     6.2 |   6.5  +1.6   0.00 |     3.6
+    2800        4.8      2.4         4.8     5.9 |   6.3  +1.5  -0.00 |     3.5
+  FIRST z>3 latency: hip_roll=260ms  ankle=240ms  hip_pitch=240ms  knee=220ms
+  tilt at those instants: knee:4.0deg  hip_pitch:4.3deg  ankle:4.3deg  hip_roll:4.5deg  hip_yaw:4.5deg
+  peak tilt 8.8 deg at +1480 ms; kick velocity decays to half at +0 ms
+  STEP-OUT: envs lifting a foot >=60ms during response: 995/1024 | stance width base=37.4cm max-during=53.7cm (delta +16.3cm)
+    fallers: 38 (lifted: 38) | survivors: 986 (lifted: 957)
+    verdict: STEPPING response present
+  BRACE: load asym toward downwind foot (baseline -0.05; +1.0 = full correct transfer)
+    +100ms:+0.71  +200ms:+0.80  +400ms:+0.83  +800ms:+0.66
+    asym@200ms — survivors: +0.80  fallers: +0.65
+  LEAN: upwind CoM offset (baseline -0.3cm; survivors lean INTO the push)
+    +100ms:-0.3cm  +200ms:-0.2cm  +400ms:-0.1cm  +800ms:+0.1cm
+    lean@200ms — survivors: -0.3cm  fallers: +1.1cm
+
+CMP_25N_1024: SUSTAINED 25.0 N x 1500 ms along y, cmd_vx=0.0, 1024 envs, dt=20 ms
+  pre-push baseline: tilt 3.4 deg, action std/joint hip_pitch:0.028 hip_roll:0.033 hip_yaw:0.021
+   t(ms) z_hip_roll  z_ankle z_hip_pitch  z_knee |  tilt  roll    vel |  dTq_hr
+       0        0.8      0.8         0.9     0.9 |   3.4  +1.0   0.04 |     2.1
+      20        0.9      0.8         0.9     0.9 |   3.4  +0.9   0.08 |     2.3
+      40        0.9      0.8         0.9     0.9 |   3.4  +0.9   0.11 |     2.6
+      60        1.0      0.9         1.0     1.0 |   3.3  +1.0   0.14 |     3.2
+      80        1.0      1.0         1.0     1.0 |   3.4  +1.0   0.16 |     3.8
+     100        1.1      1.1         1.1     1.1 |   3.4  +1.1   0.19 |     4.2
+     120        1.4      1.4         1.3     1.3 |   3.5  +1.2   0.21 |     4.6
+     140        1.6      1.7         1.5     1.7 |   3.6  +1.5   0.24 |     4.8
+     160        2.1      2.2         1.9     2.4 |   3.8  +1.8   0.26 |     5.2
+     180        2.8      3.0         2.4     3.4 |   4.0  +2.2   0.29 |     5.6
+     200        3.6      3.8         3.3     4.7 |   4.4  +2.7   0.31 |     6.3
+     220        4.6      4.7         4.4     6.4 |   4.7  +3.2   0.33 |     6.7
+     240        5.7      5.6         5.6     8.4 |   5.2  +3.7   0.34 |     7.2
+     260        7.1      6.5         6.9    10.6 |   5.6  +4.3   0.35 |     7.8
+     280        8.4      7.3         8.5    12.8 |   6.0  +4.7   0.36 |     8.5
+     300        9.7      8.4         9.8    15.2 |   6.4  +5.1   0.36 |     9.0
+     400       13.0     11.7        10.4    27.9 |   7.0  +5.0   0.42 |    11.4
+     600       12.6     13.0        10.9    46.7 |   9.0  +6.7   0.35 |    11.8
+     800       11.6     13.0        10.7    45.7 |   9.6  +5.1   0.23 |    10.7
+    1000       10.4     11.8        11.5    39.3 |  11.7  +5.0   0.23 |     9.5
+    1200       10.2     11.2        12.1    34.3 |  13.2  +5.1   0.30 |     9.5
+    1400       10.4     10.7        11.7    33.8 |  14.5  +5.4   0.32 |     9.5
+    1600        9.2      9.4        10.7    33.2 |  14.9  +4.0   0.04 |     9.1
+    1800        6.9      6.4         9.4    24.4 |  15.6  +2.7  -0.01 |     6.8
+    2000        6.4      5.1         8.1    17.7 |  15.3  +2.4   0.01 |     6.2
+    2200        6.3      4.8         7.7    14.2 |  15.0  +2.2   0.01 |     5.5
+    2400        6.1      4.3         6.9    12.2 |  14.6  +1.8   0.01 |     4.9
+    2600        6.2      3.9         7.0    11.1 |  14.4  +1.5  -0.00 |     4.6
+    2800        6.4      3.9         6.9    10.9 |  14.2  +1.4  -0.00 |     4.6
+  FIRST z>3 latency: hip_roll=200ms  ankle=200ms  hip_pitch=200ms  knee=180ms
+  tilt at those instants: knee:4.0deg  hip_pitch:4.4deg  hip_roll:4.4deg  hip_yaw:4.4deg  ankle:4.4deg
+  peak tilt 15.6 deg at +1800 ms; kick velocity decays to half at +0 ms
+  STEP-OUT: envs lifting a foot >=60ms during response: 1013/1024 | stance width base=37.6cm max-during=59.4cm (delta +21.8cm)
+    fallers: 134 (lifted: 134) | survivors: 890 (lifted: 879)
+    verdict: STEPPING response present
+  BRACE: load asym toward downwind foot (baseline -0.04; +1.0 = full correct transfer)
+    +100ms:+0.79  +200ms:+0.88  +400ms:+0.71  +800ms:+0.61
+    asym@200ms — survivors: +0.87  fallers: +0.91
+  LEAN: upwind CoM offset (baseline -0.1cm; survivors lean INTO the push)
+    +100ms:-0.1cm  +200ms:-0.1cm  +400ms:-0.1cm  +800ms:-0.6cm
+    lean@200ms — survivors: -0.4cm  fallers: +1.4cm
+
+CMP_IMPULSE: kick 0.4 m/s along y, cmd_vx=0.0, 256 envs, dt=20 ms
+  pre-push baseline: tilt 3.7 deg, action std/joint hip_pitch:0.029 hip_roll:0.033 hip_yaw:0.021
+   t(ms) z_hip_roll  z_ankle z_hip_pitch  z_knee |  tilt  roll    vel |  dTq_hr
+       0        0.8      0.8         0.9     0.9 |   3.7  +0.9  -0.01 |     3.0
+      20        1.1      2.0         1.0     1.4 |   3.7  +0.9  -0.01 |     4.2
+      40        1.4      3.4         1.4     2.5 |   3.8  +1.0  -0.01 |     4.8
+      60        1.8      5.0         2.2     4.1 |   4.0  +1.1  -0.00 |     4.8
+      80        2.6      7.1         3.6     6.4 |   4.1  +1.2   0.00 |     5.0
+     100        3.0      9.0         5.5     8.9 |   4.3  +1.3  -0.00 |     5.5
+     120        3.4      9.6         7.1    11.4 |   4.4  +1.4  -0.01 |     6.0
+     140        3.8      8.9         7.4    13.4 |   4.4  +1.4  -0.02 |     6.8
+     160        4.2      7.8         7.0    16.1 |   4.4  +1.4  -0.03 |     6.8
+     180        5.3      6.8         6.3    18.6 |   4.4  +1.3  -0.04 |     7.9
+     200        5.3      6.0         5.7    20.8 |   4.3  +1.3  -0.03 |     7.9
+     220        5.2      6.3         5.8    22.3 |   4.1  +1.2  -0.03 |     7.3
+     240        4.7      6.0         5.7    23.4 |   4.1  +1.1  -0.03 |     7.4
+     260        4.1      5.7         5.7    23.8 |   4.1  +1.1  -0.02 |     6.8
+     280        3.7      5.3         5.6    23.6 |   4.3  +1.1  -0.01 |     6.6
+     300        3.7      5.1         5.8    22.6 |   4.3  +1.2  -0.01 |     6.1
+     400        3.6      3.4         4.9    17.2 |   4.2  +1.3   0.01 |     4.7
+     600        3.0      2.3         3.9     8.1 |   4.1  +1.5   0.00 |     3.7
+     800        2.9      1.7         3.5     4.3 |   4.0  +1.4   0.01 |     3.4
+    1000        2.9      1.6         3.3     3.7 |   3.8  +1.3   0.01 |     3.2
+    1200        2.9      1.4         3.2     3.0 |   3.6  +1.3   0.00 |     3.0
+    1400        2.8      1.5         3.1     2.8 |   3.4  +1.3  -0.00 |     3.0
+    1600        2.9      1.4         3.1     2.8 |   3.3  +1.3  -0.00 |     2.9
+    1800        2.8      1.5         3.1     3.0 |   3.3  +1.3  -0.00 |     2.9
+    2000        2.9      1.5         3.1     3.0 |   3.2  +1.3   0.00 |     2.9
+    2200        2.9      1.4         3.1     2.8 |   3.2  +1.3  -0.00 |     2.9
+    2400        2.9      1.5         2.9     3.2 |   3.2  +1.4   0.00 |     2.8
+    2600        2.9      1.5         3.1     2.9 |   3.2  +1.4  -0.00 |     2.8
+    2800        3.0      1.4         3.0     2.7 |   3.1  +1.4  -0.00 |     3.0
+  FIRST z>3 latency: hip_roll=100ms  ankle=40ms  hip_pitch=80ms  knee=60ms
+  tilt at those instants: ankle:3.8deg  knee:4.0deg  hip_pitch:4.1deg  hip_yaw:4.1deg  hip_roll:4.3deg
+  peak tilt 4.4 deg at +160 ms; kick velocity decays to half at +0 ms
+  STEP-OUT: envs lifting a foot >=60ms during response: 221/256 | stance width base=37.3cm max-during=44.1cm (delta +6.7cm)
+    fallers: 1 (lifted: 1) | survivors: 255 (lifted: 220)
+    verdict: STEPPING response present
+  BRACE: load asym toward downwind foot (baseline -0.05; +1.0 = full correct transfer)
+    +100ms:+0.03  +200ms:+0.08  +400ms:-0.12  +800ms:-0.07
+    asym@200ms — survivors: +0.09  fallers: -1.00
+  LEAN: upwind CoM offset (baseline -0.1cm; survivors lean INTO the push)
+    +100ms:-3.5cm  +200ms:-2.2cm  +400ms:+0.6cm  +800ms:+0.8cm
+    lean@200ms — survivors: -2.5cm  fallers: +68.0cm
+
+CMP_NOBURST: 512 envs x 1200 steps [deterministic]
+  death-step histogram        0-50  50-100  100-150  150-300  300-600  600-end  999-end
+  time_out         n= 512      0      0      0      0      0      0    512   median_step=1000  mean_height_before=1.01 m
+  total episode endings observed: 512
+  t=0 cohort settle (base z): step: mean / p50 / p5   [kill line 0.55]
+    step  1: 1.097 / 1.096 / 1.053
+    step  3: 1.081 / 1.080 / 1.037
+    step  6: 1.031 / 1.025 / 1.006
+    step 10: 1.006 / 1.006 / 1.000
+    step 15: 1.006 / 1.005 / 0.999
+    step 20: 1.003 / 1.003 / 0.995
+    step 30: 1.000 / 1.000 / 0.993
+  DOOM-LOOP check (early bh deaths per env): envs with 0: 512, 1-2: 0, 3-9: 0, 10+: 0, max 0
+  early bh deaths by command: STANDING 0  WALKING 0
+  MID-RUN respawn settle (base z): step: mean / p5
+    step  1: 1.098 / 1.052
+    step  3: 1.082 / 1.036
+    step  6: 1.031 / 1.005
+    step 10: 1.005 / 0.999
+    step 15: 1.005 / 0.998
+    step 20: 1.003 / 0.994
+    step 30: 1.000 / 0.993
+
+CMP_STAND: 64 envs, 12s quiet stand (no pushes)
+  stance width: mean=40.6 cm  p5=32.0  p95=48.1   (lineage-1 stand ~40 cm; hips are ~18 cm apart)
+  base height: mean=1.005 m (healthy ~1.01; kill line 0.55)
+  tilt: pitch mean=+3.0 p95=8.7 deg | roll mean=+1.3 p95=2.1 deg
+  body gyro |w|: mean=0.12 rad/s (rig-quiet ~0.1-0.3)
+  both-feet-down: 100%   foot lifts/min: 3
+  net drift over 12s: mean=2.7 cm  max=12.6 cm
+  HIP-ROLL torque |tau|: mean=2.7 Nm  p95=6.4  max=16.5   (continuous rating 5.0; A-frame brace signature ~15-20 sustained)
+  hip-roll |action|: mean=0.21 (deadband-relevant; brace-era railed ~2.0)
+  TIMECOURSE — height at end of entry (post-corridor): 1.00 m; after ZERO-cmd switch:
+    +0.5s:1.01  +1s:1.01  +2s:1.00  +3s:1.00  +4s:1.00  +6s:1.01  +8s:1.01  +10s:1.01  +12s:1.01
+
+CMP_WALK     [gains=nominal] vx=0.243/0.3 (81%)  tilt mean=2.2 p95(max)=6.6 max=7.3  alive=32/32 (fell-in-window=0) [stats = alive envs only]
+    T-V saturation%: left_ankle_02=34  right_ankle_02=27  right_hip_roll_04=9  right_knee_04=3  left_knee_04=2  left_hip_roll_04=1  right_hip_pitch_04=0  left_hip_yaw_03=0  right_hip_yaw_03=0  left_hip_pitch_04=0
+    sat split mot/brk/stall %: left_ankle_02=25/7/2  right_ankle_02=15/10/1  right_hip_roll_04=5/1/2  right_knee_04=2/1/0  left_knee_04=2/0/0
+    qd tick-flip%: left_hip_pitch_04=14  right_hip_pitch_04=12  left_hip_roll_04=22  right_hip_roll_04=21  left_hip_yaw_03=42  right_hip_yaw_03=34  left_knee_04=17  right_knee_04=15  left_ankle_02=21  right_ankle_02=19
+    contact: flicker=3.8 trans/s/foot  stance-duty=83%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=3.9(4.9)  right_hip_pitch_04=4.1(5.2)  left_hip_roll_04=5.3(6.5)  right_hip_roll_04=8.5(9.9)  left_hip_yaw_03=1.1(1.5)  right_hip_yaw_03=1.2(1.5)  left_knee_04=3.9(5.8)  right_knee_04=4.5(6.4)  left_ankle_02=5.8(6.9)  right_ankle_02=5.3(6.4)
+BATTERY_DONE

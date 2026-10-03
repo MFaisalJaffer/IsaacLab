@@ -1,0 +1,24 @@
+{
+ "checkpoint": "logs/autopilot/tm_v2_400.pt",
+ "num_envs": 16,
+ "seconds": 8.0,
+ "cycles": {
+  "forward": {
+   "episodes": 17,
+   "falls": 1,
+   "drift_ends": 0,
+   "survival": 0.9411764705882353,
+   "rmse_deg": 6.799586296081543,
+   "cmd": [
+    0.405,
+    0.0,
+    0.0
+   ],
+   "achieved": [
+    0.382,
+    -0.001,
+    -0.012
+   ]
+  }
+ }
+}

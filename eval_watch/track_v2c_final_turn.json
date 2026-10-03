@@ -1,0 +1,88 @@
+{
+ "checkpoint": "archive_anchors/track_v2c_final.pt",
+ "num_envs": 128,
+ "seconds": 20.0,
+ "dr": true,
+ "stochastic": false,
+ "survival_frac": 0.90625,
+ "first_fall_cause_counts": {
+  "time_out": 0,
+  "base_contact": 0,
+  "bad_orientation": 9,
+  "base_height": 5
+ },
+ "all_episode_end_counts": {
+  "time_out": 0,
+  "base_contact": 0,
+  "bad_orientation": 9,
+  "base_height": 5
+ },
+ "fall_time_s_percentiles_10_25_50_75_90": [
+  1.486,
+  1.7349999999999999,
+  2.04,
+  3.17,
+  3.7280000000000006
+ ],
+ "fall_time_s_median": 2.04,
+ "rmse_deg": {
+  "dof_left_hip_pitch_04": 1.7723803520202637,
+  "dof_right_hip_pitch_04": 1.9841117858886719,
+  "dof_left_hip_roll_04": 2.3117599487304688,
+  "dof_right_hip_roll_04": 2.0285425186157227,
+  "dof_left_hip_yaw_03": 1.8190526962280273,
+  "dof_right_hip_yaw_03": 2.9363906383514404,
+  "dof_left_knee_04": 4.1905436515808105,
+  "dof_right_knee_04": 4.234055042266846,
+  "dof_left_ankle_02": 4.412664413452148,
+  "dof_right_ankle_02": 4.308465957641602
+ },
+ "rmse_all_deg": 3.193632125854492,
+ "speed_mps": {
+  "mean": 0.4088735580444336,
+  "lateral_abs": 0.12130890041589737,
+  "cmd": 0.4055926644594204
+ },
+ "yaw_rate_abs": 0.2789559066295624,
+ "yaw": {
+  "cmd_mean": 0.30000001192092896,
+  "achieved_mean_signed": 0.18248975276947021,
+  "tracking_err_mean": 0.11751025915145874
+ },
+ "cmd_override": "0.3:0:0.3",
+ "tilt_deg_mean": 2.5555307865142822,
+ "stance_width_cm": {
+  "median": 30.253279209136963,
+  "p90": 32.45823681354523
+ },
+ "clearance_cm": 11.555647850036621,
+ "stride_period_s": {
+  "median": 1.06,
+  "ref": 1.06,
+  "n": 1848
+ },
+ "torque_rms_over_continuous": {
+  "dof_left_hip_pitch_04": 0.8732573191324869,
+  "dof_right_hip_pitch_04": 0.8826162338256835,
+  "dof_left_hip_roll_04": 0.914503542582194,
+  "dof_right_hip_roll_04": 0.9530428568522136,
+  "dof_left_hip_yaw_03": 0.29081339836120607,
+  "dof_right_hip_yaw_03": 0.2714892148971558,
+  "dof_left_knee_04": 0.6830821355183919,
+  "dof_right_knee_04": 0.7397076924641927,
+  "dof_left_ankle_02": 1.1020233154296875,
+  "dof_right_ankle_02": 1.1786574363708495
+ },
+ "torque_peak_nm": {
+  "dof_left_hip_pitch_04": 22.0,
+  "dof_right_hip_pitch_04": 22.0,
+  "dof_left_hip_roll_04": 22.0,
+  "dof_right_hip_roll_04": 22.0,
+  "dof_left_hip_yaw_03": 11.0,
+  "dof_right_hip_yaw_03": 11.0,
+  "dof_left_knee_04": 22.0,
+  "dof_right_knee_04": 22.0,
+  "dof_left_ankle_02": 21.26466178894043,
+  "dof_right_ankle_02": 25.03023338317871
+ }
+}

@@ -1,0 +1,27 @@
+{
+ "checkpoint": "archive_anchors/trackclip_v7_best_model_2999.pt",
+ "num_envs": 16,
+ "seconds": 10.0,
+ "labels": {
+  "side_right": {
+   "steps": 8000,
+   "episodes_ended": 32,
+   "fell": 1,
+   "fall_frac_of_ends": 0.03125,
+   "rmse_deg": 9.1249361038208,
+   "cmd_mean": [
+    0.082,
+    -0.161,
+    -0.01
+   ],
+   "achieved_mean": [
+    0.005,
+    -0.017,
+    -0.01
+   ],
+   "fwd_err": 0.11667466908693314,
+   "lat_err": 0.1546182483434677,
+   "yaw_err": 0.30692973732948303
+  }
+ }
+}

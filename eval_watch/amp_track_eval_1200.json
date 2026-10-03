@@ -1,0 +1,82 @@
+{
+ "checkpoint": "logs/rsl_rl/kbot_legs_track/2026-09-29_20-53-17/model_1200.pt",
+ "num_envs": 128,
+ "seconds": 20.0,
+ "dr": true,
+ "stochastic": false,
+ "survival_frac": 0.953125,
+ "first_fall_cause_counts": {
+  "time_out": 0,
+  "base_contact": 0,
+  "bad_orientation": 4,
+  "base_height": 3
+ },
+ "all_episode_end_counts": {
+  "time_out": 0,
+  "base_contact": 0,
+  "bad_orientation": 4,
+  "base_height": 3
+ },
+ "fall_time_s_percentiles_10_25_50_75_90": [
+  1.78,
+  2.08,
+  2.75,
+  6.96,
+  10.08
+ ],
+ "fall_time_s_median": 2.75,
+ "rmse_deg": {
+  "dof_left_hip_pitch_04": 2.147815227508545,
+  "dof_right_hip_pitch_04": 2.0742380619049072,
+  "dof_left_hip_roll_04": 1.4151736497879028,
+  "dof_right_hip_roll_04": 1.5183144807815552,
+  "dof_left_hip_yaw_03": 1.0326489210128784,
+  "dof_right_hip_yaw_03": 0.9562532305717468,
+  "dof_left_knee_04": 3.5342705249786377,
+  "dof_right_knee_04": 3.3256232738494873,
+  "dof_left_ankle_02": 2.4619908332824707,
+  "dof_right_ankle_02": 2.5995476245880127
+ },
+ "rmse_all_deg": 2.271023750305176,
+ "speed_mps": {
+  "mean": 0.4706868529319763,
+  "lateral_abs": 0.20549486577510834,
+  "cmd": 0.4055926644594204
+ },
+ "yaw_rate_abs": 0.32154181599617004,
+ "tilt_deg_mean": 5.271425724029541,
+ "stance_width_cm": {
+  "median": 30.66704273223877,
+  "p90": 32.775714099407196
+ },
+ "clearance_cm": 11.31925880908966,
+ "stride_period_s": {
+  "median": 1.06,
+  "ref": 1.06,
+  "n": 1945
+ },
+ "torque_rms_over_continuous": {
+  "dof_left_hip_pitch_04": 1.1999439239501952,
+  "dof_right_hip_pitch_04": 1.171501922607422,
+  "dof_left_hip_roll_04": 1.1190670013427735,
+  "dof_right_hip_roll_04": 1.1221669514973958,
+  "dof_left_hip_yaw_03": 0.3726897954940796,
+  "dof_right_hip_yaw_03": 0.34586706161499026,
+  "dof_left_knee_04": 0.8614132563273112,
+  "dof_right_knee_04": 0.8429432551066081,
+  "dof_left_ankle_02": 0.9874323844909668,
+  "dof_right_ankle_02": 0.98251953125
+ },
+ "torque_peak_nm": {
+  "dof_left_hip_pitch_04": 22.0,
+  "dof_right_hip_pitch_04": 22.0,
+  "dof_left_hip_roll_04": 22.0,
+  "dof_right_hip_roll_04": 22.0,
+  "dof_left_hip_yaw_03": 11.0,
+  "dof_right_hip_yaw_03": 11.0,
+  "dof_left_knee_04": 22.0,
+  "dof_right_knee_04": 22.0,
+  "dof_left_ankle_02": 23.543987274169922,
+  "dof_right_ankle_02": 19.475317001342773
+ }
+}

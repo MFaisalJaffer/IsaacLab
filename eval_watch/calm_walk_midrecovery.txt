@@ -1,0 +1,11 @@
+=== MID-RECOVERY probe: model_208800.pt (cadence 1.15 + headroom -4.0/0.88, ~+10k) ===
+midrec_vx0.30 [gains=nominal] vx=0.092/0.3 (31%)  tilt mean=12.2 p95(max)=21.5 max=22.3  fallen=2/32
+    T-V saturation%: left_ankle_02=42  right_ankle_02=37  right_hip_pitch_04=27  left_hip_pitch_04=15  right_knee_04=14  left_hip_roll_04=4  right_hip_roll_04=3  left_knee_04=2  left_hip_yaw_03=1  right_hip_yaw_03=1
+    sat split mot/brk/stall %: left_ankle_02=24/11/8  right_ankle_02=20/11/6  right_hip_pitch_04=18/3/6  left_hip_pitch_04=11/2/3  right_knee_04=12/1/0  left_hip_roll_04=2/1/1  right_hip_roll_04=2/0/1  left_knee_04=2/0/0  left_hip_yaw_03=1/0/0
+    qd tick-flip%: left_hip_pitch_04=33  right_hip_pitch_04=27  left_hip_roll_04=37  right_hip_roll_04=40  left_hip_yaw_03=47  right_hip_yaw_03=45  left_knee_04=41  right_knee_04=40  left_ankle_02=37  right_ankle_02=31
+    contact: flicker=5.5 trans/s/foot  stance-duty=87%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=9.2(10.8)  right_hip_pitch_04=10.7(12.3)  left_hip_roll_04=6.5(8.0)  right_hip_roll_04=5.6(7.1)  left_hip_yaw_03=2.0(2.7)  right_hip_yaw_03=2.2(2.8)  left_knee_04=2.5(4.4)  right_knee_04=4.1(7.5)  left_ankle_02=6.2(7.1)  right_ankle_02=6.0(7.1)
+MIDREC_vx0.30: vx=0.3  (400 steps x 32 envs)  feet_phase target this build = 0.06 m
+  L_foot: swing-apex(mean top10%)=1.1 cm  p50=0.0  p90=0.4  p99=1.9  max=5.3 cm  |  off-ground=1% of time
+  R_foot: swing-apex(mean top10%)=1.6 cm  p50=0.0  p90=0.9  p99=2.4  max=10.4 cm  |  off-ground=2% of time
+  contact-sensor swing%: L=4  R=10  (stance-duty L=96%  R=90%)

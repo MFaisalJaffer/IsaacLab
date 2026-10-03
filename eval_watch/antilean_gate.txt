@@ -1,0 +1,25 @@
+=== ANTI-LEAN GATE @model_36200.pt (1.0Hz trained, flat_orientation -10) ===
+algate_vx0.15: cmd_vx=0.15  (400 steps x 32 envs)
+  PITCH (fwd+ / back-) deg: first-qtr mean=+9.8  last-qtr mean=+9.6   p50=+9.7  p95=15.8
+  ROLL  (sideways)    deg: first-qtr mean=+0.3  last-qtr mean=+0.3   |p95|=8.2
+  -> steady lean if first~last; GROWING lean = falling
+  base height m: start=1.01  end=1.01   (spawn ~0.72; <0.45 = collapsed)
+  envs still standing tall at end: 32/32
+  forward speed m/s: first-qtr=0.186  last-qtr=0.187   (commanded 0.15)
+  stance-duty: 59%   both-feet-down: 20%   airborne(both up): 2%
+  tilt>25deg fraction of steps: 1%   | tilt>45: 0%
+algate_vx0.30: cmd_vx=0.3  (400 steps x 32 envs)
+  PITCH (fwd+ / back-) deg: first-qtr mean=+10.0  last-qtr mean=+10.3   p50=+10.3  p95=16.3
+  ROLL  (sideways)    deg: first-qtr mean=-0.6  last-qtr mean=-0.4   |p95|=8.2
+  -> steady lean if first~last; GROWING lean = falling
+  base height m: start=1.01  end=1.01   (spawn ~0.72; <0.45 = collapsed)
+  envs still standing tall at end: 32/32
+  forward speed m/s: first-qtr=0.221  last-qtr=0.227   (commanded 0.3)
+  stance-duty: 59%   both-feet-down: 19%   airborne(both up): 2%
+  tilt>25deg fraction of steps: 1%   | tilt>45: 0%
+algate_tq_v0.15 [gains=nominal] vx=0.150/0.15 (100%)  tilt mean=10.5 p95(max)=25.5 max=26.4  alive=31/32 (fell-in-window=1) [stats = alive envs only]
+    T-V saturation%: right_hip_roll_04=94  left_hip_roll_04=94  left_ankle_02=90  right_ankle_02=90  right_hip_pitch_04=90  left_hip_pitch_04=89  left_hip_yaw_03=36  right_knee_04=34  right_hip_yaw_03=30  left_knee_04=26
+    sat split mot/brk/stall %: right_hip_roll_04=52/11/30  left_hip_roll_04=48/11/34  left_ankle_02=42/19/29  right_ankle_02=45/19/26  right_hip_pitch_04=61/19/10  left_hip_pitch_04=57/20/12  left_hip_yaw_03=30/4/3  right_knee_04=24/8/2  right_hip_yaw_03=25/2/3  left_knee_04=21/4/1
+    qd tick-flip%: left_hip_pitch_04=34  right_hip_pitch_04=34  left_hip_roll_04=35  right_hip_roll_04=35  left_hip_yaw_03=52  right_hip_yaw_03=53  left_knee_04=50  right_knee_04=47  left_ankle_02=39  right_ankle_02=40
+    contact: flicker=5.6 trans/s/foot  stance-duty=60%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=17.5(18.1)  right_hip_pitch_04=17.5(18.0)  left_hip_roll_04=18.2(18.5)  right_hip_roll_04=18.1(18.5)  left_hip_yaw_03=5.5(6.5)  right_hip_yaw_03=4.8(5.9)  left_knee_04=7.2(10.3)  right_knee_04=8.7(12.0)  left_ankle_02=9.1(9.4)  right_ankle_02=9.1(9.4)

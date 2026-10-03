@@ -1,0 +1,23 @@
+==== STRAIGHT-COMMAND EVAL (vx=0.60, wz=0, 300 steps) ====
+per-env  yaw_drift(deg)   mean_yaw_rate(rad/s)   disp_x(m)  disp_y(m)
+  env 0       -3.7          -0.012                +3.21     -1.10
+  env 1      +15.4          +0.052                -1.75     -3.48
+  env 2      -27.4          -0.077                -1.20     +3.03
+  env 3       -7.5          -0.022                -1.60     -3.00
+  env 4      +40.8          +0.136                -2.30     -2.36
+  env 5       -1.9          -0.003                -1.98     +2.61
+  env 6      +27.2          +0.088                -3.02     -1.06
+  env 7      +30.6          +0.076                +1.96     -2.87
+  env 8      +26.5          +0.082                +2.88     +1.89
+  env 9       +0.2          -0.006                -0.49     +3.57
+  env10       +8.1          +0.009                -3.77     -1.01
+  env11       -7.0          -0.010                -1.29     +2.67
+  env12      +21.8          +0.074                -2.34     -2.08
+  env13       +9.8          +0.026                +2.74     +1.96
+  env14      +30.4          +0.101                -0.85     -2.97
+  env15      -14.3          -0.038                +3.13     -1.54
+SUMMARY:
+  mean |yaw drift|  = 17.0 deg   (~0 -> straight; large -> circles)
+  mean yaw rate     = +0.030 rad/s   (|mean| large -> systematic turn)
+  yaw-rate signs: 7 envs turn +CCW, 1 turn -CW, 8 ~straight (of 16)
+  mean disp        = (-0.42, -0.36) m  (want disp_x>>|disp_y|)

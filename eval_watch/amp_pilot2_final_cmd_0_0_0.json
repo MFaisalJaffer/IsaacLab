@@ -1,0 +1,17 @@
+{
+ "checkpoint": "archive_anchors/amp_pilot2_final.pt",
+ "cmd": "0:0:0",
+ "standing": {
+  "envs": 256,
+  "survival": 0.9453125,
+  "tilt_deg": {
+   "mean": 1.7304843664169312,
+   "p90": 3.087412214279175
+  },
+  "foot_lift_max_cm": 8.219128847122192,
+  "foot_travel_mps_mean": 0.07803138345479965,
+  "width_cm": 39.86514210700989,
+  "base_speed_abs_mps": 0.0689404234290123
+ },
+ "walking_envs": 0
+}

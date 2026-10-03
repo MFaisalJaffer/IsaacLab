@@ -1,0 +1,14 @@
+/kbotv2p0_nohands/KB_D_501L_L_LEG_FOOT/collisions/KB_D_501L_L_LEG_FOOT_collision/node_STL_BINARY_/mesh
+  x-min=-0.1346 1mm-verts=11 xspan=[-0.135,-0.134] | clearance(mm) along x: -0.12:0 +0.00:130 +0.03:160 +0.06:193 +0.09:210
+  x-max=+0.0770 1mm-verts=16 xspan=[+0.077,+0.077] | clearance(mm) along x: -0.12:185 +0.00:75 +0.03:40 +0.06:2 +0.09:0
+  y-min=-0.0217 1mm-verts=30 xspan=[+0.025,+0.032] | clearance(mm) along x: -0.12:45 +0.00:9 +0.03:0 +0.06:48 +0.09:51
+  y-max=+0.0468 1mm-verts=70 xspan=[-0.134,+0.077] | clearance(mm) along x: -0.12:0 +0.00:59 +0.03:65 +0.06:0 +0.09:1
+  z-min=-0.0220 1mm-verts=23 xspan=[-0.108,+0.063] | clearance(mm) along x: -0.12:0 +0.00:22 +0.03:46 +0.06:0 +0.09:10
+  z-max=+0.0500 1mm-verts=24 xspan=[-0.115,+0.063] | clearance(mm) along x: -0.12:0 +0.00:48 +0.03:7 +0.06:0 +0.09:14
+/kbotv2p0_nohands/KB_D_501R_R_LEG_FOOT/collisions/KB_D_501R_R_LEG_FOOT_collision/node_STL_BINARY_/mesh
+  x-min=-0.1346 1mm-verts=10 xspan=[-0.135,-0.135] | clearance(mm) along x: -0.12:0 +0.00:130 +0.03:160 +0.06:193 +0.09:210
+  x-max=+0.0768 1mm-verts=20 xspan=[+0.076,+0.077] | clearance(mm) along x: -0.12:185 +0.00:75 +0.03:40 +0.06:3 +0.09:0
+  y-min=-0.0217 1mm-verts=30 xspan=[+0.025,+0.032] | clearance(mm) along x: -0.12:45 +0.00:9 +0.03:0 +0.06:48 +0.09:51
+  y-max=+0.0468 1mm-verts=69 xspan=[-0.135,+0.077] | clearance(mm) along x: -0.12:0 +0.00:59 +0.03:65 +0.06:0 +0.09:1
+  z-min=-0.0500 1mm-verts=25 xspan=[-0.115,+0.063] | clearance(mm) along x: -0.12:0 +0.00:48 +0.03:7 +0.06:0 +0.09:11
+  z-max=+0.0220 1mm-verts=23 xspan=[-0.108,+0.063] | clearance(mm) along x: -0.12:0 +0.00:22 +0.03:46 +0.06:0 +0.09:12

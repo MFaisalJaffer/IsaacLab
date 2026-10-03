@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>K-Bot legs — Isaac run</title>
+  <style>
+    body { background:#111; color:#ddd; font-family:monospace; margin:0; padding:18px; }
+    h1 { font-size:18px; color:#8cf; text-align:center; margin:0 0 6px; }
+    .sub { color:#888; font-size:12px; text-align:center; margin-bottom:12px; }
+    .bar { text-align:center; margin-bottom:14px; }
+    #render { font-family:monospace; font-size:14px; color:#111; background:#8cf; border:none;
+              border-radius:6px; padding:8px 20px; cursor:pointer; }
+    #render:disabled { background:#556; color:#99a; cursor:default; }
+    #render:hover:enabled { background:#adf; }
+    #exp { font-family:monospace; font-size:13px; color:#ddd; background:#222; border:1px solid #446;
+           border-radius:6px; padding:7px 10px; margin-right:8px; }
+    #rstate { color:#9c9; font-size:12px; margin-top:8px; }
+    .cols { display:flex; gap:14px; max-width:1420px; margin:0 auto; flex-wrap:wrap; }
+    .wrap { flex:1 1 460px; background:#181818; border:1px solid #333; border-radius:8px; padding:14px; }
+    .head { font-size:14px; text-align:center; margin-bottom:4px; }
+    .terr .head { color:#c9a; }
+    .flat .head { color:#9cc; }
+    .note { color:#666; font-size:11px; text-align:center; margin-bottom:8px; }
+    .status { color:#9c9; font-size:13px; text-align:center; margin-bottom:10px; }
+    .label { color:#777; font-size:12px; margin:12px 0 4px; }
+    img { width:100%; border:1px solid #333; background:#000; display:block; }
+  </style>
+</head>
+<body>
+  <h1>K-Bot legs — Isaac Lab</h1>
+  <div class="sub">on-demand render (zero GPU cost until you click) · logged to TensorBoard (policy/rollout) · renders under the trainer's own env vars</div>
+  <div class="bar">
+    <select id="exp">
+      <option value="auto" selected>auto — whatever is training now</option>
+      <option value="rough">lineage (kbot_legs_rough)</option>
+      <option value="amp">AMP pilot (kbot_legs_amp)</option>
+      <option value="track">tracking pilot (kbot_legs_track)</option>
+      <option value="clip">clip tracker — LAFAN1 motions (kbot_legs_trackclip)</option>
+      <option value="multi">multi-cycle tracker — forward/back/side/pivot (kbot_legs_trackmulti)</option>
+    </select>
+    <button id="render" onclick="requestRender()">⟳ Render newest checkpoint</button>
+    <div id="rstate">…</div>
+  </div>
+  <div class="cols">
+    <div class="wrap terr">
+      <div class="head">CURRENT RENDER</div>
+      <div class="note">newest checkpoint of the selected experiment, same config as its trainer (flat world, ADAPT package)</div>
+      <div class="status" id="stat_dr">loading…</div>
+      <div class="label">animated</div><img id="gif_dr">
+      <div class="label">filmstrip (left→right)</div><img id="strip_dr">
+    </div>
+    <div class="wrap flat">
+      <div class="head">PREVIOUS RENDER</div>
+      <div class="note">what was on the left before the last click — compare two checkpoints or two experiments</div>
+      <div class="status" id="stat_flat">loading…</div>
+      <div class="label">animated</div><img id="gif_flat">
+      <div class="label">filmstrip (left→right)</div><img id="strip_flat">
+    </div>
+  </div>
+  <script>
+    function requestRender() {
+      const b = document.getElementById('render');
+      b.disabled = true; b.textContent = '⟳ requested…';
+      const exp = document.getElementById('exp').value;
+      fetch('/request_render?exp=' + exp + '&t=' + Date.now())
+        .then(() => { document.getElementById('rstate').textContent = 'render requested — starting within ~10 s…'; })
+        .catch(() => { document.getElementById('rstate').textContent = 'request failed (server?)'; b.disabled = false; b.textContent = '⟳ Render newest checkpoint'; });
+    }
+    function poll() {
+      const t = Date.now();
+      gif_dr.src     = 'dr_latest.gif?t=' + t;
+      strip_dr.src   = 'dr_filmstrip.png?t=' + t;
+      gif_flat.src   = 'prev_latest.gif?t=' + t;
+      strip_flat.src = 'prev_filmstrip.png?t=' + t;
+      fetch('dr_status.txt?t=' + t).then(r => r.text()).then(s => stat_dr.textContent = s).catch(() => {});
+      fetch('prev_status.txt?t=' + t).then(r => r.text()).then(s => stat_flat.textContent = s).catch(() => {});
+      fetch('render_state.txt?t=' + t).then(r => r.text()).then(s => {
+        const st = s.trim();
+        document.getElementById('rstate').textContent = st;
+        const b = document.getElementById('render');
+        const rendering = st.startsWith('rendering');
+        b.disabled = rendering;
+        b.textContent = rendering ? '⟳ rendering…' : '⟳ Render newest checkpoint';
+      }).catch(() => {});
+    }
+    poll(); setInterval(poll, 5000);
+  </script>
+</body>
+</html>

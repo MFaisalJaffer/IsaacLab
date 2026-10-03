@@ -1,0 +1,13 @@
+=== ATTEMPT 3 walking-with-lean, alive-mask FIXED (height+57deg) ===
+a3fix_vx0.15 [gains=nominal] vx=0.168/0.15 (112%)  tilt mean=38.1 p95(max)=53.6 max=54.8  alive=32/32 (fell-in-window=0) [stats = alive envs only]
+    T-V saturation%: right_hip_roll_04=95  left_hip_roll_04=95  left_ankle_02=91  left_hip_pitch_04=88  right_hip_pitch_04=88  right_ankle_02=87  left_knee_04=38  right_knee_04=38  right_hip_yaw_03=30  left_hip_yaw_03=30
+    sat split mot/brk/stall %: right_hip_roll_04=48/13/33  left_hip_roll_04=43/13/39  left_ankle_02=35/17/39  left_hip_pitch_04=53/25/10  right_hip_pitch_04=58/20/10  right_ankle_02=40/18/29  left_knee_04=25/10/3  right_knee_04=27/8/2  right_hip_yaw_03=25/2/3  left_hip_yaw_03=25/2/2
+    qd tick-flip%: left_hip_pitch_04=29  right_hip_pitch_04=32  left_hip_roll_04=39  right_hip_roll_04=35  left_hip_yaw_03=52  right_hip_yaw_03=51  left_knee_04=49  right_knee_04=51  left_ankle_02=41  right_ankle_02=36
+    contact: flicker=4.5 trans/s/foot  stance-duty=55%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=17.7(18.2)  right_hip_pitch_04=17.3(17.9)  left_hip_roll_04=18.4(18.8)  right_hip_roll_04=18.3(18.6)  left_hip_yaw_03=4.7(5.9)  right_hip_yaw_03=4.8(5.9)  left_knee_04=9.2(12.7)  right_knee_04=9.2(12.4)  left_ankle_02=9.2(9.4)  right_ankle_02=8.9(9.2)
+a3fix_vx0.30 [gains=nominal] vx=0.224/0.3 (75%)  tilt mean=38.0 p95(max)=53.0 max=55.5  alive=31/32 (fell-in-window=1) [stats = alive envs only]
+    T-V saturation%: left_hip_roll_04=94  right_hip_roll_04=94  left_ankle_02=90  right_hip_pitch_04=89  left_hip_pitch_04=89  right_ankle_02=87  right_knee_04=41  left_knee_04=36  left_hip_yaw_03=34  right_hip_yaw_03=32
+    sat split mot/brk/stall %: left_hip_roll_04=47/13/34  right_hip_roll_04=48/13/34  left_ankle_02=35/18/37  right_hip_pitch_04=59/21/10  left_hip_pitch_04=56/23/9  right_ankle_02=39/19/29  right_knee_04=28/10/3  left_knee_04=28/7/2  left_hip_yaw_03=28/3/3  right_hip_yaw_03=27/3/3
+    qd tick-flip%: left_hip_pitch_04=29  right_hip_pitch_04=28  left_hip_roll_04=39  right_hip_roll_04=37  left_hip_yaw_03=52  right_hip_yaw_03=49  left_knee_04=53  right_knee_04=50  left_ankle_02=40  right_ankle_02=37
+    contact: flicker=4.9 trans/s/foot  stance-duty=54%  (MuJoCo ref: smooth 0.52s stances, duty 78%; Isaac@200Hz was ~5.8)
+    |torque| mean(rms) Nm: left_hip_pitch_04=17.6(18.2)  right_hip_pitch_04=17.6(18.1)  left_hip_roll_04=18.4(18.7)  right_hip_roll_04=18.3(18.6)  left_hip_yaw_03=5.3(6.4)  right_hip_yaw_03=5.1(6.2)  left_knee_04=8.7(12.1)  right_knee_04=9.8(13.1)  left_ankle_02=9.2(9.4)  right_ankle_02=8.9(9.3)

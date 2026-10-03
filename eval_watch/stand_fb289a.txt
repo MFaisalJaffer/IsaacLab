@@ -1,0 +1,20 @@
+=== stand-analysis fb289a ckpt=/tmp/claude-1000/-home-faisal/a126e81c-138e-4fe7-955f-b72a35b2d9b3/scratchpad/model_289400.pt envs=64 ===
+[A stand-from-init] upright whole window: 57/64 envs
+[A stand-from-init] both-feet-down: 96%   window 27s x 57 envs
+[A stand-from-init] lift events/env/min:  KB_D_501L_L_LEG_FOOT: 29.7   KB_D_501R_R_LEG_FOOT: 28.3   (L/R ratio 1.05)
+[A stand-from-init] airborne %:  KB_D_501L_L_LEG_FOOT: 2.0%   KB_D_501R_R_LEG_FOOT: 1.6%
+[A stand-from-init] mean |joint_vel| rad/s: 0.09  max joint: 0.20
+[A stand-from-init] STILLNESS |body gyro| rad/s: mean 0.12  p95 0.36  max 2.55
+[A stand-from-init] STILLNESS tilt deg: mean 5.2  p95 6.6  max 14.0
+[A stand-from-init] lift HEIGHT during no-contact: median 6.9mm  p95 18.2mm  max 42.1mm
+[B] still upright after 10s walk @vx=0.5: 57/64
+[B walk->stop] upright at end: 50/64
+[B walk->stop] last foot-lift after stop cmd (s): median 28.9  p90 29.9
+[B post-settle] upright whole window: 50/64 envs
+[B post-settle] both-feet-down: 96%   window 25s x 50 envs
+[B post-settle] lift events/env/min:  KB_D_501L_L_LEG_FOOT: 30.0   KB_D_501R_R_LEG_FOOT: 27.0   (L/R ratio 1.11)
+[B post-settle] airborne %:  KB_D_501L_L_LEG_FOOT: 2.1%   KB_D_501R_R_LEG_FOOT: 1.6%
+[B post-settle] mean |joint_vel| rad/s: 0.09  max joint: 0.20
+[B post-settle] STILLNESS |body gyro| rad/s: mean 0.12  p95 0.38  max 2.56
+[B post-settle] STILLNESS tilt deg: mean 5.1  p95 6.5  max 10.3
+[B post-settle] lift HEIGHT during no-contact: median 7.3mm  p95 17.7mm  max 32.1mm
