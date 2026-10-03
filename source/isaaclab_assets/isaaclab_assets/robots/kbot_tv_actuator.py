@@ -136,6 +136,18 @@ class TVCurveActuator(DelayedPDActuator):
         self._series_b = float(cfg.series_b)
         self._rotor_pos = None      # lazily initialised to joint_pos
         self._rotor_vel = None
+        # UNANSWERED-COMMAND MODELS (2026-10-03, rig RIG_HW_ENGAGE_FINDINGS.md §4.3). All None = exact legacy
+        # behavior; a DR event (mdp_amp.randomize_unanswered / engage_gain_ramp) sizes and redraws them.
+        #   _gain_scale (N, 1): multiplies the PD torque (= scaling kp and kd together). Engage curriculum:
+        #       weak gains for the first moments after reset, ramping to 1.
+        #   _deadband  (N, J) Nm, rigid joints: output dead band, tau -= clamp(tau, -D, D) — PD torques under
+        #       D do nothing, like a drive that does not break the joint away.
+        #   _rotor_fc  (N, J) Nm, series (ankle) path: Coulomb friction on the ROTOR with a true static
+        #       regime (the friction impulse may stop the rotor within a substep but never reverse it). The rig
+        #       measured motor breakaway at 0.6 / 1.2 Nm, body motion only at ~4 Nm.
+        self._gain_scale = None
+        self._deadband = None
+        self._rotor_fc = None
         self._series_substeps = 8   # 15 Hz mode at 5 ms dt needs substepping
         self._series_dbg = 0        # §6.1: prove the path executes
 
@@ -197,6 +209,8 @@ class TVCurveActuator(DelayedPDActuator):
                 defl_eff = torch.sign(defl) * (defl.abs() - half_play).clamp(min=0.0)
                 tau_s = k_s * defl_eff + self._series_b * (self._rotor_vel - joint_vel)
                 tau_pd = kp * (target - self._rotor_pos) - kd * self._rotor_vel
+                if self._gain_scale is not None:
+                    tau_pd = tau_pd * self._gain_scale
                 # the MOTOR is T-V limited (the spring only transmits what the
                 # rotor can push); previously this branch skipped the clamp too
                 mot = self._tv.compute(self._rotor_vel.abs())
@@ -205,6 +219,10 @@ class TVCurveActuator(DelayedPDActuator):
                 tau_pd = tau_pd.clamp(-lim, lim)
                 # semi-implicit (symplectic) Euler: velocity first, then position
                 self._rotor_vel = self._rotor_vel + sub_dt * (tau_pd - tau_s) / j_m
+                if self._rotor_fc is not None:
+                    # Coulomb friction with stiction: it removes up to sub_dt*Fc/J of speed and cannot reverse
+                    # the rotor, so a drive torque under Fc (net of the spring) leaves the rotor where it is
+                    self._rotor_vel = torch.sign(self._rotor_vel) * (self._rotor_vel.abs() - sub_dt * self._rotor_fc / j_m).clamp(min=0.0)
                 self._rotor_pos = self._rotor_pos + sub_dt * self._rotor_vel
             # the OBSERVATION is the rotor — this is what makes ~72% of body
             # lean invisible to the policy, exactly as on hardware (§6.3)
@@ -259,6 +277,10 @@ class TVCurveActuator(DelayedPDActuator):
         # PD torque (with action delay) from the base class.
         control_action = super().compute(control_action, joint_pos, joint_vel)
         effort = control_action.joint_efforts
+        if self._gain_scale is not None:
+            effort = effort * self._gain_scale
+        if self._deadband is not None:
+            effort = effort - torch.maximum(torch.minimum(effort, self._deadband), -self._deadband)
         # RIG-FITTED JOINT FRICTION (handoff 2026-08-20 §3), their exact law:
         #     tau += -Fc*tanh(qd/0.02) - b*qd
         # BUGFIX 2026-08-21 (ablation on model_39000): Fc was previously fed

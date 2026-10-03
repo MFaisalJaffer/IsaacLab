@@ -1,0 +1,2 @@
+# WALKER v6 pipeline 2026-10-03 14:35 (v5 best + standing load, unanswered commands, weak start, spawn stands, ankle spring 52)
+- 10-03 14:39 WALKER v6 launched: 2000 iterations from archive_anchors/walker_v5_best.pt; on TensorBoard (port 6007) as kbot_legs_amp/2026-10-03_14-35-53_walker_v6 — [amp-env] v6: standing load +-3.0 Nm (pitch and roll, constant per episode); dead band U(0,1.0) Nm, ankle rotor stiction U(0,1.5) Nm; weak start p=0.5: gains x U(0.3,1) ramping over U(0,1.0) s; ankle spring nominal 52.0, band 30.0-120.0 Nm/rad; spawn stands kept with p=1.0

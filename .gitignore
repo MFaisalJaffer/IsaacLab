@@ -89,3 +89,8 @@ eval_watch/__pycache__/
 eval_watch/amp_refs/
 eval_watch/lafan1_g1/
 eval_watch/safe_ckpts/
+eval_watch/SWEEP
+eval_watch/WT
+eval_watch/WT9
+eval_watch/WW
+eval_watch/*.bak_*

@@ -214,3 +214,51 @@ def ref_foot_lift(env: "ManagerBasedRLEnv", lib_file: str, gait_freq: float, rel
     if track_gate_lin > 0.0:
         r = r * _cmd_track_gate(env, asset, command_name, track_gate_lin)
     return r
+
+
+# ---------------------------------------------------------------- walker v6: what the first hardware engage taught (2026-10-03)
+def randomize_unanswered(env: "ManagerBasedRLEnv", env_ids: torch.Tensor, deadband_max: float = 1.0, rotor_fc_max: float = 1.5,
+                         engage_p: float = 0.5, engage_gain_min: float = 0.3, engage_ramp_max: float = 1.0,
+                         asset_cfg: SceneEntityCfg = SceneEntityCfg("robot")) -> None:
+    """Reset event. Puts UNANSWERED COMMANDS in the data (rig RIG_HW_ENGAGE_FINDINGS.md §4.3): on the first live
+    engage the ankles did not answer for 0.4 s and the policy escalated its own commands (ankle action -0.04 ->
+    -1.42) into a violent motion. Per episode:
+      * rigid joints (hips, yaw, knees): output dead band U(0, deadband_max) Nm — small PD torques do nothing;
+      * series-elastic joints (ankles): rotor Coulomb friction with stiction U(0, rotor_fc_max) Nm;
+      * with probability engage_p, a weak start: all gains x U(engage_gain_min, 1), ramping to 1 over
+        U(0, engage_ramp_max) s after the reset (the ramp itself is applied by engage_gain_ramp)."""
+    asset = env.scene[asset_cfg.name]
+    n = len(env_ids)
+    dev = env.device
+    for act in asset.actuators.values():
+        shape = (env.num_envs, len(act.joint_names))
+        if getattr(act, "_series_k", 0.0) > 0.0:
+            if rotor_fc_max > 0.0:
+                if act._rotor_fc is None:
+                    act._rotor_fc = torch.zeros(shape, device=dev)
+                act._rotor_fc[env_ids] = torch.rand(n, shape[1], device=dev) * rotor_fc_max
+        elif deadband_max > 0.0:
+            if act._deadband is None:
+                act._deadband = torch.zeros(shape, device=dev)
+            act._deadband[env_ids] = torch.rand(n, shape[1], device=dev) * deadband_max
+    if engage_p > 0.0:
+        if getattr(env, "_engage_g0", None) is None:
+            env._engage_g0 = torch.ones(env.num_envs, device=dev)
+            env._engage_T = torch.zeros(env.num_envs, device=dev)
+        weak = torch.rand(n, device=dev) < engage_p
+        g0 = engage_gain_min + (1.0 - engage_gain_min) * torch.rand(n, device=dev)
+        env._engage_g0[env_ids] = torch.where(weak, g0, torch.ones_like(g0))
+        env._engage_T[env_ids] = torch.rand(n, device=dev) * engage_ramp_max
+
+
+def engage_gain_ramp(env: "ManagerBasedRLEnv", env_ids: torch.Tensor, asset_cfg: SceneEntityCfg = SceneEntityCfg("robot")) -> None:
+    """Interval event (every step): gain scale g(t) = g0 + (1 - g0) * min(t / T, 1) on every actuator, t = time
+    since the reset. g0 and T come from randomize_unanswered (or from a probe that sets env._engage_g0 / _engage_T)."""
+    g0 = getattr(env, "_engage_g0", None)
+    if g0 is None:
+        return
+    t = env.episode_length_buf.float() * env.step_dt
+    prog = torch.where(env._engage_T > 1.0e-6, (t / env._engage_T.clamp(min=1.0e-6)).clamp(0.0, 1.0), torch.ones_like(t))
+    g = (g0 + (1.0 - g0) * prog).unsqueeze(1)
+    for act in env.scene[asset_cfg.name].actuators.values():
+        act._gain_scale = g

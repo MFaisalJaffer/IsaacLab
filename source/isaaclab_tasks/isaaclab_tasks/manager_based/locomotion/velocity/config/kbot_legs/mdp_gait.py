@@ -809,8 +809,12 @@ def walk_at_spawn(
     env_ids: torch.Tensor,
     command_name: str = "base_velocity",
     spawn_window_steps: int = 10,
+    keep_stand_p: float = 0.0,
 ):
     """STAND IS NEVER ASSIGNED AT SPAWN — only via mid-episode resample.
+    (keep_stand_p > 0, walker v6 2026-10-03: that share of the stands drawn at spawn is KEPT. The real robot
+    is engaged standing at the zero pose from tick 0 — the one start this event removed from the data; a policy
+    that already stands holds a spawn-stand, the from-scratch argument below no longer applies to it.)
 
     DEATH-FORENSICS PART 2 (2026-08-12): even with the base_height grace, the
     stand-commanded spawn is a 100% deterministic collapse-to-floor (0.27-0.33
@@ -833,6 +837,18 @@ def walk_at_spawn(
         return
     stand = term.is_standing_env[ids]
     s = ids[stand]
+    if keep_stand_p > 0.0 and len(s) > 0:
+        # decide ONCE per episode (this event ticks several times inside the spawn window)
+        keep = getattr(env, "_spawn_stand_keep", None)
+        if keep is None:
+            keep = torch.zeros(env.num_envs, dtype=torch.bool, device=env.device)
+            env._spawn_stand_keep = keep
+            env._spawn_stand_ep = torch.full((env.num_envs,), -1, dtype=torch.long, device=env.device)
+        ep = env.common_step_counter - env.episode_length_buf[s]          # step at which this episode began
+        fresh = env._spawn_stand_ep[s] != ep
+        keep[s[fresh]] = torch.rand(int(fresh.sum()), device=env.device) < keep_stand_p
+        env._spawn_stand_ep[s] = ep
+        s = s[~keep[s]]
     if len(s) == 0:
         return
     r = term.cfg.ranges
@@ -1134,6 +1150,13 @@ class stand_transition_corridor(ManagerTermBase):
         # 3) freshly-drawn stand (mid-episode resample) -> open a corridor
         fresh = flag & ~corridor & (onset[ids] < -1.0e5) & \
                 (env.episode_length_buf[ids] > spawn_window_steps)
+        # walker v6: a stand KEPT at spawn (walk_at_spawn keep_stand_p) is the hardware engage — a stand from
+        # tick 0 under the hard pin, no corridor. The mark is dropped once the env is commanded to walk, so
+        # later stands of the same episode go through the corridor as usual.
+        _keep = getattr(env, "_spawn_stand_keep", None)
+        if _keep is not None:
+            _keep[ids[~flag & ~corridor]] = False
+            fresh = fresh & ~_keep[ids]
         if fresh.any():
             s = ids[fresh]
             term.is_standing_env[s] = False
@@ -1941,6 +1964,15 @@ class sustained_push_bursts(ManagerTermBase):
         self._h_until = torch.zeros(n, device=env.device)
         self._h_next = torch.zeros(n, device=env.device)
         env._tilt_hold_active = torch.zeros(n, dtype=torch.bool, device=env.device)
+        # STANDING LOAD (2026-10-03, rig RIG_HW_ENGAGE_FINDINGS.md): the real robot is NOT balanced at the zero
+        # pose — at home its drives carry ~2.5 Nm at the ankles and 2.3 Nm on the left hip roll (CoM a few cm
+        # off the ankle axis, more weight left). Ours stood balanced, so a small ankle command moved the body at
+        # once; on hardware it first winds the ankle spring against that load, the policy sees no answer and
+        # winds up (first live engage of walker_v5_3200: violent motion, power cut at 0.88 s). A constant base
+        # moment (mx, my), drawn once per episode in U(-standing_moment, +standing_moment) and held for the
+        # whole episode, puts that load in the data. Lives here for the same single-owner reason as the holds.
+        self._standing = torch.zeros(n, 2, device=env.device)
+        self._standing_max = 0.0
         self._rng_ready = False
         # EVENT-GATED RELIEF mask (2026-08-07, stepout_probe.txt): per-env "a
         # burst is on me right now". The stand statue rewards read this to
@@ -1973,6 +2005,11 @@ class sustained_push_bursts(ManagerTermBase):
         self._h_until[env_ids] = 0.0
         self._env._tilt_hold_active[env_ids] = False
         self._env._rehome_until[env_ids] = 0.0
+        if self._standing_max > 0.0:  # a new standing load for the new episode
+            k = self._standing[env_ids].shape[0]
+            self._standing[env_ids] = (2.0 * torch.rand(k, 2, device=self._standing.device) - 1.0) * self._standing_max
+        else:
+            self._standing[env_ids] = 0.0
         # first burst lands 2-6 s into the episode (after settle)
         n = self._next[env_ids].shape[0] if not isinstance(env_ids, slice) else self._next.shape[0]
         self._next[env_ids] = 2.0 + 4.0 * torch.rand(n, device=self._next.device)
@@ -1996,9 +2033,11 @@ class sustained_push_bursts(ManagerTermBase):
         hold_ramp_range: tuple = (0.3, 0.8),
         hold_roll_bias: float = 0.7,
         rehome_grace_s: float = 0.0,
+        standing_moment: float = 0.0,
     ):
         robot = env.scene["robot"]
         now = env.episode_length_buf.float() * env.step_dt      # per-env episode time
+        self._standing_max = float(standing_moment)             # used by reset() for the per-episode draw
         ids = env_ids
         t = now[ids]
         # LINEAGE 10 (2026-09-23): QUIET standing envs get no bursts and no
@@ -2094,6 +2133,15 @@ class sustained_push_bursts(ManagerTermBase):
             self._torque[:, 0, 0] = self._h_target[:, 0] * h_scale
             self._torque[:, 0, 1] = self._h_target[:, 1] * h_scale
             env._tilt_hold_active = self._h_target.abs().sum(dim=1) > 0
+        else:
+            self._torque[:, 0, :2] = 0.0
+        # standing load: constant for the episode, on top of any hold. Probes can pin it per env through
+        # env._standing_moment_override (N, 2).
+        _ov = getattr(env, "_standing_moment_override", None)
+        if _ov is not None:
+            self._torque[:, 0, :2] += _ov
+        elif standing_moment > 0.0:
+            self._torque[:, 0, :2] += self._standing
 
         # derive the wrench: target scaled by ramp progress (instant-on when
         # ramp_range=(0,0) — scale clamps to 1 immediately)

@@ -1,0 +1,1 @@
+stairs 10 cm: crossed | platform 14 cm: crossed | beam 14 cm: crossed

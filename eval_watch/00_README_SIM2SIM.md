@@ -23,6 +23,19 @@ can diff them. This note is the ask; the other files are the detail.
 > bit-exact vs an independent reference, inference 1.9 ms median); all §6 failure modes are hard errors. **Two bundle
 > asks: ship `.pt` (no onnxruntime on the rig) and the meta as `<ckpt>.meta.json`.** Tooling in `rig_walker/`.
 
+> **2026-10-03 — FIRST HARDWARE ENGAGE, ABORTED (violent motion, power cut; no fall).** `RIG_HW_ENGAGE_FINDINGS.md`:
+> root cause = the policy integrates on `last_action` when the plant does not answer; the robot is **not balanced at
+> the zero pose** (ankles ≈2.5 Nm, L hip roll 2.3 Nm preload) and our engage crossfade starved it for 0.4 s. Reproduced
+> in sim from the measured load alone. **Asks: standing-load DR (±3 Nm base moment / CoM offset), series_k 23 → 52,
+> dead-band + weak-gain-start curriculum, run `rig_hw_engage/cf_tracking.py` at export.** Data in `rig_hw_engage/`.
+
+> **2026-10-03 — TRAINING REPLY: `REPLY_HW_ENGAGE.md`.** Your diagnosis reproduces on our weights (toy test identical)
+> and in Isaac (−2.5 Nm pitch + 1 s ramp → ankle −0.58/+1.33 at 0.4 s, 21.6 rad/s). **Do NOT re-engage walker_v5_3200:**
+> under the measured load alone it falls 16 % within 6 s here even with a hard start. All four asks, plus
+> stand-from-spawn (no training episode ever began standing), are in walker v6 — training since 14:35. A bundle
+> ships only if it passes your `cf_tracking.py` and our 15-condition engage test inside your watchdog limits.
+> Four questions for you in §4.
+
 ## The ask, in one line
 
 **Run the three batteries on your side and send back a `metrics.json` for each, plus answers to the

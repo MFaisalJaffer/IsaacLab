@@ -179,6 +179,45 @@ class KBotLegsAmpEnvCfg(KBotLegsRoughEnvCfg):
                                                  params={"lib_file": os.path.join(AMP_REFS, "multicycle_v1.npz"), "gait_freq": float(clock),
                                                          "rel_sigma": float(os.environ.get("KBOT_AMP_LIFT_REL", "0.5"))})
             print(f"[amp-env] v5: reference foot-lift anchor, weight {lift_w}, sigma {self.rewards.ref_foot_lift.params['rel_sigma']} x each cycle's peak lift")
+        # ---- walker v6 (prepared 2026-10-03, every part OFF unless its env var is set): the first hardware engage ----
+        # eval_watch/RIG_HW_ENGAGE_FINDINGS.md: the real robot carries a standing load at the zero pose and its
+        # ankles do not answer small commands at once; the policy integrated on its own last_action.
+        v6 = []
+        stand_m = float(os.environ.get("KBOT_AMP_STAND_MOMENT", "0"))
+        if stand_m > 0 and getattr(self.events, "sustained_push", None) is not None:
+            self.events.sustained_push.params["standing_moment"] = stand_m
+            v6.append(f"standing load +-{stand_m} Nm (pitch and roll, constant per episode)")
+        dead = float(os.environ.get("KBOT_AMP_DEADBAND", "0"))
+        rotor = float(os.environ.get("KBOT_AMP_ROTOR_FC", "0"))
+        eng_p = float(os.environ.get("KBOT_AMP_ENGAGE_P", "0"))
+        if dead > 0 or rotor > 0 or eng_p > 0:
+            self.events.amp_unanswered = EventTerm(func=mdp_amp.randomize_unanswered, mode="reset",
+                                                   params={"deadband_max": dead, "rotor_fc_max": rotor, "engage_p": eng_p,
+                                                           "engage_gain_min": float(os.environ.get("KBOT_AMP_ENGAGE_GAIN", "0.3")),
+                                                           "engage_ramp_max": float(os.environ.get("KBOT_AMP_ENGAGE_RAMP", "1.0"))})
+            v6.append(f"dead band U(0,{dead}) Nm, ankle rotor stiction U(0,{rotor}) Nm")
+            if eng_p > 0:
+                self.events.amp_engage_ramp = EventTerm(func=mdp_amp.engage_gain_ramp, mode="interval", interval_range_s=(0.02, 0.02))
+                v6.append(f"weak start p={eng_p}: gains x U({self.events.amp_unanswered.params['engage_gain_min']},1) ramping over U(0,{self.events.amp_unanswered.params['engage_ramp_max']}) s")
+        ks = os.environ.get("KBOT_AMP_SERIES_K")          # "nominal:lo:hi", e.g. 52:30:120 (rig: loaded ankle 52 Nm/rad)
+        if ks:
+            nom, lo, hi = (float(x) for x in ks.split(":"))
+            for name, act in self.scene.robot.actuators.items():
+                if "ankle" in name and getattr(act, "series_k", 0.0) > 0.0:
+                    act.series_k = nom
+            if getattr(self.events, "randomize_joint_play", None) is not None:
+                self.events.randomize_joint_play.params["series_k_range"] = (lo, hi)
+            band = getattr(self.curriculum, "series_k_band", None)
+            if band is not None:
+                band.params["lo_end"] = lo
+                band.params["lo_start"] = max(band.params.get("lo_start", lo), lo)
+            v6.append(f"ankle spring nominal {nom}, band {lo}-{hi} Nm/rad")
+        keep_p = float(os.environ.get("KBOT_AMP_SPAWN_STAND_P", "0"))
+        if keep_p > 0 and getattr(self.events, "walk_at_spawn", None) is not None:
+            self.events.walk_at_spawn.params["keep_stand_p"] = keep_p
+            v6.append(f"spawn stands kept with p={keep_p}")
+        if v6:
+            print("[amp-env] v6: " + "; ".join(v6))
         print(f"[amp-env] v4: history {hist}, signed clock {signed}, lin vel w {self.rewards.track_lin_vel_xy_exp.weight} std "
               f"{self.rewards.track_lin_vel_xy_exp.params.get('std')}, yaw w {self.rewards.track_ang_vel_z_exp.weight} std "
               f"{self.rewards.track_ang_vel_z_exp.params.get('std')}, axis bias {p_axis} (single-direction commands >= {os.environ.get('KBOT_AMP_AXIS_MIN', '0.1')}), "
