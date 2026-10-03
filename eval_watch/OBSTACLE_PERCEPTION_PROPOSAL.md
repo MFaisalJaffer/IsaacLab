@@ -162,3 +162,51 @@ on the hardware decision.
 - From memory, not re-checked today: Rudin et al., *Learning to Walk in Minutes Using Massively Parallel Deep
   Reinforcement Learning* (CoRL 2021); Miki et al., *Learning robust perceptive locomotion for quadrupedal
   robots in the wild* (Science Robotics 2022).
+
+---
+
+## Stage 1 as built (2026-10-03)
+
+Branch `kbot-obstacle-perception`. Task `Isaac-Velocity-Obstacle-KbotLegs-AMP-v0` = the walker's task (same env
+vars as walker v5, `eval_watch/obstacle_env.sh`) plus:
+
+- **Course** (`mdp_obstacle.py`): 8 x 8 m tiles; a column is one kind of tile, a row one height (2, 4, ... 20 cm).
+  `flat` 25% of the robots, `platform` 45% (a square ring 1.0 m wide around the spawn area, inner edge 1.3 m from
+  the centre: step up, walk on top, step down), `beam` 30% (the same ring 0.3 m wide: step onto or over it).
+  A robot walking straight out of the centre meets the obstacle whatever its heading (head-on to 45 degrees).
+- **Commands:** robots on obstacle tiles walk forward only, 0.30-0.45 m/s, no lateral, no yaw, never standing.
+  Robots on flat tiles keep the walker's full command mix.
+- **Curriculum:** past the obstacle (0.5 m beyond its outer edge) -> one height up; fell, or fell behind the
+  command, before that -> one height down; top height cleared -> a random height. Everyone starts at 2 cm.
+- **Policy input:** the walker's 430 values, unchanged, then the height map of the current tick: 187 values =
+  17 x 11 cells of 10 cm (0.8 m ahead and behind, 0.5 m to each side), ground height relative to the base
+  (0 = the floor under a robot walking on flat ground), clipped to +-0.5 m, x 5. Total 617.
+- **Rewards:** the foot-lift anchor measures each foot above the ground under it and lets it go higher next to an
+  obstacle (by the obstacle's height + 5 cm); on level ground it is exactly the walker's. Penalties (weight -5)
+  for a foot pushing against a vertical face and for a shin or thigh touching anything. The style judge is
+  switched off while an edge is within 0.3 m of a foot (its data is flat-ground walking).
+- **Start point:** walker v5 (`walker_v5_best.pt`) with the map input wired to zeros
+  (`archive_anchors/obstacle_s1_warm_from_walker_v5.pt`): identical to the walker until training connects it.
+- **Control:** the same run with the map zeroed (`KBOT_OBST_BLIND=1`).
+
+**Baseline — walker v5 on the course, no training** (1200 robots, forward 0.35 m/s, random heading, 20 s):
+
+| obstacle | 2 cm | 4 cm | 6 cm and up |
+|---|---|---|---|
+| platform | 83% cross | 9% | 0% |
+| beam | 89% | 17% | 0-6% |
+| flat (control, same distance) | 100% | | |
+
+It does not trip on the edge; it steps onto it and then loses its balance (the walker has only ever seen flat
+ground).
+
+Tools: `obstacle_probe.py` (course, sensors, layout checks), `obst_prep_warm.py` (start checkpoint),
+`obstacle_eval.py` (crossing per kind and height, `--blind`, renders), `obstacle_summary.py`,
+`obstacle_s1_pipeline.sh` (both runs + tests, status in `OBSTACLE_S1_STATUS.md`), `obstacle_render.sh`.
+
+Things found while building it:
+- The training-time "fell behind the command" termination ends about a quarter of the walker's straight walks
+  on flat ground within 10 s — heading drift (about 22 degrees in 10 s), not slowness. The crossing test runs
+  without it; training keeps it (as walker v5 did).
+- The first reset happens before the robots are on their tiles; a curriculum that reads positions there
+  promotes everyone (caught in the dry run, fixed).

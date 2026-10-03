@@ -86,6 +86,9 @@ def axis_bias(env: "ManagerBasedRLEnv", env_ids: torch.Tensor, p_axis: float = 0
     corridor = getattr(env, "_stand_corridor_until", None)
     if corridor is not None:
         protect |= corridor >= 0.0
+    owned = getattr(env, "_cmd_protect_mask", None)   # obstacle course: commands set by ObstacleVelocityCommand
+    if owned is not None:
+        protect |= owned
     mask = getattr(env, "_amp_axis_mask", None)
     if mask is None:
         mask = torch.ones(env.num_envs, 3, device=env.device)

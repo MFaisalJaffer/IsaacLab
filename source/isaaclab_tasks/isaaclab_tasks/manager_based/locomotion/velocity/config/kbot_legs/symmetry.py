@@ -75,6 +75,20 @@ def _mirror_policy_obs_hist(o: torch.Tensor) -> torch.Tensor:
     return torch.cat(out, dim=-1)
 
 
+MAP_ROWS, MAP_COLS = 11, 17   # height map (mdp_obstacle.height_map): y rows (right -> left), x inside each row
+
+
+def _mirror_map(m: torch.Tensor) -> torch.Tensor:
+    """Height map: the sagittal mirror swaps the rows (y -> -y); x is unchanged."""
+    return m.reshape(*m.shape[:-1], MAP_ROWS, MAP_COLS).flip(-2).reshape(m.shape)
+
+
+def _mirror_policy_obs_map(o: torch.Tensor) -> torch.Tensor:
+    """Obstacle course: [walker terms with history | height map of the current tick]."""
+    n = MAP_ROWS * MAP_COLS
+    return torch.cat([_mirror_policy_obs_hist(o[..., :-n]), _mirror_map(o[..., -n:])], dim=-1)
+
+
 def data_augmentation_func(env=None, obs=None, actions=None, obs_type="policy", **kwargs):
     """rsl_rl symmetry hook: returns [original ; mirrored] for obs and actions."""
     if actions is None:
@@ -82,8 +96,14 @@ def data_augmentation_func(env=None, obs=None, actions=None, obs_type="policy", 
     aug_obs = None
     if obs is not None:
         if obs_type == "policy":
-            assert obs.shape[-1] % 43 == 0, f"policy obs dim {obs.shape[-1]} is not a multiple of 43"
-            mir = _mirror_policy_obs(obs) if obs.shape[-1] == 43 else _mirror_policy_obs_hist(obs)
+            d = obs.shape[-1]
+            if d == 43:
+                mir = _mirror_policy_obs(obs)
+            elif d % 43 == 0:
+                mir = _mirror_policy_obs_hist(obs)
+            else:
+                assert (d - MAP_ROWS * MAP_COLS) % 43 == 0 and d > MAP_ROWS * MAP_COLS, f"unknown policy obs layout ({d} values)"
+                mir = _mirror_policy_obs_map(obs)
             aug_obs = torch.cat([obs, mir], dim=0)
         else:
             # critic obs is not mirrored (mirror-loss path only augments 'policy');

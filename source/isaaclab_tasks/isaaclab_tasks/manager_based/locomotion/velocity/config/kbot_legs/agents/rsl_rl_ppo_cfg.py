@@ -186,6 +186,17 @@ class KBotLegsAmpPPORunnerCfg(KBotLegsRoughPPORunnerCfg):
 
 
 @configclass
+class KBotLegsObstaclePPORunnerCfg(KBotLegsAmpPPORunnerCfg):
+    """Obstacle course (stage 1): the AMP walker's settings, own experiment dir. The mirror loss stays on;
+    symmetry.py mirrors the height map (y flip) after the 430 walker values."""
+    experiment_name = "kbot_legs_obstacle"
+
+    def __post_init__(self):
+        super().__post_init__()
+        self.max_iterations = int(os.environ.get("KBOT_OBST_ITERS", "3000"))
+
+
+@configclass
 class KBotLegsClipPPORunnerCfg(KBotLegsRoughPPORunnerCfg):
     """Time-indexed clip tracker (dataset expansion: backward / sideways / pivots / stops)."""
     experiment_name = "kbot_legs_trackclip"
