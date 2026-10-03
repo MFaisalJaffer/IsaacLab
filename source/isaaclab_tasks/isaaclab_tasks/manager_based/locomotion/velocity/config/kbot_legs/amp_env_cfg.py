@@ -216,6 +216,11 @@ class KBotLegsAmpEnvCfg(KBotLegsRoughEnvCfg):
         if keep_p > 0 and getattr(self.events, "walk_at_spawn", None) is not None:
             self.events.walk_at_spawn.params["keep_stand_p"] = keep_p
             v6.append(f"spawn stands kept with p={keep_p}")
+        wd = os.environ.get("KBOT_AMP_WATCHDOG")          # "max joint speed rad/s:max tilt deg", e.g. 5:12 (the rig's E-STOP limits)
+        if wd:
+            spd, tilt = (float(x) for x in wd.split(":"))
+            self.terminations.stand_watchdog = DoneTerm(func=mdp_amp.stand_watchdog, params={"max_joint_speed": spd, "max_tilt_deg": tilt})
+            v6.append(f"stand watchdog: episode ends at joint speed > {spd} rad/s or tilt > {tilt} deg while standing")
         if v6:
             print("[amp-env] v6: " + "; ".join(v6))
         print(f"[amp-env] v4: history {hist}, signed clock {signed}, lin vel w {self.rewards.track_lin_vel_xy_exp.weight} std "

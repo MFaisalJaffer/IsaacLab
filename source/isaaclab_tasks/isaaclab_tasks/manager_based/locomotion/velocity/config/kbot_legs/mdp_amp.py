@@ -262,3 +262,46 @@ def engage_gain_ramp(env: "ManagerBasedRLEnv", env_ids: torch.Tensor, asset_cfg:
     g = (g0 + (1.0 - g0) * prog).unsqueeze(1)
     for act in env.scene[asset_cfg.name].actuators.values():
         act._gain_scale = g
+
+
+def stand_watchdog(env: "ManagerBasedRLEnv", max_joint_speed: float = 5.0, max_tilt_deg: float = 12.0, arm_s: float = 0.3,
+                   settle_s: float = 1.5, push_grace_s: float = 1.0, command_name: str = "base_velocity",
+                   stand_still_threshold: float = 0.1, asset_cfg: SceneEntityCfg = SceneEntityCfg("robot")) -> torch.Tensor:
+    """Termination: the rig's hardware watchdog, in training (user decision 2026-10-03). While the robot is told
+    to STAND, any joint faster than max_joint_speed (rad/s) or a torso tilt beyond max_tilt_deg ends the episode
+    like a fall — on the robot the same event cuts motor power (E-STOP at tilt > 12 deg, |qd| > 5 rad/s). Until
+    now a jerk at the start of a stand cost almost nothing: the standing penalties are averaged over a 20 s
+    episode, bad_orientation only fires at 57 deg and has a 1.5 s grace at stand onset.
+
+    Armed:
+      * a stand kept from spawn (the hardware engage: stand at the zero pose from tick 0): arm_s after the
+        reset — the training reset leaves joint offsets and base velocity that the real engage does not have;
+      * a stand entered from walking (through the stop corridor): settle_s after the stand onset;
+      * not during a push burst and for push_grace_s after it (stepping out of a shove is legitimate).
+    Walking is never checked."""
+    asset = env.scene[asset_cfg.name]
+    term = env.command_manager.get_term(command_name)
+    cmd = env.command_manager.get_command(command_name)
+    now = env.episode_length_buf.float() * env.step_dt
+    standing = term.is_standing_env & (torch.norm(cmd[:, :3], dim=1) < stand_still_threshold)
+    onset = getattr(env, "_stand_onset_time", None)
+    keep = getattr(env, "_spawn_stand_keep", None)
+    armed = torch.zeros_like(standing)
+    if keep is not None:
+        armed |= standing & keep & (now >= arm_s)
+    if onset is not None:
+        armed |= standing & (onset > -1.0e5) & ((now - onset) >= settle_s)
+    if onset is None and keep is None:  # probes / evals without the training-side stand machinery
+        armed |= standing & (now >= arm_s)
+    pushed = getattr(env, "_sustained_push_active", None)
+    if pushed is not None:
+        until = getattr(env, "_wd_push_until", None)
+        if until is None:
+            until = torch.zeros(env.num_envs, device=env.device)
+            env._wd_push_until = until
+        until[env.episode_length_buf <= 1] = 0.0
+        until[pushed] = now[pushed] + push_grace_s
+        armed &= now >= until
+    tilt = torch.asin(asset.data.projected_gravity_b[:, :2].norm(dim=1).clamp(max=1.0))
+    fast = asset.data.joint_vel.abs().amax(dim=1) > max_joint_speed
+    return armed & (fast | (tilt > math.radians(max_tilt_deg)))

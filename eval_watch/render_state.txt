@@ -1,1 +1,1 @@
-idle — no renders yet (click Render on the dashboard)
+idle — last rendered AMP pilot (kbot_legs_amp) iter 400 at 15:14:35 (click Render to refresh)

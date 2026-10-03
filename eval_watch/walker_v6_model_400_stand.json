@@ -1,0 +1,19 @@
+{
+ "checkpoint": "/home/faisal/IsaacLab/logs/autopilot/walker_v6_400.pt",
+ "cmd": "0:0:0",
+ "standing": {
+  "envs": 256,
+  "survival": 0.984375,
+  "tilt_deg": {
+   "mean": 1.0847834348678589,
+   "p90": 2.1711018562316897
+  },
+  "foot_lift_max_cm": 6.315094232559204,
+  "foot_travel_mps_mean": 0.06306464970111847,
+  "width_cm": 30.704760551452637,
+  "base_speed_abs_mps": 0.05820896103978157
+ },
+ "walking_envs": 0,
+ "survival_walking": null,
+ "note": "no walking envs"
+}
