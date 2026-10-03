@@ -19,6 +19,10 @@ robot-centric height map and trains on a flat floor with single obstacles of 2-2
     obstacle (the judge only knows flat-ground steps).
 
 KBOT_OBST_BLIND=1 zeroes the map (same network, same training) — the control that shows what the map buys.
+
+Stage 1b (2026-10-03) adds a fourth kind, ``stairs`` (a square staircase around the spawn area: 3 risers up, a
+landing, 3 down; the row's height is the riser), a curriculum that replays lower heights and does not demote
+a robot for merely falling behind its command, and a fall check measured above the local ground.
 """
 from __future__ import annotations
 
@@ -79,18 +83,77 @@ class RingObstacleTerrainCfg(SubTerrainBaseCfg):
     num_levels: int = 10
 
 
+def stairs_obstacle_terrain(difficulty: float, cfg: "StairsObstacleTerrainCfg") -> tuple[list[trimesh.Trimesh], np.ndarray]:
+    """Flat tile with a square staircase around the spawn area: ``num_steps`` risers up, a landing, the same
+    number down. Each level is a square ring one tread narrower on both sides than the one it sits on."""
+    level = min(int(difficulty * cfg.num_levels), cfg.num_levels - 1)
+    h = level_height(level, cfg.height_range, cfg.num_levels)
+    cx, cy = 0.5 * cfg.size[0], 0.5 * cfg.size[1]
+    r_out = cfg.inner_half_width + 2.0 * (cfg.num_steps - 1) * cfg.tread + cfg.landing
+    meshes = []
+    for i in range(cfg.num_steps):
+        a = 2.0 * (cfg.inner_half_width + i * cfg.tread)
+        b = 2.0 * (r_out - i * cfg.tread)
+        meshes += list(make_border((b, b), (a, a), h, (cx, cy, (i + 0.5) * h)))
+    thick = 1.0
+    meshes.append(trimesh.creation.box((cfg.size[0], cfg.size[1], thick), trimesh.transformations.translation_matrix((cx, cy, -0.5 * thick))))
+    return meshes, np.array([cx, cy, 0.0])
+
+
+@configclass
+class StairsObstacleTerrainCfg(SubTerrainBaseCfg):
+    function = stairs_obstacle_terrain
+    inner_half_width: float = 1.2
+    num_steps: int = 3
+    """Risers on the way up (and the same number on the way down)."""
+    tread: float = 0.30
+    landing: float = 0.60
+    height_range: tuple[float, float] = (0.02, 0.20)
+    """Riser height at the lowest and the highest level."""
+    num_levels: int = 10
+
+
+def kind_extent(sub) -> tuple[float, float] | None:
+    """(inner, outer) half widths of a tile kind's obstacle; None for a kind without one."""
+    if isinstance(sub, RingObstacleTerrainCfg):
+        return sub.inner_half_width, sub.inner_half_width + sub.ring_width
+    if isinstance(sub, StairsObstacleTerrainCfg):
+        return sub.inner_half_width, sub.inner_half_width + 2.0 * (sub.num_steps - 1) * sub.tread + sub.landing
+    return None
+
+
+def tile_height(sub, h: torch.Tensor, r: torch.Tensor) -> torch.Tensor:
+    """Ground height of a tile of this kind at Chebyshev distance r from its centre, for step/riser height h
+    (probe and test use; the simulation uses the mesh)."""
+    out = torch.zeros_like(r)
+    ext = kind_extent(sub)
+    if ext is None:
+        return out
+    if isinstance(sub, RingObstacleTerrainCfg):
+        return torch.where((r > ext[0]) & (r < ext[1]), h + out, out)
+    for i in range(sub.num_steps):
+        out = torch.where((r > ext[0] + i * sub.tread) & (r < ext[1] - i * sub.tread), (i + 1) * h + torch.zeros_like(r), out)
+    return out
+
+
+STAGE1_MIX = {"flat": 0.25, "platform": 0.45, "beam": 0.30, "stairs": 0.0}
+
+
 def obstacle_terrain_cfg(num_rows: int = 10, num_cols: int = 20, height_range: tuple[float, float] = (0.02, 0.20),
-                         p_flat: float = 0.25, p_platform: float = 0.45, p_beam: float = 0.30) -> TerrainGeneratorCfg:
-    """p_platform = p_beam = 0 gives an all-flat course: every env then keeps the walker's commands, which is
-    how the walker's own six-direction tests are run on an obstacle-course policy."""
-    ring = dict(height_range=height_range, num_levels=num_rows)
+                         mix: dict | None = None) -> TerrainGeneratorCfg:
+    """``mix`` = share of the columns (and so of the robots) per kind; a kind with share 0 exists but has no
+    tiles. {"flat": 1} gives an all-flat course: every env then keeps the walker's commands, which is how the
+    walker's own six-direction tests are run on an obstacle-course policy."""
+    m = {**{k: 0.0 for k in STAGE1_MIX}, **(STAGE1_MIX if mix is None else mix)}
+    lv = dict(height_range=height_range, num_levels=num_rows)
     return TerrainGeneratorCfg(
         size=(8.0, 8.0), border_width=20.0, num_rows=num_rows, num_cols=num_cols, horizontal_scale=0.1,
         vertical_scale=0.005, slope_threshold=0.75, use_cache=False, curriculum=True,
         sub_terrains={
-            "flat": MeshPlaneTerrainCfg(proportion=p_flat),
-            "platform": RingObstacleTerrainCfg(proportion=p_platform, ring_width=1.0, **ring),
-            "beam": RingObstacleTerrainCfg(proportion=p_beam, ring_width=0.3, **ring),
+            "flat": MeshPlaneTerrainCfg(proportion=m["flat"]),
+            "platform": RingObstacleTerrainCfg(proportion=m["platform"], ring_width=1.0, **lv),
+            "beam": RingObstacleTerrainCfg(proportion=m["beam"], ring_width=0.3, **lv),
+            "stairs": StairsObstacleTerrainCfg(proportion=m["stairs"], **lv),
         },
     )
 
@@ -103,6 +166,11 @@ def column_kinds(gen_cfg: TerrainGeneratorCfg) -> list[str]:
     return [names[int(np.min(np.where(i / gen_cfg.num_cols + 0.001 < np.cumsum(p))[0]))] for i in range(gen_cfg.num_cols)]
 
 
+def parse_mix(text: str) -> dict:
+    """"flat:0.4,platform:0.2,beam:0.15,stairs:0.25" -> {"flat": 0.4, ...}"""
+    return {k.strip(): float(v) for k, v in (item.split(":") for item in text.split(",") if item.strip())}
+
+
 def course(env: "ManagerBasedRLEnv") -> dict:
     """Static description of the course (cached): kind per column, outer edge of each kind's ring, height per row."""
     st = getattr(env, "_obst_course", None)
@@ -110,15 +178,17 @@ def course(env: "ManagerBasedRLEnv") -> dict:
         gen = env.scene.terrain.cfg.terrain_generator
         names = list(gen.sub_terrains.keys())
         subs = list(gen.sub_terrains.values())
-        rings = [s for s in subs if isinstance(s, RingObstacleTerrainCfg)]
+        ext = [kind_extent(s) for s in subs]
+        first = next(s for s, e in zip(subs, ext) if e is not None)
         dev = env.device
         st = {
             "names": names,
+            "subs": subs,
             "col_kind": torch.tensor([names.index(k) for k in column_kinds(gen)], device=dev),
-            "kind_inner": torch.tensor([s.inner_half_width if isinstance(s, RingObstacleTerrainCfg) else 0.0 for s in subs], device=dev),
-            "kind_outer": torch.tensor([s.inner_half_width + s.ring_width if isinstance(s, RingObstacleTerrainCfg) else 0.0 for s in subs], device=dev),
-            "kind_is_obstacle": torch.tensor([isinstance(s, RingObstacleTerrainCfg) for s in subs], device=dev),
-            "heights": torch.tensor([level_height(r, rings[0].height_range, rings[0].num_levels) for r in range(gen.num_rows)], device=dev),
+            "kind_inner": torch.tensor([e[0] if e else 0.0 for e in ext], device=dev),
+            "kind_outer": torch.tensor([e[1] if e else 0.0 for e in ext], device=dev),
+            "kind_is_obstacle": torch.tensor([e is not None for e in ext], device=dev),
+            "heights": torch.tensor([level_height(r, first.height_range, first.num_levels) for r in range(gen.num_rows)], device=dev),
         }
         env._obst_course = st
     return st
@@ -246,41 +316,93 @@ def walk_gate_obstacle(env: "ManagerBasedRLEnv", command_name: str = "base_veloc
     return gate * (~near_obstacle(env, near_tol)).float().unsqueeze(1)
 
 
+# ---------------------------------------------------------------- termination
+def base_height_terrain(env: "ManagerBasedRLEnv", minimum_height: float, grace_steps: int = 30, stand_grace_s: float = 0.0,
+                        asset_cfg: SceneEntityCfg = SceneEntityCfg("robot"),
+                        sensor_cfg: SceneEntityCfg = SceneEntityCfg("height_scanner")) -> torch.Tensor:
+    """The lineage's fall check (mdp_gait.base_height_after_grace, same grace and stand exemption) with the base
+    height measured above the ground under the base instead of above z = 0: on top of a 0.6 m staircase a
+    robot lying down is still 0.8 m above z = 0 and would never be caught. On flat ground it is the same test."""
+    from . import mdp_gait
+
+    asset = env.scene[asset_cfg.name]
+    scan = env.scene.sensors[sensor_cfg.name]
+    centre = getattr(env, "_obst_scan_centre", None)
+    if centre is None:
+        centre = int((scan.ray_starts[0, :, :2] ** 2).sum(dim=1).argmin())
+        env._obst_scan_centre = centre
+    ground = torch.nan_to_num(scan.data.ray_hits_w[:, centre, 2], nan=0.0, posinf=0.0, neginf=0.0)
+    below = (asset.data.root_pos_w[:, 2] - ground) < minimum_height
+    alive = below & (env.episode_length_buf > grace_steps) & mdp_gait._outside_stand_grace(env, stand_grace_s)
+    cmd = env.command_manager.get_command("base_velocity")
+    return alive & ~(torch.norm(cmd[:, :3], dim=1) < 0.1)
+
+
 # ---------------------------------------------------------------- curriculum
-def obstacle_levels(env: "ManagerBasedRLEnv", env_ids: torch.Tensor, cross_margin: float = 0.5,
-                    asset_cfg: SceneEntityCfg = SceneEntityCfg("robot")) -> dict:
+def obstacle_levels(env: "ManagerBasedRLEnv", env_ids: torch.Tensor, cross_margin: float = 0.5, behind_fails: bool = True,
+                    replay_p: float = 0.0, asset_cfg: SceneEntityCfg = SceneEntityCfg("robot")) -> dict:
     """Runs at every reset. A robot on an obstacle tile that ended its episode beyond the obstacle (further
-    than the ring's outer edge + cross_margin from the tile centre) moves one height up; one that fell, or
-    fell behind its command, before that moves one down. Robots that clear the top height are sent to a random
-    one. Flat tiles have no levels."""
+    than the obstacle's outer edge + cross_margin from the tile centre) moves one height up; one that failed
+    before that moves one down. Robots that clear the top height are sent to a random one. Flat tiles have no
+    levels.
+
+    Failed = fell before getting past. ``behind_fails`` (stage 1): falling behind the command before getting
+    past also counts. With it off (stage 1b) falling behind only counts for a robot that never got onto the
+    obstacle (it refused): in stage 1 the walker's heading drift ended about half of all episodes that way and
+    each one demoted a robot that was in fact climbing — training heights sat at 9 / 13 cm while the test
+    passed 18-20 cm.
+
+    ``replay_p``: share of episodes played at a random LOWER height than the robot's own (its own height does
+    not change in such an episode). Stage 1's policy ended up worse at 4 cm than at 8-18 cm: once robots
+    moved up nothing sent them back to the low obstacles."""
     c = course(env)
     terrain = env.scene.terrain
     asset = env.scene[asset_cfg.name]
+    dev = env.device
     kind = c["col_kind"][terrain.terrain_types[env_ids]]
     is_obst = c["kind_is_obstacle"][kind]
     d = (asset.data.root_pos_w[env_ids, :2] - env.scene.env_origins[env_ids, :2]).abs().amax(dim=1)
     crossed = d > c["kind_outer"][kind] + cross_margin
-    failed = env.termination_manager.terminated[env_ids] & ~crossed
+    tm_ = env.termination_manager
+    terminated = tm_.terminated[env_ids]
+    if behind_fails:
+        failed = terminated & ~crossed
+    else:
+        fell = torch.zeros_like(terminated)
+        for name in ("base_contact", "bad_orientation", "base_height"):
+            if name in tm_.active_terms:
+                fell |= tm_.get_term(name)[env_ids]
+        refused = terminated & ~fell & (d <= c["kind_inner"][kind])
+        failed = ~crossed & (fell | refused)
     st = getattr(env, "_obst_stats", None)
     if st is None:
-        st = {"cross": torch.zeros(len(c["names"]), device=env.device), "seen": torch.zeros(len(c["names"]), device=env.device)}
+        st = {"cross": torch.zeros(len(c["names"]), device=dev), "seen": torch.zeros(len(c["names"]), device=dev),
+              "home": terrain.terrain_levels.clone(), "replay": torch.zeros(env.num_envs, dtype=torch.bool, device=dev)}
         env._obst_stats = st
     # The reset at start-up is not an episode: the robots are not on their tiles yet, so their distance from
     # the tile centre means nothing (the first dry run promoted every robot one level right there).
     real = env.episode_length_buf[env_ids] > 10
+    own = real & is_obst & ~st["replay"][env_ids]     # an episode at the robot's own height
     for i in range(len(c["names"])):
-        m = real & (kind == i)
+        m = own & (kind == i)
         if m.any():
             a = 0.02 if st["seen"][i] > 0 else 1.0
             st["cross"][i] = (1 - a) * st["cross"][i] + a * crossed[m].float().mean()
             st["seen"][i] = 1.0
-    terrain.update_env_origins(env_ids, crossed & is_obst & real, failed & is_obst & real)
+    home = st["home"][env_ids] + (crossed & own).long() - (failed & own).long()
+    home = torch.where(home >= terrain.max_terrain_level, torch.randint_like(home, terrain.max_terrain_level), home.clamp(min=0))
+    st["home"][env_ids] = home
+    replay = is_obst & (home > 0) & (torch.rand(len(env_ids), device=dev) < replay_p)
+    play = torch.where(replay, (torch.rand(len(env_ids), device=dev) * home.float()).long().clamp(max=terrain.max_terrain_level - 1), home)
+    st["replay"][env_ids] = replay
+    terrain.terrain_levels[env_ids] = play
+    terrain.env_origins[env_ids] = terrain.terrain_origins[play, terrain.terrain_types[env_ids]]
     kinds_all = env_kind(env)
-    lv = terrain.terrain_levels.float()
     out = {}
     for i, name in enumerate(c["names"]):
-        if c["kind_is_obstacle"][i]:
-            out[f"level_{name}"] = lv[kinds_all == i].mean()
-            out[f"height_cm_{name}"] = c["heights"][terrain.terrain_levels[kinds_all == i]].mean() * 100.0
+        m = kinds_all == i
+        if c["kind_is_obstacle"][i] and m.any():
+            out[f"level_{name}"] = st["home"][m].float().mean()
+            out[f"height_cm_{name}"] = c["heights"][st["home"][m]].mean() * 100.0
             out[f"cross_{name}"] = st["cross"][i]
     return out

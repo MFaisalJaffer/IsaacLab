@@ -44,6 +44,28 @@ class KbotAmpRunner(OnPolicyRunner):
         self.alg = AMPPPO(self.alg.policy, amp_cfg=amp_cfg, device=self.device, **self.alg_cfg, multi_gpu_cfg=self.multi_gpu_cfg)
         self.alg.init_storage(self.training_type, self.env.num_envs, self.num_steps_per_env, [num_obs], [num_privileged_obs], [self.env.num_actions])
         self._check_amp_layout()
+        std_max = os.environ.get("KBOT_AMP_STD_MAX")
+        if std_max:
+            self._install_std_ceiling(float(std_max))
+
+    # ------------------------------------------------------------------ action-noise ceiling
+    def _install_std_ceiling(self, std_max: float) -> None:
+        """Cap the action noise at ``std_max`` (KBOT_AMP_STD_MAX). The entropy bonus pushes the noise up for
+        as long as the advantage signal does not push back: in the obstacle course's first run it rose from
+        0.22 to 0.36 over 3000 iterations (walker v5 sat at 0.15-0.21), and side-stepping, the most delicate
+        flat skill, was lost on the way. Same straight-through form as the lineage's ceiling at 1.0 in the
+        installed rsl_rl (value capped, gradient passes, so pressure for precision can still lower it)."""
+        policy = self.alg.policy
+        assert hasattr(policy, "log_std"), "the noise ceiling needs noise_std_type='log'"
+        ceiling = math.log(std_max)
+
+        def update_distribution(observations):
+            mean = policy.actor(observations)
+            ls = policy.log_std - torch.relu((policy.log_std - ceiling).detach())
+            policy.distribution = torch.distributions.Normal(mean, torch.exp(ls).expand_as(mean))
+
+        policy.update_distribution = update_distribution
+        print(f"[AMP] action noise capped at std {std_max} (KBOT_AMP_STD_MAX)")
 
     # ------------------------------------------------------------------ layout guard
     def _check_amp_layout(self) -> None:

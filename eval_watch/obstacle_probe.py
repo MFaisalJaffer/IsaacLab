@@ -35,6 +35,7 @@ def main() -> int:
     env_cfg = parse_env_cfg(args.task, device="cuda:0", num_envs=args.num_envs)
     env_cfg.curriculum.obstacle_levels = None      # keep the random start levels
     env_cfg.terminations.root_drift = None         # robots are placed by hand below; that is not 'falling behind the command'
+    env_cfg.terminations.base_height = None        # nor is a robot dropped onto a staircase a fall
     env = gym.make(args.task, cfg=env_cfg, render_mode=None)
     uenv = env.unwrapped
     dev = uenv.device
@@ -72,15 +73,25 @@ def main() -> int:
         env.reset()
         act = torch.zeros(n, uenv.action_manager.total_action_dim, device=dev)
         heights = c["heights"][terrain.terrain_levels]
-        is_ring = c["kind_is_obstacle"][kinds]
-        inner = c["kind_inner"][kinds]; outer = c["kind_outer"][kinds]
-        print(f"{'offset':>7s} {'kind':>9s} {'envs':>5s} {'expect = level height?':>24s} {'base ray err (mm)':>18s} {'foot rays err (mm)':>19s}")
-        for dx in (0.0, 1.45, 1.8, 2.6, 3.5):
+        is_obst = c["kind_is_obstacle"][kinds]
+
+        def expected(r):   # ground height at Chebyshev distance r (N, ...) from each env's tile centre
+            out = torch.zeros_like(r)
+            for i, sub in enumerate(c["subs"]):
+                m = kinds == i
+                if m.any():
+                    hh = heights[m].reshape(-1, *([1] * (r.dim() - 1))).expand_as(r[m])
+                    out[m] = mdp_obstacle.tile_height(sub, hh, r[m])
+            return out
+
+        feet_ids = robot.find_bodies(mdp_trackmulti.FEET, preserve_order=True)[0]
+        print(f"{'offset':>7s} {'kind':>9s} {'envs':>5s} {'expected (x level height)':>26s} {'base ray err (mm)':>18s} {'foot rays err (mm)':>19s}")
+        for dx in (0.0, 1.35, 1.45, 1.65, 1.95, 2.15, 2.45, 2.75, 3.3):
+            r_base = torch.full((n,), dx, device=dev)
+            expect = expected(r_base)
             root = robot.data.default_root_state.clone()
             root[:, :3] += uenv.scene.env_origins
             root[:, 0] += dx
-            on = is_ring & (dx > inner) & (dx < outer)
-            expect = torch.where(on, heights, torch.zeros_like(heights))
             root[:, 2] = 1.02 + expect
             root[:, 3:7] = torch.tensor([1.0, 0.0, 0.0, 0.0], device=dev)
             robot.write_root_pose_to_sim(root[:, :7])
@@ -89,22 +100,23 @@ def main() -> int:
             env.step(act)
             base_hit = scan.data.ray_hits_w[:, centre, 2]
             g = mdp_obstacle.foot_ground(uenv)
-            feet = robot.data.body_pos_w[:, robot.find_bodies(mdp_trackmulti.FEET, preserve_order=True)[0]]
-            fdx = feet[..., 0] - uenv.scene.env_origins[:, None, 0]
-            fdy = (feet[..., 1] - uenv.scene.env_origins[:, None, 1]).abs()
-            f_on = is_ring[:, None] & (fdx > inner[:, None]) & (fdx < outer[:, None]) & (fdy < inner[:, None])
-            f_expect = torch.where(f_on, heights[:, None].expand(-1, 2), torch.zeros(n, 2, device=dev))
+            fr = (robot.data.body_pos_w[:, feet_ids, :2] - uenv.scene.env_origins[:, None, :2]).abs().amax(dim=-1)   # (N, 2)
+            f_expect = expected(fr)
+            edges = torch.stack([expected(fr + 0.02), expected(fr - 0.02)], dim=0)
+            clear = (edges[0] == f_expect) & (edges[1] == f_expect)       # feet within 2 cm of an edge are not checked
             for i, name in enumerate(c["names"]):
                 m = kinds == i
+                if not m.any():
+                    continue
                 e_base = (base_hit[m] - expect[m]).abs().max() * 1000
-                e_foot = (g["under"][m] - f_expect[m]).abs().max() * 1000
-                print(f"{dx:7.2f} {name:>9s} {int(m.sum()):5d} {str(bool(on[m].any())):>24s} {float(e_base):18.2f} {float(e_foot):19.2f}")
+                e_foot = ((g["under"][m] - f_expect[m]).abs() * clear[m].float()).max() * 1000
+                mult = (expect[m] / heights[m]).round().unique().tolist() if bool(is_obst[m][0]) else [0.0]
+                print(f"{dx:7.2f} {name:>9s} {int(m.sum()):5d} {str([int(x) for x in mult]):>26s} {float(e_base):18.2f} {float(e_foot):19.2f}")
                 ok &= float(e_base) < 1.0 and float(e_foot) < 1.0
-            if dx == 1.45:  # on the ring's inner part: the patch around the feet must see the step
+            if dx == 1.45:  # on the obstacle's inner part: the patch around the feet must see the step
                 near = mdp_obstacle.near_obstacle(uenv)
-                print(f"[probe]   near_obstacle at 1.45 m: flat {float(near[~is_ring].float().mean()):.2f} (want 0), rings {float(near[is_ring].float().mean()):.2f} (want 1); "
-                      f"patch max-under (cm) on rings: {float(((g['max'] - g['under'])[is_ring]).mean() * 100):.1f}")
-                ok &= float(near[~is_ring].float().mean()) == 0.0 and float(near[is_ring].float().mean()) == 1.0
+                print(f"[probe]   near_obstacle at 1.45 m: flat {float(near[~is_obst].float().mean()):.2f} (want 0), obstacles {float(near[is_obst].float().mean()):.2f} (want 1)")
+                ok &= float(near[~is_obst].float().mean()) == 0.0 and float(near[is_obst].float().mean()) == 1.0
 
         # ---- 4. foot frame (robot upright, yaw 0, default joints)
         env.reset()
@@ -140,7 +152,7 @@ def main() -> int:
             cfg_ = rw.get_term_cfg(t)
             sensor = uenv.scene.sensors["contact_forces"]
             print(f"[probe] {t}: weight {cfg_.weight}, bodies {[sensor.body_names[i] for i in cfg_.params['sensor_cfg'].body_ids]}")
-        print(f"[probe] ref_foot_lift -> {rw.get_term_cfg('ref_foot_lift').func.__name__}, gate -> {uenv.observation_manager.cfg.amp_gate.gate.func.__name__}")
+        print(f"[probe] ref_foot_lift -> {rw.get_term_cfg('ref_foot_lift').func.__name__}, gate -> {uenv.observation_manager.cfg.amp_gate.gate.func.__name__}, episode {uenv.max_episode_length_s:.0f} s")
     print(f"[probe] RESULT: {'ALL CHECKS PASSED' if ok else 'A CHECK FAILED'}")
     env.close()
     return 0

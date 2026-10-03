@@ -42,12 +42,20 @@ class KBotLegsObstacleEnvCfg(KBotLegsAmpEnvCfg):
         hmax = float(e("KBOT_OBST_HMAX", "0.20"))
         hmin = float(e("KBOT_OBST_HMIN", "0.02"))
         self.scene.terrain.terrain_type = "generator"
-        flat_only = e("KBOT_OBST_FLAT_ONLY", "0") == "1"   # all-flat course: the walker's own tests on this policy
+        # share of the robots per kind of tile, e.g. "flat:0.4,platform:0.2,beam:0.15,stairs:0.25" (default: stage 1's)
+        mix = mdp_obstacle.parse_mix(e("KBOT_OBST_MIX")) if e("KBOT_OBST_MIX") else None
+        if e("KBOT_OBST_FLAT_ONLY", "0") == "1":   # all-flat course: the walker's own tests on this policy
+            mix = {"flat": 1.0, "platform": 0.0, "beam": 0.0, "stairs": 0.0}
         self.scene.terrain.terrain_generator = mdp_obstacle.obstacle_terrain_cfg(
-            num_rows=rows, num_cols=int(e("KBOT_OBST_COLS", "20")), height_range=(hmin, hmax),
-            **({"p_flat": 1.0, "p_platform": 0.0, "p_beam": 0.0} if flat_only else {}))
+            num_rows=rows, num_cols=int(e("KBOT_OBST_COLS", "20")), height_range=(hmin, hmax), mix=mix)
         self.scene.terrain.max_init_terrain_level = int(e("KBOT_OBST_INIT_LEVEL", "0"))
-        self.curriculum.obstacle_levels = CurrTerm(func=mdp_obstacle.obstacle_levels)
+        behind_fails = e("KBOT_OBST_BEHIND_FAILS", "1") == "1"   # stage 1: 1; stage 1b: 0 (see mdp_obstacle.obstacle_levels)
+        replay_p = float(e("KBOT_OBST_REPLAY", "0"))
+        self.curriculum.obstacle_levels = CurrTerm(func=mdp_obstacle.obstacle_levels, params={"behind_fails": behind_fails, "replay_p": replay_p})
+        # a staircase needs more time than a single step: 3 risers up, a landing, 3 down, then 0.5 m beyond
+        self.episode_length_s = float(e("KBOT_OBST_EPISODE_S", str(self.episode_length_s)))
+        # falls are judged above the local ground (a robot lying on a 0.6 m staircase is 0.8 m above z = 0)
+        self.terminations.base_height.func = mdp_obstacle.base_height_terrain
 
         # ---- ground under each foot: a 0.6 x 0.6 m patch of rays per foot (world-aligned) ----
         for name, body in zip(mdp_obstacle.FOOT_SCANNERS, mdp_obstacle.tm.FEET):
@@ -95,7 +103,9 @@ class KBotLegsObstacleEnvCfg(KBotLegsAmpEnvCfg):
         # ---- 5. style gate closed next to an obstacle ----
         self.observations.amp_gate.gate.func = mdp_obstacle.walk_gate_obstacle
 
-        print(f"[obstacle-env] {rows} heights {hmin * 100:.0f}-{hmax * 100:.0f} cm, kinds per column "
-              f"{mdp_obstacle.column_kinds(self.scene.terrain.terrain_generator)}, start level {self.scene.terrain.max_init_terrain_level}, "
+        kinds = mdp_obstacle.column_kinds(self.scene.terrain.terrain_generator)
+        print(f"[obstacle-env] {rows} heights {hmin * 100:.0f}-{hmax * 100:.0f} cm, columns per kind "
+              f"{ {k: kinds.count(k) for k in dict.fromkeys(kinds)} }, start level {self.scene.terrain.max_init_terrain_level}, "
+              f"falling behind demotes {behind_fails}, replay of lower heights {replay_p}, episode {self.episode_length_s:.0f} s, "
               f"obstacle-tile vx {cmd.obstacle_vx}, policy history {hist} + height map ({'BLIND: zeroed' if mdp_obstacle.BLIND else 'on'}, "
               f"z_nominal {MAP_Z_NOMINAL}), lift anchor {'terrain-aware' if lift is not None else 'OFF'}, contact penalties -{w}")

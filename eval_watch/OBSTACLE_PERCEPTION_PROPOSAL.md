@@ -210,3 +210,32 @@ Things found while building it:
   without it; training keeps it (as walker v5 did).
 - The first reset happens before the robots are on their tiles; a curriculum that reads positions there
   promotes everyone (caught in the dry run, fixed).
+
+---
+
+## Stage 1 result and stage 1b (2026-10-03)
+
+Stage 1 answered its question: with the map the walker crosses 91% of platforms and 94% of beams of 2-20 cm
+(blind control 70% / 86%; the map-trained policy with the map zeroed 6-8%). But in both runs flat side-stepping
+and turning in place decayed after iteration 1600 (full numbers: OBSTACLE_S1_STATUS.md).
+
+Stage 1b (user go: "one more run before stage 2 and add more like stairs to practice") — one run from stage 1's
+iteration-1600 checkpoint (all flat skills intact), `eval_watch/obstacle_env_v2.sh`:
+
+- **Stairs** as a fourth kind of tile: a square staircase around the spawn area, 3 risers up, a 0.6 m landing,
+  3 risers down, treads 0.30 m; the riser is the row's height (2-20 cm, so up to 0.6 m at the top).
+- **Mix:** 40% flat (was 25%), 20% platform, 15% beam, 25% stairs.
+- **Action noise capped at 0.2** (it rose from 0.22 to 0.36 in stage 1; walker v5 sat at 0.15-0.21).
+- **Curriculum:** falling behind the command no longer demotes a robot that got onto its obstacle (heading drift
+  ended half of stage 1's episodes that way); 20% of episodes replay a lower height (stage 1's policy was worse
+  at 4 cm than at 8-18 cm).
+- **Needed for stairs:** falls judged above the local ground; 25 s episodes.
+- **Tests at every checkpoint:** crossing per kind and height, and the walker's six-direction test on flat
+  ground. A checkpoint is eligible only if every flat direction scores at least 0.5; the best is the eligible
+  checkpoint with the highest crossing score.
+
+Baseline on the new course (1200 robots, 26 s): the start checkpoint crosses stairs with 2 cm risers 89%, 4 cm
+64%, 6 cm 42%, 8 cm 25%, 10 cm and up 0-11%; stage 1's best climber, which never saw stairs: 86 / 69 / 53 /
+39 / 36 / 19 / 14 / 6 / 0 / 0%.
+
+Autopilot `eval_watch/obstacle_s1b_pipeline.sh`, status `eval_watch/OBSTACLE_S1B_STATUS.md`.
