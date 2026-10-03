@@ -1,0 +1,19 @@
+{
+ "checkpoint": "/home/faisal/IsaacLab/logs/autopilot/obst_s1b_2999.pt",
+ "cmd": "0:0:0",
+ "standing": {
+  "envs": 256,
+  "survival": 0.9765625,
+  "tilt_deg": {
+   "mean": 1.2212532758712769,
+   "p90": 2.3857741832733157
+  },
+  "foot_lift_max_cm": 28.48597764968872,
+  "foot_travel_mps_mean": 0.06135692447423935,
+  "width_cm": 28.658974170684814,
+  "base_speed_abs_mps": 0.055734314024448395
+ },
+ "walking_envs": 0,
+ "survival_walking": null,
+ "note": "no walking envs"
+}
