@@ -2,7 +2,7 @@
 """Static server for the :8800 K-Bot dashboard + an ON-DEMAND render trigger.
 
 Replaces `python -m http.server 8800`. Same static serving of eval_watch/, plus:
-  GET /request_render[?exp=auto|rough|amp|track|clip]
+  GET /request_render[?exp=auto|rough|amp|track|clip|multi|obst]
                        -> write the choice into render_request.flag; the watcher renders
                           on its next ~10 s poll, then returns to idle. "auto" (default)
                           = whatever is training right now (see watcher_isaac.sh).
@@ -25,7 +25,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         if self.path.split("?")[0] == "/request_render":
             from urllib.parse import parse_qs, urlparse
             exp = parse_qs(urlparse(self.path).query).get("exp", ["auto"])[0]
-            if exp not in ("auto", "rough", "amp", "track", "clip", "multi"):
+            if exp not in ("auto", "rough", "amp", "track", "clip", "multi", "obst"):
                 exp = "auto"
             with open(FLAG, "w") as f:
                 f.write(exp)

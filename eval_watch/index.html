@@ -37,6 +37,7 @@
       <option value="track">tracking pilot (kbot_legs_track)</option>
       <option value="clip">clip tracker — LAFAN1 motions (kbot_legs_trackclip)</option>
       <option value="multi">multi-cycle tracker — forward/back/side/pivot (kbot_legs_trackmulti)</option>
+      <option value="obst">obstacle course — stairs / platform / beam (kbot_legs_obstacle)</option>
     </select>
     <button id="render" onclick="requestRender()">⟳ Render newest checkpoint</button>
     <div id="rstate">…</div>
@@ -44,7 +45,7 @@
   <div class="cols">
     <div class="wrap terr">
       <div class="head">CURRENT RENDER</div>
-      <div class="note">newest checkpoint of the selected experiment, same config as its trainer (flat world, ADAPT package)</div>
+      <div class="note">newest checkpoint of the selected experiment, same config as its trainer. Obstacle course: three robots (stairs, platform, beam) walking head-on at the heights being practised now; takes 3-4 min, longer if a test is running</div>
       <div class="status" id="stat_dr">loading…</div>
       <div class="label">animated</div><img id="gif_dr">
       <div class="label">filmstrip (left→right)</div><img id="strip_dr">
@@ -66,14 +67,19 @@
         .then(() => { document.getElementById('rstate').textContent = 'render requested — starting within ~10 s…'; })
         .catch(() => { document.getElementById('rstate').textContent = 'request failed (server?)'; b.disabled = false; b.textContent = '⟳ Render newest checkpoint'; });
     }
+    // Images are reloaded only when their status line changes (a new render): reloading every poll restarted
+    // the animation every 5 s — the 16 s obstacle-course gif never got to play — and re-downloaded it each time.
+    let lastDr = null, lastPrev = null;
     function poll() {
       const t = Date.now();
-      gif_dr.src     = 'dr_latest.gif?t=' + t;
-      strip_dr.src   = 'dr_filmstrip.png?t=' + t;
-      gif_flat.src   = 'prev_latest.gif?t=' + t;
-      strip_flat.src = 'prev_filmstrip.png?t=' + t;
-      fetch('dr_status.txt?t=' + t).then(r => r.text()).then(s => stat_dr.textContent = s).catch(() => {});
-      fetch('prev_status.txt?t=' + t).then(r => r.text()).then(s => stat_flat.textContent = s).catch(() => {});
+      fetch('dr_status.txt?t=' + t).then(r => r.text()).then(s => {
+        stat_dr.textContent = s;
+        if (s !== lastDr) { lastDr = s; gif_dr.src = 'dr_latest.gif?t=' + t; strip_dr.src = 'dr_filmstrip.png?t=' + t; }
+      }).catch(() => {});
+      fetch('prev_status.txt?t=' + t).then(r => r.text()).then(s => {
+        stat_flat.textContent = s;
+        if (s !== lastPrev) { lastPrev = s; gif_flat.src = 'prev_latest.gif?t=' + t; strip_flat.src = 'prev_filmstrip.png?t=' + t; }
+      }).catch(() => {});
       fetch('render_state.txt?t=' + t).then(r => r.text()).then(s => {
         const st = s.trim();
         document.getElementById('rstate').textContent = st;

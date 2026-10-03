@@ -9,6 +9,10 @@
 #   auto   whatever is training right now: train_amp.py -> amp, a Track task -> track,
 #          else the lineage (kbot_legs_rough); nothing running -> lineage's newest ckpt
 #   rough | amp | track | clip   explicit choice from the dashboard dropdown (clip = LAFAN1 clip tracker)
+#   obst   obstacle course (kbot_legs_obstacle), 2026-10-03: three robots side by side — stairs, platform,
+#          beam — each at the height the trainer is practising now, filmed by eval_watch/obstacle_eval.py
+#          (play_amp.py's fixed world camera would look at an empty tile). Shares the autopilot's GPU lock,
+#          so it waits for a running test instead of starving it.
 # The render uses the SAME KBOT_* env vars as the running trainer (read from
 # /proc/<pid>/environ) so it sees the config the checkpoint was trained on
 # (clock, command band, DR); with no trainer running it falls back to the service
@@ -33,7 +37,8 @@ log() { echo "[$(date '+%H:%M:%S')] $*" >> "$OUT/watcher_isaac.log"; }
 resolve_exp() {
     local choice="$1" pid=""
     if [ "$choice" = "auto" ] || [ -z "$choice" ]; then
-        if pgrep -f "train_amp.py" >/dev/null; then choice=amp
+        if pgrep -f "train_amp.py.*Obstacle-KbotLegs" >/dev/null; then choice=obst
+        elif pgrep -f "train_amp.py" >/dev/null; then choice=amp
         elif pgrep -f "TrackMulti-Kbot" >/dev/null; then choice=multi
         elif pgrep -f "TrackClip-Kbot" >/dev/null; then choice=clip
         elif pgrep -f "Isaac-Track-Kbot" >/dev/null; then choice=track
@@ -41,6 +46,7 @@ resolve_exp() {
     fi
     case "$choice" in
         amp)   EXP=kbot_legs_amp;   TASK=Isaac-Velocity-Rough-KbotLegs-AMP-v0; SCRIPT=play_amp.py; LABEL="AMP pilot";  pid=$(pgrep -f "train_amp.py" | head -1) ;;
+        obst)  EXP=kbot_legs_obstacle; TASK=Isaac-Velocity-Obstacle-KbotLegs-AMP-v0; SCRIPT=obstacle_eval.py; LABEL="obstacle course"; pid=$(pgrep -f "train_amp.py.*Obstacle-KbotLegs" | head -1) ;;
         track) EXP=kbot_legs_track; TASK=Isaac-Track-KbotLegs-v0;              SCRIPT=play.py;     LABEL="tracking";   pid=$(pgrep -f "Isaac-Track-Kbot" | head -1) ;;
         multi) EXP=kbot_legs_trackmulti; TASK=Isaac-TrackMulti-KbotLegs-v0;    SCRIPT=play.py;     LABEL="multi-cycle tracker"; pid=$(pgrep -f "TrackMulti-Kbot" | head -1) ;;
         clip)  EXP=kbot_legs_trackclip; TASK=Isaac-TrackClip-KbotLegs-v0;      SCRIPT=play.py;     LABEL="clip tracking"; pid=$(pgrep -f "TrackClip-Kbot" | head -1) ;;
@@ -50,8 +56,45 @@ resolve_exp() {
     if [ -n "$pid" ] && [ -r "/proc/$pid/environ" ]; then
         RENDER_ENV=$(tr '\0' '\n' < "/proc/$pid/environ" | grep -E '^KBOT_' | grep -v '^KBOT_NUM_ENVS=' | tr '\n' ' ')
     fi
+    if [ -z "$RENDER_ENV" ] && [ "$choice" = "obst" ]; then   # no trainer running: the course's own environment file
+        RENDER_ENV=$(bash -c "source $IL/eval_watch/obstacle_env_v2.sh; env" | grep -E '^KBOT_' | tr '\n' ' ')
+    fi
     [ -z "$RENDER_ENV" ] && RENDER_ENV="$DEFAULT_ENV"
     CHOICE=$choice
+}
+
+# render_obst <prefix> <tb_tag>   obstacle course: stairs | platform | beam, one robot each, in one run
+render_obst() {
+    local pre="$1" tag="$2" curlog kind lv pairs="" age n
+    curlog=$(cat "$IL/logs/amp_pilot/CURRENT" 2>/dev/null)
+    for kind in stairs platform beam; do      # the height the robots practise now (mean level in the trainer's log)
+        lv=""
+        [ -n "$curlog" ] && [ -f "$curlog" ] && lv=$(grep -a "Curriculum/obstacle_levels/level_$kind:" "$curlog" | tail -n 1 | sed 's/\x1b\[[0-9;]*m//g' | awk '{v = $NF + 0.5; if (v < 0) v = 0; if (v > 9) v = 9; printf "%d", v}')
+        [ -z "$lv" ] && { [ "$kind" = "stairs" ] && lv=2 || lv=4; }
+        pairs="$pairs${pairs:+,}$kind:$lv"
+    done
+    age=$(( $(date +%s) - $(stat -c %Y "$newest") ))    # a checkpoint is written twice (the judge is added to it)
+    [ "$age" -lt 25 ] && sleep $((25 - age))
+    cd "$IL"
+    rm -f "$OUT/dash_obst.gif" "$OUT/dash_obst_render.txt"
+    (
+        flock -w 1500 9 || exit 1
+        n=0; while [ "$(nvidia-smi --query-gpu=memory.free --format=csv,noheader,nounits | head -1)" -lt 6800 ]; do n=$((n + 1)); [ "$n" -ge 60 ] && break; sleep 10; done
+        env PYTHONUNBUFFERED=1 $RENDER_ENV KBOT_OBST_MIX=flat:0.10,platform:0.30,beam:0.30,stairs:0.30 "$PY" eval_watch/obstacle_eval.py \
+            --task $TASK --checkpoint "$newest" --num_envs 200 --seconds 17 --yaw0 --render_seconds 16 \
+            --render_multi "$pairs" --tag dash_obst --headless > "$OUT/play_${pre}.log" 2>&1
+    ) 9> "$IL/logs/autopilot/gpu_side_job.lock"
+    if [ ! -s "$OUT/dash_obst.gif" ]; then log "  [$pre] no gif (obstacle render failed) — see play_${pre}.log"; return 1; fi
+    for f in latest.gif filmstrip.png status.txt; do
+        [ -f "$OUT/${pre}_$f" ] && cp "$OUT/${pre}_$f" "$OUT/prev_$f"
+    done
+    cp "$OUT/dash_obst.gif" "$OUT/${pre}_latest.gif"
+    cp "$OUT/dash_obst_filmstrip.png" "$OUT/${pre}_filmstrip.png"
+    echo "[$LABEL] $EXP · $(basename "$RUN") · iter $iter · head-on, heights practised now · $(cat "$OUT/dash_obst_render.txt" 2>/dev/null) · rendered $(date '+%Y-%m-%d %H:%M:%S')" > "$OUT/${pre}_status.txt"
+    "$PY" "$OUT/video_to_tb.py" "$OUT/${pre}_latest.gif" "$RUN" "$iter" "$tag" \
+        >> "$OUT/watcher_isaac.log" 2>&1
+    log "  [$pre] ok ($LABEL $EXP iter $iter: $pairs)"
+    return 0
 }
 
 # render <prefix> <tb_tag>   (uses EXP TASK SCRIPT RENDER_ENV newest iter RUN)
@@ -111,7 +154,7 @@ while true; do
         -mindepth 1 -mmin +90 -delete 2>/dev/null
 
     # RENDER REGIME = TRAINING REGIME (2026-08-10): same env vars as the trainer.
-    render dr "policy/rollout"
+    if [ "$CHOICE" = "obst" ]; then render_obst dr "policy/rollout"; else render dr "policy/rollout"; fi
 
     echo "idle — last rendered $LABEL ($EXP) iter $iter at $(date '+%H:%M:%S') (click Render to refresh)" > "$STATE"
     log "done $EXP iter=$iter"

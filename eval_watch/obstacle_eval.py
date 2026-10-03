@@ -13,6 +13,8 @@ hit before crossing, speed, heading change.
   --blind   zero the height map before it reaches the policy (does the policy use the map?)
   --yaw0    every robot starts facing +x: head-on approach (default: random heading -> approach up to 45 deg off)
   --render_seconds S --render_kind platform --render_level 4   render one robot (side + rear view) -> <tag>.gif
+  --render_seconds S --render_multi stairs:3,platform:5,beam:6  render one robot per entry (side view each, labelled)
+                                                                side by side in ONE run -> <tag>.gif (the dashboard's render)
 
   source eval_watch/obstacle_env.sh; ./isaaclab.sh -p eval_watch/obstacle_eval.py --checkpoint <ckpt> --tag obst_eval --headless
 """
@@ -39,6 +41,7 @@ parser.add_argument("--tag", default="obst_eval")
 parser.add_argument("--render_seconds", type=float, default=0.0)
 parser.add_argument("--render_kind", default="platform")
 parser.add_argument("--render_level", type=int, default=4)
+parser.add_argument("--render_multi", default="", help="kind:level,kind:level,... — one robot each, side by side")
 AppLauncher.add_app_launcher_args(parser)
 args = parser.parse_args()
 args.enable_cameras = args.render_seconds > 0
@@ -89,10 +92,16 @@ def main() -> int:
     env_col = np.floor(np.arange(n) / (n / gen.num_cols)).astype(int)
     env_level = np.arange(n) % rows
     cam_env = 0
+    multi = []   # (kind, level, env index) per robot of --render_multi
     if args.render_seconds > 0:
-        match = [i for i in range(n) if col_kind[env_col[i]] == args.render_kind and env_level[i] == args.render_level]
-        assert match, f"no env on a {args.render_kind} tile at level {args.render_level}"
-        cam_env = match[0]
+        wanted = [(k_, int(l_)) for k_, l_ in (x.split(":") for x in args.render_multi.split(",") if x)] or [(args.render_kind, args.render_level)]
+        for kind_, lv_ in wanted:
+            match = [i for i in range(n) if col_kind[env_col[i]] == kind_ and env_level[i] == lv_]
+            assert match, f"no env on a {kind_} tile at level {lv_}"
+            multi.append((kind_, lv_, match[0]))
+        cam_env = multi[0][2]
+        if not args.render_multi:
+            multi = []
         env_cfg.viewer.origin_type = "asset_root"; env_cfg.viewer.asset_name = "robot"; env_cfg.viewer.env_index = cam_env
         env_cfg.viewer.resolution = (960, 540); env_cfg.viewer.eye = (0.15, -2.15, 0.35); env_cfg.viewer.lookat = (0.0, 0.0, -0.3)
     agent_cfg = load_cfg_from_registry(args.task, "rsl_rl_cfg_entry_point")
@@ -124,6 +133,7 @@ def main() -> int:
 
     views = {"side": ((0.15, -2.15, 0.35), (0.0, 0.0, -0.3)), "rear34": ((-1.55, 1.25, 0.6), (0.0, 0.0, -0.35))}
     frames = {k: [] for k in views}
+    mframes = [[] for _ in multi]
     n_render = int(args.render_seconds / uenv.step_dt)
 
     def capture():
@@ -176,7 +186,14 @@ def main() -> int:
             q_ = robot.data.root_quat_w
             yaw_now = torch.atan2(2.0 * (q_[:, 0] * q_[:, 3] + q_[:, 1] * q_[:, 2]), 1.0 - 2.0 * (q_[:, 2] ** 2 + q_[:, 3] ** 2))
             turn = torch.where(m, torch.atan2(torch.sin(yaw_now - yaw_start), torch.cos(yaw_now - yaw_start)).abs(), turn)
-            if t < n_render and t % 2 == 0:
+            if t < n_render and t % 2 == 0 and multi:   # one robot per panel: point the follow camera at each in turn
+                vc = uenv.viewport_camera_controller
+                for j, (_, _, idx_) in enumerate(multi):
+                    vc.set_view_env_index(idx_)
+                    vc.update_view_to_asset_root("robot")
+                    vc.update_view_location(eye=views["side"][0], lookat=views["side"][1])
+                    mframes[j].append(capture())
+            elif t < n_render and t % 2 == 0:
                 for name, (eye, lookat) in views.items():
                     uenv.viewport_camera_controller.update_view_location(eye=eye, lookat=lookat)
                     frames[name].append(capture())
@@ -215,7 +232,48 @@ def main() -> int:
     print(f"[eval] flat tiles: base {fl.get('base_above_feet_ground_m', float('nan')):.3f} m above the ground under the feet; largest |map value| {fl.get('map_abs_max', float('nan')):.2f} "
           f"(x 1/5 = {fl.get('map_abs_max', float('nan')) / 5 * 100:.1f} cm)")
     json.dump(res, open(os.path.join(OUT, f"{args.tag}.json"), "w"), indent=1)
-    if n_render > 0:
+    if n_render > 0 and multi:
+        import subprocess
+
+        import imageio.v2 as imageio
+        from PIL import Image, ImageDraw, ImageFont
+        FF = os.path.join(os.path.dirname(sys.executable), "..", "lib", "python3.11", "site-packages", "imageio_ffmpeg", "binaries", "ffmpeg-linux-x86_64-v7.0.2")
+        try:
+            font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 26)
+        except OSError:
+            font = ImageFont.load_default()
+        labels, notes, vids = [], [], []
+        for j, (kind_, lv_, idx_) in enumerate(multi):
+            outcome = "crossed" if ok[idx_] else ("fell" if R["end_kind"][idx_] else "not past it yet")
+            labels.append(f"{kind_} {heights[lv_]:.0f} cm")
+            notes.append(f"{kind_} {heights[lv_]:.0f} cm: {outcome}")
+            cropped = []
+            for img in mframes[j]:
+                h_, w_ = img.shape[:2]
+                im = Image.fromarray(np.ascontiguousarray(img[:, int(w_ * 0.25):int(w_ * 0.75)]))
+                d_ = ImageDraw.Draw(im)
+                d_.rectangle([0, 0, im.width, 40], fill=(0, 0, 0))
+                d_.text((10, 6), labels[-1], fill=(255, 255, 255), font=font)
+                cropped.append(np.asarray(im))
+            mframes[j] = cropped
+            vids.append(os.path.join(OUT, f"{args.tag}_{kind_}{lv_}.mp4"))
+            imageio.mimwrite(vids[-1], cropped, fps=25, codec="libx264", quality=7, macro_block_size=None)
+        gif = os.path.join(OUT, f"{args.tag}.gif")
+        k_ = len(vids)
+        chain = "".join(f"[{i}:v]scale=300:-1,hqdn3d=10:8:16:12[v{i}];" for i in range(k_))
+        stack = "".join(f"[v{i}]" for i in range(k_)) + (f"hstack=inputs={k_}," if k_ > 1 else "")
+        cmd_ = [FF, "-y"]
+        for v_ in vids:
+            cmd_ += ["-i", v_]
+        cmd_ += ["-filter_complex", chain + stack + "fps=8,split[s0][s1];[s0]palettegen=max_colors=32:stats_mode=diff[p];[s1][p]paletteuse=dither=none", gif]
+        subprocess.run(cmd_, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        idx = [int(i_ * (len(mframes[0]) - 1) / 7) for i_ in range(8)]
+        rows_ = [np.concatenate([fr_[i_][::2, ::2] for i_ in idx], axis=1) for fr_ in mframes]
+        imageio.imwrite(os.path.join(OUT, f"{args.tag}_filmstrip.png"), np.concatenate(rows_, axis=0))
+        with open(os.path.join(OUT, f"{args.tag}_render.txt"), "w") as f_:
+            f_.write(" | ".join(notes))
+        print(f"[render] {gif} ({os.path.getsize(gif) / 1e6:.1f} MB): " + " | ".join(notes))
+    elif n_render > 0:
         import subprocess
 
         import imageio.v2 as imageio
