@@ -1,5 +1,9 @@
 """Closer look at one engage condition: when robots fall, and what the stand looks like on the way there.
 
+WARNING (2026-10-03): this script uses a stripped plant (no training randomization, NO ANKLE JOINT FRICTION, no
+sensor noise). Policies were never trained on that plant; the slow drift it shows is not evidence about the trained
+plant. Use amp_engage_test.py --plant trained (the default) for conclusions.
+
 Same setup as amp_engage_test.py (rest at the zero pose, stand command and hard pin from tick 0, nominal plant,
 ankle spring 52 with 1 deg play), every robot under the same torso moment. Prints fall times and, in 0.5 s bins,
 the mean torso pitch/roll tilt, base horizontal speed, ankle actions and knee actions of the robots still up.

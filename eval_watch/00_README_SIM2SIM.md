@@ -36,6 +36,13 @@ can diff them. This note is the ask; the other files are the detail.
 > ships only if it passes your `cf_tracking.py` and our 15-condition engage test inside your watchdog limits.
 > Four questions for you in §4.
 
+> **2026-10-03 18:10 — CORRECTION: `REPLY2_HW_ENGAGE.md`.** Our "v5 falls 16 % under the load alone even with a hard
+> start" was a TEST ARTIFACT (we had stripped the plant, including the ankle joint friction the policy was trained
+> with). On the plant as trained, walker_v5_3200 holds −3…+3 Nm for 20 s with **0 falls** at a hard start; the weak-start
+> wind-up still reproduces (18.2 rad/s). **"Do not re-engage" is withdrawn — your call.** Note: a normal start reaches
+> ~5 rad/s joint speed in our plant (≈3 with clean sensors), i.e. at your watchdog limit. Today's two fine-tunes (v6,
+> v6b) did not beat v5; no bundle from them.
+
 ## The ask, in one line
 
 **Run the three batteries on your side and send back a `metrics.json` for each, plus answers to the
