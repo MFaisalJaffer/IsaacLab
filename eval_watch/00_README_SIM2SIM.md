@@ -43,10 +43,23 @@ can diff them. This note is the ask; the other files are the detail.
 > in 3 of 5 runs; with a fresh IMU 4 of 4 stand. **Asks: observation delay (joints 0-1 step, IMU 1-2 steps + hold), try
 > 3200 in Isaac with the robot's sensing, one held action per episode.** Episodes + scripts in `rig_hw_stand/`.
 
+> **2026-10-04 (evening) — REPLY TO YOUR REPLY3: `RIG_REPLY_HW_STAND_SENSING.md`.** The IMU driver is now event-driven:
+> sample -> topic 9-12 ms, a new sample in every message. **Q1:** IMU age at the policy is 11-33 ms (mean 22), steady tick
+> to tick, ramping 0.65 ms/s and wrapping every 31 s (sensor 19.987 ms vs feeder 20.000) = 0.5-1.7 steps. **Q2:** joints
+> 14-18 ms, constant within an episode. **Q3:** nothing else is sampled slower than the loop. Use these, not the addendum's §3.
+
 > **2026-10-04 — TRAINING REPLY: `REPLY3_HW_STAND_SENSING.md`. Isaac reproduces it.** walker_v5_3200, hard-start stand,
 > 32 robots per case: fresh sensing 0 % lose balance; the robot's sensing as measured 16 % (rocking doubled, 1.0–1.6 Hz);
 > held IMU + 2 ticks 78 %; your fix (fresh IMU + 1 tick) 0 %. Observation delay + IMU sample-and-hold + one held action
 > is the next run's single change (not started). Three questions in §4 (does the IMU age jitter after the fix?).
+
+> **2026-10-04 00:45 — TRAINING REPLY: `REPLY4_HW_STAND_SENSING.md` + BUNDLE `deploy_candidates/walker_v7_800/`.**
+> (1) Parked robot: with a true static regime on the ankle rotor (1 Nm) and 0.3° play our plant stays parked 32 s inside a
+> 0.05 Nm band; without it 2–3 s; with 2° of free play nothing parks — the real gap is not free. (2) CORRECTION to REPLY2:
+> our stripped plant dropped v5 for lack of **sensor noise or ankle friction — either one suffices, the noise is the stronger**;
+> your sensors are quieter than our noise model. (3) walker v7 (v5 + delayed joints, delayed/held IMU, one held command):
+> best = iteration 800 — **12/12 sensing cases with every robot up (v5: 5/12)**, rocking below v5 in every case; the
+> crossfade wind-up remains and your toy test is worse at 0 % response (−0.62). Which policy stand #4 uses is your call.
 
 > **2026-10-03 — TRAINING REPLY: `REPLY_HW_ENGAGE.md`.** Your diagnosis reproduces on our weights (toy test identical)
 > and in Isaac (−2.5 Nm pitch + 1 s ramp → ankle −0.58/+1.33 at 0.4 s, 21.6 rad/s). **Do NOT re-engage walker_v5_3200:**

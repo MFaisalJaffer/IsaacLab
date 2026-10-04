@@ -1,0 +1,43 @@
+{
+ "checkpoint": "logs/autopilot/walker_v7_800.pt",
+ "series_k": 52.0,
+ "play_deg": 1.0,
+ "groups": {
+  "pitch load -2.5 Nm": {
+   "ankle_action_t20": [
+    -0.15778528153896332,
+    0.15392358601093292
+   ],
+   "peak_ankle_action_2s": 0.6885493397712708,
+   "peak_any_action_2s": 5.159006118774414,
+   "peak_joint_speed_2s": 5.455536365509033,
+   "peak_tilt_deg_2s": 4.449796676635742,
+   "fell": 0.0,
+   "fell_before_2s": 0.0
+  },
+  "pitch load +0.0 Nm": {
+   "ankle_action_t20": [
+    -0.01851494610309601,
+    0.014590798877179623
+   ],
+   "peak_ankle_action_2s": 0.19561031460762024,
+   "peak_any_action_2s": 5.103638648986816,
+   "peak_joint_speed_2s": 2.1199707984924316,
+   "peak_tilt_deg_2s": 3.2237508296966553,
+   "fell": 0.0,
+   "fell_before_2s": 0.0
+  },
+  "pitch load +2.5 Nm": {
+   "ankle_action_t20": [
+    0.10243579745292664,
+    -0.10134822130203247
+   ],
+   "peak_ankle_action_2s": 0.3504387140274048,
+   "peak_any_action_2s": 5.227567672729492,
+   "peak_joint_speed_2s": 2.257815361022949,
+   "peak_tilt_deg_2s": 3.574453830718994,
+   "fell": 0.0,
+   "fell_before_2s": 0.0
+  }
+ }
+}

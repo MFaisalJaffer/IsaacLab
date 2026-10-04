@@ -1,1 +1,1 @@
-idle — last rendered AMP pilot (kbot_legs_amp) iter 400 at 15:14:35 (click Render to refresh)
+idle — last rendered AMP pilot (kbot_legs_amp) iter 800 at 22:46:01 (click Render to refresh)

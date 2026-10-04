@@ -149,7 +149,7 @@ def main() -> int:
             print("[io] onnxruntime not importable here — onnx_action not recorded (the rig checks this)")
     seg = {"schedule": [{"t_s": e[0], "cmd": [e[1], e[2], e[3]], "stand_flag": e[4]} for e in SCHEDULE], "T_END": T_END}
     np.savez(args.out, **R, **({"onnx_action": onnx_action} if onnx_action is not None else {}),
-             obs_terms=np.array(names), frame_dims=np.array(frame_dims), history_length=H, control_dt=dt,
+             obs_terms=np.array(names), frame_dims=np.array(frame_dims), history_length=H, H=H, obs_dim=int(R["input"].shape[1]), frame_dim=frame_dim, control_dt=dt,
              layout="per_term_contiguous_oldest_first", schedule=json.dumps(seg),
              readme=("input[t] is what the policy saw at tick t (10 frames per term, oldest first); frame[t] is its newest frame; "
                      "action[t] = policy(input[t]); the stop at 13 s goes through the corridor (0.12,0,0) for 1.5 s then the annealed stand pin"))

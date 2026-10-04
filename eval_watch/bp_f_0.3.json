@@ -1,0 +1,85 @@
+{
+ "band_deg": 0.5,
+ "seconds": 32.0,
+ "play_deg": 0.3,
+ "variants": {
+  "no ankle friction, no rotor stiction": {
+   "longest_s": 1.98,
+   "moment_nm": -0.026568416506052017,
+   "pitch_deg_at_1s": -0.05245641991496086,
+   "width_10s_nm": 0.0,
+   "width_20s_nm": 0.0,
+   "width_full_nm": 0.0,
+   "sweep": [
+    -0.18320000171661377,
+    0.0568000003695488
+   ],
+   "resolution_nm": 0.0025263158898604543
+  },
+  "ankle joint friction 0.03 (low end of training)": {
+   "longest_s": 2.3000000000000003,
+   "moment_nm": -0.027415785938501358,
+   "pitch_deg_at_1s": -0.02290433458983898,
+   "width_10s_nm": 0.0,
+   "width_20s_nm": 0.0,
+   "width_full_nm": 0.0,
+   "sweep": [
+    -0.1410999894142151,
+    0.09889999777078629
+   ],
+   "resolution_nm": 0.0025263155761517976
+  },
+  "ankle joint friction 0.10": {
+   "longest_s": 2.2800000000000002,
+   "moment_nm": -0.015531573444604874,
+   "pitch_deg_at_1s": 0.13700254261493683,
+   "width_10s_nm": 0.0,
+   "width_20s_nm": 0.0,
+   "width_full_nm": 0.0,
+   "sweep": [
+    -0.09889999777078629,
+    0.1410999894142151
+   ],
+   "resolution_nm": 0.0025263155761517976
+  },
+  "ankle joint friction 0.18 (high end of training)": {
+   "longest_s": 2.84,
+   "moment_nm": -0.0054263100028038025,
+   "pitch_deg_at_1s": 0.03392347693443298,
+   "width_10s_nm": 0.0,
+   "width_20s_nm": 0.0,
+   "width_full_nm": 0.0,
+   "sweep": [
+    -0.09889999777078629,
+    0.1410999894142151
+   ],
+   "resolution_nm": 0.0025263155761517976
+  },
+  "rotor stiction 1.0 Nm only": {
+   "longest_s": 32.0,
+   "moment_nm": -0.021431580185890198,
+   "pitch_deg_at_1s": 0.1959669291973114,
+   "width_10s_nm": 0.07326316080595317,
+   "width_20s_nm": 0.05810526546679045,
+   "width_full_nm": 0.05305263368706954,
+   "sweep": [
+    -0.0568000003695488,
+    0.18320000171661377
+   ],
+   "resolution_nm": 0.0025263158898604543
+  },
+  "ankle joint friction 0.10 + rotor stiction 1.0 Nm": {
+   "longest_s": 32.0,
+   "moment_nm": -0.0037473663687705994,
+   "pitch_deg_at_1s": 0.11084047704935074,
+   "width_10s_nm": 0.07326316080595317,
+   "width_20s_nm": 0.05557894957692999,
+   "width_full_nm": 0.05305263368706954,
+   "sweep": [
+    -0.0568000003695488,
+    0.18320000171661377
+   ],
+   "resolution_nm": 0.0025263158898604543
+  }
+ }
+}

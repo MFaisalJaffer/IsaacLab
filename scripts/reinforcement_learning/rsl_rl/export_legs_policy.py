@@ -29,6 +29,7 @@ import cli_args  # isort: skip  (local module living next to play.py)
 parser = argparse.ArgumentParser(description="Export the legs policy to ONNX + metadata.")
 parser.add_argument("--task", type=str, default="Isaac-Velocity-Rough-KbotLegs-v0")
 parser.add_argument("--num_envs", type=int, default=1)
+parser.add_argument("--trained_sensing", type=str, default=None, help="JSON describing the sensing path the policy was TRAINED on (delays, holds); copied into the meta as information — the export env itself always uses fresh sensing")
 parser.add_argument("--out_dir", type=str, default=None, help="where to write the bundle (default: <checkpoint dir>/exported)")
 cli_args.add_rsl_rl_args(parser)
 AppLauncher.add_app_launcher_args(parser)
@@ -264,6 +265,7 @@ def main():
         "obs_terms": OBS_TERMS,                 # ONE frame
         "command_envelope": command_envelope,
         "train_env_vars": {k: v for k, v in sorted(os.environ.items()) if k.startswith("KBOT_")},
+        "trained_sensing": json.loads(args_cli.trained_sensing) if args_cli.trained_sensing else None,   # information only
         "joint_names": joint_names,                 # <-- Isaac DOF order (key!)
         "default_joint_pos": default_joint_pos,     # zero pose
         "kp": dict(zip(joint_names, kp)),

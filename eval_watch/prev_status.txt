@@ -1,1 +1,1 @@
-[obstacle course] kbot_legs_obstacle · 2026-10-03_09-38-24_obst_s1b · iter 1400 · head-on, heights practised now · stairs 6 cm: fell | platform 16 cm: crossed | beam 14 cm: crossed · rendered 2026-10-03 11:47:58
+[obstacle course] kbot_legs_obstacle · 2026-10-03_09-38-24_obst_s1b · iter 2600 · head-on, heights practised now · stairs 10 cm: crossed | platform 14 cm: crossed | beam 14 cm: crossed · rendered 2026-10-03 13:30:03

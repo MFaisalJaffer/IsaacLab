@@ -1,0 +1,85 @@
+{
+ "band_deg": 0.5,
+ "seconds": 32.0,
+ "play_deg": 0.3,
+ "variants": {
+  "no ankle friction, no rotor stiction": {
+   "longest_s": 1.46,
+   "moment_nm": -0.06315779685974121,
+   "pitch_deg_at_1s": -0.18102914094924927,
+   "width_10s_nm": 0.0,
+   "width_20s_nm": 0.0,
+   "width_full_nm": 0.0,
+   "sweep": [
+    -2.0,
+    2.0
+   ],
+   "resolution_nm": 0.042105263157894736
+  },
+  "ankle joint friction 0.03 (low end of training)": {
+   "longest_s": 1.36,
+   "moment_nm": -0.02105259895324707,
+   "pitch_deg_at_1s": -0.17582054436206818,
+   "width_10s_nm": 0.0,
+   "width_20s_nm": 0.0,
+   "width_full_nm": 0.0,
+   "sweep": [
+    -2.0,
+    2.0
+   ],
+   "resolution_nm": 0.042105263157894736
+  },
+  "ankle joint friction 0.10": {
+   "longest_s": 1.48,
+   "moment_nm": 0.021052837371826172,
+   "pitch_deg_at_1s": 0.3623429238796234,
+   "width_10s_nm": 0.0,
+   "width_20s_nm": 0.0,
+   "width_full_nm": 0.0,
+   "sweep": [
+    -2.0,
+    2.0
+   ],
+   "resolution_nm": 0.042105263157894736
+  },
+  "ankle joint friction 0.18 (high end of training)": {
+   "longest_s": 3.18,
+   "moment_nm": 0.021052837371826172,
+   "pitch_deg_at_1s": 0.12461104989051819,
+   "width_10s_nm": 0.0,
+   "width_20s_nm": 0.0,
+   "width_full_nm": 0.0,
+   "sweep": [
+    -2.0,
+    2.0
+   ],
+   "resolution_nm": 0.042105263157894736
+  },
+  "rotor stiction 1.0 Nm only": {
+   "longest_s": 32.0,
+   "moment_nm": 0.06315803527832031,
+   "pitch_deg_at_1s": 0.43515896797180176,
+   "width_10s_nm": 0.12631578947368421,
+   "width_20s_nm": 0.042105263157894736,
+   "width_full_nm": 0.042105263157894736,
+   "sweep": [
+    -2.0,
+    2.0
+   ],
+   "resolution_nm": 0.042105263157894736
+  },
+  "ankle joint friction 0.10 + rotor stiction 1.0 Nm": {
+   "longest_s": 32.0,
+   "moment_nm": 0.06315803527832031,
+   "pitch_deg_at_1s": 0.43549811840057373,
+   "width_10s_nm": 0.042105263157894736,
+   "width_20s_nm": 0.042105263157894736,
+   "width_full_nm": 0.042105263157894736,
+   "sweep": [
+    -2.0,
+    2.0
+   ],
+   "resolution_nm": 0.042105263157894736
+  }
+ }
+}

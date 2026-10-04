@@ -1,0 +1,85 @@
+{
+ "band_deg": 0.5,
+ "seconds": 32.0,
+ "play_deg": 2.0,
+ "variants": {
+  "no ankle friction, no rotor stiction": {
+   "longest_s": 2.4,
+   "moment_nm": -0.019836829975247383,
+   "pitch_deg_at_1s": -0.1005416065454483,
+   "width_10s_nm": 0.0,
+   "width_20s_nm": 0.0,
+   "width_full_nm": 0.0,
+   "sweep": [
+    -0.1410999894142151,
+    0.09889999777078629
+   ],
+   "resolution_nm": 0.0025263155761517976
+  },
+  "ankle joint friction 0.03 (low end of training)": {
+   "longest_s": 1.68,
+   "moment_nm": -0.05015262961387634,
+   "pitch_deg_at_1s": 0.1188417449593544,
+   "width_10s_nm": 0.0,
+   "width_20s_nm": 0.0,
+   "width_full_nm": 0.0,
+   "sweep": [
+    -0.1410999894142151,
+    0.09889999777078629
+   ],
+   "resolution_nm": 0.0025263155761517976
+  },
+  "ankle joint friction 0.10": {
+   "longest_s": 2.68,
+   "moment_nm": 0.0407947413623333,
+   "pitch_deg_at_1s": -0.031855929642915726,
+   "width_10s_nm": 0.0,
+   "width_20s_nm": 0.0,
+   "width_full_nm": 0.0,
+   "sweep": [
+    -0.1410999894142151,
+    0.09889999777078629
+   ],
+   "resolution_nm": 0.0025263155761517976
+  },
+  "ankle joint friction 0.18 (high end of training)": {
+   "longest_s": 1.98,
+   "moment_nm": -0.01300526037812233,
+   "pitch_deg_at_1s": 0.07133275270462036,
+   "width_10s_nm": 0.0,
+   "width_20s_nm": 0.0,
+   "width_full_nm": 0.0,
+   "sweep": [
+    -0.09889999777078629,
+    0.1410999894142151
+   ],
+   "resolution_nm": 0.0025263155761517976
+  },
+  "rotor stiction 1.0 Nm only": {
+   "longest_s": 3.04,
+   "moment_nm": -0.044252630323171616,
+   "pitch_deg_at_1s": 0.0984782874584198,
+   "width_10s_nm": 0.0,
+   "width_20s_nm": 0.0,
+   "width_full_nm": 0.0,
+   "sweep": [
+    -0.18320000171661377,
+    0.0568000003695488
+   ],
+   "resolution_nm": 0.0025263158898604543
+  },
+  "ankle joint friction 0.10 + rotor stiction 1.0 Nm": {
+   "longest_s": 2.12,
+   "moment_nm": -0.014784205704927444,
+   "pitch_deg_at_1s": 0.09614299982786179,
+   "width_10s_nm": 0.0,
+   "width_20s_nm": 0.0,
+   "width_full_nm": 0.0,
+   "sweep": [
+    -0.1410999894142151,
+    0.09889999777078629
+   ],
+   "resolution_nm": 0.0025263155761517976
+  }
+ }
+}

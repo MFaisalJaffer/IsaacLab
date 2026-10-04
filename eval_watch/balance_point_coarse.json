@@ -1,0 +1,85 @@
+{
+ "band_deg": 0.5,
+ "seconds": 32.0,
+ "play_deg": 2.0,
+ "variants": {
+  "no ankle friction, no rotor stiction": {
+   "longest_s": 1.54,
+   "moment_nm": 0.37894773483276367,
+   "pitch_deg_at_1s": 0.1359241008758545,
+   "width_10s_nm": 0.0,
+   "width_20s_nm": 0.0,
+   "width_full_nm": 0.0,
+   "sweep": [
+    -4.0,
+    4.0
+   ],
+   "resolution_nm": 0.08421052631578947
+  },
+  "ankle joint friction 0.03 (low end of training)": {
+   "longest_s": 1.5,
+   "moment_nm": -0.12631559371948242,
+   "pitch_deg_at_1s": -0.06970793753862381,
+   "width_10s_nm": 0.0,
+   "width_20s_nm": 0.0,
+   "width_full_nm": 0.0,
+   "sweep": [
+    -4.0,
+    4.0
+   ],
+   "resolution_nm": 0.08421052631578947
+  },
+  "ankle joint friction 0.10": {
+   "longest_s": 1.68,
+   "moment_nm": 0.12631607055664062,
+   "pitch_deg_at_1s": 0.09099575132131577,
+   "width_10s_nm": 0.0,
+   "width_20s_nm": 0.0,
+   "width_full_nm": 0.0,
+   "sweep": [
+    -4.0,
+    4.0
+   ],
+   "resolution_nm": 0.08421052631578947
+  },
+  "ankle joint friction 0.18 (high end of training)": {
+   "longest_s": 1.56,
+   "moment_nm": 0.6315789222717285,
+   "pitch_deg_at_1s": 0.05858360230922699,
+   "width_10s_nm": 0.0,
+   "width_20s_nm": 0.0,
+   "width_full_nm": 0.0,
+   "sweep": [
+    -4.0,
+    4.0
+   ],
+   "resolution_nm": 0.08421052631578947
+  },
+  "rotor stiction 1.0 Nm only": {
+   "longest_s": 1.2,
+   "moment_nm": 0.2105264663696289,
+   "pitch_deg_at_1s": -0.5067126750946045,
+   "width_10s_nm": 0.0,
+   "width_20s_nm": 0.0,
+   "width_full_nm": 0.0,
+   "sweep": [
+    -4.0,
+    4.0
+   ],
+   "resolution_nm": 0.08421052631578947
+  },
+  "ankle joint friction 0.10 + rotor stiction 1.0 Nm": {
+   "longest_s": 1.24,
+   "moment_nm": -0.8842103481292725,
+   "pitch_deg_at_1s": -0.3662223517894745,
+   "width_10s_nm": 0.0,
+   "width_20s_nm": 0.0,
+   "width_full_nm": 0.0,
+   "sweep": [
+    -4.0,
+    4.0
+   ],
+   "resolution_nm": 0.08421052631578947
+  }
+ }
+}

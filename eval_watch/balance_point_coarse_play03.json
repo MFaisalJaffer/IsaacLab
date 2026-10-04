@@ -1,0 +1,85 @@
+{
+ "band_deg": 0.5,
+ "seconds": 32.0,
+ "play_deg": 0.3,
+ "variants": {
+  "no ankle friction, no rotor stiction": {
+   "longest_s": 1.28,
+   "moment_nm": 0.8000001907348633,
+   "pitch_deg_at_1s": -0.35293570160865784,
+   "width_10s_nm": 0.0,
+   "width_20s_nm": 0.0,
+   "width_full_nm": 0.0,
+   "sweep": [
+    -4.0,
+    4.0
+   ],
+   "resolution_nm": 0.08421052631578947
+  },
+  "ankle joint friction 0.03 (low end of training)": {
+   "longest_s": 1.36,
+   "moment_nm": -0.6315789222717285,
+   "pitch_deg_at_1s": 0.22794502973556519,
+   "width_10s_nm": 0.0,
+   "width_20s_nm": 0.0,
+   "width_full_nm": 0.0,
+   "sweep": [
+    -4.0,
+    4.0
+   ],
+   "resolution_nm": 0.08421052631578947
+  },
+  "ankle joint friction 0.10": {
+   "longest_s": 1.78,
+   "moment_nm": -0.2105262279510498,
+   "pitch_deg_at_1s": 0.08693480491638184,
+   "width_10s_nm": 0.0,
+   "width_20s_nm": 0.0,
+   "width_full_nm": 0.0,
+   "sweep": [
+    -4.0,
+    4.0
+   ],
+   "resolution_nm": 0.08421052631578947
+  },
+  "ankle joint friction 0.18 (high end of training)": {
+   "longest_s": 1.28,
+   "moment_nm": -0.7157893180847168,
+   "pitch_deg_at_1s": 0.4857644736766815,
+   "width_10s_nm": 0.0,
+   "width_20s_nm": 0.0,
+   "width_full_nm": 0.0,
+   "sweep": [
+    -4.0,
+    4.0
+   ],
+   "resolution_nm": 0.08421052631578947
+  },
+  "rotor stiction 1.0 Nm only": {
+   "longest_s": 14.38,
+   "moment_nm": 0.042105674743652344,
+   "pitch_deg_at_1s": 0.11355224996805191,
+   "width_10s_nm": 0.08421052631578947,
+   "width_20s_nm": 0.0,
+   "width_full_nm": 0.0,
+   "sweep": [
+    -4.0,
+    4.0
+   ],
+   "resolution_nm": 0.08421052631578947
+  },
+  "ankle joint friction 0.10 + rotor stiction 1.0 Nm": {
+   "longest_s": 32.0,
+   "moment_nm": 0.042105674743652344,
+   "pitch_deg_at_1s": 1.4209476709365845,
+   "width_10s_nm": 0.08421052631578947,
+   "width_20s_nm": 0.08421052631578947,
+   "width_full_nm": 0.08421052631578947,
+   "sweep": [
+    -4.0,
+    4.0
+   ],
+   "resolution_nm": 0.08421052631578947
+  }
+ }
+}

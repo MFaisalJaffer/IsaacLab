@@ -1,0 +1,262 @@
+{
+ "checkpoint": "/home/faisal/IsaacLab/logs/autopilot/walker_v7_1600.pt",
+ "ankle": "rig",
+ "limits": [
+  12.0,
+  1000.0
+ ],
+ "groups": {
+  "stock sensing (control)": {
+   "tripped_before_kick": 0.0,
+   "trip_time_median_s": null,
+   "pitch_fast_rms_deg": 0.30356733516307943,
+   "pitch_fast_p2p_deg": 1.4923879328941985,
+   "dominant_hz": 0.875,
+   "ankle_enc_fast_rms_deg": [
+    2.395515444691123,
+    2.412011352201192
+   ],
+   "ankle_torque_p2p_nm": [
+    11.54296588897705,
+    11.871062278747559
+   ],
+   "after_kick_fast_rms_deg": [
+    0.4318091404243328,
+    0.30337400304941015,
+    0.30609347826035704
+   ],
+   "tripped_after_kick": 0.0
+  },
+  "IMU 20 Hz only": {
+   "tripped_before_kick": 0.0,
+   "trip_time_median_s": null,
+   "pitch_fast_rms_deg": 0.39192888932086944,
+   "pitch_fast_p2p_deg": 1.878157278800354,
+   "dominant_hz": 1.0,
+   "ankle_enc_fast_rms_deg": [
+    2.497003479825425,
+    2.637019945622482
+   ],
+   "ankle_torque_p2p_nm": [
+    12.270416259765625,
+    12.296455383300781
+   ],
+   "after_kick_fast_rms_deg": [
+    0.5401883585375884,
+    0.37822340832408347,
+    0.38526095243174874
+   ],
+   "tripped_after_kick": 0.0
+  },
+  "robot as measured: IMU 20 Hz + 1 tick, joints + 1 tick": {
+   "tripped_before_kick": 0.0,
+   "trip_time_median_s": null,
+   "pitch_fast_rms_deg": 0.4487692683246511,
+   "pitch_fast_p2p_deg": 2.2130849664091325,
+   "dominant_hz": 1.125,
+   "ankle_enc_fast_rms_deg": [
+    3.0018515111784807,
+    3.03735446979721
+   ],
+   "ankle_torque_p2p_nm": [
+    14.420719146728516,
+    14.048054695129395
+   ],
+   "after_kick_fast_rms_deg": [
+    0.6523785407620133,
+    0.3736305584005087,
+    0.43589339068586824
+   ],
+   "tripped_after_kick": 0.0
+  },
+  "as measured + 0.12 s stall at tick 37": {
+   "tripped_before_kick": 0.0,
+   "trip_time_median_s": null,
+   "pitch_fast_rms_deg": 0.4192933917580316,
+   "pitch_fast_p2p_deg": 2.051009022640865,
+   "dominant_hz": 1.125,
+   "ankle_enc_fast_rms_deg": [
+    2.874351304722416,
+    3.009798626117991
+   ],
+   "ankle_torque_p2p_nm": [
+    14.360087394714355,
+    14.185927391052246
+   ],
+   "after_kick_fast_rms_deg": [
+    0.5203103428304211,
+    0.4163401383229983,
+    0.3823385943057895
+   ],
+   "tripped_after_kick": 0.0
+  },
+  "as measured + ankle rotor stiction 1 Nm": {
+   "tripped_before_kick": 0.0,
+   "trip_time_median_s": null,
+   "pitch_fast_rms_deg": 0.4485328861471499,
+   "pitch_fast_p2p_deg": 2.184208442181807,
+   "dominant_hz": 1.125,
+   "ankle_enc_fast_rms_deg": [
+    2.802689434464484,
+    2.9152928489920735
+   ],
+   "ankle_torque_p2p_nm": [
+    13.037806510925293,
+    13.293132781982422
+   ],
+   "after_kick_fast_rms_deg": [
+    0.5417464933603696,
+    0.40793738502877314,
+    0.4413998073707941
+   ],
+   "tripped_after_kick": 0.0
+  },
+  "as measured + stall + stiction 1 Nm": {
+   "tripped_before_kick": 0.0,
+   "trip_time_median_s": null,
+   "pitch_fast_rms_deg": 0.45870825492265443,
+   "pitch_fast_p2p_deg": 2.342339310564858,
+   "dominant_hz": 1.0,
+   "ankle_enc_fast_rms_deg": [
+    2.919191584812895,
+    2.953006484958808
+   ],
+   "ankle_torque_p2p_nm": [
+    13.407997131347656,
+    13.285062789916992
+   ],
+   "after_kick_fast_rms_deg": [
+    0.6264666362408223,
+    0.4160125322797246,
+    0.4491456918016708
+   ],
+   "tripped_after_kick": 0.0
+  },
+  "IMU 20 Hz + 2 ticks, joints + 1 tick": {
+   "tripped_before_kick": 0.0,
+   "trip_time_median_s": null,
+   "pitch_fast_rms_deg": 0.502543831440414,
+   "pitch_fast_p2p_deg": 2.4320120083203802,
+   "dominant_hz": 1.125,
+   "ankle_enc_fast_rms_deg": [
+    3.119900033997848,
+    3.17387869950535
+   ],
+   "ankle_torque_p2p_nm": [
+    14.441285133361816,
+    14.412087440490723
+   ],
+   "after_kick_fast_rms_deg": [
+    0.7357633275656368,
+    0.44836840951473006,
+    0.4534892445060302
+   ],
+   "tripped_after_kick": 0.0
+  },
+  "rig after its fix: fresh IMU + 1 tick, joints + 1 tick": {
+   "tripped_before_kick": 0.0,
+   "trip_time_median_s": null,
+   "pitch_fast_rms_deg": 0.3365220946193477,
+   "pitch_fast_p2p_deg": 1.6472074638269987,
+   "dominant_hz": 0.875,
+   "ankle_enc_fast_rms_deg": [
+    2.4926152340044334,
+    2.705175549731568
+   ],
+   "ankle_torque_p2p_nm": [
+    12.274267196655273,
+    12.853622436523438
+   ],
+   "after_kick_fast_rms_deg": [
+    0.4205586470712438,
+    0.3075144127555458,
+    0.30993608351762303
+   ],
+   "tripped_after_kick": 0.0
+  },
+  "after fix + ankle rotor stiction 1 Nm": {
+   "tripped_before_kick": 0.0,
+   "trip_time_median_s": null,
+   "pitch_fast_rms_deg": 0.37198655553522725,
+   "pitch_fast_p2p_deg": 1.887865288143439,
+   "dominant_hz": 0.875,
+   "ankle_enc_fast_rms_deg": [
+    2.5200636276840322,
+    2.4732641764750007
+   ],
+   "ankle_torque_p2p_nm": [
+    12.205039978027344,
+    11.780462265014648
+   ],
+   "after_kick_fast_rms_deg": [
+    0.5603119179901312,
+    0.3468396430662425,
+    0.302631658921227
+   ],
+   "tripped_after_kick": 0.0
+  },
+  "fresh IMU + 2 ticks, joints + 1 tick": {
+   "tripped_before_kick": 0.0,
+   "trip_time_median_s": null,
+   "pitch_fast_rms_deg": 0.3719407510949477,
+   "pitch_fast_p2p_deg": 1.806415714059268,
+   "dominant_hz": 1.25,
+   "ankle_enc_fast_rms_deg": [
+    2.8149137696863824,
+    2.7685869918310866
+   ],
+   "ankle_torque_p2p_nm": [
+    13.131023406982422,
+    12.862915992736816
+   ],
+   "after_kick_fast_rms_deg": [
+    0.46745819486107126,
+    0.33454113734615093,
+    0.3745871260600985
+   ],
+   "tripped_after_kick": 0.0
+  },
+  "IMU + 2 ticks, joints + 2 ticks (40 ms, constant)": {
+   "tripped_before_kick": 0.0,
+   "trip_time_median_s": null,
+   "pitch_fast_rms_deg": 0.3634475969732463,
+   "pitch_fast_p2p_deg": 1.8078908195597614,
+   "dominant_hz": 1.125,
+   "ankle_enc_fast_rms_deg": [
+    3.112214729984252,
+    3.2346174154207823
+   ],
+   "ankle_torque_p2p_nm": [
+    14.078261375427246,
+    14.445884704589844
+   ],
+   "after_kick_fast_rms_deg": [
+    0.5329626018301025,
+    0.3315630140651658,
+    0.32990811001527487
+   ],
+   "tripped_after_kick": 0.0
+  },
+  "stock sensing + ankle rotor stiction 1 Nm": {
+   "tripped_before_kick": 0.0,
+   "trip_time_median_s": null,
+   "pitch_fast_rms_deg": 0.33356122651665215,
+   "pitch_fast_p2p_deg": 1.6808518283012381,
+   "dominant_hz": 0.875,
+   "ankle_enc_fast_rms_deg": [
+    2.1282051298689457,
+    2.1420548695217096
+   ],
+   "ankle_torque_p2p_nm": [
+    10.989075660705566,
+    10.817682266235352
+   ],
+   "after_kick_fast_rms_deg": [
+    0.4884305847761778,
+    0.31141101609818195,
+    0.30755084196839133
+   ],
+   "tripped_after_kick": 0.0
+  }
+ }
+}

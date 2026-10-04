@@ -38,6 +38,9 @@ parser.add_argument("--play_deg", type=float, default=1.0, help="ankle free play
 parser.add_argument("--load", type=float, default=2.5)
 parser.add_argument("--tag", default="engage_test")
 parser.add_argument("--plant", default="trained", choices=("nominal", "trained"), help="nominal = one fixed plant, no sensor noise (NB: also removes the ankle joint friction the policy was trained with); trained = the training randomization (gains, masses, friction, ankle play and spring, IMU mount) and sensor noise stay on")
+parser.add_argument("--keep", default="", help="nominal plant only: comma list of randomization events to leave ON (to find which ingredient of the trained plant matters)")
+parser.add_argument("--drop", default="", help="trained plant only: comma list of randomization events to switch OFF")
+parser.add_argument("--noise", type=int, default=-1, help="sensor noise: -1 = as the plant (nominal off, trained on), 0 = off, 1 = on")
 parser.add_argument("--sweep", type=int, default=0, help="1 = load sweep instead of the 15 conditions: pitch and roll moments from -3 to +3 Nm, hard start, to find how much standing load a policy tolerates")
 AppLauncher.add_app_launcher_args(parser)
 args = parser.parse_args()
@@ -75,7 +78,9 @@ GROUPS = [
     (f"load y-{M} + rotor 1.2 + dead band 0.7, hard", (0.0, -M), 0.0, 1.2, 0.7),
 ]
 
-if args.sweep:
+if args.sweep == 2:   # short form: no load and the measured load both ways, hard start
+    GROUPS = [(f"pitch load {m:+.1f} Nm", (0.0, m), 0.0, 0.0, 0.0) for m in (-2.5, 0.0, 2.5)]
+elif args.sweep:
     GROUPS = [(f"pitch load {m:+.1f} Nm", (0.0, m), 0.0, 0.0, 0.0) for m in (-3.0, -2.5, -2.0, -1.5, -1.0, -0.5, 0.0, 0.5, 1.0, 1.5, 2.0, 2.5, 3.0)] + \
              [(f"roll load {m:+.1f} Nm", (m, 0.0), 0.0, 0.0, 0.0) for m in (-3.0, -2.0, -1.0, 1.0, 2.0, 3.0)]
 
@@ -90,9 +95,12 @@ def main() -> int:
     c.resampling_time_range = (1000.0, 1000.0)
     ev = env_cfg.events
     off = ["walk_at_spawn", "stand_corridor", "push_robot", "amp_unanswered", "amp_axis_bias"]
+    keep = [x for x in args.keep.split(",") if x]
     if args.plant == "nominal":
-        off += ["randomize_actuator_gains", "randomize_gains_small_joints", "randomize_gains_04_joints", "add_limb_masses",
-                "randomize_joint_properties", "randomize_imu_mount", "randomize_joint_friction_ankles", "randomize_joint_play", "physics_material"]
+        off += [e for e in ("randomize_actuator_gains", "randomize_gains_small_joints", "randomize_gains_04_joints", "add_limb_masses",
+                            "randomize_joint_properties", "randomize_imu_mount", "randomize_joint_friction_ankles", "randomize_joint_play", "physics_material") if e not in keep]
+    else:
+        off += [x for x in args.drop.split(",") if x]
     for name in off:
         if getattr(ev, name, None) is not None:
             setattr(ev, name, None)
@@ -108,8 +116,9 @@ def main() -> int:
     sp["force_range"] = (0.0, 0.0); sp["hold_torque_range"] = (0.0, 0.0); sp["standing_moment"] = 0.0
     ev.sustained_push.interval_range_s = (0.02, 0.02)
     ev.engage_probe_ramp = EventTerm(func=mdp_amp.engage_gain_ramp, mode="interval", interval_range_s=(0.02, 0.02))
-    if args.plant == "nominal":
-        env_cfg.observations.policy.enable_corruption = False
+    noise_on = (args.plant == "trained") if args.noise < 0 else bool(args.noise)
+    env_cfg.observations.policy.enable_corruption = noise_on
+    fixed_ankle = args.plant == "nominal" and "randomize_joint_play" not in keep
     agent_cfg = load_cfg_from_registry(args.task, "rsl_rl_cfg_entry_point")
     env = gym.make(args.task, cfg=env_cfg, render_mode=None)
     env = RslRlVecEnvWrapper(env, clip_actions=agent_cfg.clip_actions)
@@ -136,12 +145,12 @@ def main() -> int:
         for act in robot.actuators.values():
             shape = (n, len(act.joint_names))
             if getattr(act, "_series_k", 0.0) > 0.0:
-                if args.plant == "nominal":
+                if fixed_ankle:
                     act._series_k_env = torch.full(shape, args.series_k, device=dev)
                     act._play = torch.full(shape, math.radians(args.play_deg), device=dev)
                 act._rotor_fc = rotor.unsqueeze(1).expand(shape).clone()
             else:
-                if args.plant == "nominal":
+                if fixed_ankle:
                     act._play = torch.zeros(shape, device=dev)
                 act._deadband = dead.unsqueeze(1).expand(shape).clone()
 
@@ -172,7 +181,7 @@ def main() -> int:
             TILT[t] = torch.asin(robot.data.projected_gravity_b[:, :2].norm(dim=1).clamp(max=1.0)) * 180.0 / math.pi
     w2 = int(2.0 / uenv.step_dt)
     res = {"checkpoint": args.checkpoint, "series_k": args.series_k, "play_deg": args.play_deg, "groups": {}}
-    print(f"\n[engage] {args.checkpoint} | plant: {args.plant}" + (f" (ankle spring {args.series_k} Nm/rad, play {args.play_deg} deg, no ankle joint friction, no sensor noise)" if args.plant == "nominal" else " (training randomization and sensor noise on)") + f" | {args.per_group} robots per group, {args.seconds} s")
+    print(f"\n[engage] {args.checkpoint} | plant: {args.plant}" + (f" (stripped; kept on: {keep or 'nothing'}; sensor noise {'on' if noise_on else 'off'})" if args.plant == "nominal" else f" (training randomization on, minus {args.drop or 'nothing'}; sensor noise {'on' if noise_on else 'off'})") + f" | {args.per_group} robots per group, {args.seconds} s")
     print(f"{'group':46s} {'ankle act @0.4s L/R':>20s} {'peak |ankle act| 2s':>20s} {'peak joint speed':>17s} {'peak tilt':>10s} {'fell':>6s}")
     for g, (name, *_rest) in enumerate(GROUPS):
         m = grp == g
