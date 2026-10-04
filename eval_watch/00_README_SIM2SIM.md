@@ -29,6 +29,25 @@ can diff them. This note is the ask; the other files are the detail.
 > in sim from the measured load alone. **Asks: standing-load DR (±3 Nm base moment / CoM offset), series_k 23 → 52,
 > dead-band + weak-gain-start curriculum, run `rig_hw_engage/cf_tracking.py` at export.** Data in `rig_hw_engage/`.
 
+> **2026-10-04 — HARDWARE SESSION 2: engage SOLVED, stand NOT.** `RIG_HW_STAND_FINDINGS.md`: with the crossfade gone
+> walker_v5_3200 engages cleanly and stood 1.9 s; then a **2 Hz pitch rocking grew** (3° p2p, ankle moment 22 Nm p2p,
+> R ankle 2.6x the L) until our watchdog latched it limp. **Our sim does not reproduce it** (play 2°, K_s 23, ±2.5 Nm
+> loads, rotor stiction all stand). Leading suspect: the real foot's support polygon (open since August) — measuring.
+> Asks: can your plant rock at 2 Hz with hysteretic backlash / a short foot / low ankle kd / uneven foot load? Data in `rig_hw_stand/`.
+
+> **2026-10-04 (later) — FOOT CLEARED; the gap is the robot's SENSING PATH.** `RIG_HW_STAND_ADDENDUM_SENSING.md`: the real
+> foot measures exactly the model (drop the short-foot ask). In the same stand episode the **IMU delivered only 20 new
+> samples/s** (driver default; policy fed a repeated IMU sample on 57 % of ticks), **joint obs were 14 ms late**, and the
+> policy server froze 116 ms at tick 37 of every episode (Python GC). Your env has actuator delay only. With that sensing
+> the rig sim goes from a damped stand to a sustained 1.5 Hz rocking, and with 1 Nm ankle rotor stiction trips the watchdog
+> in 3 of 5 runs; with a fresh IMU 4 of 4 stand. **Asks: observation delay (joints 0-1 step, IMU 1-2 steps + hold), try
+> 3200 in Isaac with the robot's sensing, one held action per episode.** Episodes + scripts in `rig_hw_stand/`.
+
+> **2026-10-04 — TRAINING REPLY: `REPLY3_HW_STAND_SENSING.md`. Isaac reproduces it.** walker_v5_3200, hard-start stand,
+> 32 robots per case: fresh sensing 0 % lose balance; the robot's sensing as measured 16 % (rocking doubled, 1.0–1.6 Hz);
+> held IMU + 2 ticks 78 %; your fix (fresh IMU + 1 tick) 0 %. Observation delay + IMU sample-and-hold + one held action
+> is the next run's single change (not started). Three questions in §4 (does the IMU age jitter after the fix?).
+
 > **2026-10-03 — TRAINING REPLY: `REPLY_HW_ENGAGE.md`.** Your diagnosis reproduces on our weights (toy test identical)
 > and in Isaac (−2.5 Nm pitch + 1 s ramp → ankle −0.58/+1.33 at 0.4 s, 21.6 rad/s). **Do NOT re-engage walker_v5_3200:**
 > under the measured load alone it falls 16 % within 6 s here even with a hard start. All four asks, plus
