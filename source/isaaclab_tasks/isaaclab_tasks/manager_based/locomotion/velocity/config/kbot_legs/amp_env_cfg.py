@@ -221,6 +221,24 @@ class KBotLegsAmpEnvCfg(KBotLegsRoughEnvCfg):
             spd, tilt = (float(x) for x in wd.split(":"))
             self.terminations.stand_watchdog = DoneTerm(func=mdp_amp.stand_watchdog, params={"max_joint_speed": spd, "max_tilt_deg": tilt})
             v6.append(f"stand watchdog: episode ends at joint speed > {spd} rad/s or tilt > {tilt} deg while standing")
+        # ---- walker v7 (2026-10-04): the robot's sensing path and loop timing, OFF unless the env var is set ----
+        od = os.environ.get("KBOT_AMP_OBS_DELAY")         # "joint_lo:joint_hi:imu_lo:imu_hi:imu_hold_max" in policy steps, e.g. 0:1:1:3:3
+        if od:
+            jlo, jhi, ilo, ihi, hmax = (int(x) for x in od.split(":"))
+            pol = self.observations.policy
+            for name, sensor, rng, hold in (("projected_gravity", "imu", (ilo, ihi), hmax), ("imu_ang_vel", "imu", (ilo, ihi), hmax),
+                                            ("joint_pos", "joint", (jlo, jhi), 1), ("joint_vel", "joint", (jlo, jhi), 1)):
+                term = getattr(pol, name)
+                term.params = {"inner": term.func, "inner_params": dict(term.params or {}), "sensor": sensor, "delay_range": rng, "hold_max": hold, "noise": term.noise}
+                term.func = mdp_amp.DelayedObs
+                term.noise = None
+            v6.append(f"sensing: joints {jlo}-{jhi} steps late; IMU {ilo}-{ihi} steps late, a new sample every 1-{hmax} steps")
+        ah = os.environ.get("KBOT_AMP_ACT_HOLD")          # "lo:hi" policy steps, once per episode at a random time, e.g. 5:6
+        if ah:
+            lo, hi = (int(x) for x in ah.split(":"))
+            self.events.amp_action_hold_draw = EventTerm(func=mdp_amp.randomize_action_hold, mode="reset", params={"steps": (lo, hi)})
+            self.events.amp_action_hold = EventTerm(func=mdp_amp.action_hold, mode="interval", interval_range_s=(0.02, 0.02))
+            v6.append(f"one {lo}-{hi} step hold of the joint targets per episode")
         if v6:
             print("[amp-env] v6: " + "; ".join(v6))
         print(f"[amp-env] v4: history {hist}, signed clock {signed}, lin vel w {self.rewards.track_lin_vel_xy_exp.weight} std "

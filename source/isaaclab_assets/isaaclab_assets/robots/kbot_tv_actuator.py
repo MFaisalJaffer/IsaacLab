@@ -148,6 +148,11 @@ class TVCurveActuator(DelayedPDActuator):
         self._gain_scale = None
         self._deadband = None
         self._rotor_fc = None
+        # HELD COMMAND (2026-10-04, rig RIG_HW_STAND_ADDENDUM_SENSING.md §5.3): while _hold_mask (N, 1) is set the
+        # actuator keeps the joint target it had before the hold — the rig's policy server stalled ~116 ms per
+        # episode and the last command stayed on the wire. Set by mdp_amp.action_hold; None = legacy.
+        self._hold_mask = None
+        self._held_target = None
         self._series_substeps = 8   # 15 Hz mode at 5 ms dt needs substepping
         self._series_dbg = 0        # §6.1: prove the path executes
 
@@ -177,6 +182,11 @@ class TVCurveActuator(DelayedPDActuator):
             self._play = torch.full_like(joint_pos, 0.0)
             if self._play_range[1] > 0.0:
                 self._play.uniform_(*self._play_range)
+        if self._hold_mask is not None and control_action.joint_positions is not None:
+            if self._held_target is None:
+                self._held_target = control_action.joint_positions.clone()
+            self._held_target = torch.where(self._hold_mask, self._held_target, control_action.joint_positions)
+            control_action.joint_positions = self._held_target.clone()
         if self._series_k > 0.0 and control_action.joint_positions is not None:
             # ---- SERIES-ELASTIC PATH (rig handoff #3) --------------------
             # Firmware PD runs on the ROTOR encoder (that is what the real

@@ -6,7 +6,7 @@ from typing import TYPE_CHECKING
 
 import torch
 
-from isaaclab.managers import SceneEntityCfg
+from isaaclab.managers import ManagerTermBase, SceneEntityCfg
 from isaaclab.utils.math import euler_xyz_from_quat, quat_apply_inverse, wrap_to_pi, yaw_quat
 
 from .mdp_gait import _cmd_track_gate
@@ -305,3 +305,113 @@ def stand_watchdog(env: "ManagerBasedRLEnv", max_joint_speed: float = 5.0, max_t
     tilt = torch.asin(asset.data.projected_gravity_b[:, :2].norm(dim=1).clamp(max=1.0))
     fast = asset.data.joint_vel.abs().amax(dim=1) > max_joint_speed
     return armed & (fast | (tilt > math.radians(max_tilt_deg)))
+
+
+# ---------------------------------------------------------------- walker v7: the robot's sensing path (2026-10-04)
+class DelayedObs(ManagerTermBase):
+    """Observation term wrapper: the inner term's value as the ROBOT'S SENSING PATH delivers it.
+
+    Rig RIG_HW_STAND_ADDENDUM_SENSING.md: on the robot the IMU gave 20 new samples a second (a repeated sample on
+    57 % of ticks) 20-70 ms old and the joint readings were ~14 ms late; this env delivered every observation
+    fresh at every step. walker_v5_3200 engaged cleanly, stood 1.9 s and then rocked at ~2 Hz until the watchdog
+    cut it; both the rig's sim and ours (eval_watch/amp_stand_sensing_test.py) reproduce the loss of balance from
+    the sensing alone, and a fresh IMU one tick late stands.
+
+    Per episode and per robot, shared by every term of the same `sensor`:
+      delay  U{delay_range} policy steps — the value the policy sees is that many steps old;
+      hold   U{1..hold_max} steps — the sensor yields a NEW sample only every `hold` steps (random phase) and
+             repeats the previous one in between, bit-identical, noise included.
+    The term's own noise model is applied HERE, to the fresh sample (so a repeated sample repeats its noise), and
+    must be removed from the term cfg. The group's history stacking then runs on what this returns, exactly like
+    the rig's stacker does on what its sensors deliver."""
+
+    def __init__(self, cfg, env: "ManagerBasedRLEnv"):
+        super().__init__(cfg, env)
+        for v in cfg.params["inner_params"].values():
+            if isinstance(v, SceneEntityCfg):
+                v.resolve(env.scene)
+        self._maxd = int(cfg.params["delay_range"][1])
+        self._buf = None            # (N, maxd + 1, dim): what the sensor output k steps ago, k = 0 newest
+        self._held = None           # the sample the sensor is currently holding
+        self._out = None
+        self._fill = torch.ones(env.num_envs, dtype=torch.bool, device=env.device)
+        self._stamp = -1
+        self._draw(env, torch.arange(env.num_envs, device=env.device))
+
+    def _draw(self, env, env_ids) -> None:
+        p = self.cfg.params
+        st = getattr(env, "_sense", None)
+        if st is None:
+            st = {}
+            env._sense = st
+        key = p["sensor"]
+        if key not in st:
+            z = torch.zeros(env.num_envs, dtype=torch.long, device=env.device)
+            st[key] = {"delay": z.clone(), "hold": torch.ones_like(z), "phase": z.clone(), "epoch": z.clone() - 1}
+        s = st[key]
+        # one draw per episode for the whole sensor, whichever of its terms resets first
+        epoch = (env.common_step_counter - env.episode_length_buf[env_ids]).long() if hasattr(env, "episode_length_buf") else torch.zeros(len(env_ids), dtype=torch.long, device=env.device)
+        new = s["epoch"][env_ids] != epoch
+        ids = env_ids[new]
+        if len(ids) > 0:
+            lo, hi = p["delay_range"]
+            s["delay"][ids] = torch.randint(int(lo), int(hi) + 1, (len(ids),), device=env.device)
+            s["hold"][ids] = torch.randint(1, int(p["hold_max"]) + 1, (len(ids),), device=env.device)
+            s["phase"][ids] = torch.randint(0, 64, (len(ids),), device=env.device)
+            s["epoch"][ids] = epoch[new]
+
+    def reset(self, env_ids=None):
+        if env_ids is None:
+            env_ids = torch.arange(self._env.num_envs, device=self._env.device)
+        elif not torch.is_tensor(env_ids):
+            env_ids = torch.as_tensor(env_ids, device=self._env.device)
+        self._fill[env_ids] = True
+        self._draw(self._env, env_ids)
+
+    def __call__(self, env: "ManagerBasedRLEnv", inner, inner_params: dict, sensor: str, delay_range: tuple, hold_max: int, noise=None) -> torch.Tensor:
+        step = int(env.common_step_counter)
+        if self._out is not None and step == self._stamp and not bool(self._fill.any()):
+            return self._out                                   # an extra compute() in the same env step: nothing new arrived
+        self._stamp = step
+        v = inner(env, **inner_params)
+        if noise is not None and getattr(env.cfg.observations.policy, "enable_corruption", False):
+            v = noise.func(v, noise)
+        s = env._sense[sensor]
+        if self._buf is None:
+            self._buf = v.unsqueeze(1).repeat(1, self._maxd + 1, 1)
+            self._held = v.clone()
+        fresh = ((env.episode_length_buf + s["phase"]) % s["hold"]) == 0
+        upd = fresh | self._fill
+        self._held = torch.where(upd.unsqueeze(1), v, self._held)
+        self._buf = torch.cat([self._held.unsqueeze(1), self._buf[:, :-1]], dim=1)
+        if bool(self._fill.any()):                             # a new episode starts with every slot = its first sample
+            self._buf[self._fill] = self._held[self._fill].unsqueeze(1)
+            self._fill[:] = False
+        self._out = self._buf[torch.arange(env.num_envs, device=env.device), s["delay"].clamp(max=self._maxd)]
+        return self._out
+
+
+def randomize_action_hold(env: "ManagerBasedRLEnv", env_ids: torch.Tensor, steps: tuple = (5, 6), t_range_s: tuple = (0.3, 18.0), p: float = 1.0) -> None:
+    """Reset event: with probability p, once in the episode the joint targets are frozen for U{steps} policy
+    steps starting at U(t_range_s) — the rig's policy server stalled 116 ms at tick 37 of every episode (Python
+    GC) and the last command was held for six ticks. The freeze itself is applied by action_hold."""
+    if getattr(env, "_hold_t0", None) is None:
+        env._hold_t0 = torch.full((env.num_envs,), 1.0e9, device=env.device)
+        env._hold_n = torch.zeros(env.num_envs, device=env.device)
+    n = len(env_ids)
+    on = torch.rand(n, device=env.device) < p
+    t0 = (t_range_s[0] + (t_range_s[1] - t_range_s[0]) * torch.rand(n, device=env.device)) / env.step_dt
+    env._hold_t0[env_ids] = torch.where(on, torch.floor(t0), torch.full_like(t0, 1.0e9))
+    env._hold_n[env_ids] = torch.randint(int(steps[0]), int(steps[1]) + 1, (n,), device=env.device).float()
+
+
+def action_hold(env: "ManagerBasedRLEnv", env_ids: torch.Tensor, asset_cfg: SceneEntityCfg = SceneEntityCfg("robot")) -> None:
+    """Interval event (every step): actuators keep their previous joint targets while the hold drawn by
+    randomize_action_hold is active. The policy keeps running; its commands are ignored for those steps."""
+    t0 = getattr(env, "_hold_t0", None)
+    if t0 is None:
+        return
+    t = env.episode_length_buf.float()
+    mask = ((t >= t0) & (t < t0 + env._hold_n)).unsqueeze(1)
+    for act in env.scene[asset_cfg.name].actuators.values():
+        act._hold_mask = mask
