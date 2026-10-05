@@ -113,6 +113,9 @@ def main() -> int:
     Q, QM, TG, RAW = [np.degrees((x[up] / k).cpu().numpy()) for x in (q, qm, tg, raw / 1.0)]
     RAW = (raw[up] / k).cpu().numpy()
     G = (g[up] / k).cpu().numpy()
+    # each robot's own proportional gain (randomized per robot): kp x (target - encoder) = the motor's standing torque
+    KP = torch.stack([motor[name][0].stiffness[:, motor[name][1]] for name in jn], dim=1)[up].cpu().numpy()
+    TQ = KP * np.radians(TG - QM)
     res = {"checkpoint": args.checkpoint, "plant": args.plant, "seconds": args.seconds, "robots": int(up.sum()), "fell": int(fell.sum()), "pairs": {}}
     print(f"\n[pose] {args.checkpoint} | plant {args.plant} | flat stand, cmd 0, hard start | {int(up.sum())} robots up of {n}, means over 2-{args.seconds:.0f} s; degrees")
     print(f"[pose] torso lean (mean over robots): pitch {math.degrees(math.asin(float(G[:, 0].mean()))):+.2f} deg, roll {math.degrees(math.asin(float(G[:, 1].mean()))):+.2f} deg; "
@@ -126,6 +129,24 @@ def main() -> int:
         res["pairs"][name] = r
         print(f"{name:10s} | {r['link'][0]:+8.2f} /{r['link'][1]:+7.2f} {r['link'][0] + r['link'][1]:+6.2f} | {r['encoder'][0]:+7.2f} /{r['encoder'][1]:+7.2f} {r['encoder'][0] + r['encoder'][1]:+6.2f} | "
               f"{r['target'][0]:+9.2f} /{r['target'][1]:+7.2f} {r['target'][0] + r['target'][1]:+6.2f} | {r['raw_action'][0]:+7.2f} /{r['raw_action'][1]:+7.2f} | {r['target_spread'][0]:.2f} / {r['target_spread'][1]:.2f}")
+        # the population one real robot is compared with: spread across robots (std and 5-95 %) of each robot's own mean
+        pct = lambda x: [float(np.percentile(x, 5)), float(np.percentile(x, 95))]
+        sm = TG[:, il] + TG[:, ir]
+        r.update({"encoder_spread": [float(QM[:, il].std()), float(QM[:, ir].std())], "link_spread": [float(Q[:, il].std()), float(Q[:, ir].std())],
+                  "target_p05_p95": [pct(TG[:, il]), pct(TG[:, ir])], "encoder_p05_p95": [pct(QM[:, il]), pct(QM[:, ir])],
+                  "kp": [float(KP[:, il].mean()), float(KP[:, ir].mean())],
+                  "motor_torque_nm": [float(TQ[:, il].mean()), float(TQ[:, ir].mean())], "motor_torque_spread_nm": [float(TQ[:, il].std()), float(TQ[:, ir].std())],
+                  "motor_torque_p05_p95_nm": [pct(TQ[:, il]), pct(TQ[:, ir])],
+                  "target_sum": float(sm.mean()), "target_sum_spread": float(sm.std()), "target_sum_p05_p95": pct(sm),
+                  "robots_with_target_sum_within_1deg": int((np.abs(sm) < 1.0).sum()),
+                  "robots_with_same_sign_as_mean": [int((np.sign(TG[:, il]) == np.sign(TG[:, il].mean())).sum()), int((np.sign(TG[:, ir]) == np.sign(TG[:, ir].mean())).sum())]})
+    print(f"\n[pose] the population (each robot's own 2-{args.seconds:.0f} s mean; std and 5-95 % across the {int(up.sum())} robots)")
+    print(f"{'joint':10s} | {'target 5-95 % L':>18s} {'R':>16s} | {'encoder std L / R':>18s} | {'kp x (target - encoder), Nm: mean L / R':>40s} {'std L / R':>12s} | {'L+R of target: mean, std, 5-95 %':>36s} | robots with |L+R| < 1 deg | same sign as the mean (L / R)")
+    for name, _jl, _jr in PAIRS:
+        r = res["pairs"][name]
+        print(f"{name:10s} | {r['target_p05_p95'][0][0]:+7.2f} ..{r['target_p05_p95'][0][1]:+6.2f} {r['target_p05_p95'][1][0]:+7.2f} ..{r['target_p05_p95'][1][1]:+6.2f} | {r['encoder_spread'][0]:8.2f} /{r['encoder_spread'][1]:5.2f} | "
+              f"{r['motor_torque_nm'][0]:+20.2f} /{r['motor_torque_nm'][1]:+6.2f} {r['motor_torque_spread_nm'][0]:7.2f} /{r['motor_torque_spread_nm'][1]:5.2f} | "
+              f"{r['target_sum']:+10.2f} {r['target_sum_spread']:6.2f} {r['target_sum_p05_p95'][0]:+7.2f} ..{r['target_sum_p05_p95'][1]:+6.2f} | {r['robots_with_target_sum_within_1deg']:8d} | {r['robots_with_same_sign_as_mean'][0]:6d} /{r['robots_with_same_sign_as_mean'][1]:4d}")
     json.dump(res, open(os.path.join(OUT, f"{args.tag}.json"), "w"), indent=1)
     env.close()
     return 0

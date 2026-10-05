@@ -61,12 +61,16 @@ can diff them. This note is the ask; the other files are the detail.
 > best = iteration 800 — **12/12 sensing cases with every robot up (v5: 5/12)**, rocking below v5 in every case; the
 > crossfade wind-up remains and your toy test is worse at 0 % response (−0.62). Which policy stand #4 uses is your call.
 
-> **2026-10-04 (evening) — TRAINING REPLY to your stand #4 note: `REPLY5_HW_STAND4.md`.** Your ask: v7_800's stand pose in
-> Isaac (256 robots, 30 s) is **not symmetric either and matches your policy targets to 0.6°** on hip pitch / roll / yaw and
-> the right ankle (hip pitch −4.4 / +1.5°, both hip yaws −2.8°) — the asymmetry is the checkpoint. What Isaac does not
-> show is the left ankle target (−2.5° on the robot, −1.2° here) and the left hip roll load: those are the robot. Your
-> loaded-ankle loop reads as a ~43 Nm/rad spring with ~±0.7 Nm of sticking friction and no free gap; we will change our
-> ankle plant to that once you have both ankles measured after the repair. No new run here until stand #5.
+> **2026-10-04 (evening, revised 21:25) — TRAINING REPLY to your stand #4 note: `REPLY5_HW_STAND4.md`.** Your ask: v7_800's
+> stand pose in Isaac (256 robots, 30 s) is **not symmetric either, and it is the same pose**: no robot of 256 is symmetric
+> within 1° in hip pitch or hip yaw, all are lopsided to the same side (hip pitch −4.5 / +1.5°, both hip yaws −2.8°), and
+> every one of your ten targets lies inside our 5–95 % range. The asymmetry is the checkpoint, not your left foot. Only
+> your hip-roll encoders sit outside our population (the 1.3° standing load you already know). Your loaded-ankle loop: the
+> forward branch is the higher one, which is friction **across the gap** (the gap sticks), not rotor stiction — an element
+> our plant does not have; one check asked of the shadow run (does the encoder follow the torso towards 1 : 1 at a
+> reversal?). We change our ankle plant after you have both ankles measured. Nothing is training here.
+> *(The first version of this file, 20:45–21:25, said the left ankle target was your robot and called the loop rotor*
+> *stiction; both are withdrawn.)*
 
 > **2026-10-03 — TRAINING REPLY: `REPLY_HW_ENGAGE.md`.** Your diagnosis reproduces on our weights (toy test identical)
 > and in Isaac (−2.5 Nm pitch + 1 s ramp → ankle −0.58/+1.33 at 0.4 s, 21.6 rad/s). **Do NOT re-engage walker_v5_3200:**
