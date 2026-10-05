@@ -1,5 +1,5 @@
 """Per-ankle torque against torso lean, for episodes where the drives HOLD a fixed pose (shadow runs) or any episode.
-Torque = kp x (target - encoder), expressed as 'push that resists a forward lean' for both ankles (axes are mirrored).
+Torque = kp x (target - encoder), expressed as 'push that resists a BACKWARD lean' (torso pitch + = leaning back: policy frame y = backward) for both ankles (axes are mirrored).
 Prints, per ankle: straight-line stiffness (Nm per rad of torso pitch), torque share, and the mean torque in pitch bins.
 usage: ankle_vs_pitch.py <ep.npz> [t1] [t2]"""
 import numpy as np, sys, json
@@ -9,8 +9,8 @@ fr = r[m, 29:72]; pitch = np.degrees(np.arcsin(np.clip(fr[:, 1], -1, 1))); jp = 
 live = "MIRROR" not in str(z["meta"]) and np.abs(np.diff(jp[:, 6:8], axis=0)).sum() >= 0
 # shadow runs: the drives hold zero, the logged actions never reach them
 hold = len(sys.argv) > 4 and sys.argv[4] == "hold"
-TL = 60.0 * ((0 if hold else tg[:, 8]) - jp[:, 8]) * -1.0      # + = left ankle resists a forward lean
-TR = 60.0 * ((0 if hold else tg[:, 9]) - jp[:, 9])             # + = right ankle resists a forward lean
+TL = 60.0 * ((0 if hold else tg[:, 8]) - jp[:, 8]) * -1.0      # + = left ankle resists a backward lean
+TR = 60.0 * ((0 if hold else tg[:, 9]) - jp[:, 9])             # + = right ankle resists a backward lean
 print("%s  %.1f-%.1f s (%s) | pitch range %+.2f..%+.2f deg" % (sys.argv[1].split("/")[-1], t1, t2, "drives hold zero" if hold else "policy targets", pitch.min(), pitch.max()))
 for n, T in (("LEFT ", TL), ("RIGHT", TR)):
     A = np.c_[np.radians(pitch), np.ones(len(pitch))]; k, b = np.linalg.lstsq(A, T, rcond=None)[0]; res = T - A @ np.r_[k, b]

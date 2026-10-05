@@ -1,0 +1,2 @@
+# WALKER v8 pipeline 2026-10-04 23:46 (walker v7 again with one change: the mirror-symmetry loss now mirrors the IMU on the right axes)
+- 10-04 23:48 WALKER v8 launched: 2000 iterations from archive_anchors/walker_v5_best.pt; on TensorBoard (port 6007) as kbot_legs_amp/2026-10-04_23-46-44_walker_v8 — [symmetry] imu mirror 'imu': gravity flips (2,), gyro flips (0, 1) — [amp-env] v6: sensing: joints 0-1 steps late; IMU 1-3 steps late, a new sample every 1-3 steps; one 5-6 step hold of the joint targets per episode

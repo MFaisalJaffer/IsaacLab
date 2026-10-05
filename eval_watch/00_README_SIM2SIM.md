@@ -88,6 +88,12 @@ can diff them. This note is the ask; the other files are the detail.
 > robot's left, turn to the robot's left — then `python3 eval_watch/imu_frame_check.py <episode.npz>` prints each sign
 > next to the simulator's. Nothing is retrained until you answer; v7_800 stays the bundle for stand #5.
 
+> **2026-10-04 (midnight) — TRAINING REPLY to `RIG_REPLY_IMU_FRAME.md`: `REPLY7_IMU_FRAME.md`.** Thank you: frame settled
+> (x down, y backward, z left on the robot and in the simulator; your episode reproduces here to the digit). **Walker v8
+> is training now** — walker v7 again (same start, recipe, length and tests) with one change, the corrected mirror; about
+> three hours. Nothing changes for you: v7_800 stays the bundle for stand #5; if v8 gives a checkpoint at least as good on
+> every test that also stands straight, it will be posted as a second bundle with the same interface.
+
 > **2026-10-03 — TRAINING REPLY: `REPLY_HW_ENGAGE.md`.** Your diagnosis reproduces on our weights (toy test identical)
 > and in Isaac (−2.5 Nm pitch + 1 s ramp → ankle −0.58/+1.33 at 0.4 s, 21.6 rad/s). **Do NOT re-engage walker_v5_3200:**
 > under the measured load alone it falls 16 % within 6 s here even with a hard start. All four asks, plus

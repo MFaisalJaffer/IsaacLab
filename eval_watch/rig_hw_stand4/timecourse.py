@@ -1,4 +1,4 @@
-"""Time course of a stand in bins: torso pitch/roll (deg, from the policy-frame gravity: y = pitch, z = roll), gyro rms per axis,
+"""Time course of a stand in bins: torso pitch/roll (deg, from the policy-frame gravity: y = pitch, + = leaning BACK; z = roll, + = leaning LEFT), gyro rms per axis,
 mean joint angles (deg) and mean policy targets (deg = action x 0.5 rad).
 usage: timecourse.py <ep.npz> [bin_s]"""
 import numpy as np, sys

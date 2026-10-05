@@ -1,5 +1,5 @@
 """Left vs right ankle across hardware episodes, using only quantities that do not depend on the IMU zero:
-each ankle's torque (60 x (target - encoder); 'hold' episodes: target = 0) in the sense 'resists a forward lean',
+each ankle's torque (60 x (target - encoder); 'hold' episodes: target = 0) in the sense 'resists a backward lean',
 and the straight-line relation left = a x right + b over the episode (a = stiffness ratio, b = offset at right = 0).
 usage: ankle_history.py label=ep.npz[:hold][@t1:t2] ..."""
 import numpy as np, sys
