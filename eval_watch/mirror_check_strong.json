@@ -1,0 +1,62 @@
+{
+ "pairs": 16,
+ "seconds": 1.2,
+ "amp": 0.35,
+ "com": "centre",
+ "terms": {
+  "grav": {
+   "change_rms": 0.19550183415412903,
+   "err_legacy": 0.33671262860298157,
+   "err_imu_frame": 0.03462577238678932,
+   "err_symmetry_py_now": 0.03462577238678932
+  },
+  "cmd": {
+   "change_rms": 0.0,
+   "err_legacy": 0.0,
+   "err_imu_frame": 0.0,
+   "err_symmetry_py_now": 0.0
+  },
+  "jp": {
+   "change_rms": 0.1366027295589447,
+   "err_legacy": 0.016738856211304665,
+   "err_imu_frame": 0.016738856211304665,
+   "err_symmetry_py_now": 0.016738856211304665
+  },
+  "jv": {
+   "change_rms": 1.1356159448623657,
+   "err_legacy": 0.28255757689476013,
+   "err_imu_frame": 0.28255757689476013,
+   "err_symmetry_py_now": 0.28255757689476013
+  },
+  "imu": {
+   "change_rms": 1.667305588722229,
+   "err_legacy": 1.7573564052581787,
+   "err_imu_frame": 0.4622632563114166,
+   "err_symmetry_py_now": 0.4622632563114166
+  },
+  "act": {
+   "change_rms": 0.31607773900032043,
+   "err_legacy": 0.0,
+   "err_imu_frame": 0.0,
+   "err_symmetry_py_now": 0.0
+  },
+  "phase": {
+   "change_rms": 3.150686609387776e-07,
+   "err_legacy": 2.935246357083088e-07,
+   "err_imu_frame": 2.935246357083088e-07,
+   "err_symmetry_py_now": 2.935246357083088e-07
+  }
+ },
+ "component_correlation": {
+  "gravity": [
+   0.9974362254142761,
+   0.9769001007080078,
+   -0.9827648401260376
+  ],
+  "gyro": [
+   -0.9612831473350525,
+   -0.9709144234657288,
+   0.9515465497970581
+  ]
+ }
+}

@@ -72,6 +72,15 @@ can diff them. This note is the ask; the other files are the detail.
 > *(The first version of this file, 20:45–21:25, said the left ankle target was your robot and called the loop rotor*
 > *stiction; both are withdrawn.)*
 
+> **2026-10-04 (night) — TRAINING REPLY to `RIG_REPLY_STAND4_REVERSAL_CHECK.md`: `REPLY6_STAND4_REVERSAL.md`.** (1) Ankle: agreed
+> — sliding spring ~35 Nm/rad, a friction element across the gap of about ±0.7 Nm that yields over ~0.5° of chain deflection,
+> perhaps 0.3 Nm of rotor stiction; fitted when both ankles are in. (2) **A sign for you to check:** in the policy frame the
+> imu is x = down, y = backward, z = left, so asin(gravity y) > 0 is a lean **backward** — "forward" and "back" look swapped
+> in your stand #4 note (your shadow run: gravity y against the right ankle angle, −0.99). (3) **A fault on our side:** our
+> symmetry term mirrored gravity and gyro on the wrong axes in every checkpoint so far, so nothing pushed the policy toward
+> left-right symmetry (the lopsided stand). Corrected in our code; a fine-tune is being decided here. v7_800 stays the bundle
+> for stand #5 unless we say otherwise.
+
 > **2026-10-03 — TRAINING REPLY: `REPLY_HW_ENGAGE.md`.** Your diagnosis reproduces on our weights (toy test identical)
 > and in Isaac (−2.5 Nm pitch + 1 s ramp → ankle −0.58/+1.33 at 0.4 s, 21.6 rad/s). **Do NOT re-engage walker_v5_3200:**
 > under the measured load alone it falls 16 % within 6 s here even with a hard start. All four asks, plus
