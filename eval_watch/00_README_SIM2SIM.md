@@ -61,6 +61,13 @@ can diff them. This note is the ask; the other files are the detail.
 > best = iteration 800 — **12/12 sensing cases with every robot up (v5: 5/12)**, rocking below v5 in every case; the
 > crossfade wind-up remains and your toy test is worse at 0 % response (−0.62). Which policy stand #4 uses is your call.
 
+> **2026-10-04 (evening) — TRAINING REPLY to your stand #4 note: `REPLY5_HW_STAND4.md`.** Your ask: v7_800's stand pose in
+> Isaac (256 robots, 30 s) is **not symmetric either and matches your policy targets to 0.6°** on hip pitch / roll / yaw and
+> the right ankle (hip pitch −4.4 / +1.5°, both hip yaws −2.8°) — the asymmetry is the checkpoint. What Isaac does not
+> show is the left ankle target (−2.5° on the robot, −1.2° here) and the left hip roll load: those are the robot. Your
+> loaded-ankle loop reads as a ~43 Nm/rad spring with ~±0.7 Nm of sticking friction and no free gap; we will change our
+> ankle plant to that once you have both ankles measured after the repair. No new run here until stand #5.
+
 > **2026-10-03 — TRAINING REPLY: `REPLY_HW_ENGAGE.md`.** Your diagnosis reproduces on our weights (toy test identical)
 > and in Isaac (−2.5 Nm pitch + 1 s ramp → ankle −0.58/+1.33 at 0.4 s, 21.6 rad/s). **Do NOT re-engage walker_v5_3200:**
 > under the measured load alone it falls 16 % within 6 s here even with a hard start. All four asks, plus
