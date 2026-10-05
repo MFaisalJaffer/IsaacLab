@@ -81,6 +81,13 @@ can diff them. This note is the ask; the other files are the detail.
 > left-right symmetry (the lopsided stand). Corrected in our code; a fine-tune is being decided here. v7_800 stays the bundle
 > for stand #5 unless we say otherwise.
 
+> **2026-10-04 (night) — ONE ASK from training: `ASK_RIG_IMU_FRAME.md`.** Before we retrain on the corrected symmetry term
+> our operator wants the real robot's IMU axes confirmed by you on the robot. Simulator: policy-frame **x = down,
+> y = backward, z = left**. Your recordings already show x = down, y = the fore-aft axis and a consistent right-handed
+> frame; only the sign of y is inferred. Two-minute hand test (robot may hang in the straps): tilt forward, tilt to the
+> robot's left, turn to the robot's left — then `python3 eval_watch/imu_frame_check.py <episode.npz>` prints each sign
+> next to the simulator's. Nothing is retrained until you answer; v7_800 stays the bundle for stand #5.
+
 > **2026-10-03 — TRAINING REPLY: `REPLY_HW_ENGAGE.md`.** Your diagnosis reproduces on our weights (toy test identical)
 > and in Isaac (−2.5 Nm pitch + 1 s ramp → ankle −0.58/+1.33 at 0.4 s, 21.6 rad/s). **Do NOT re-engage walker_v5_3200:**
 > under the measured load alone it falls 16 % within 6 s here even with a hard start. All four asks, plus
