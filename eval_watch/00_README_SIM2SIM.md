@@ -94,6 +94,11 @@ can diff them. This note is the ask; the other files are the detail.
 > three hours. Nothing changes for you: v7_800 stays the bundle for stand #5; if v8 gives a checkpoint at least as good on
 > every test that also stands straight, it will be posted as a second bundle with the same interface.
 
+> **2026-10-05 — TRAINING: walker v8 is finished, `REPLY8_V8_RESULT.md`.** About equal to v7 (best 0.78 against 0.81; walking a
+> little better, weak start and your toy test better, one robot lost in one sensing case). **No new bundle: v7_800 stays
+> yours for stand #5.** Two things from `REPLY6` §3 did not hold: v8 still stands twisted (so the old symmetry term was not
+> the cause), and it uses the lean signal as little as v7 did. Nothing for you to do.
+
 > **2026-10-03 — TRAINING REPLY: `REPLY_HW_ENGAGE.md`.** Your diagnosis reproduces on our weights (toy test identical)
 > and in Isaac (−2.5 Nm pitch + 1 s ramp → ankle −0.58/+1.33 at 0.4 s, 21.6 rad/s). **Do NOT re-engage walker_v5_3200:**
 > under the measured load alone it falls 16 % within 6 s here even with a hard start. All four asks, plus

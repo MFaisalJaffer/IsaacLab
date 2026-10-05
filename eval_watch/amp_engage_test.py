@@ -41,7 +41,7 @@ parser.add_argument("--plant", default="trained", choices=("nominal", "trained")
 parser.add_argument("--keep", default="", help="nominal plant only: comma list of randomization events to leave ON (to find which ingredient of the trained plant matters)")
 parser.add_argument("--drop", default="", help="trained plant only: comma list of randomization events to switch OFF")
 parser.add_argument("--noise", type=int, default=-1, help="sensor noise: -1 = as the plant (nominal off, trained on), 0 = off, 1 = on")
-parser.add_argument("--sweep", type=int, default=0, help="1 = load sweep instead of the 15 conditions: pitch and roll moments from -3 to +3 Nm, hard start, to find how much standing load a policy tolerates")
+parser.add_argument("--sweep", type=int, default=0, help="1 = load sweep instead of the 15 conditions: pitch and roll moments from -3 to +3 Nm, hard start, to find how much standing load a policy tolerates; 2 = pitch loads -2.5 / 0 / +2.5 only; 3 = sideways loads of 5 to 14 Nm on both sides")
 AppLauncher.add_app_launcher_args(parser)
 args = parser.parse_args()
 app = AppLauncher(args).app
@@ -80,6 +80,8 @@ GROUPS = [
 
 if args.sweep == 2:   # short form: no load and the measured load both ways, hard start
     GROUPS = [(f"pitch load {m:+.1f} Nm", (0.0, m), 0.0, 0.0, 0.0) for m in (-2.5, 0.0, 2.5)]
+elif args.sweep == 3:   # sideways loads, both sides, up to where a stand gives way: is the left as strong as the right? (+ leans the torso to the robot's right)
+    GROUPS = [(f"roll load {m:+.1f} Nm", (m, 0.0), 0.0, 0.0, 0.0) for m in (-14.0, -11.0, -8.0, -5.0, 5.0, 8.0, 11.0, 14.0)]
 elif args.sweep:
     GROUPS = [(f"pitch load {m:+.1f} Nm", (0.0, m), 0.0, 0.0, 0.0) for m in (-3.0, -2.5, -2.0, -1.5, -1.0, -0.5, 0.0, 0.5, 1.0, 1.5, 2.0, 2.5, 3.0)] + \
              [(f"roll load {m:+.1f} Nm", (m, 0.0), 0.0, 0.0, 0.0) for m in (-3.0, -2.0, -1.0, 1.0, 2.0, 3.0)]
